@@ -9,7 +9,9 @@ Cliente: Curiosipics
 /**********************
 VARIABLES
 **********************/
-
+var slider_colum1_l,slider_colum1_r,intervalo;
+var speedA, speedB, speedC, speedD, speedE;
+var posX;
 
 //Eventos para dispositivos móviles
 var ua = navigator.userAgent,
@@ -31,16 +33,80 @@ jQuery(window).load(function(){
 
 jQuery(document).ready(function(){
 	
+	//Reinicio de variables
+	posX=0; 
+    speedA = 1.3;
+    speedB = 0.8;
+    speedC = 1.5;
+    speedD = 0.6;
+    speedE = 1;
+	speedF = 0.3;
+	
 	//Reiniciar Scroll a 0
-	/*jQuery('body').scrollTo( "0px", 0,function(){
+	jQuery('body').scrollTo( "0px", 0,function(){
 		//Pillar anclas de la url si las hay 
 		var hash = window.location.hash.substring(1);
 		if(hash!=""){
-			jQuery('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
+			j//Query('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
 		}
-	});*/
+	});
 	
 	jQuery(window).scroll(control_scroll);
+	
+	//Solo ejecutar si es visible la galería
+	if ( jQuery("#galeria_sup").is(":visible") ) {
+		//Calculamos la altura del contenedor padre y 
+		//se la asignamos a las diapositivas 
+		var h_parent=jQuery('.left_galeria .colum_1 .box_img_2').height();
+		jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(h_parent);
+		
+		//Slider columna 1
+		slider_colum1_l=jQuery('.left_galeria .bxslider_colum1_l').bxSlider({
+							mode:'vertical',
+							pager: false,
+							infiniteLoop: true,
+							useCSS: false,
+							auto: true,
+							controls:false,
+							pause:5000
+		});
+		
+		//Calculamos la altura del contenedor padre y 
+		//se la asignamos a las diapositivas 
+		var h_parent=jQuery('.right_galeria .colum_1 .box_img_1').height();
+		jQuery('.right_galeria .colum_1 .box_img_1 .box_slider_img').height(h_parent);
+		
+		//Slider columna 1
+		slider_colum1_r=jQuery('.right_galeria .bxslider_colum1_r').bxSlider({
+							mode:'horizontal',
+							pager: false,
+							infiniteLoop: true,
+							useCSS: false,
+							auto: true,
+							controls:false,
+							pause:4000
+		});
+		
+		//Animación de últimas fotos añadidas
+		clearInterval(intervalo);
+  		intervalo = setInterval(posterAnimation,20);
+	}
+	
+	//Cuando queremos desplegar ventana de login
+	jQuery(document).on("click",".btn_login", function(e) {
+		e.preventDefault();
+		if(jQuery(this).hasClass('active')){
+			jQuery(this).removeClass('active');
+			jQuery('#box_login').stop().clearQueue().fadeOut(600,function(){
+				//Limpiamos los campos
+			});
+		}else{
+			jQuery(this).addClass('active');
+			jQuery('#box_login').stop().clearQueue().fadeIn(600);
+		}
+	});
+	
+	
 	
 	//Obtenemos altura y anchura del navegador
 	var h_win=jQuery('#wrapper').height();
@@ -87,28 +153,30 @@ function control_scroll(e){
 		//}
   }
   
-  //Aparece flecha top
-  /*if(scrollAmount>300){
-		if (!jQuery('.up-window').is(":visible") ) {
-			jQuery('.up-window').stop().clearQueue().fadeIn(400);
-			if(jQuery(window).scrollTop() + jQuery(window).height() > jQuery(document).height() - h_foot + 20) {
-			var despl=jQuery(window).scrollTop() + jQuery(window).height() - (jQuery(document).height() - h_foot)
-				jQuery('.up-window').css({bottom:(despl)});
-		   }else{
-				jQuery('.up-window').css({bottom:0});
-		   }  
-		}else{
-			if(jQuery(window).scrollTop() + jQuery(window).height() > jQuery(document).height() - h_foot) {
-			var despl=jQuery(window).scrollTop() + jQuery(window).height() - (jQuery(document).height() - h_foot)
-				jQuery('.up-window').css({bottom:(despl)});
-		   }else{
-				jQuery('.up-window').css({bottom:0});
-		   } 
-		}
-   }else{
-   		jQuery('.up-window').stop().clearQueue().fadeOut(400);
-   }*/
-   //jQuery('.marcador').html(scrollAmount);
+  //Solo ejecutar si es visible la galería (HOME)
+  if ( jQuery("#galeria_sup").is(":visible") ) {
+		  //Animación decoración superior de la home 
+		  if(scrollAmount<765){
+			jQuery('.deco_1').stop().clearQueue().animate({ top: 0-(scrollAmount * speedD)}, 0);
+			jQuery('.deco_2').stop().clearQueue().animate({ top: -360-(scrollAmount * speedB)}, 0);
+			jQuery('.deco_3').stop().clearQueue().animate({ top: -370-(scrollAmount * speedA)}, 0);
+			jQuery('#contenidos').stop().clearQueue().animate({ marginTop: 0-(scrollAmount * speedE)}, 0);
+		  }
+		  
+		  //Animación de la home 
+		  if(scrollAmount>250){
+			jQuery('.deco_4').stop().clearQueue().animate({ bottom: 175+((scrollAmount-250) * speedD)}, 0);
+			jQuery('.deco_5').stop().clearQueue().animate({ bottom: 30+((scrollAmount-250) * speedF)}, 0);
+		  }
+		  
+		  //Animación flecha home
+		  if(scrollAmount<40){
+			jQuery('.flecha_scroll').stop().clearQueue().animate({ top: -40+(scrollAmount * speedE)}, 0).fadeIn(400);
+		  }else{
+			jQuery('.flecha_scroll').stop().clearQueue().animate({top:0},0).fadeOut(400);
+		  }
+    }
+   jQuery('.marcador').html(scrollAmount+'px');
 }
 
 // autoplay video Youtube
@@ -140,8 +208,16 @@ function doOnOrientationChange()
         break; 
     }
   }
+
+//Animcación de imágenes de galería
+function posterAnimation()
+{
+    posX += 1.5;
+  	jQuery('.galeria_curiosidad').css({ backgroundPosition: -posX +"px 0px" });
+}
+
   
-  //Función para alinear top los cuadros
+//Función para alinear top los cuadros
 function align_top_box(id){
 		 
 		//Listado cajas
@@ -153,6 +229,8 @@ function align_top_box(id){
 		maxHeight = Math.max.apply(null, heights);
 		jQuery(id).css('height',maxHeight);	
 }
+
+
 
 
 

@@ -66,13 +66,43 @@ PROPIEDADES GENERALES
 ******************************/
 body{margin:0;padding:0;font-family:'cabinregular', Helvetica, sans-serif;font-size: 1em;line-height: 1.5em;}
 .container{display:block;width:100%;max-width:1600px;margin:0 auto;}
+#wrapper{position:relative;}
 
 /*****************************
 PROPIEDADES HEADER
 ******************************/
 #header{position:relative;}
 #header .container{position:relative;}
-#galeria_sup{height:795px;background:red;}
+#galeria_sup{height:795px;overflow:hidden;position:relative;}
+#galeria_sup:after{content:'';display:block;height:795px;background:rgba(0,0,0,0.5);position:absolute;top:0;width:100%;z-index:50;}
+#galeria_sup .left_galeria,#galeria_sup .right_galeria{width:50%;float:left;overflow:hidden;}
+#galeria_sup .left_galeria .colum_1{width:60%;float:left;height:795px;background:red;}
+#galeria_sup .left_galeria .colum_2{width:40%;float:left;height:795px;background:blue;}
+#galeria_sup .right_galeria .colum_1{width:40%;float:left;height:795px;background:green;}
+#galeria_sup .right_galeria .colum_2{width:60%;float:left;height:795px;background:yellow;}
+
+#galeria_sup .left_galeria .colum_1 .box_img_1{height:41%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#galeria_sup .left_galeria .colum_1 .box_img_2{height:36%;width:100%;}
+#galeria_sup .left_galeria .colum_1 .box_img_3{height:33%;width:100%;overflow:hidden;}
+
+#galeria_sup .left_galeria .colum_2 .box_img_1{height:27%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#galeria_sup .left_galeria .colum_2 .box_img_2{height:24%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#galeria_sup .left_galeria .colum_2 .box_img_3{height:24%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#galeria_sup .left_galeria .colum_2 .box_img_4{height:25%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+
+#galeria_sup .right_galeria .colum_1 .box_img_1{height:50%;width:100%;}
+#galeria_sup .right_galeria .colum_1 .box_img_2{height:27%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#galeria_sup .right_galeria .colum_1 .box_img_3{height:23%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+
+#galeria_sup .right_galeria .colum_2 .box_img_1{height:35%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#galeria_sup .right_galeria .colum_2 .box_img_2{height:35%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#galeria_sup .right_galeria .colum_2 .box_img_3{height:30%;width:100%;overflow:hidden;}
+
+.big_split_img{width:66.6%;height:100%;float:left;}
+.small_split_img{width:33.3%;height:100%;float:left;}
+.box_slider_img{background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);width:100%;}
+
+
 #top_header{position:absolute;top:0;left:0;z-index:100;width:100%;}
 #top_header h1 a{display:block;width:149px;height:44px;text-indent:-99999px;background:url(../img/logo_cambridge.jpg) top left no-repeat;position:absolute;top:0;left:0;}
 
@@ -89,20 +119,34 @@ PROPIEDADES HEADER
 #top_header ul li.btn_header a.activo{background:#ffffff;color:#61bde9;}
 #top_header ul li.btn_header:last-child a{margin-right:20px;}
 
-#header h2{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/logo_concurso.png) top left no-repeat;top:50%;margin-top:-216px;}
+#header h2{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/logo_concurso.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;}
+
+#box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;height:280px;position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:100;}
+#formulario-login label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
+#formulario-login input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;}
+#formulario-login a{font-size:14px;color:#7f7f7f;text-decoration:underline;}
+#formulario-login input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:1px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;}
+
+.deco_1{display:block;background:url(../img/deco_1.png) top left no-repeat;display:block;width:284px;height:131px;position:absolute;top:0;left:50%;margin-left:-384px;z-index:100;}
+.deco_2{display:block;background:url(../img/deco_2.png) top left no-repeat;display:block;width:333px;height:513px;position:absolute;top:-360px;left:0;z-index:100;}
+.deco_3{display:block;background:url(../img/deco_3.png) top left no-repeat;display:block;width:248px;height:404px;position:absolute;top:-370px;right:0;z-index:100;}
+.deco_4{display:block;background:url(../img/deco_4.png) top left no-repeat;display:block;width:222px;height:225px;position:absolute;bottom:175px;left:0;z-index:100;}
+.deco_5{display:block;background:url(../img/deco_5.png) top left no-repeat;display:block;width:223px;height:485px;position:absolute;bottom:30px;right:0;z-index:100;}
 
 /*************************************
 PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 *************************************/
-#contenidos{position:relative;}
+#contenidos{position:relative;z-index:150;}
+.flecha_scroll{display:block;width:119px;height:120px;position:absolute;left:0;right:0;margin:0 auto;background:url(../img/flecha_scroll.png) top left no-repeat;top:-40px;z-index:105;}
 #box_curiosidad{position:relative;background:#ffffff;}
+#box_curiosidad .container{position:relative;}
 .inside_curiosidad{width:60%;margin:0 auto;padding-top:100px;padding-bottom:40px;}
 #box_curiosidad h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;}
 #box_curiosidad h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
 #box_curiosidad h4{color:#484647;font-size:24px;text-align:center;margin-bottom:20px;line-height:36px;font-family:'cabinsemibold', Helvetica, sans-serif;}
 #box_curiosidad p{color:#484647;text-align:center;font-size:18px;margin-bottom:20px;line-height:24px;font-family:'cabinregular', Helvetica, sans-serif;}
 #box_curiosidad p a{font-family:'cabinsemibold', Helvetica, sans-serif;color:#484647;}
-.galeria_curiosidad{background:red;height:215px;}
+.galeria_curiosidad{height:212px;background:url(../img/carrusel.png) top left repeat-x;}
 
 /*************************************
 PROPIEDADES COMO PARTICIPAR
@@ -117,13 +161,19 @@ PROPIEDADES COMO PARTICIPAR
 .btn_participar{color:#ffffff;font-size:16px;border:1px solid #ffffff;display:block;height:50px;width:270px;position:absolute;bottom:105px;line-height:50px;text-align:center;left:0;right:0;margin:0 auto;border-radius:5px;}
 
 .rombo{background:#ffffff;display:table;position:absolute;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);}
+.rombo.registro_rombo{background:#f05456 !important;}
 .rombo .inside_rombo{width:100%;text-align:center;display:table-cell;vertical-align:middle;height:100%;}
-.rombo .inside_rombo p{width:83%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:18px;line-height:26px;}
+.rombo .inside_rombo a{width:100%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:17px;line-height:24px;color:#ffffff;height:100%;display:block;line-height:110px;}
+.rombo .inside_rombo p{width:83%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:18px;line-height:24px;color:#484647;}
+.rombo .inside_rombo p strong{font-family:'cabinsemibold', Helvetica, sans-serif;}
 
 .rombo_1_l{width:220px;height:220px;bottom:400px;left:80px;}
 .rombo_2_l{width:280px;height:280px;bottom:260px;left:350px;}
 .rombo_2_r{width:210px;height:210px;bottom:290px;right:440px;}
 .rombo_1_r{width:280px;height:280px;bottom:390px;right:110px;}
+
+.rombo_1_c{width:200px;height:200px;bottom:370px;left:50%;margin-left:-100px;}
+.rombo_2_c{width:110px;height:110px;bottom:310px;left:50%;margin-left:-55px;}
 
 /*************************************
 PROPIEDADES PREMIOS
@@ -176,7 +226,8 @@ PROPIEDADES FOOTER
 #top_footer .menu_pie li{display:inline-block;font-size:16px;margin-left:20px;height:36px;line-height:36px;}
 #top_footer .menu_pie li:first-child{margin-left:0;}
 #top_footer .menu_pie li a{color:#61bde9;font-family:'cabinregular', Helvetica, sans-serif;font-size:18px;display:inline-block;line-height:30px;height:30px;}
-#top_footer ul li.btn_footer a{font-size:18px;border:2px solid #61bde9;padding-left:20px;padding-right:20px;border-radius:5px;}
+#top_footer ul li.btn_footer a{font-size:18px;border:2px solid #61bde9;padding-left:20px;padding-right:20px;border-radius:5px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
+#top_footer ul li.btn_footer a:hover{background:#ffffff;}
 
 /** BOTONES RRSS **/
 #rrss_cab{position:absolute;top:10px;right:10px;z-index:20;}
