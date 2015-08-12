@@ -76,10 +76,10 @@ PROPIEDADES HEADER
 #galeria_sup{height:795px;overflow:hidden;position:relative;}
 #galeria_sup:after{content:'';display:block;height:795px;background:rgba(0,0,0,0.5);position:absolute;top:0;width:100%;z-index:50;}
 #galeria_sup .left_galeria,#galeria_sup .right_galeria{width:50%;float:left;overflow:hidden;}
-#galeria_sup .left_galeria .colum_1{width:60%;float:left;height:795px;background:red;}
-#galeria_sup .left_galeria .colum_2{width:40%;float:left;height:795px;background:blue;}
-#galeria_sup .right_galeria .colum_1{width:40%;float:left;height:795px;background:green;}
-#galeria_sup .right_galeria .colum_2{width:60%;float:left;height:795px;background:yellow;}
+#galeria_sup .left_galeria .colum_1{width:60%;float:left;height:795px;}
+#galeria_sup .left_galeria .colum_2{width:40%;float:left;height:795px;}
+#galeria_sup .right_galeria .colum_1{width:40%;float:left;height:795px;}
+#galeria_sup .right_galeria .colum_2{width:60%;float:left;height:795px;}
 
 #galeria_sup .left_galeria .colum_1 .box_img_1{height:41%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
 #galeria_sup .left_galeria .colum_1 .box_img_2{height:36%;width:100%;}
