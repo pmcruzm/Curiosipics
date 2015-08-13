@@ -66,7 +66,8 @@ PROPIEDADES GENERALES
 ******************************/
 body{margin:0;padding:0;font-family:'cabinregular', Helvetica, sans-serif;font-size: 1em;line-height: 1.5em;}
 .container{display:block;width:100%;max-width:1600px;margin:0 auto;}
-#wrapper{position:relative;}
+#wrapper{position:relative;background:#f1f1f1;}
+#wrapper.home{background:#ffffff;}
 
 /*****************************
 PROPIEDADES HEADER
@@ -109,6 +110,7 @@ PROPIEDADES HEADER
 #top_header .right_top_header{position:absolute;top:15px;right:0;overflow:hidden;}
 .right_top_header .navigation_menu{float:right;}
 .right_top_header .user_menu{float:right;}
+.right_top_header .logged_box{float:right;}
 #top_header ul li{display:inline-block;}
 #top_header ul li a{font-family:'cabinbold', Helvetica, sans-serif;font-size:18px;color:#ffffff;display:inline-block;height:35px;line-height:35px;margin-right:20px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 #top_header ul li a.active{border-bottom:solid 5px #61bde9;}
@@ -118,6 +120,9 @@ PROPIEDADES HEADER
 #top_header ul li.btn_header a:hover{background:#ffffff;color:#61bde9;}
 #top_header ul li.btn_header a.activo{background:#ffffff;color:#61bde9;}
 #top_header ul li.btn_header:last-child a{margin-right:20px;}
+
+.logged_box p{font-size:18px;color:#61bde9;line-height:35px;height:35px;margin-right:25px;margin-left:15px;}
+.logged_box p:before{content:'';display:block;width:35px;height:35px;background:url(../img/ico_logged.png) left center no-repeat;float:left;}
 
 #header h2{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/logo_concurso.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;}
 
