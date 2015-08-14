@@ -72,37 +72,8 @@ body{margin:0;padding:0;font-family:'cabinregular', Helvetica, sans-serif;font-s
 /*****************************
 PROPIEDADES HEADER
 ******************************/
-#header{position:relative;}
+#header{position:fixed; top:0px;z-index:200;width:100%;}
 #header .container{position:relative;}
-#galeria_sup{height:795px;overflow:hidden;position:relative;}
-#galeria_sup:after{content:'';display:block;height:795px;background:rgba(0,0,0,0.5);position:absolute;top:0;width:100%;z-index:50;}
-#galeria_sup .left_galeria,#galeria_sup .right_galeria{width:50%;float:left;overflow:hidden;}
-#galeria_sup .left_galeria .colum_1{width:60%;float:left;height:795px;}
-#galeria_sup .left_galeria .colum_2{width:40%;float:left;height:795px;}
-#galeria_sup .right_galeria .colum_1{width:40%;float:left;height:795px;}
-#galeria_sup .right_galeria .colum_2{width:60%;float:left;height:795px;}
-
-#galeria_sup .left_galeria .colum_1 .box_img_1{height:41%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-#galeria_sup .left_galeria .colum_1 .box_img_2{height:36%;width:100%;}
-#galeria_sup .left_galeria .colum_1 .box_img_3{height:33%;width:100%;overflow:hidden;}
-
-#galeria_sup .left_galeria .colum_2 .box_img_1{height:27%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-#galeria_sup .left_galeria .colum_2 .box_img_2{height:24%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-#galeria_sup .left_galeria .colum_2 .box_img_3{height:24%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-#galeria_sup .left_galeria .colum_2 .box_img_4{height:25%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-
-#galeria_sup .right_galeria .colum_1 .box_img_1{height:50%;width:100%;}
-#galeria_sup .right_galeria .colum_1 .box_img_2{height:27%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-#galeria_sup .right_galeria .colum_1 .box_img_3{height:23%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-
-#galeria_sup .right_galeria .colum_2 .box_img_1{height:35%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-#galeria_sup .right_galeria .colum_2 .box_img_2{height:35%;width:100%;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
-#galeria_sup .right_galeria .colum_2 .box_img_3{height:30%;width:100%;overflow:hidden;}
-
-.big_split_img{width:66.6%;height:100%;float:left;}
-.small_split_img{width:33.3%;height:100%;float:left;}
-.box_slider_img{background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);width:100%;}
-
 
 #top_header{position:absolute;top:0;left:0;z-index:100;width:100%;}
 #top_header h1 a{display:block;width:149px;height:44px;text-indent:-99999px;background:url(../img/logo_cambridge.jpg) top left no-repeat;position:absolute;top:0;left:0;}
@@ -115,16 +86,19 @@ PROPIEDADES HEADER
 #top_header ul li a{font-family:'cabinbold', Helvetica, sans-serif;font-size:18px;color:#ffffff;display:inline-block;height:35px;line-height:35px;margin-right:20px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 #top_header ul li a.active{border-bottom:solid 5px #61bde9;}
 #top_header ul li a:hover{border-bottom:solid 5px #61bde9;}
+#top_header.black_enl ul li a{color:#373737 !important;}
 
 #top_header ul li.btn_header a{font-size:16px;border:2px solid #ffffff;padding-left:25px;padding-right:25px;border-radius:5px;margin-right:5px;}
 #top_header ul li.btn_header a:hover{background:#ffffff;color:#61bde9;}
-#top_header ul li.btn_header a.activo{background:#ffffff;color:#61bde9;}
+#top_header ul li.btn_header a.active{background:#ffffff;color:#61bde9;}
 #top_header ul li.btn_header:last-child a{margin-right:20px;}
+
+#top_header.black_enl ul li.btn_header a{border:2px solid #373737 !important;}
 
 .logged_box p{font-size:18px;color:#61bde9;line-height:35px;height:35px;margin-right:25px;margin-left:15px;}
 .logged_box p:before{content:'';display:block;width:35px;height:35px;background:url(../img/ico_logged.png) left center no-repeat;float:left;}
 
-#header h2{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/logo_concurso.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;}
+#header h2.logo_top{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;}
 
 #box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;height:280px;position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:100;}
 #formulario-login label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
@@ -139,11 +113,46 @@ PROPIEDADES HEADER
 .deco_5{display:block;background:url(../img/deco_5.png) top left no-repeat;display:block;width:223px;height:485px;position:absolute;bottom:30px;right:0;z-index:100;}
 
 /*************************************
+PROPIEDADES GALERÍ SUPERIOR HOME
+*************************************/
+#gallery_home{position:relative;}
+#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/logo_concurso.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;}
+
+#galeria_sup{height:795px;overflow:hidden;position:relative;}
+#galeria_sup:after{content:'';display:block;height:795px;background:rgba(0,0,0,0.5);position:absolute;top:0;width:100%;z-index:50;}
+#galeria_sup .left_galeria,#galeria_sup .right_galeria{width:50%;float:left;overflow:hidden;}
+#galeria_sup .left_galeria .colum_1{width:60%;float:left;height:795px;}
+#galeria_sup .left_galeria .colum_2{width:40%;float:left;height:795px;}
+#galeria_sup .right_galeria .colum_1{width:40%;float:left;height:795px;}
+#galeria_sup .right_galeria .colum_2{width:60%;float:left;height:795px;}
+
+#galeria_sup .left_galeria .colum_1 .box_img_1{height:41%;width:100%;}
+#galeria_sup .left_galeria .colum_1 .box_img_2{height:36%;width:100%;}
+#galeria_sup .left_galeria .colum_1 .box_img_3{height:33%;width:100%;overflow:hidden;}
+
+#galeria_sup .left_galeria .colum_2 .box_img_1{height:27%;width:100%;}
+#galeria_sup .left_galeria .colum_2 .box_img_2{height:24%;width:100%;}
+#galeria_sup .left_galeria .colum_2 .box_img_3{height:24%;width:100%;}
+#galeria_sup .left_galeria .colum_2 .box_img_4{height:25%;width:100%;}
+
+#galeria_sup .right_galeria .colum_1 .box_img_1{height:50%;width:100%;}
+#galeria_sup .right_galeria .colum_1 .box_img_2{height:27%;width:100%;}
+#galeria_sup .right_galeria .colum_1 .box_img_3{height:23%;width:100%;}
+
+#galeria_sup .right_galeria .colum_2 .box_img_1{height:35%;width:100%;}
+#galeria_sup .right_galeria .colum_2 .box_img_2{height:35%;width:100%;}
+#galeria_sup .right_galeria .colum_2 .box_img_3{height:30%;width:100%;overflow:hidden;}
+
+.big_split_img{width:66.6%;height:100%;float:left;}
+.small_split_img{width:33.3%;height:100%;float:left;}
+.box_slider_img{background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);width:100%;}
+
+/*************************************
 PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 *************************************/
 #contenidos{position:relative;z-index:150;}
 .flecha_scroll{display:block;width:119px;height:120px;position:absolute;left:0;right:0;margin:0 auto;background:url(../img/flecha_scroll.png) top left no-repeat;top:-40px;z-index:105;}
-#box_curiosidad{position:relative;background:#ffffff;}
+#box_curiosidad{position:relative;background:#ffffff;z-index:80;}
 #box_curiosidad .container{position:relative;}
 .inside_curiosidad{width:60%;margin:0 auto;padding-top:100px;padding-bottom:40px;}
 #box_curiosidad h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;}
@@ -151,7 +160,7 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 #box_curiosidad h4{color:#484647;font-size:24px;text-align:center;margin-bottom:20px;line-height:36px;font-family:'cabinsemibold', Helvetica, sans-serif;}
 #box_curiosidad p{color:#484647;text-align:center;font-size:18px;margin-bottom:20px;line-height:24px;font-family:'cabinregular', Helvetica, sans-serif;}
 #box_curiosidad p a{font-family:'cabinsemibold', Helvetica, sans-serif;color:#484647;}
-.galeria_curiosidad{height:212px;background:url(../img/carrusel.png) top left repeat-x;}
+.galeria_curiosidad{height:212px;overflow:hidden;}
 
 /*************************************
 PROPIEDADES COMO PARTICIPAR
@@ -163,7 +172,7 @@ PROPIEDADES COMO PARTICIPAR
 #box_participar h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
 #box_participar h4{font-size:24px;position:absolute;bottom:180px;color:#ffffff;text-align:center;width:100%;}
 .txt_legal{font-size:14px;position:absolute;bottom:30px;color:#ffffff;width:100%;text-align:center;}
-.btn_participar{color:#ffffff;font-size:16px;border:1px solid #ffffff;display:block;height:50px;width:270px;position:absolute;bottom:105px;line-height:50px;text-align:center;left:0;right:0;margin:0 auto;border-radius:5px;}
+.btn_participar{color:#ffffff;font-size:16px;border:2px solid #ffffff;display:block;height:50px;width:270px;position:absolute;bottom:105px;line-height:50px;text-align:center;left:0;right:0;margin:0 auto;border-radius:5px;}
 
 .rombo{background:#ffffff;display:table;position:absolute;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);}
 .rombo.registro_rombo{background:#f05456 !important;}
@@ -213,6 +222,54 @@ PROPIEDADES EL JURADO
 .box_jurado_single a{color:#ffffff;font-size:18px;font-family:'cabinsemibold', Helvetica, sans-serif;line-height:28px;text-decoration:underline;}
 
 
+/*************************************
+PROPIEDADES REGISTRO
+*************************************/
+#box_registro{width:60%;margin:0 auto;padding-top:40px;padding-bottom:150px;}
+#box_registro h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;}
+#box_registro h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
+
+.form_box_registro{float:left;width:70%;}
+
+
+.info_box_registro{float:left;width:30%;}
+.info_box_registro .box_bg_txt{background:#f1e87c;display:table;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);height:160px;width:160px;margin:0 auto;margin-top:25px;}
+.info_box_registro .inside_box_bg_txt{width:100%;text-align:center;display:table-cell;vertical-align:middle;height:100%;}
+.info_box_registro .inside_box_bg_txt p{width:83%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:16px;line-height:21px;color:#373737;}
+
+.form_box_registro{}
+.form_box_registro h4{color:#61bde9;font-size:24px;line-height:32px;text-align:center;margin-bottom:20px;}
+
+#registro-form{}
+.form-group{overflow:hidden;margin-bottom:10px;}
+#registro-form .form-group label{display:block;text-align:right;width:30%;float:left;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:18px;}
+#registro-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
+#registro-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
+#registro-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
+
+#registro-form span.ind_password{color:#adaaab;font-size:13px;display:block;padding-left:30%;width:95%;text-align:center;box-sizing:border-box;margin-bottom:40px;}
+
+.radio-group{overflow:hidden;margin-bottom:3px;margin-top:60px;}
+.titul_radio{display:block;text-align:right;width:30%;float:left;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:18px;}
+.cont_radio{display:block;width:65%;float:left;box-sizing:border-box;height:40px;padding-top:10px;}
+.cont_radio span{color:#484647;font-size:18px;display:inline-block;margin-right:25px;}
+
+.date-group{overflow:hidden;}
+.date-group label{display:none;}
+.date-group .cont_radio{overflow:hidden;padding-top:0;}
+.date-group input{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;width:50px;margin-right:10px;text-align:center;}
+.date-group .cont_radio span{display:block;float:left;height:40px;line-height:40px;width:20px;color:#484647;font-size:20px;margin-right:0;}
+
+.group_checkbox{margin-top:70px;}
+#registro-form .checkbox label{display:inline-block;}
+#registro-form  .checkbox{padding-left:50px;margin-bottom:18px;display:block;padding-left:30%;}
+#registro-form  .checkbox p{margin-top:-30px;font-size:16px;padding-left:40px;color:#484647;}
+#registro-form .checkbox a{color:#484647;text-decoration:underline;}
+
+.submit_group{padding-left:30%;padding-top:40px;}
+.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;}
+
+
 
 /*****************************
 PROPIEDADES FOOTER
@@ -256,10 +313,98 @@ PROPIEDADES ESPECIALES
 ******************************/
 a img{border:0;}
 .clear{clear:both;}
-.hide{display:none;}
+.hide{display:none !important;}
 ul.bxslider {margin: 0;padding: 0;}
 .bx-wrapper .bx-viewport{-moz-box-shadow: 0;-webkit-box-shadow: 0;box-shadow: 0 0 0 0;border: 0;left: 0;background:none !important;border:none !important;left:0 !important;}
 .box_inside_float{overflow:hidden;}
+.box_space_top{padding-top:184px;}
+
+
+
+/**********************************
+PROPIEDADES DE CUSTOM RADIO | CHECKBOX BUTTON
+**********************************/
+#foo:checked::before,
+input[type="radio"] {
+    position:absolute;
+    clip: rect(0,0,0,0);
+    clip: rect(0 0 0 0);
+}
+
+#foo:checked,
+input[type="radio"] + label::before {
+    content:'';
+    cursor:pointer;
+    position:relative;
+    top:2px;
+    vertical-align:top;
+    padding-right:10px;
+    display:inline-block;
+    overflow:hidden;
+    width:21px;
+    height:21px;
+    background:url(../img/radio_opt.png) no-repeat;
+    background-position:0px 0px;
+    background-size:21px;
+}
+
+input[type="radio"]:checked + label::before {
+    content:'';
+    cursor:pointer;
+    position:relative;
+    top:2px;
+    vertical-align:top;
+    padding-right:10px;
+    display:inline-block;
+    overflow:hidden;
+    width:21px;
+    height:21px;
+    background:url(../img/radio_opt.png) no-repeat;
+    background-position:0px -21px;
+    background-size:21px;
+}
+
+#foo:checked::before,
+input[type="checkbox"] {
+    position:absolute;
+    clip: rect(0,0,0,0);
+    clip: rect(0 0 0 0);
+}
+
+#foo:checked,
+input[type="checkbox"] + label::before {
+    content:'';
+    cursor:pointer;
+    display:inline-block;
+    width:21px;
+    height:21px;
+    background:url(../img/check_state.png) no-repeat;
+    background-position:0px 0px;
+    background-size:21px;
+}
+
+#foo:checked,
+input[type="checkbox"].error + label::before {
+    content:'';
+    cursor:pointer;
+    display:inline-block;
+    width:21px;
+    height:20px;
+    background:url(../img/check_state.png) no-repeat;
+    background-position:0px -42px;
+    background-size:21px;
+}
+
+input[type="checkbox"]:checked + label::before {
+    content:'';
+    cursor:pointer;
+    display:inline-block;
+    width:21px;
+    height:21px;
+    background:url(../img/check_state.png) no-repeat;
+    background-position:0px -21px;
+    background-size:21px;
+}
 
 /*****************************
 MEDIA QUERIES

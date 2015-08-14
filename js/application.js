@@ -9,9 +9,10 @@ Cliente: Curiosipics
 /**********************
 VARIABLES
 **********************/
-var slider_colum1_l,slider_colum1_r,intervalo;
+var slider_l_1_1,slider_l_1_2,slider_l_1_3_1,slider_l_1_3_2,slider_l_2_1,slider_l_2_2,slider_l_2_3,slider_l_2_4;
+var slider_r_1_1,slider_r_1_2,slider_r_1_3,slider_r_2_1,slider_l_2_2,slider_r_2_3_1,slider_r_2_3_2,slider_last_pics;
 var speedA, speedB, speedC, speedD, speedE;
-var posX;
+var posX,intervalo;
 
 //Eventos para dispositivos móviles
 var ua = navigator.userAgent,
@@ -43,53 +44,83 @@ jQuery(document).ready(function(){
 	speedF = 0.3;
 	
 	//Reiniciar Scroll a 0
-	jQuery('body').scrollTo( "0px", 0,function(){
+	/*jQuery('body').scrollTo( "0px", 0,function(){
 		//Pillar anclas de la url si las hay 
 		var hash = window.location.hash.substring(1);
 		if(hash!=""){
-			j//Query('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
+			//jQuery('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
 		}
-	});
+	});*/
 	
 	jQuery(window).scroll(control_scroll);
 	
 	//Solo ejecutar si es visible la galería
 	if ( jQuery("#galeria_sup").is(":visible") ) {
-		//Calculamos la altura del contenedor padre y 
-		//se la asignamos a las diapositivas 
-		var h_parent=jQuery('.left_galeria .colum_1 .box_img_2').height();
-		jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(h_parent);
+		//Slider columnas de la izquierda 
 		
-		//Slider columna 1
-		slider_colum1_l=jQuery('.left_galeria .bxslider_colum1_l').bxSlider({
-							mode:'vertical',
-							pager: false,
-							infiniteLoop: true,
-							useCSS: false,
-							auto: true,
-							controls:false,
-							pause:5000
-		});
+		//var h_parent=jQuery('.left_galeria .colum_1 .box_img_2').height();
+		//jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(h_parent);
 		
-		//Calculamos la altura del contenedor padre y 
-		//se la asignamos a las diapositivas 
-		var h_parent=jQuery('.right_galeria .colum_1 .box_img_1').height();
-		jQuery('.right_galeria .colum_1 .box_img_1 .box_slider_img').height(h_parent);
+		/*COLUMNA 1 IZQUIERDA*/
+		//Cuadro columna 1 bloque 1
+		jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
+		slider_l_1_1=jQuery('.left_galeria .bxslider_l_1_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5000});
+		//Cuadro columna 1 bloque 2
+		jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_2').height());
+		slider_l_1_2=jQuery('.left_galeria .bxslider_l_1_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000});
+		//Cuadro columna 1 bloque 3-1
+		jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
+		slider_l_1_3_1=jQuery('.left_galeria .bxslider_l_1_3_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4000});
+		//Cuadro columna 1 bloque 3-2
+		jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
+		slider_l_1_3_2=jQuery('.left_galeria .bxslider_l_1_3_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3500});
 		
-		//Slider columna 1
-		slider_colum1_r=jQuery('.right_galeria .bxslider_colum1_r').bxSlider({
-							mode:'horizontal',
-							pager: false,
-							infiniteLoop: true,
-							useCSS: false,
-							auto: true,
-							controls:false,
-							pause:4000
-		});
+		/*COLUMNA 2 IZQUIERDA*/
+		//Cuadro columna 1 bloque 1
+		jQuery('.left_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_1').height());
+		slider_l_2_1=jQuery('.left_galeria .bxslider_l_2_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4500});
+		//Cuadro columna 1 bloque 2
+		jQuery('.left_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_2').height());
+		slider_l_2_2=jQuery('.left_galeria .bxslider_l_2_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2500});
+		//Cuadro columna 1 bloque 3-1
+		jQuery('.left_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_3').height());
+		slider_l_2_3=jQuery('.left_galeria .bxslider_l_2_3').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000});
+		//Cuadro columna 1 bloque 3-2
+		jQuery('.left_galeria .colum_2 .box_img_4 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_4').height());
+		slider_l_2_4=jQuery('.left_galeria .bxslider_l_2_4').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4000});
+		
+		/*COLUMNA 1 DERECHA*/
+		//Cuadro columna 1 bloque 1
+		jQuery('.right_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_1').height());
+		slider_r_1_1=jQuery('.right_galeria .bxslider_r_1_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4500});
+		//Cuadro columna 1 bloque 2
+		jQuery('.right_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_2').height());
+		slider_r_1_2=jQuery('.right_galeria .bxslider_r_1_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2500});
+		//Cuadro columna 1 bloque 3-1
+		jQuery('.right_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_3').height());
+		slider_r_1_3=jQuery('.right_galeria .bxslider_r_1_3').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000});
+		
+		/*COLUMNA 2 DERECHA*/
+		//Cuadro columna 2 bloque 1
+		jQuery('.right_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_1').height());
+		slider_r_2_1=jQuery('.right_galeria .bxslider_r_2_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5000});
+		//Cuadro columna 1 bloque 2
+		jQuery('.right_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_2').height());
+		slider_r_2_2=jQuery('.right_galeria .bxslider_r_2_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000});
+		//Cuadro columna 2 bloque 3-1
+		jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
+		slider_r_2_3_1=jQuery('.right_galeria .bxslider_r_2_3_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4000});
+		//Cuadro columna 2 bloque 3-2
+		jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
+		slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3500});
+		
+		/*Últimos Pics*/
+		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
+		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:5,maxSlides:5,slideWidth:3200,slideMargin:0,ticker:true});
 		
 		//Animación de últimas fotos añadidas
-		clearInterval(intervalo);
-  		intervalo = setInterval(posterAnimation,20);
+		//clearInterval(intervalo);
+  		//intervalo = setInterval(posterAnimation,20);
 	}
 	
 	//Cuando queremos desplegar ventana de login
@@ -160,7 +191,7 @@ function control_scroll(e){
 			jQuery('.deco_1').stop().clearQueue().animate({ top: 0-(scrollAmount * speedD)}, 0);
 			jQuery('.deco_2').stop().clearQueue().animate({ top: -360-(scrollAmount * speedB)}, 0);
 			jQuery('.deco_3').stop().clearQueue().animate({ top: -370-(scrollAmount * speedA)}, 0);
-			jQuery('#contenidos').stop().clearQueue().animate({ marginTop: 0-(scrollAmount * speedE)}, 0);
+			jQuery('#box_curiosidad').stop().clearQueue().animate({ marginTop: 0-(scrollAmount * speedE)}, 0);
 		  }
 		  
 		  //Animación de la home 
