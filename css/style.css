@@ -155,7 +155,7 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 #box_curiosidad{position:relative;background:#ffffff;z-index:80;}
 #box_curiosidad .container{position:relative;}
 .inside_curiosidad{width:60%;margin:0 auto;padding-top:100px;padding-bottom:40px;}
-#box_curiosidad h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;}
+#box_curiosidad h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_curiosidad h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
 #box_curiosidad h4{color:#484647;font-size:24px;text-align:center;margin-bottom:20px;line-height:36px;font-family:'cabinsemibold', Helvetica, sans-serif;}
 #box_curiosidad p{color:#484647;text-align:center;font-size:18px;margin-bottom:20px;line-height:24px;font-family:'cabinregular', Helvetica, sans-serif;}

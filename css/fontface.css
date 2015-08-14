@@ -41,3 +41,16 @@ FUENTES CURIOSIPICS
     font-style: normal;
 
 }
+
+
+@font-face {
+    font-family: 'santa_fe';
+    src: url('../fonts/cabin-semibold-webfont.eot');
+    src: url('../fonts/Santa_Fe_LET_Plain1.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Santa_Fe_LET_Plain1.woff') format('woff'),
+         url('../fonts/Santa_Fe_LET_Plain1.ttf') format('truetype'),
+         url('../fonts/Santa_Fe_LET_Plain1.svg#cabinsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
