@@ -65,7 +65,7 @@
                     	<h3>Registro</h3>
                         <div class="box_inside_float">
                         	<div class="form_box_registro">
-                            	<form id="registro-form" action="Get_User_Information.php" method="post" role="form" data-error-msg="Ha habido un error, por favor revisa los campos resaltados">
+                            	<form id="registro-form" action="envio.php" method="post" role="form" novalidate data-error-msg="Ha habido un error, por favor revisa los campos resaltados">
 									<h4>Datos del usuario</h4>	
                                     <div class="form-group required">
                                         <label for="name_r">Nombre</label>
@@ -77,7 +77,7 @@
                                      </div>
                                      <div class="form-group required">
                                          <label for="email_r">Email</label>
-                                         <input type="email" class="form-control validation-rule-mail" id="email_r" data-error-msg="El email no es válido">
+                                         <input type="email" class="form-control validation-rule-mail" id="email_r" autocorrect="off" data-error-msg="El email no es válido">
                                      </div>
                                      <div class="form-group required">
                                          <label for="city_r">Ciudad</label>
@@ -91,13 +91,13 @@
                                      	<div class="titul_radio">Fecha de Nacimiento</div>
                                         <div class="cont_radio">
                                             <label for="día_r">Día</label>
-                                         	<input type="text" class="form-control validation-rule-empty" maxlength="2" id="día_r">
+                                         	<input type="text" class="form-control validation-rule-date" maxlength="2" id="día_r" data-error-msg="Formato fecha no es válido">
                                             <span>/</span>
                                             <label for="mes_r">Apellidos</label>
-                                         	<input type="text" class="form-control validation-rule-empty" maxlength="2" id="mes_r">
+                                         	<input type="text" class="form-control validation-rule-date" maxlength="2" id="mes_r" data-error-msg="Formato fecha no es válido">
                                             <span>/</span>
                                          	<label for="ano_r">Apellidos</label>
-                                         	<input type="text" class="form-control validation-rule-empty" maxlength="2" id="ano_r">
+                                         	<input type="text" class="form-control validation-rule-date" maxlength="2" id="ano_r" data-error-msg="Formato fecha no es válido">
                                         </div>   
                                      </div>
                                      <div class="radio-group required">
@@ -117,11 +117,11 @@
                                      </div>
                                      <div class="form-group required">
                                          <label for="contrasena_r">Contraseña</label>
-                                         <input type="password" class="form-control validation-rule-empty" id="contrasena_r">
+                                         <input type="password" class="form-control validation-rule-password init_password" id="contrasena_r" data-error-msg="Error contraseña">
                                      </div>
                                      <div class="form-group required">
                                          <label for="rep_contrasena_c">Confirmar contraseña</label>
-                                         <input type="password" class="form-control validation-rule-empty" id="rep_contrasena_c" >
+                                         <input type="password" class="form-control validation-rule-password repeat_password" id="rep_contrasena_c" data-error-msg="Error contraseña	" >
                                      </div>
                                      <span class="ind_password">La contraseña ha de ser de un mínimo de 6 caracteres y un máximo de 12</span>
                                      <h4>Datos del centro</h4>	
@@ -130,9 +130,10 @@
                                          <input type="text" class="form-control validation-rule-empty" id="name_c_r" >
                                      </div> 
                                      <div class="group_checkbox">
-                                         <div class="checkbox"><input id="c_privacy_c" class="validation-rule-checkbox" data-error-msg="Debe aceptar política de privacidad." type="checkbox"><label for="c_privacy_c"></label><p><span>I have read, understand and accept the</span> <a href="#" title="Privacy Policy">Privacy Policy</a>.</p></div>
-                                         <div class="checkbox"><input id="c_info_c" type="checkbox"><label for="c_info_c"></label><p><span>I do not wish to receive information regarding paid focus groups, be invited to events or receive information via email regarding new products, services or discounts.</span></p></div>
+                                         <div class="checkbox"><input id="c_privacy_c" class="validation-rule-checkbox" data-error-msg="Debe aceptar política de privacidad." type="checkbox"><label for="c_privacy_c"></label><p><span>He leído y acepto la </span> <a href="#" title="Privacy Policy">Política de privacidad</a>.</p></div>
+                                         <div class="checkbox"><input id="c_info_c" type="checkbox"><label for="c_info_c"></label><p><span>No deseo estar informado sobre nuevas promociones, acontecimientos de interés e información de Cambridge University Press.</span></p></div>
                                      </div>
+                                     <div class="errores"></div>
                                      <div class="submit_group"><input type="submit"  value="Enviar"></div>
                                 </form>
                             </div>

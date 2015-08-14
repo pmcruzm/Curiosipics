@@ -13,6 +13,7 @@ var slider_l_1_1,slider_l_1_2,slider_l_1_3_1,slider_l_1_3_2,slider_l_2_1,slider_
 var slider_r_1_1,slider_r_1_2,slider_r_1_3,slider_r_2_1,slider_l_2_2,slider_r_2_3_1,slider_r_2_3_2,slider_last_pics;
 var speedA, speedB, speedC, speedD, speedE;
 var posX,intervalo;
+var send_form=0;
 
 //Eventos para dispositivos móviles
 var ua = navigator.userAgent,
@@ -117,10 +118,7 @@ jQuery(document).ready(function(){
 		/*Últimos Pics*/
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:5,maxSlides:5,slideWidth:3200,slideMargin:0,ticker:true});
-		
-		//Animación de últimas fotos añadidas
-		//clearInterval(intervalo);
-  		//intervalo = setInterval(posterAnimation,20);
+	
 	}
 	
 	//Cuando queremos desplegar ventana de login
@@ -134,6 +132,31 @@ jQuery(document).ready(function(){
 		}else{
 			jQuery(this).addClass('active');
 			jQuery('#box_login').stop().clearQueue().fadeIn(600);
+		}
+	});
+	
+	//Enviar formulario de registro
+	jQuery(document).on("submit","#registro-form", function(e) {
+		if(send_form==0){
+			send_form=1;
+			//Limpiamos errores si no es la primera vez
+			jQuery(".errores").html("");
+			//Llamamos a la función de validar (id formulario y contenedor errores)
+			var result=validate_form('#registro-form');
+			if(result==1){
+				e.preventDefault();
+				send_form=0;
+			}
+		}
+	});
+	
+	//Eliminar marco de error cuando se hace click sobre un input con error
+	jQuery(document).on('focus','form input,form textarea,form input[type=checkbox]',function(event){
+		event.preventDefault();
+		if(jQuery(this).attr('type')!='submit'){
+			if(jQuery(this).hasClass('error')){
+				jQuery(this).removeClass('error');
+			}
 		}
 	});
 	
@@ -241,11 +264,11 @@ function doOnOrientationChange()
   }
 
 //Animcación de imágenes de galería
-function posterAnimation()
+/*function posterAnimation()
 {
     posX += 1.5;
   	jQuery('.galeria_curiosidad').css({ backgroundPosition: -posX +"px 0px" });
-}
+}*/
 
   
 //Función para alinear top los cuadros
@@ -259,6 +282,131 @@ function align_top_box(id){
 		//Obtenemos tamaño max de los cuadros 
 		maxHeight = Math.max.apply(null, heights);
 		jQuery(id).css('height',maxHeight);	
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+//Funcion para validar genéricamnete un formulario
+function validate_form(id){
+		//Busca todos los campos requeridos de texto
+			if(jQuery(id).find('.validation-rule-empty').length > 0){
+				var error_empty=0;
+				jQuery(id).find('.validation-rule-empty').each(function() {
+					var res_campo=jQuery(this).val();
+					if(res_campo==""){
+						error_empty=1;
+						jQuery(this).addClass('error').val('');
+					}
+
+				});
+			}
+
+			//Busca todos los campos requeridos de mail
+			if(jQuery(id).find('.validation-rule-mail').length > 0){
+				var error_mail=0;
+				jQuery(id).find('.validation-rule-mail').each(function() {
+					var res_campo=jQuery(this).val();
+					if((res_campo=="") || (res_campo!="" && validateEmail(res_campo)==false) ){
+						error_mail=1;
+						jQuery(this).addClass('error').val('');
+					}
+
+				});
+			}
+
+			//Busca todos los campos requeridos de codigo postal
+			if(jQuery(id).find('.validation-rule-date').length > 0){
+				var error_date=0;
+				jQuery(id).find('.validation-rule-date').each(function() {
+					var res_campo=jQuery(this).val();
+					if((res_campo=="") || (res_campo!="" && isNumber(res_campo)==false) ){
+						error_date=1;
+						jQuery(this).addClass('error').val('');
+					}
+
+				});
+			}
+			
+			//Busca todos los campos requeridos de codigo postal
+			if(jQuery(id).find('.validation-rule-password').length > 0){
+				var error_password=0;
+				//Comprobamos que uno de los 2 no está vacío
+				if(jQuery('.init_password').val()!="" && jQuery('.repeat_password').val()!=""){
+					var txt_ini=jQuery('.init_password').val();
+					var txt_rept=jQuery('.repeat_password').val();
+					if(txt_ini!=txt_rept){
+						error_password=1;
+						jQuery('.init_password').addClass('error').val('');
+						jQuery('.repeat_password').addClass('error').val('');
+					}else{
+						if(txt_ini.length < 6 || txt_ini.length > 12){
+							error_password=1;
+							jQuery('.init_password').addClass('error').val('');
+							jQuery('.repeat_password').addClass('error').val('');
+						}
+					}	
+				}else{
+					error_password=1;
+					jQuery('.init_password').addClass('error').val('');
+					jQuery('.repeat_password').addClass('error').val('');
+				}
+			}
+
+			//Busca todos los campos requeridos checkbox
+			if(jQuery(id).find('.validation-rule-checkbox').length > 0){
+				var error_checkbox=0;
+				jQuery(id).find('.validation-rule-checkbox').each(function() {
+					if(!jQuery(this).prop("checked")){
+						error_checkbox=1;
+						jQuery(this).addClass('error');
+					}
+
+				});
+			}
+
+
+			//Error general campos vacíos
+			if(error_empty==1 || error_checkbox_centre==1 || error_checkbox_teacher==1 || error_course_book==1){
+				var message=jQuery(id).attr('data-error-msg');
+				jQuery('.errores').append('<p>'+message+'</p>');
+			}
+
+			if(error_checkbox==1){
+				var message=jQuery(id).find('.validation-rule-checkbox').attr('data-error-msg');
+				jQuery('.errores').append('<p>'+message+'</p>');
+			}
+			
+			//Errores en formato de fecha
+			if(error_date==1){
+				var message=jQuery(id).find('.validation-rule-date').attr('data-error-msg');
+				jQuery('.errores').append('<p>'+message+'</p>');
+			}
+			
+			//Errores password
+			if(error_password==1){
+				var message=jQuery(id).find('.validation-rule-password').attr('data-error-msg');
+				jQuery('.errores').append('<p>'+message+'</p>');
+			}
+			
+			if(error_mail==1){
+				var message=jQuery(id).find('.validation-rule-mail').attr('data-error-msg');
+				jQuery('.errores').append('<p>'+message+'</p>');
+			}
+
+
+			//Salida
+			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_date==1){
+				return 1;
+			}else{
+				return 0;
+			}
 }
 
 
