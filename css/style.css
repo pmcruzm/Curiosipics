@@ -72,8 +72,9 @@ body{margin:0;padding:0;font-family:'cabinregular', Helvetica, sans-serif;font-s
 /*****************************
 PROPIEDADES HEADER
 ******************************/
-#header{position:fixed; top:0px;z-index:200;width:100%;}
-#header.header_normal{position:relative !important;}
+#header{position:fixed; top:0px;width:100%;}
+#header.home{z-index:200;}
+#header.header_normal{position:relative !important;z-index:100;}
 #header .container{position:relative;}
 
 #top_header{position:absolute;top:0;left:0;z-index:100;width:100%;}
@@ -99,7 +100,7 @@ PROPIEDADES HEADER
 .logged_box p{font-size:18px;color:#61bde9;line-height:35px;height:35px;margin-right:25px;margin-left:15px;}
 .logged_box p:before{content:'';display:block;width:35px;height:35px;background:url(../img/ico_logged.png) left center no-repeat;float:left;}
 
-#header h2.logo_top{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;}
+#header h2.logo_top a{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;}
 
 #box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;height:280px;position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:100;}
 #formulario-login label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
@@ -327,6 +328,44 @@ PROPIEDADES MIS PICS
 .info_s_pic p{color:#373737;font-size:16px;line-height:24px;margin-bottom:30px;}
 .info_s_pic .count_votos{color:#373737;font-size:20px;line-height:24px;background:url(../img/icon_star.png) center right no-repeat;padding-right:34px;}
 
+/**********************
+PROPIEDADES PICS (TODOS)
+***********************/
+#box_all_pics{/*padding-top:40px;*/}
+.wall_pics{margin-top:-60px;}
+.row{overflow:hidden;}
+.box_img_small{float:left;width:20%;position:relative;display:block;box-sizing:border-box;padding:20px;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+.box_img_small:after {content:'';position:absolute;left:0px;top:0px;width:100%;height:100%;background:-moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 0.6)));background:-webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);background:-o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);background:-ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#99000000',GradientType=0)}
+.box_img_small a{display: block;height:100%;position: absolute;width: 100%;z-index: 15;top:0;left:0;}
+.box_img_small h3{position:absolute;bottom:15px;color:#ffffff;font-size:16px;padding-left:15px;padding-right:15px;}
+
+.pagination_pics{background:#61bde9;text-align:center;padding-top:20px;padding-bottom:20px;}
+.pagination_pics ul{display:inline-block;}
+.pagination_pics li{display:inline-block;}
+.pagination_pics li a{font-size:18px;color:#ffffff;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;margin-right:10px;}
+.pagination_pics li:last-child a{margin-right:30px;}
+.pagination_pics li:first-child a{margin-left:30px;}
+.pagination_pics li a:hover{color:#7ed8ff;}
+.pagination_pics li a.active{color:#7ed8ff;}
+
+.prev_pag{display:inline-block;width:23px;height:16px;background-image:url(../img/arrow_pag_l.png); background-position:0px 0px;background-repeat:no-repeat;text-indent:-99999px;vertical-align:middle;}
+.prev_pag:hover{background-position:0px -16px;}
+.next_pag{display:inline-block;width:23px;height:16px;background-image:url(../img/arrow_pag_r.png); background-position:0px 0px;background-repeat:no-repeat;text-indent:-99999px;vertical-align:middle;}
+.next_pag:hover{background-position:0px -16px;}
+
+.navigation_pics{overflow:hidden;position:relative;}
+.left_navigation_pics{display:inline-block;float:left;position:absolute;bottom:0px;}
+.left_navigation_pics ul{margin-left:20px;margin-bottom:20px;}
+.left_navigation_pics ul li{display:inline-block;}
+.left_navigation_pics ul li a{font-size:20px;color:#373737;height:45px;line-height:45px;margin-right:20px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
+.left_navigation_pics ul li a:hover{border-bottom:solid 3px #61bde9;color:#61bde9;}
+.left_navigation_pics ul li a.active{border-bottom:solid 3px #61bde9;color:#61bde9;}
+.right_navigation_pics{display:inline-block;float:right;}
+.right_navigation_pics ul{font-size:0px;}
+.right_navigation_pics ul li{display:inline-block;font-size:16px;}
+.right_navigation_pics ul li a{display:inline-block;height:105px;text-indent:-99999px;width:290px;position:relative;z-index:210;}
+.right_navigation_pics ul li:first-child{background:red;}
+.right_navigation_pics ul li:last-child{background:green;}
 /*****************************
 PROPIEDADES FOOTER
 ******************************/

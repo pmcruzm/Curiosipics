@@ -100,6 +100,11 @@ jQuery(document).ready(function(){
 		jQuery(".preview_box").height(jQuery(".preview_box").width());	
 	}
 	
+	//Ajustamos cuadros en el muro de pics 
+	if ( jQuery(".wall_pics").is(":visible") ) {	
+		jQuery(".box_img_small").height(jQuery(".box_img_small").width());	
+	}
+	
 	//Solo ejecutar si es visible la galería
 	if ( jQuery("#galeria_sup").is(":visible") ) {
 		//Slider columnas de la izquierda 
@@ -215,7 +220,15 @@ jQuery(document).ready(function(){
 	//Evento para capturar el resize de la ventana
 	jQuery( window ).resize(function() {
 		
+		//Ajustamos cuadro de preview en Mis pics 
+		if ( jQuery(".preview_box").is(":visible") ) {	
+			jQuery(".preview_box").height(jQuery(".preview_box").width());	
+		}
 		
+		//Ajustamos cuadros en el muro de pics 
+		if ( jQuery(".wall_pics").is(":visible") ) {	
+			jQuery(".box_img_small").height(jQuery(".box_img_small").width());	
+		}	
 	
 	});
 
