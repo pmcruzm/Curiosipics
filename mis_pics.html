@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title></title>
+    <meta name="description" content="" />
+	<meta property="og:title" content=""/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+    
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/fontface.css" />
+     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+     <link rel="stylesheet" type="text/css" href="css/style.css" />
+     <!-- Font Awesome styles-->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!--El siguiente comentario es un comentario condicional que solo IE sabe interpretar-->
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/css_ie.css"/>
+    <![endif]-->
+    
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+  	<div id="wrapper">
+    	<div id="header" class="header_normal">
+        	<div class="container">
+        		<div id="top_header" class="black_enl">
+                	<h1><a href="#">Cambridge University Press</a></h1>
+                    <h2 class="logo_top"><a href="#">Curiosipics</a></h2>
+                    <div class="right_top_header">
+                    	<ul class="user_menu">
+                        	<li class="btn_header"><a href="#" class="btn_registro">Registro</a></li>
+                            <li class="btn_header"><a href="#" class="btn_login">Login</a></li>
+                        </ul>
+                        <ul class="navigation_menu">
+                            <li><a href="#">EL CONCURSO</a></li>
+                            <li><a href="#">PICS</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="box_login" style="display:none;">
+                	<form role="form" id="formulario-login">
+                        <label for="email_login">Email</label>
+                        <input type="text"  id="email_login">
+                        <label for="password_login">Contraseña</label>
+                        <input type="text"  id="password_login">
+                        <div><a href="#">Recordar contraseña</a></div>
+                        <input type="submit" class="btn" value="Entrar">
+                    </form> 
+                </div>
+            </div>
+        </div><!--Fin header--> 
+        <div id="contenidos">
+            <div class="box_space_top">
+                <div id="box_mis_pics">
+                    <h3>Mis pics</h3>
+                        <h4>Subir nuevo Pic</h4>
+                        <div class="box_new_pic">
+                        	<div class="inside_new_pic">
+                                <div class="form_new_pic">
+                                	<form id="form-upload-pic" action="" method="post" enctype="multipart/form-data">
+                                    	<div class="preview_pic">
+                                        	<div class="preview_box">
+                                            	<div class="imagePreview"></div>
+                                            </div>
+                                            <span>Peso máximo del archivo 5 mb</span>
+                                        	<input type="file" name="imagefile" onchange="previewImage(this,[512],4);" />
+                                        </div>
+                                        <div class="fields_pic">
+                                        	<label for="titul_pic">Título en inglés</label>
+                                        	<input type="text" class="form-control validation-rule-empty" id="titul_pic">
+                                            <label for="descrip_pic">Descripción en inglés</label>
+                                        	<textarea id="descrip_pic"></textarea>
+                                        </div>
+                                        <div class="submit_btn_pic"><input type="submit" name="enviar_pic" value="Enviar" /></div>
+                                    </form>
+                                </div>
+                                <div class="info_new_pic">
+                                	<h5>Recuerda</h5>
+                                	<p>Tanto el título como la descripción de la foto tienen que ir en inglés. </p>
+                                    <p>La descripción tiene que tener un mínimo de 10 palabras y un máximo de 50.</p>
+                                    <div class="box_bg_txt">
+                                        <div class="inside_box_bg_txt">
+                                            <p>¿Necesitas ayuda? Contacta con nosotros y te ayudamos<br/><a href="#">Contacto</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Pics subidos</h4>
+                        <div class="resumen_mis_pics">
+                        	<div class="box_single_pic">
+                            	<div class="inside_single_pic">
+                                	<div class="preview_pic single_pic">
+                                    	<img src="img/test1.jpg"/>
+                                    </div>
+                                    <div class="info_s_pic">
+                                    	<h4 class="aprovado_pic">Consecuentum vitale</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at nunc eu eros gravida aliquam. Praesent vitae lorem quis arcu suscipit fringilla. Donec justo urna, egestas nec lorem ac, pharetra suscipit lectus. Etiam id pretium velit, in imperdiet ligula. Pellentesque ut dui convallis, congue erat in, mattis mi. Donec et.</p>
+                                        <span class="count_votos">132 Votos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_single_pic">
+                            	<div class="inside_single_pic">
+                                	<div class="preview_pic single_pic">
+                                    	<img src="img/test2.jpg"/>
+                                    </div>
+                                    <div class="info_s_pic">
+                                    	<h4 class="no_aprovado_pic">Praesent ligula fui loremipsum</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at nunc eu eros gravida aliquam. Praesent vitae lorem quis arcu suscipit fringilla. Donec justo urna, egestas nec lorem ac, pharetra suscipit lectus. Etiam id pretium velit, in imperdiet ligula. Pellentesque ut dui convallis, congue erat in, mattis mi. Donec et.</p>
+                                        <span class="count_votos">2 Votos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+             </div>
+        </div><!--Fin contenidos--> 
+        <div id="footer">
+   			<div id="top_footer">
+            	<div class="container">
+            		<div class="right_p_rrss">
+                    	<p>Síguenos</p>
+                        <ul class="list_rrss">
+                        	<li><a href="" target="_blank" class="fa fa-instagram"><span class="hide">Instagram</span></a></li>
+                        	<li><a href="" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a></li>
+                            <li><a href="" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a></li>
+                            <li><a href="" target="_blank" class="fa fa-youtube-play"><span class="hide">Youtube</span></a></li>
+                        </ul>
+                     </div>
+                     	<ul class="menu_pie">
+                        	<li><a href="" title="">El concurso</a></li>
+                    		<li><a href="" title="">Pics</a></li>
+                    		<li><a href="" title="">Bases Legales</a></li>
+                    		<li><a href="" title="">Contacto</a></li>
+                    		<li class="btn_footer"><a href="">Registro</a></li>
+                    	</ul>	
+                </div>
+            </div>
+            <div id="boottom_footer">
+            	<div class="container">
+                	<p class="logo_foot"><a href="#" title="Cambridge University Press" target="_blank"><img alt="Cambridge University Press" src="http://www.cambridge.es/bundles/cambridgeweb/assets/svg/logo_escudo.svg"></a></p>
+                    <p class="copy_foot">&copy; Cambridge University Press 2015
+                        <span><a href="#">Aviso legal</a></span>
+                        <span><a href="#">Contacto</a></span>
+                    </p>	
+                </div>
+            </div>
+        </div><!--Fin footer--> 
+        <div class="marcador" style="color:#ff0000;font-size:18px;position:fixed;top:0;left:0;z-index:200;">0px</div>
+    </div><!--Fin wrapper--> 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/html5.image.preview.js"></script>
+  	<script src="js/jquery.inview.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/application.js"></script>
+  </body>
+</html>

@@ -73,6 +73,7 @@ body{margin:0;padding:0;font-family:'cabinregular', Helvetica, sans-serif;font-s
 PROPIEDADES HEADER
 ******************************/
 #header{position:fixed; top:0px;z-index:200;width:100%;}
+#header.header_normal{position:relative !important;}
 #header .container{position:relative;}
 
 #top_header{position:absolute;top:0;left:0;z-index:100;width:100%;}
@@ -226,8 +227,8 @@ PROPIEDADES EL JURADO
 PROPIEDADES REGISTRO
 *************************************/
 #box_registro{width:60%;margin:0 auto;padding-top:40px;padding-bottom:150px;}
-#box_registro h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;}
-#box_registro h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
+#box_registro h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
+#box_registro h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;}
 
 .form_box_registro{float:left;width:70%;}
 
@@ -239,7 +240,7 @@ PROPIEDADES REGISTRO
 .info_box_registro .inside_box_bg_txt p a{color:#373737;display:block;height:30px;width:120px;margin:0 auto;border:2px solid #373737;line-height:30px;border-radius:5px;margin-top:10px;}
 
 .form_box_registro{}
-.form_box_registro h4{color:#61bde9;font-size:24px;line-height:32px;text-align:center;margin-bottom:20px;padding-left:30%;}
+.form_box_registro h4{color:#61bde9;font-size:24px;line-height:32px;text-align:center;margin-bottom:20px;padding-left:25%;}
 
 #registro-form{}
 .form-group{overflow:hidden;margin-bottom:10px;}
@@ -278,6 +279,53 @@ PROPIEDADES REGISTRO
 .errores{color:#ff0000;font-size:14px;display:block;padding-left:30%;width:95%;box-sizing:border-box;}
 
 
+/**********************
+PROPIEDADES MIS PICS
+***********************/
+#box_mis_pics{padding-top:40px;}
+#box_mis_pics h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
+#box_mis_pics h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;}
+#box_mis_pics h4{color:#61bde9;font-size:24px;line-height:32px;text-align:center;margin-bottom:15px;}
+
+.box_new_pic{background:#ffffff;padding-top:40px;padding-bottom:70px;margin-bottom:30px;}
+.inside_new_pic{width:80%;margin:0 auto;overflow:hidden;}
+
+.form_new_pic{float:left;width:75%;}
+#form-upload-pic{overflow:hidden;}
+.preview_pic{width:33.3%;float:left;box-sizing:border-box;}
+.fields_pic{width:66.6%;float:left;box-sizing:border-box;padding-left:50px;}
+.submit_btn_pic{clear:both;box-sizing:border-box;padding-left:33.3%;}
+.submit_btn_pic input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;background:none;margin-left:50px;}
+#form-upload-pic span,#form-upload-pic label{display:block;}
+.fields_pic label{color:#484647;font-size:18px;margin-bottom:10px;}
+.fields_pic input[type=text]{height:40px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding-left:10px;padding-right:10px;margin-bottom:20px;}
+.fields_pic span{text-align:right;font-size:13px;color:#adaaab;margin-bottom:10px;}
+.fields_pic textarea{height:220px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding:10px;}
+	
+.preview_pic{text-align:center;}
+.preview_pic span{font-size:13px;color:#adaaab;display:block;margin-top:10px;margin-bottom:30px;}
+.preview_box{background:#e2e2e2;height:200px;display:block;margin:0 auto;margin-top:30px;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);overflow:hidden;}
+.preview_box img{max-width:100%;}
+
+
+.info_new_pic{float:left;width:25%;text-align:center;}
+.info_new_pic h5{color:#373737;font-size:16px;margin-bottom:15px;}
+.info_new_pic p{color:#373737;font-size:13px;line-height:18px;width:80%;margin:0 auto;margin-bottom:15px;}
+
+.info_new_pic .box_bg_txt{background:#f1e87c;display:table;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);height:160px;width:160px;margin:0 auto;margin-top:45px;}
+.info_new_pic .inside_box_bg_txt{width:100%;text-align:center;display:table-cell;vertical-align:middle;height:100%;}
+.info_new_pic .inside_box_bg_txt p{width:100%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:16px;line-height:21px;color:#373737;}
+.info_new_pic .inside_box_bg_txt p a{color:#373737;display:block;height:30px;width:120px;margin:0 auto;border:2px solid #373737;line-height:30px;border-radius:5px;margin-top:10px;}
+
+.box_single_pic{background:#ffffff;border-top:solid 2px #f1f1f1;}
+.inside_single_pic{margin: 0 auto;overflow: hidden;width: 80%;padding-top:40px;padding-bottom:70px;}
+.info_s_pic{box-sizing: border-box;float: left;padding-left: 50px;width:56.6%;}
+.single_pic img{max-width:100%;}
+.info_s_pic h4{text-align:left !important;color:#373737 !important;font-size:28px !important;line-height:32px;padding-right:52px;display:inline-block;}
+.info_s_pic h4.aprovado_pic{background:url(../img/icon_aceptado.png) center right no-repeat;}
+.info_s_pic h4.no_aprovado_pic{background:url(../img/icon_no_aceptado.png) center right no-repeat;}
+.info_s_pic p{color:#373737;font-size:16px;line-height:24px;margin-bottom:30px;}
+.info_s_pic .count_votos{color:#373737;font-size:20px;line-height:24px;background:url(../img/icon_star.png) center right no-repeat;padding-right:34px;}
 
 /*****************************
 PROPIEDADES FOOTER

@@ -53,7 +53,52 @@ jQuery(document).ready(function(){
 		}
 	});*/
 	
+	//Función contador de palabras textarea
+	jQuery.fn.textareaCounter = function(options) {
+		// setting the defaults
+		// $("textarea").textareaCounter({ limit: 100 });
+		var defaults = {
+			limit: 50
+		};	
+		var options = jQuery.extend(defaults, options);
+ 
+		// and the plugin begins
+		return this.each(function() {
+			var obj, text, wordcount, limited;
+			
+			obj = jQuery(this);
+			obj.after('<span style="clear: both; margin-top: 3px; display: block;" id="counter-text">Max. '+options.limit+' palabras</span>');
+
+			obj.keyup(function() {
+			    text = obj.val();
+			    if(text === "") {
+			    	wordcount = 0;
+			    } else {
+				    wordcount = jQuery.trim(text).split(" ").length;
+				}
+			    if(wordcount > options.limit) {
+			        jQuery("#counter-text").html('<span style="color: #DD0000;">0 palabras restantes</span>');
+					limited = jQuery.trim(text).split(" ", options.limit);
+					limited = limited.join(" ");
+					jQuery(this).val(limited);
+			    } else {
+			        jQuery("#counter-text").html((options.limit - wordcount)+' palabras restantes');
+			    } 
+			});
+		});
+	};
+	
 	jQuery(window).scroll(control_scroll);
+	
+	//Aplicar contador de palabras al formulario de Mis pics
+	if ( jQuery(".form_new_pic").is(":visible") ) {	
+		jQuery("#descrip_pic").textareaCounter();
+	}
+	
+	//Ajustamos cuadro de preview en Mis pics 
+	if ( jQuery(".preview_box").is(":visible") ) {	
+		jQuery(".preview_box").height(jQuery(".preview_box").width());	
+	}
 	
 	//Solo ejecutar si es visible la galería
 	if ( jQuery("#galeria_sup").is(":visible") ) {
