@@ -105,6 +105,14 @@ jQuery(document).ready(function(){
 		jQuery(".box_img_small").height(jQuery(".box_img_small").width());	
 	}
 	
+	//Si detalle está desplegado calculamos altura de los bloques
+	if ( jQuery(".detalle_pic").is(":visible") ) {	
+		jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+		jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+		jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
+		jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+	}
+	
 	//Solo ejecutar si es visible la galería
 	if ( jQuery("#galeria_sup").is(":visible") ) {
 		//Slider columnas de la izquierda 
@@ -229,6 +237,18 @@ jQuery(document).ready(function(){
 		if ( jQuery(".wall_pics").is(":visible") ) {	
 			jQuery(".box_img_small").height(jQuery(".box_img_small").width());	
 		}	
+		
+		//Ajustamos cuadros en el muro de pics 
+		if ( jQuery(".wall_pics").is(":visible") ) {	
+			jQuery(".box_img_small").height(jQuery(".box_img_small").width());	
+		}
+		
+		//Si detalle está desplegado calculamos altura de los bloques
+		if ( jQuery(".detalle_pic").is(":visible") ) {	
+			jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+			jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+		}
 	
 	});
 
