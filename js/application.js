@@ -45,13 +45,13 @@ jQuery(document).ready(function(){
 	speedF = 0.3;
 	
 	//Reiniciar Scroll a 0
-	/*jQuery('body').scrollTo( "0px", 0,function(){
+	jQuery('body').scrollTo( "0px", 0,function(){
 		//Pillar anclas de la url si las hay 
 		var hash = window.location.hash.substring(1);
 		if(hash!=""){
 			//jQuery('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
 		}
-	});*/
+	});
 	
 	//Función contador de palabras textarea
 	jQuery.fn.textareaCounter = function(options) {
@@ -218,6 +218,82 @@ jQuery(document).ready(function(){
 		}
 	});
 	
+	//Desplegar la info de un pic en concreto
+	jQuery(document).on("click",".box_img_small a", function(e) {
+		e.preventDefault();
+		var row_padre=jQuery(this).parents('.row').attr('rel');
+		var id_pic=jQuery(this).attr('rel');
+		
+		if ( jQuery(".detalle_pic").is(":visible") ) {	
+			jQuery(".detalle_pic").stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
+				//Removemos el bloque anterior
+				jQuery(".detalle_pic").remove();
+				//Hacemos llamada de AJAX para obtener detalles del pic
+				/*var data_var1='q='+ Math.random()+'&id='+id_pic;
+				jQuery.ajax({
+						url: 'detalles_pic.php',
+						type: 'POST',
+						async: true,
+						dataType: 'html',
+						data: data_var1,
+						success: function(msg1){
+							//Pintamos la respuesta del AJAX y desplegamos detalle
+						}
+				});*/
+				// Pintamos detalles
+				jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><div class="img_big_detalle" style="background-image:url(img/test1.jpg);"></div></div><div class="cont_detalle_pic"><h4>Alumno</h4><p class="nombre_persona">Estefania Randez Pérez</p><h5>Beauty and The Beast</h5><p class="descrip_pic">Integer dolor nunc, lacinia a mi eu, hendrerit blandit augue. Fusce tincidunt enim lorem, eget varius velit semper euismod. Duis semper id nulla ut fringilla. Cras a ante ac nibh scelerisque cursus eget eu lorem. Etiam consectetur risus vel pharetra semper. Aliquam libero tortor, dapibus eget sapien ac, ultricies pulvinar.</p><div class="bottom_detalle"><div class="votos_detalle"><span>132 Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div><a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a></div>').insertAfter( ".row[rel="+row_padre+"]" );
+				//Ajustamos alturas
+				jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+				jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+				jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
+				jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+				//Desplegamos el cuadro de detalle
+				jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo');
+			});
+		}else{
+			//Hacemos llamada de AJAX para obtener detalles del pic
+			/*var data_var1='q='+ Math.random()+'&id='+id_pic;
+			jQuery.ajax({
+					url: 'detalles_pic.php',
+					type: 'POST',
+					async: true,
+					dataType: 'html',
+					data: data_var1,
+					success: function(msg1){
+						//Pintamos la respuesta del AJAX y desplegamos detalle
+					}
+			});*/
+			// Pintamos detalles
+			jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><div class="img_big_detalle" style="background-image:url(img/test1.jpg);"></div></div><div class="cont_detalle_pic"><h4>Alumno</h4><p class="nombre_persona">Estefania Randez Pérez</p><h5>Beauty and The Beast</h5><p class="descrip_pic">Integer dolor nunc, lacinia a mi eu, hendrerit blandit augue. Fusce tincidunt enim lorem, eget varius velit semper euismod. Duis semper id nulla ut fringilla. Cras a ante ac nibh scelerisque cursus eget eu lorem. Etiam consectetur risus vel pharetra semper. Aliquam libero tortor, dapibus eget sapien ac, ultricies pulvinar.</p><div class="bottom_detalle"><div class="votos_detalle"><span>132 Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div><a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a></div>').insertAfter( ".row[rel="+row_padre+"]" );
+			//Ajustamos alturas
+			jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+			jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
+			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+			//Desplegamos el cuadro de detalle
+			jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo');
+		}
+	});
+	
+	//Cuando queremos cerrar detalles de pic
+	jQuery(document).on("click",".close_pic", function(e) {
+		e.preventDefault();
+		jQuery('.detalle_pic').stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
+			jQuery(".detalle_pic").remove();
+		});
+	});
+	
+	//Cuando queremos pasar al siguiente pic
+	jQuery(document).on("click",".next_pic", function(e) {
+		e.preventDefault();
+		console.log('Pic Siguiente');
+	});
+	
+	//Cuando queremos pasar al pic anterior
+	jQuery(document).on("click",".prev_pic", function(e) {
+		e.preventDefault();
+		console.log('Pic Anterior');
+	});
 	
 	
 	//Obtenemos altura y anchura del navegador
@@ -248,6 +324,7 @@ jQuery(document).ready(function(){
 			jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
 			jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
 			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 		}
 	
 	});
@@ -266,6 +343,13 @@ function control_scroll(e){
   //Variable de scroll	
   var scrollAmount = jQuery(window).scrollTop();
   var h_foot=jQuery('#pie').height();
+  
+  //Obtenemos las alturas de todas las secciones 
+  var top_curiosidades=jQuery('#box_curiosidad').offset().top;
+  var top_participar=jQuery('#box_participar').offset().top;
+  var top_premios=jQuery('#box_premios').offset().top;
+  var top_jurado=jQuery('#box_jurado').offset().top;
+  console.log(top_curiosidades+'--'+top_participar+'--'+top_premios+'--'+top_jurado);
   
   //Añadir Cookie si se hace scroll a +100px
   if(scrollAmount>100){
@@ -286,9 +370,12 @@ function control_scroll(e){
   }
   
   //Solo ejecutar si es visible la galería (HOME)
-  if ( jQuery("#galeria_sup").is(":visible") ) {
+  if ( jQuery("#galeria_sup").is(":visible") && device=='none' ) {
+	  	  //Añadir clases a los enlaces del menú según scroll
+		  if(scrollAmount>top_curiosidades && scrollAmount>top_participar){}
+	  
 		  //Animación decoración superior de la home 
-		  if(scrollAmount<765){
+		  if(scrollAmount<top_curiosidades){
 			jQuery('.deco_1').stop().clearQueue().animate({ top: 0-(scrollAmount * speedD)}, 0);
 			jQuery('.deco_2').stop().clearQueue().animate({ top: -360-(scrollAmount * speedB)}, 0);
 			jQuery('.deco_3').stop().clearQueue().animate({ top: -370-(scrollAmount * speedA)}, 0);

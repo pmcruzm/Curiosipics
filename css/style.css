@@ -152,7 +152,8 @@ PROPIEDADES GALERÍ SUPERIOR HOME
 /*************************************
 PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 *************************************/
-#contenidos{position:relative;z-index:150;}
+#contenidos{position:relative;}
+#contenidos.home{z-index:150;}
 .flecha_scroll{display:block;width:119px;height:120px;position:absolute;left:0;right:0;margin:0 auto;background:url(../img/flecha_scroll.png) top left no-repeat;top:-40px;z-index:105;}
 #box_curiosidad{position:relative;background:#ffffff;z-index:80;}
 #box_curiosidad .container{position:relative;}
@@ -170,7 +171,7 @@ PROPIEDADES COMO PARTICIPAR
 #box_participar{height:820px;background:#61bde9 url(../img/bg_participar.jpg) bottom center no-repeat;}
 #box_participar .container{position:relative;height:820px;}
 
-#box_participar h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;position:absolute;top:60px;width:100%;}
+#box_participar h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;position:absolute;top:60px;width:100%;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_participar h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
 #box_participar h4{font-size:24px;position:absolute;bottom:180px;color:#ffffff;text-align:center;width:100%;}
 .txt_legal{font-size:14px;position:absolute;bottom:30px;color:#ffffff;width:100%;text-align:center;}
@@ -195,7 +196,7 @@ PROPIEDADES COMO PARTICIPAR
 PROPIEDADES PREMIOS
 *************************************/
 #box_premios{background:#f9f9f9 url(../img/bg_premios.jpg) bottom center repeat-x;min-height:870px;padding-top:60px;}
-#box_premios h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;}
+#box_premios h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_premios h3:after{content:'';display:block;margin-bottom:135px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
 
 .premios_alumnos,.premios_profesores{width:40%;float:left;padding-left:5%;padding-right:5%;}
@@ -210,7 +211,7 @@ PROPIEDADES PREMIOS
 PROPIEDADES EL JURADO
 *************************************/
 #box_jurado{background:#f05456 url(../img/bg_jurado.jpg) bottom center no-repeat;min-height:1055px;padding-top:60px;}
-#box_jurado h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;}
+#box_jurado h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_jurado h3:after{content:'';display:block;margin-bottom:45px;background:url(../img/dots_jurado.png) bottom center no-repeat;height:15px;padding-top:20px;}
 
 #box_jurado h4{font-size:24px;color:#ffffff;width:80%;margin:0 auto;text-align:center;margin-bottom:25px;line-height:32px;}
@@ -367,7 +368,7 @@ PROPIEDADES PICS (TODOS)
 .right_navigation_pics ul li:first-child{background:red;}
 .right_navigation_pics ul li:last-child{background:green;}
 
-.detalle_pic{background:#323232;/*height:640px;*/box-sizing:border-box;padding:45px;position:relative;}
+.detalle_pic{background:#323232;/*height:640px;*/box-sizing:border-box;padding:45px;position:relative;display:none;}
 .inside_detalle_pic{overflow:hidden;width:80%;margin:0 auto;}
 .img_detalle_pic{width:60%;float:left;position:relative;}
 .img_big_detalle{width:90%;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center; background-repeat:no-repeat;}
