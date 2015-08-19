@@ -90,10 +90,46 @@ PROPIEDADES HEADER
 #top_header ul li a:hover{border-bottom:solid 5px #61bde9;}
 #top_header.black_enl ul li a{color:#373737 !important;}
 
+/*Cambio de colores según scroll de la home*/
+#top_header.block1 ul li a{color:#ff0000;}
+#top_header.block1 ul li a.active{border-bottom:solid 5px #61bde9;}
+#top_header.block1 ul li a:hover{border-bottom:solid 5px #61bde9;}
+
+#top_header.block2 ul li a{color:#00ff00;}
+#top_header.block2 ul li a.active{border-bottom:solid 5px #00ff00;}
+#top_header.block2 ul li a:hover{border-bottom:solid 5px #00ff00;}
+
+#top_header.block3 ul li a{color:#0000ff;}
+#top_header.block3 ul li a.active{border-bottom:solid 5px #61bde9;}
+#top_header.block3 ul li a:hover{border-bottom:solid 5px #61bde9;}
+
+#top_header.block4 ul li a{color:#0f0f0f;}
+#top_header.block4 ul li a.active{border-bottom:solid 5px #61bde9;}
+#top_header.block4 ul li a:hover{border-bottom:solid 5px #61bde9;}
+
+
 #top_header ul li.btn_header a{font-size:16px;border:2px solid #ffffff;padding-left:25px;padding-right:25px;border-radius:5px;margin-right:5px;}
 #top_header ul li.btn_header a:hover{background:#ffffff;color:#61bde9;}
 #top_header ul li.btn_header a.active{background:#ffffff;color:#61bde9;}
 #top_header ul li.btn_header:last-child a{margin-right:20px;}
+
+/*Cambio de colores según scroll de la home*/
+#top_header.block1 ul li.btn_header a{border:2px solid #ff0000;}
+#top_header.block1 ul li.btn_header a:hover{background:#ff0000;color:#61bde9;}
+#top_header.block1 ul li.btn_header a.active{background:#ff0000;color:#61bde9;}
+
+#top_header.block2 ul li.btn_header a{border:2px solid #00ff00;}
+#top_header.block2 ul li.btn_header a:hover{background:#00ff00;color:#61bde9;}
+#top_header.block2 ul li.btn_header a.active{background:#00ff00;color:#61bde9;}
+
+#top_header.block3 ul li.btn_header a{border:2px solid #0000ff;}
+#top_header.block3 ul li.btn_header a:hover{background:#0000ff;color:#61bde9;}
+#top_header.block3 ul li.btn_header a.active{background:#0000ff;color:#61bde9;}
+
+#top_header.block4 ul li.btn_header a{border:2px solid #0f0f0f;}
+#top_header.block4 ul li.btn_header a:hover{background:#0f0f0f;color:#61bde9;}
+#top_header.block4 ul li.btn_header a.active{background:#0f0f0f;color:#61bde9;}
+
 
 #top_header.black_enl ul li.btn_header a{border:2px solid #373737 !important;}
 
@@ -108,11 +144,37 @@ PROPIEDADES HEADER
 #formulario-login a{font-size:14px;color:#7f7f7f;text-decoration:underline;}
 #formulario-login input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:1px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;}
 
-.deco_1{display:block;background:url(../img/deco_1.png) top left no-repeat;display:block;width:284px;height:131px;position:absolute;top:0;left:50%;margin-left:-384px;z-index:100;}
-.deco_2{display:block;background:url(../img/deco_2.png) top left no-repeat;display:block;width:333px;height:513px;position:absolute;top:-360px;left:0;z-index:100;}
-.deco_3{display:block;background:url(../img/deco_3.png) top left no-repeat;display:block;width:248px;height:404px;position:absolute;top:-370px;right:0;z-index:100;}
-.deco_4{display:block;background:url(../img/deco_4.png) top left no-repeat;display:block;width:222px;height:225px;position:absolute;bottom:175px;left:0;z-index:100;}
-.deco_5{display:block;background:url(../img/deco_5.png) top left no-repeat;display:block;width:223px;height:485px;position:absolute;bottom:30px;right:0;z-index:100;}
+.deco_1{display:block;display:block;width:284px;height:131px;position:absolute;top:0;left:50%;margin-left:-384px;z-index:100;}
+.deco_1 span{display:block;position:absolute;}
+.deco_1_1{background:url(../img/deco_1_1.png) top left no-repeat;width:32px;height:32px;right:29px;top:64px;}
+.deco_1_2{background:url(../img/deco_1_2.png) top left no-repeat;width:284px;height:131px;top:0px;}
+
+.deco_2{display:block;display:block;width:333px;height:513px;position:absolute;top:-360px;left:0;z-index:100;}
+.deco_2 span{display:block;position:absolute;}
+.deco_2_1{background:url(../img/deco_2_1.png) top left no-repeat;width:51px;height:51px;top:180px;right:33px;}
+.deco_2_2{background:url(../img/deco_2_2.png) top left no-repeat;width:24px;height:24px;top:145px;left:178px;}
+.deco_2_3{background:url(../img/deco_2_3.png) top left no-repeat;width:44px;height:44px;top:261px;}
+.deco_2_4{background:url(../img/deco_2_4.png) top left no-repeat;width:157px;height:157px;top:0px;right:7px;}
+.deco_2_5{background:url(../img/deco_2_5.png) top left no-repeat;width:333px;height:332px;bottom:0px;}
+
+.deco_3{display:block;display:block;width:248px;height:404px;position:absolute;top:-370px;right:0;z-index:100;}
+.deco_3 span{display:block;position:absolute;}
+.deco_3_1{background:url(../img/deco_3_1.png) top left no-repeat;width:242px;height:266px;bottom:0;right:0;}
+.deco_3_2{background:url(../img/deco_3_2.png) top left no-repeat;width:85px;height:85px;bottom:150px;}
+.deco_3_3{background:url(../img/deco_3_3.png) top left no-repeat;width:57px;height:58px;top:35px;left:37px;}
+.deco_3_4{background:url(../img/deco_3_4.png) top left no-repeat;width:17px;height:17px;left:16px;}
+
+.deco_4{display:block;display:block;width:222px;height:225px;position:absolute;bottom:175px;left:0;z-index:100;}
+.deco_4 span{display:block;position:absolute;}
+.deco_4_1{background:url(../img/deco_4_1.png) top left no-repeat;width:37px;height:37px;right:7px;top:60px;}
+.deco_4_2{background:url(../img/deco_4_2.png) top left no-repeat;width:47px;height:62px;bottom:7px;}
+.deco_4_3{background:url(../img/deco_4_3.png) top left no-repeat;width:222px;height:225px;}
+
+.deco_5{display:block;display:block;width:223px;height:485px;position:absolute;bottom:30px;right:0;z-index:100;}
+.deco_5 span{display:block;position:absolute;}
+.deco_5_1{background:url(../img/deco_5_1.png) top left no-repeat;width:29px;height:29px;right:86px;}
+.deco_5_2{background:url(../img/deco_5_2.png) top left no-repeat;width:77px;height:77px;top:100px;right:31px;}
+.deco_5_3{background:url(../img/deco_5_3.png) top left no-repeat;width:223px;height:482px;}
 
 /*************************************
 PROPIEDADES GALERÍ SUPERIOR HOME
@@ -168,8 +230,8 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 /*************************************
 PROPIEDADES COMO PARTICIPAR
 *************************************/
-#box_participar{height:820px;background:#61bde9 url(../img/bg_participar.jpg) bottom center no-repeat;}
-#box_participar .container{position:relative;height:820px;}
+#box_participar{height:820px;background:#61bde9;}
+#box_participar .container{position:relative;height:820px;background:url(../img/bg_participar.jpg) 50% 0px no-repeat;}
 
 #box_participar h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;position:absolute;top:60px;width:100%;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_participar h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
@@ -195,7 +257,7 @@ PROPIEDADES COMO PARTICIPAR
 /*************************************
 PROPIEDADES PREMIOS
 *************************************/
-#box_premios{background:#f9f9f9 url(../img/bg_premios.jpg) bottom center repeat-x;min-height:870px;padding-top:60px;}
+#box_premios{background:#f9f9f9 url(../img/bg_premios.jpg) 0px bottom repeat-x;min-height:870px;padding-top:60px;}
 #box_premios h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_premios h3:after{content:'';display:block;margin-bottom:135px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
 

@@ -12,7 +12,8 @@ VARIABLES
 var slider_l_1_1,slider_l_1_2,slider_l_1_3_1,slider_l_1_3_2,slider_l_2_1,slider_l_2_2,slider_l_2_3,slider_l_2_4;
 var slider_r_1_1,slider_r_1_2,slider_r_1_3,slider_r_2_1,slider_l_2_2,slider_r_2_3_1,slider_r_2_3_2,slider_last_pics;
 var speedA, speedB, speedC, speedD, speedE;
-var posX,intervalo;
+var posX,intervalo,posY;
+var top_curiosidades,top_participar,top_premios,top_jurado;
 var send_form=0;
 
 //Eventos para dispositivos móviles
@@ -37,6 +38,7 @@ jQuery(document).ready(function(){
 	
 	//Reinicio de variables
 	posX=0; 
+	posY=0;
     speedA = 1.3;
     speedB = 0.8;
     speedC = 1.5;
@@ -87,6 +89,15 @@ jQuery(document).ready(function(){
 			});
 		});
 	};
+	
+	if ( jQuery("#galeria_sup").is(":visible")){
+	  //Obtenemos las alturas de todas las secciones 
+	  top_curiosidades=jQuery('#box_curiosidad').offset().top;
+	  top_participar=jQuery('#box_participar').offset().top;
+	  top_premios=jQuery('#box_premios').offset().top;
+	  top_jurado=jQuery('#box_jurado').offset().top;
+	  //console.log(top_curiosidades+'--'+top_participar+'--'+top_premios+'--'+top_jurado);
+	}
 	
 	jQuery(window).scroll(control_scroll);
 	
@@ -344,19 +355,12 @@ function control_scroll(e){
   var scrollAmount = jQuery(window).scrollTop();
   var h_foot=jQuery('#pie').height();
   
-  //Obtenemos las alturas de todas las secciones 
-  var top_curiosidades=jQuery('#box_curiosidad').offset().top;
-  var top_participar=jQuery('#box_participar').offset().top;
-  var top_premios=jQuery('#box_premios').offset().top;
-  var top_jurado=jQuery('#box_jurado').offset().top;
-  console.log(top_curiosidades+'--'+top_participar+'--'+top_premios+'--'+top_jurado);
-  
   //Añadir Cookie si se hace scroll a +100px
   if(scrollAmount>100){
- 		//if(jQuery.cookie('cambridge-out-and-about') != 'acepta'){
+ 		//if(jQuery.cookie('cambridge-curiosipics') != 'acepta'){
 			//jQuery('.block-cookies').fadeOut(600,function(){
 				//Creamos la cookie de aceptación
-				//jQuery.cookie('cambridge-out-and-about', 'acepta', { expires: 365 * 10 ,path: '/' });
+				//jQuery.cookie('cambridge-curiosipics', 'acepta', { expires: 365 * 10 ,path: '/' });
 				//Añadimos GA
 				/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -371,21 +375,71 @@ function control_scroll(e){
   
   //Solo ejecutar si es visible la galería (HOME)
   if ( jQuery("#galeria_sup").is(":visible") && device=='none' ) {
+	   
+	   	  top_curiosidades=jQuery('#box_curiosidad').offset().top;
+		  top_participar=jQuery('#box_participar').offset().top;
+		  top_premios=jQuery('#box_premios').offset().top;
+		  top_jurado=jQuery('#box_jurado').offset().top;
+		  
+		    /*
+		    speedA = 1.3;
+			speedB = 0.8;
+			speedC = 1.5;
+			speedD = 0.6;
+			speedE = 1;
+			speedF = 0.3
+			  */	
+	   		
 	  	  //Añadir clases a los enlaces del menú según scroll
-		  if(scrollAmount>top_curiosidades && scrollAmount>top_participar){}
+		  if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
+		  if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');}
+		  if(scrollAmount>(top_participar) && scrollAmount<(top_premios)){jQuery("#top_header").removeClass().addClass('block2');}
+		  if(scrollAmount>(top_premios) && scrollAmount<(top_jurado)){jQuery("#top_header").removeClass().addClass('block3');}
+		  if(scrollAmount>(top_jurado)){jQuery("#top_header").removeClass().addClass('block4');}
 	  
 		  //Animación decoración superior de la home 
 		  if(scrollAmount<top_curiosidades){
-			jQuery('.deco_1').stop().clearQueue().animate({ top: 0-(scrollAmount * speedD)}, 0);
-			jQuery('.deco_2').stop().clearQueue().animate({ top: -360-(scrollAmount * speedB)}, 0);
-			jQuery('.deco_3').stop().clearQueue().animate({ top: -370-(scrollAmount * speedA)}, 0);
+			/*Decoración 1*/  
+			jQuery('.deco_1_1').stop().clearQueue().animate({ top: 64-(scrollAmount * speedC)}, 0);
+			jQuery('.deco_1_2').stop().clearQueue().animate({ top: 0-(scrollAmount * speedD)}, 0);
+			
+			jQuery('.deco_2_1').stop().clearQueue().animate({ top: 180-(scrollAmount * speedD)}, 0);
+			jQuery('.deco_2_2').stop().clearQueue().animate({ top: 145-(scrollAmount * speedA)}, 0);
+			jQuery('.deco_2_3').stop().clearQueue().animate({ top: 261-(scrollAmount * speedE)}, 0);
+			jQuery('.deco_2_4').stop().clearQueue().animate({ top: 0-(scrollAmount * speedB)}, 0);
+			jQuery('.deco_2_5').stop().clearQueue().animate({ bottom: 0+(scrollAmount * speedC)}, 0);
+			
+			jQuery('.deco_3_1').stop().clearQueue().animate({ bottom: 0+(scrollAmount * speedA)}, 0);
+			jQuery('.deco_3_2').stop().clearQueue().animate({ bottom: 150+(scrollAmount * speedB)}, 0);
+			jQuery('.deco_3_3').stop().clearQueue().animate({ top: 35-(scrollAmount * speedD)}, 0);
+			jQuery('.deco_3_4').stop().clearQueue().animate({ top: 0-(scrollAmount * speedF)}, 0);
+			
 			jQuery('#box_curiosidad').stop().clearQueue().animate({ marginTop: 0-(scrollAmount * speedE)}, 0);
 		  }
 		  
-		  //Animación de la home 
-		  if(scrollAmount>250){
-			jQuery('.deco_4').stop().clearQueue().animate({ bottom: 175+((scrollAmount-250) * speedD)}, 0);
-			jQuery('.deco_5').stop().clearQueue().animate({ bottom: 30+((scrollAmount-250) * speedF)}, 0);
+		  //Animación de decoración de la sección curiosidades 
+		  if(scrollAmount>top_curiosidades){
+			  jQuery('.deco_4_1').stop().clearQueue().animate({ top: 60-((scrollAmount-top_curiosidades) * speedE)}, 0);
+			  jQuery('.deco_4_2').stop().clearQueue().animate({ bottom: 7+((scrollAmount-top_curiosidades) * speedA)}, 0);
+			  jQuery('.deco_4_3').stop().clearQueue().animate({ top: 0-((scrollAmount-top_curiosidades) * speedD)}, 0);
+			  
+			 jQuery('.deco_5_1').stop().clearQueue().animate({ top: 0-((scrollAmount-top_curiosidades) * speedD)}, 0);
+			  jQuery('.deco_5_2').stop().clearQueue().animate({ top: 100-((scrollAmount-top_curiosidades) * speedE)}, 0);
+			  jQuery('.deco_5_3').stop().clearQueue().animate({ top: 0-((scrollAmount-top_curiosidades) * speedA)}, 0);
+		  }
+		  
+		   //Animación de decoración de la sección participar 
+		  if(scrollAmount>top_participar){
+			 posY=-(scrollAmount-top_participar);
+			 //console.log(posY);
+			jQuery('#box_participar .container').css({ backgroundPosition:"50% "+posY+"px" });
+		  }
+		  
+		   //Animación de decoración de la sección premios 
+		  if(scrollAmount>top_premios){
+			 posX=-(scrollAmount-top_premios);
+			 //console.log(posY);
+			jQuery('#box_premios').css({ backgroundPosition: posX+"px bottom" });
 		  }
 		  
 		  //Animación flecha home
