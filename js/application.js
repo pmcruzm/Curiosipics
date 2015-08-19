@@ -109,6 +109,7 @@ jQuery(document).ready(function(){
 	//Ajustamos cuadro de preview en Mis pics 
 	if ( jQuery(".preview_box").is(":visible") ) {	
 		jQuery(".preview_box").height(jQuery(".preview_box").width());	
+		jQuery(".imagePreview").height(jQuery(".preview_box").width());	
 	}
 	
 	//Ajustamos cuadros en el muro de pics 
@@ -318,6 +319,7 @@ jQuery(document).ready(function(){
 		//Ajustamos cuadro de preview en Mis pics 
 		if ( jQuery(".preview_box").is(":visible") ) {	
 			jQuery(".preview_box").height(jQuery(".preview_box").width());	
+			jQuery(".imagePreview").height(jQuery(".preview_box").width());	
 		}
 		
 		//Ajustamos cuadros en el muro de pics 
@@ -627,6 +629,19 @@ function validate_form(id){
 				return 0;
 			}
 }
+
+//Previsualizar imagen antes de subir al server 
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                jQuery('.preview_box').css('background', 'transparent url('+e.target.result +') left top no-repeat');
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
 
 

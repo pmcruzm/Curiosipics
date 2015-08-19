@@ -29,7 +29,7 @@ function previewImage(el,widths,limit){
 		if (!file.type.match(imageType)) {
 			var description = document.createElement('p');
 			output.innerHTML='';
-			description.innerHTML='This is not valid Image file';
+			description.innerHTML='No es un fichero de imagen válido';
 			output.appendChild(description);
 			return false;
 		}
@@ -54,7 +54,7 @@ function previewImage(el,widths,limit){
 				format = format[0].toUpperCase();
 			}
 			
-			var description = document.createElement('p');
+			//var description = document.createElement('p');
 			//description.innerHTML = '<br />This is a <b>'+format+'</b> image, size of <b>'+(e.total/1024).toFixed(2)+'</b> KB.';
 
 			if (allowedTypes.indexOf(format)>=0 && e.total<(limit*1024*1024)){
@@ -75,15 +75,18 @@ function previewImage(el,widths,limit){
 
 					image.width = widths[size];
 					image.title = 'Image preview '+widths[size]+'px';
-					output.appendChild(image);
+					//output.appendChild(image);
+					var encoded = window.btoa(src);
+					output.style.background = "transparent url("+src+") center center no-repeat";
 				}
 
-				//description.innerHTML += '<br /><span style="color:green;">Picture seems to be fine for upload.</span>';
+				//description.innerHTML += '<span style="color:green;">Picture seems to be fine for upload.</span>';
 			} else {
-			    //description.innerHTML += '<br /><span style="color:red;">Which is wrong format / size! Accepted formats: '+allowedTypes.join(', ')+'. Size limit is: '+limit+'MB</span>';
+				var description = document.createElement('p');
+			    description.innerHTML += '<span style="color:red;">Formato/tamaño no correcto! Formatos aceptados son: '+allowedTypes.join(', ')+'. Peso máximo del archivo: '+limit+'MB</span>';
+				output.appendChild(description);
 			}						
 
-			output.appendChild(description);
 		};
 	})(img);
 	reader.readAsDataURL(file);
