@@ -231,7 +231,7 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 PROPIEDADES COMO PARTICIPAR
 *************************************/
 #box_participar{height:820px;background:#61bde9;}
-#box_participar .container{position:relative;height:820px;background:url(../img/bg_participar.jpg) 50% 0px no-repeat;}
+#box_participar .container{position:relative;height:820px;background:url(../img/bg_participar.jpg) 50% 0px no-repeat;overflow:hidden;}
 
 #box_participar h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;position:absolute;top:60px;width:100%;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_participar h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
