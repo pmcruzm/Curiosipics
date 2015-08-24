@@ -75,9 +75,12 @@ function previewImage(el,widths,limit){
 
 					image.width = widths[size];
 					image.title = 'Image preview '+widths[size]+'px';
-					//output.appendChild(image);
-					var encoded = window.btoa(src);
-					output.style.background = "transparent url("+src+") center center no-repeat";
+					output.appendChild(image);
+					//Eliminar la altura de los bloques 
+					document.getElementById('preview_box').style.height = 'auto';
+					
+					//var encoded = window.btoa(src);
+					//output.style.background = "transparent url("+src+") center center no-repeat";
 				}
 
 				//description.innerHTML += '<span style="color:green;">Picture seems to be fine for upload.</span>';

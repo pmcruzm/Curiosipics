@@ -54,3 +54,14 @@ FUENTES CURIOSIPICS
     font-style: normal;
 
 }
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?mx7xpv');
+	src:url('../fonts/icomoon.eot?#iefixmx7xpv') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?mx7xpv') format('woff'),
+		url('../fonts/icomoon.ttf?mx7xpv') format('truetype'),
+		url('../fonts/icomoon.svg?mx7xpv#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

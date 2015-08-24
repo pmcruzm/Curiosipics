@@ -68,71 +68,72 @@
                             	<form id="registro-form" action="envio.php" method="post" role="form" novalidate data-error-msg="Ha habido un error, por favor revisa los campos resaltados">
 									<h4>Datos del usuario</h4>	
                                     <div class="form-group required">
-                                        <label for="name_r">Nombre</label>
-                                        <input type="text" class="form-control validation-rule-empty" id="name_r">
+                                        <label for="first_name">Nombre</label>
+                                        <input type="text" class="form-control validation-rule-empty" id="first_name" name="first_name">
                                     </div>
                                     <div class="form-group required">
-                                         <label for="lastname_r">Apellidos</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="lastname_r">
+                                         <label for="last_name">Apellidos</label>
+                                         <input type="text" class="form-control validation-rule-empty" id="last_name" name="last_name">
                                      </div>
                                      <div class="form-group required">
-                                         <label for="email_r">Email</label>
-                                         <input type="email" class="form-control validation-rule-mail" id="email_r" autocorrect="off" data-error-msg="El email no es válido">
+                                         <label for="email">Email</label>
+                                         <input type="email" class="form-control validation-rule-mail" id="email" name="email" autocorrect="off" data-error-msg="El email no es válido">
                                      </div>
                                      <div class="form-group required">
-                                         <label for="city_r">Ciudad</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="city_r">
+                                         <label for="city">Ciudad</label>
+                                         <input type="text" class="form-control validation-rule-empty" id="city" name="city">
                                      </div>
                                      <div class="form-group required">
-                                         <label for="province_c">Provincia</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="province_c" >
+                                         <label for="province">Provincia</label>
+                                         <input type="text" class="form-control validation-rule-empty" id="province" name="province" >
                                      </div>
                                      <div class="date-group required">
                                      	<div class="titul_radio">Fecha de Nacimiento</div>
                                         <div class="cont_radio">
-                                            <label for="día_r">Día</label>
-                                         	<input type="text" class="form-control validation-rule-date" maxlength="2" id="día_r" data-error-msg="Formato fecha no es válido">
+                                            <label for="birth_day">Día</label>
+                                         	<input type="text" class="form-control validation-rule-day" maxlength="2" id="birth_day" name="birth_day" data-error-msg="Formato día no es válido">
                                             <span>/</span>
-                                            <label for="mes_r">Apellidos</label>
-                                         	<input type="text" class="form-control validation-rule-date" maxlength="2" id="mes_r" data-error-msg="Formato fecha no es válido">
+                                            <label for="birth_month">Mes</label>
+                                         	<input type="text" class="form-control validation-rule-month" maxlength="2" id="birth_month" name="birth_month" data-error-msg="Formato mes no es válido">
                                             <span>/</span>
-                                         	<label for="ano_r">Apellidos</label>
-                                         	<input type="text" class="form-control validation-rule-date" maxlength="2" id="ano_r" data-error-msg="Formato fecha no es válido">
+                                         	<label for="birth_year">Año</label>
+                                         	<input type="text" class="form-control validation-rule-year" maxlength="4" id="birth_year" name="birth_year" data-error-msg="Formato año no es válido">
                                         </div>   
                                      </div>
                                      <div class="radio-group required">
                                      	<div class="titul_radio">Tipo de usuario</div>
                                         <div class="cont_radio">
-                                            <input type="radio" checked="checked" value="Alumno" id="radiosalumno" name="tipo_p">
+                                            <input type="radio" checked="checked" value="1" id="radiosalumno" name="user_type">
                                             <label class="radio-inline" for="radiosalumno"><span class="hide">Alumno</span></label>
                                             <span>Alumno</span> 
-                                            <input type="radio" value="Profesor" id="radiosprofesor" name="tipo_p">
+                                            <input type="radio" value="2" id="radiosprofesor" name="user_type">
                                             <label class="radio-inline" for="radiosprofesor"><span class="hide">Profesor</span></label>
                                             <span>Profesor</span>
                                         </div>   
                                      </div>
                                      <div class="form-group required">
-                                         <label for="user_name_r">Nombre de usuario</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="user_name_r">
+                                         <label for="username">Nombre de usuario</label>
+                                         <input type="text" class="form-control validation-rule-empty" id="username">
                                      </div>
                                      <div class="form-group required">
-                                         <label for="contrasena_r">Contraseña</label>
-                                         <input type="password" class="form-control validation-rule-password init_password" id="contrasena_r" data-error-msg="Error contraseña">
+                                         <label for="password">Contraseña</label>
+                                         <input type="password" class="form-control validation-rule-password init_password" id="password" name="password" data-error-msg="Error contraseña">
                                      </div>
                                      <div class="form-group required">
-                                         <label for="rep_contrasena_c">Confirmar contraseña</label>
-                                         <input type="password" class="form-control validation-rule-password repeat_password" id="rep_contrasena_c" data-error-msg="Error contraseña	" >
+                                         <label for="password_confirm">Confirmar contraseña</label>
+                                         <input type="password" class="form-control validation-rule-password repeat_password" id="password_confirm" name="password_confirm" data-error-msg="Error contraseña" >
                                      </div>
                                      <span class="ind_password">La contraseña ha de ser de un mínimo de 6 caracteres y un máximo de 12</span>
                                      <h4>Datos del centro</h4>	
                                      <div class="form-group required">
-                                         <label for="name_c_r">Nombre</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="name_c_r" >
+                                         <label for="center_name">Nombre</label>
+                                         <input type="text" class="form-control validation-rule-empty" id="center_name" name="center_name" >
                                      </div> 
                                      <div class="group_checkbox">
-                                         <div class="checkbox"><input id="c_privacy_c" class="validation-rule-checkbox" data-error-msg="Debe aceptar política de privacidad." type="checkbox"><label for="c_privacy_c"></label><p><span>He leído y acepto la </span> <a href="#" title="Privacy Policy">Política de privacidad</a>.</p></div>
-                                         <div class="checkbox"><input id="c_info_c" type="checkbox"><label for="c_info_c"></label><p><span>No deseo estar informado sobre nuevas promociones, acontecimientos de interés e información de Cambridge University Press.</span></p></div>
+                                         <div class="checkbox"><input id="legal" name="legal" class="validation-rule-checkbox" data-error-msg="Debe aceptar política de privacidad." type="checkbox"><label for="legal"></label><p><span>He leído y acepto la </span> <a href="#" title="Privacy Policy">Política de privacidad</a>.</p></div>
+                                         <div class="checkbox"><input id="no_subscription" name="no_subscription" type="checkbox"><label for="no_subscription"></label><p><span>No deseo estar informado sobre nuevas promociones, acontecimientos de interés e información de Cambridge University Press.</span></p></div>
                                      </div>
+                                     <div class="maquetacion_captcha"><div class="g-recaptcha" data-sitekey="6LeNvAsTAAAAAAJf_hL1Nt7yX1NZaERZiABBt2He"></div></div>
                                      <div class="errores"></div>
                                      <div class="submit_group"><input type="submit"  value="Enviar"></div>
                                 </form>
@@ -181,15 +182,25 @@
             </div>
         </div><!--Fin footer--> 
         <div class="marcador" style="color:#ff0000;font-size:18px;position:fixed;top:0;left:0;z-index:200;">0px</div>
+        <!--Bloque Cookies-->
+        <div class="block-cookies">
+        	<div class="container">
+                <h2>Política de Cookies</h2>
+                <p>Utilizamos cookies propias y de terceros para ofrecerte una mejor experiencia y servicio, de acuerdo a tus hábitos de navegación. Si continúas navegando, consideramos que aceptas su uso. Puedes obtener más información en nuestra <a href="#" title="Política de Cookies">Política de Cookies.</a></p>
+                <a href="#" class="btn-accept">Ok</a>
+                <a href="#" title="" class="close_c"></a>
+            </div>
+        </div>	
+        <!--Fin Cookies-->
     </div><!--Fin wrapper--> 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.backgroundPosition.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/html5.image.preview.js"></script>
-  	<script src="js/jquery.inview.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/jquery.scrollTo.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="js/application.js"></script>
   </body>
 </html>

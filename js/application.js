@@ -15,6 +15,7 @@ var speedA, speedB, speedC, speedD, speedE;
 var posX,intervalo,posY;
 var top_curiosidades,top_participar,top_premios,top_jurado;
 var send_form=0;
+var h_win,w_win;
 
 //Eventos para dispositivos móviles
 var ua = navigator.userAgent,
@@ -36,6 +37,10 @@ jQuery(window).load(function(){
 
 jQuery(document).ready(function(){
 	
+	//Obtenemos altura y anchura del navegador
+	h_win=jQuery(window).height();
+	w_win=jQuery(window).width();
+	
 	//Reinicio de variables
 	posX=0; 
 	posY=0;
@@ -54,6 +59,22 @@ jQuery(document).ready(function(){
 			//jQuery('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
 		}
 	});
+	
+	//Miramos si la cookie de aceptación está creada
+	if(jQuery.cookie('cambridge-curiosipics') == 'acepta'){
+		//Ocultamos info cookies 
+		jQuery('.block-cookies').hide();
+		//Añadimos GA
+		/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				
+		ga('create', 'UA-31155962-13', 'auto');
+		ga('send', 'pageview');*/
+	}else{
+		jQuery('.block-cookies').show();
+	}
 	
 	//Función contador de palabras textarea
 	jQuery.fn.textareaCounter = function(options) {
@@ -107,9 +128,8 @@ jQuery(document).ready(function(){
 	}
 	
 	//Ajustamos cuadro de preview en Mis pics 
-	if ( jQuery(".preview_box").is(":visible") ) {	
-		jQuery(".preview_box").height(jQuery(".preview_box").width());	
-		jQuery(".imagePreview").height(jQuery(".preview_box").width());	
+	if ( jQuery("#preview_box").is(":visible") ) {	
+		jQuery("#preview_box").height(jQuery("#preview_box").width());	
 	}
 	
 	//Ajustamos cuadros en el muro de pics 
@@ -141,7 +161,7 @@ jQuery(document).ready(function(){
 		slider_l_1_2=jQuery('.left_galeria .bxslider_l_1_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000});
 		//Cuadro columna 1 bloque 3-1
 		jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
-		slider_l_1_3_1=jQuery('.left_galeria .bxslider_l_1_3_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4000});
+		slider_l_1_3_1=jQuery('.left_galeria .bxslider_l_1_3_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4400});
 		//Cuadro columna 1 bloque 3-2
 		jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
 		slider_l_1_3_2=jQuery('.left_galeria .bxslider_l_1_3_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3500});
@@ -149,41 +169,41 @@ jQuery(document).ready(function(){
 		/*COLUMNA 2 IZQUIERDA*/
 		//Cuadro columna 1 bloque 1
 		jQuery('.left_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_1').height());
-		slider_l_2_1=jQuery('.left_galeria .bxslider_l_2_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4500});
+		slider_l_2_1=jQuery('.left_galeria .bxslider_l_2_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2800});
 		//Cuadro columna 1 bloque 2
 		jQuery('.left_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_2').height());
-		slider_l_2_2=jQuery('.left_galeria .bxslider_l_2_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2500});
+		slider_l_2_2=jQuery('.left_galeria .bxslider_l_2_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2300});
 		//Cuadro columna 1 bloque 3-1
 		jQuery('.left_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_3').height());
-		slider_l_2_3=jQuery('.left_galeria .bxslider_l_2_3').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000});
+		slider_l_2_3=jQuery('.left_galeria .bxslider_l_2_3').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3200});
 		//Cuadro columna 1 bloque 3-2
 		jQuery('.left_galeria .colum_2 .box_img_4 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_4').height());
-		slider_l_2_4=jQuery('.left_galeria .bxslider_l_2_4').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4000});
+		slider_l_2_4=jQuery('.left_galeria .bxslider_l_2_4').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4200});
 		
 		/*COLUMNA 1 DERECHA*/
 		//Cuadro columna 1 bloque 1
 		jQuery('.right_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_1').height());
-		slider_r_1_1=jQuery('.right_galeria .bxslider_r_1_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4500});
+		slider_r_1_1=jQuery('.right_galeria .bxslider_r_1_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4300});
 		//Cuadro columna 1 bloque 2
 		jQuery('.right_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_2').height());
-		slider_r_1_2=jQuery('.right_galeria .bxslider_r_1_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2500});
+		slider_r_1_2=jQuery('.right_galeria .bxslider_r_1_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2200});
 		//Cuadro columna 1 bloque 3-1
 		jQuery('.right_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_3').height());
-		slider_r_1_3=jQuery('.right_galeria .bxslider_r_1_3').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000});
+		slider_r_1_3=jQuery('.right_galeria .bxslider_r_1_3').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3600});
 		
 		/*COLUMNA 2 DERECHA*/
 		//Cuadro columna 2 bloque 1
 		jQuery('.right_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_1').height());
-		slider_r_2_1=jQuery('.right_galeria .bxslider_r_2_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5000});
+		slider_r_2_1=jQuery('.right_galeria .bxslider_r_2_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5200});
 		//Cuadro columna 1 bloque 2
 		jQuery('.right_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_2').height());
-		slider_r_2_2=jQuery('.right_galeria .bxslider_r_2_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000});
+		slider_r_2_2=jQuery('.right_galeria .bxslider_r_2_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3700});
 		//Cuadro columna 2 bloque 3-1
 		jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
-		slider_r_2_3_1=jQuery('.right_galeria .bxslider_r_2_3_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4000});
+		slider_r_2_3_1=jQuery('.right_galeria .bxslider_r_2_3_1').bxSlider({mode:'vertical',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4250});
 		//Cuadro columna 2 bloque 3-2
 		jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
-		slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3500});
+		slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3150});
 		
 		/*Últimos Pics*/
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
@@ -235,6 +255,11 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		var row_padre=jQuery(this).parents('.row').attr('rel');
 		var id_pic=jQuery(this).attr('rel');
+		//Eliminamos el indicador de bloque activo 
+		jQuery('.box_img_small').removeClass('active');
+		jQuery('.box_img_small a').removeClass('active');
+		jQuery(this).parents('.box_img_small').addClass('active');
+		jQuery(this).addClass('active');
 		
 		if ( jQuery(".detalle_pic").is(":visible") ) {	
 			jQuery(".detalle_pic").stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
@@ -260,8 +285,15 @@ jQuery(document).ready(function(){
 				jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
 				jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 				//Desplegamos el cuadro de detalle
-				jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo');
+				jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
+					//Alineamos el scroll al pie del detalle 
+					var h_detalle=jQuery(".detalle_pic").outerHeight();
+					var h_offset;
+					if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}
+					jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
+				});
 			});
+			
 		}else{
 			//Hacemos llamada de AJAX para obtener detalles del pic
 			/*var data_var1='q='+ Math.random()+'&id='+id_pic;
@@ -283,7 +315,13 @@ jQuery(document).ready(function(){
 			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
 			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 			//Desplegamos el cuadro de detalle
-			jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo');
+			jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
+				//Alineamos el scroll al pie del detalle 
+				var h_detalle=jQuery(".detalle_pic").outerHeight();
+				var h_offset;
+				if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}
+				jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
+			});
 		}
 	});
 	
@@ -307,19 +345,40 @@ jQuery(document).ready(function(){
 		console.log('Pic Anterior');
 	});
 	
+	//Cerrar cuadro info cookies
+	jQuery(document).on('click','.close_c',function(event){
+		event.preventDefault();
+		jQuery('.block-cookies').fadeOut(600);
+	});
 	
-	//Obtenemos altura y anchura del navegador
-	var h_win=jQuery('#wrapper').height();
-	var w_win=window.innerWidth;
+	//Aceptar cookies en el cuadro
+	jQuery(document).on('click','.btn-accept',function(event){
+		event.preventDefault();
+		jQuery('.block-cookies').fadeOut(600,function(){
+			//Creamos la cookie de aceptación
+			jQuery.cookie('cambridge-curiosipics', 'acepta', { expires: 365 * 10 ,path: '/' });
+			//Añadimos GA
+			/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				
+			ga('create', 'UA-31155962-13', 'auto');
+			ga('send', 'pageview');*/
+		});
+	});
 	
 	
 	//Evento para capturar el resize de la ventana
 	jQuery( window ).resize(function() {
 		
+		//Obtenemos altura y anchura del navegador
+		h_win=jQuery(window).height();
+		w_win=jQuery(window).width();
+		
 		//Ajustamos cuadro de preview en Mis pics 
-		if ( jQuery(".preview_box").is(":visible") ) {	
-			jQuery(".preview_box").height(jQuery(".preview_box").width());	
-			jQuery(".imagePreview").height(jQuery(".preview_box").width());	
+		if ( jQuery("#preview_box").is(":visible") ) {	
+			jQuery("#preview_box").height(jQuery("#preview_box").width());	
 		}
 		
 		//Ajustamos cuadros en el muro de pics 
@@ -359,20 +418,20 @@ function control_scroll(e){
   
   //Añadir Cookie si se hace scroll a +100px
   if(scrollAmount>100){
- 		//if(jQuery.cookie('cambridge-curiosipics') != 'acepta'){
-			//jQuery('.block-cookies').fadeOut(600,function(){
+ 		if(jQuery.cookie('cambridge-curiosipics') != 'acepta'){
+			jQuery('.block-cookies').fadeOut(600,function(){
 				//Creamos la cookie de aceptación
-				//jQuery.cookie('cambridge-curiosipics', 'acepta', { expires: 365 * 10 ,path: '/' });
+				jQuery.cookie('cambridge-curiosipics', 'acepta', { expires: 365 * 10 ,path: '/' });
 				//Añadimos GA
 				/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-				
+					
 				ga('create', 'UA-31155962-13', 'auto');
 				ga('send', 'pageview');*/
-			//});
-		//}
+			});
+		}
   }
   
   //Solo ejecutar si es visible la galería (HOME)
@@ -542,13 +601,39 @@ function validate_form(id){
 				});
 			}
 
-			//Busca todos los campos requeridos de codigo postal
-			if(jQuery(id).find('.validation-rule-date').length > 0){
-				var error_date=0;
-				jQuery(id).find('.validation-rule-date').each(function() {
+			//Busca todos los campos requeridos de día
+			if(jQuery(id).find('.validation-rule-day').length > 0){
+				var error_day=0;
+				jQuery(id).find('.validation-rule-day').each(function() {
 					var res_campo=jQuery(this).val();
-					if((res_campo=="") || (res_campo!="" && isNumber(res_campo)==false) ){
-						error_date=1;
+					if((res_campo=="") || (res_campo!="" && isNumber(res_campo)==false) || (res_campo!="" && isNumber(res_campo)==true && res_campo<1) || (res_campo!="" && isNumber(res_campo)==true && res_campo>31) ){
+						error_day=1;
+						jQuery(this).addClass('error').val('');
+					}
+
+				});
+			}
+			
+			//Busca todos los campos requeridos de codigo postal
+			if(jQuery(id).find('.validation-rule-month').length > 0){
+				var error_month=0;
+				jQuery(id).find('.validation-rule-month').each(function() {
+					var res_campo=jQuery(this).val();
+					if((res_campo=="") || (res_campo!="" && isNumber(res_campo)==false) || (res_campo!="" && isNumber(res_campo)==true && res_campo<1) || (res_campo!="" && isNumber(res_campo)==true && res_campo>12)  ){
+						error_month=1;
+						jQuery(this).addClass('error').val('');
+					}
+
+				});
+			}
+			
+			//Busca todos los campos requeridos de codigo postal
+			if(jQuery(id).find('.validation-rule-year').length > 0){
+				var error_year=0;
+				jQuery(id).find('.validation-rule-year').each(function() {
+					var res_campo=jQuery(this).val();
+					if((res_campo=="") || (res_campo!="" && isNumber(res_campo)==false) || (res_campo!="" && isNumber(res_campo)==true && res_campo<1900) ){
+						error_year=1;
 						jQuery(this).addClass('error').val('');
 					}
 
@@ -604,9 +689,21 @@ function validate_form(id){
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}
 			
-			//Errores en formato de fecha
-			if(error_date==1){
-				var message=jQuery(id).find('.validation-rule-date').attr('data-error-msg');
+			//Errores en formato de fecha(day)
+			if(error_day==1){
+				var message=jQuery(id).find('.validation-rule-day').attr('data-error-msg');
+				jQuery('.errores').append('<p>'+message+'</p>');
+			}
+			
+			//Errores en formato de fecha(month)
+			if(error_month==1){
+				var message=jQuery(id).find('.validation-rule-month').attr('data-error-msg');
+				jQuery('.errores').append('<p>'+message+'</p>');
+			}
+			
+			//Errores en formato de fecha(year)
+			if(error_year==1){
+				var message=jQuery(id).find('.validation-rule-year').attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}
 			
@@ -623,7 +720,7 @@ function validate_form(id){
 
 
 			//Salida
-			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_date==1){
+			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1){
 				return 1;
 			}else{
 				return 0;
