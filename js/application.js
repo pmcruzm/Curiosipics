@@ -583,8 +583,8 @@ function validate_form(id){
 		//Comprobar el Captcha 
 		jQuery.ajax({
           type: "POST",   
-          url: 'https://www.google.com/recaptcha/api/siteverify',   
-          data: {"response": grecaptcha.getResponse(),"secret": '6LeNvAsTAAAAAAIpvQqU6Q8oZkHft4ldCbdtQZKY'},
+          url: 'api.php',   
+          data: {"response": grecaptcha.getResponse()},
           async: false,
           dataType: 'json',
           success : function(data){ 
