@@ -589,7 +589,8 @@ function validate_form(id){
           dataType: 'json',
           success : function(data){ 
               alert("Am I a human? " + data.success);
-          }
+          },
+		  error: function(data){console.log(data);}
       });
 		//console.log('captcha response: ' + grecaptcha.getResponse()); 
 	
