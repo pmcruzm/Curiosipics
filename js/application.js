@@ -573,6 +573,11 @@ function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
+function meetsMinimumAge(birthDate, minAge) {
+    var tempDate = new Date(birthDate.getFullYear() + minAge, birthDate.getMonth(), birthDate.getDate());
+    return (tempDate <= new Date());
+}
+
 //Funcion para validar genéricamnete un formulario
 function validate_form(id){
 		//Busca todos los campos requeridos de texto
@@ -582,7 +587,9 @@ function validate_form(id){
 					var res_campo=jQuery(this).val();
 					if(res_campo==""){
 						error_empty=1;
-						jQuery(this).addClass('error').val('');
+						if(jQuery(this).is(":visible")){
+							jQuery(this).addClass('error').val('');
+						}
 					}
 
 				});
@@ -595,7 +602,9 @@ function validate_form(id){
 					var res_campo=jQuery(this).val();
 					if((res_campo=="") || (res_campo!="" && validateEmail(res_campo)==false) ){
 						error_mail=1;
-						jQuery(this).addClass('error').val('');
+						if(jQuery(this).is(":visible")){
+							jQuery(this).addClass('error').val('');
+						}
 					}
 
 				});
@@ -676,6 +685,21 @@ function validate_form(id){
 
 				});
 			}
+			
+			//Comprobar si la fecha introducida es mayor de 14años
+			if( error_day==0 || error_month==0 || error_year==0){
+				var error_big_14=0;
+				var year=jQuery('.validation-rule-year').val();
+				var month=(jQuery('.validation-rule-month').val()-1);
+				var day=jQuery('.validation-rule-day').val();
+				if (meetsMinimumAge(new Date(year, month, day),14)) {
+					error_big_14=0;
+				}else{
+					error_big_14=1;
+					//Mostramos el campo de tutor legal
+					jQuery('.tutor_datos').show();
+				}
+			}
 
 
 			//Error general campos vacíos
@@ -716,11 +740,17 @@ function validate_form(id){
 			if(error_mail==1){
 				var message=jQuery(id).find('.validation-rule-mail').attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
+			}	
+			
+			if(error_big_14==1){
+				var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
+				jQuery('.errores').append('<p>'+message+'</p>');
 			}
+			
 
 
 			//Salida
-			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1){
+			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1 || error_big_14==1){
 				return 1;
 			}else{
 				return 0;
