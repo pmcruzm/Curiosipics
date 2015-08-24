@@ -697,7 +697,13 @@ function validate_form(id){
 				}else{
 					error_big_14=1;
 					//Mostramos el campo de tutor legal
-					jQuery('.tutor_datos').show();
+					if(jQuery('.tutor_datos').is(":visible")){
+						 jQuery('.tutor_datos').show();
+					}else{
+						var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
+						jQuery('.errores').append('<p>'+message+'</p>');	
+						jQuery('.tutor_datos').show();
+					}
 				}
 			}
 
@@ -741,11 +747,6 @@ function validate_form(id){
 				var message=jQuery(id).find('.validation-rule-mail').attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}	
-			
-			if(error_big_14==1){
-				var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
-				jQuery('.errores').append('<p>'+message+'</p>');
-			}
 			
 
 
