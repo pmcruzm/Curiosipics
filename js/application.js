@@ -581,8 +581,7 @@ function meetsMinimumAge(birthDate, minAge) {
 //Funcion para validar genéricamnete un formulario
 function validate_form(id){
 		//Comprobar el Captcha 
-		var salida_c=grecaptcha.getResponse();
-		alert(salida_c);
+		console.log('captcha response: ' + grecaptcha.getResponse()); 
 	
 		//Busca todos los campos requeridos de texto
 			if(jQuery(id).find('.validation-rule-empty').length > 0){
