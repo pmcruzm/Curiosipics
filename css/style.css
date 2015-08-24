@@ -343,7 +343,7 @@ PROPIEDADES REGISTRO
 #registro-form .checkbox a{color:#484647;text-decoration:underline;}
 
 .submit_group{padding-left:30%;padding-top:40px;}
-.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;}
+.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;background:none !important;}
 
 .errores{color:#f05456;font-size:14px;display:block;padding-left:30%;width:95%;box-sizing:border-box;margin-top:20px;}
 
