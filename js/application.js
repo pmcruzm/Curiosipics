@@ -583,7 +583,7 @@ function validate_form(id){
 		//Comprobar el Captcha 
 		jQuery.ajax({
           type: "POST",   
-          url: 'api.php',   
+          url: 'http://pedroxmujica.com/recaptcha/api.php',   
           data: {"response": grecaptcha.getResponse()},
           async: false,
           dataType: 'json',
