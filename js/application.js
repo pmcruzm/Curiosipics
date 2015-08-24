@@ -581,6 +581,7 @@ function meetsMinimumAge(birthDate, minAge) {
 //Funcion para validar genéricamnete un formulario
 function validate_form(id){
 		//Comprobar el Captcha 
+		grecaptcha.reset();
 		jQuery.ajax({
           type: "POST",   
           url: 'http://pedroxmujica.com/recaptcha/api.php',   
