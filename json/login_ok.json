@@ -1,0 +1,5 @@
+{
+  "errorCode": 0,
+  "message": "Login successful.",
+  "redirect" :"/Curiosipics/mis_pics.html"
+}

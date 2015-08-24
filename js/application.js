@@ -352,8 +352,8 @@ jQuery(document).ready(function(){
 	});
 	
 	//Aceptar cookies en el cuadro
-	jQuery(document).on('click','.btn-accept',function(event){
-		event.preventDefault();
+	jQuery(document).on('click','.btn-accept',function(e){
+		e.preventDefault();
 		jQuery('.block-cookies').fadeOut(600,function(){
 			//Creamos la cookie de aceptación
 			jQuery.cookie('cambridge-curiosipics', 'acepta', { expires: 365 * 10 ,path: '/' });
@@ -366,6 +366,31 @@ jQuery(document).ready(function(){
 			ga('create', 'UA-31155962-13', 'auto');
 			ga('send', 'pageview');*/
 		});
+	});
+	
+	//Comprobación del login/forgot-password vía AJAX
+	jQuery('#form-login,#form-forgot-password').on('submit', function(e){
+		e.preventDefault();
+		
+		var f = jQuery(this);
+		
+		jQuery.ajax({
+		url: f.attr('action'),
+		method: f.attr('method'),
+		data: f.serialize(),
+		dataType: 'json',
+		success : function(response) {
+			if(response.errorCode == 0){
+				//success message
+				jQuery('.feedback', f).text(response.message).show(400);
+				if(response.redirect){window.top.location = response.redirect;}
+			}else{
+				//some error message
+				jQuery('.feedback', f).text(response.message).show(400);
+			}
+		 }
+	   });
+		
 	});
 	
 	

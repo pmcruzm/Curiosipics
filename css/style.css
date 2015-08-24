@@ -142,11 +142,12 @@ PROPIEDADES HEADER
 
 #header h2.logo_top a{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;}
 
-#box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;height:280px;position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:100;}
-#formulario-login label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
-#formulario-login input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;}
-#formulario-login a{font-size:14px;color:#7f7f7f;text-decoration:underline;}
-#formulario-login input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:1px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;}
+#box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;/*height:280px;*/position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:100;padding-bottom:80px;}
+#form-login label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
+#form-login input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;}
+#form-login a{font-size:14px;color:#7f7f7f;text-decoration:underline;}
+#form-login input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:1px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;}
+.feedback{text-align:center;color:#f05456;font-size:14px;margin-top:20px;display:none;width:100%;}
 
 .deco_1{display:block;display:block;width:284px;height:131px;position:absolute;top:0;left:50%;margin-left:-384px;z-index:100;}
 .deco_1 span{display:block;position:absolute;}
