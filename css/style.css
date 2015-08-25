@@ -214,7 +214,7 @@ PROPIEDADES GALERÍ SUPERIOR HOME
 
 .big_split_img{width:66.6%;height:100%;float:left;}
 .small_split_img{width:33.3%;height:100%;float:left;}
-.box_slider_img{background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);width:100%;}
+.box_slider_img{background-size:cover !important;-ms-behavior:url(/backgroundsize.min.htc);width:100%;}
 
 /*************************************
 PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
@@ -531,6 +531,9 @@ ul.bxslider {margin: 0;padding: 0;}
 .bx-wrapper .bx-viewport{-moz-box-shadow: 0;-webkit-box-shadow: 0;box-shadow: 0 0 0 0;border: 0;left: 0;background:none !important;border:none !important;left:0 !important;}
 .box_inside_float{overflow:hidden;}
 .box_space_top{padding-top:184px;}
+.desktop_opc{display:block;}
+.mobile_opc{display:none;}
+.custom-menu:before{content:'h';font-family:'icomoon', Helvetica, sans-serif;font-size:44px;}
 
 
 
@@ -662,6 +665,13 @@ MEDIA QUERIES
 	#box_jurado .intro_jurado{width:75%;}
 }
 
+@media screen and (max-width: 815px) {	
+	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
+	.menu_pie{float:inherit !important;width:100%;margin-left:0 !important;text-align:center;}
+	.right_p_rrss{float:inherit;width:100%;text-align:center;}
+	#top_footer p{display:block;margin-right:0;margin-top:40px;margin-bottom:15px;}
+}
+
 @media screen and (max-width: 768px) {	
 	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
 }
@@ -670,6 +680,44 @@ MEDIA QUERIES
 	.inside_curiosidad{width:90%;}
 	.premios_alumnos, .premios_profesores{width:90%;margin-bottom:40px;}
 	.box_jurado, .box_publico{width:100%;padding-left:0;padding-right:0;margin-bottom:40px;}
+	.desktop_opc{display:none;}
+	.mobile_opc{display:block;}
+	#top_footer .menu_pie li{display:block;margin-left:0px;margin-bottom:20px;}
+	.logo_foot{float:inherit;margin-left:0;text-align:center;margin-bottom:20px;}
+	.copy_foot{float:inherit;margin-right:0;text-align:center;}
+	.copy_foot span{display:block;margin-top:10px;}
+	.copy_foot a:before{content:'';padding:0;}
+	.box_jurado_single{width:100%;}
+	.box_jurado_single img{margin:0 auto;margin-bottom:35px;}
+	#box_jurado{padding-bottom:30px;}
+	.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{bottom:-60px;}
+	body{-webkit-text-size-adjust:none}
+	.bx-wrapper .bx-pager.bx-default-pager a{height:16px;width:16px;background:url(../img/radio_jurado.png) 0px 0px no-repeat;}
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{background:url(../img/radio_jurado.png) 0px -16px no-repeat;}
+	#box_jurado h4{width:90%;}
+	#box_jurado .intro_jurado{width:85%;}
+	.left_galeria .colum_2,.right_galeria .colum_2{display:none;}
+	.left_galeria .colum_1,.right_galeria .colum_1{width:100% !important;}
+	.galeria_curiosidad{height:125px;}
+	.right_top_header.mobile_opc{min-height:44px;top:0 !important;z-index:-1;width:100%;overflow:hidden;}
+	.right_top_header.mobile_opc.active{background:#ffffff;}
+	.right_top_header.mobile_opc .custom-menu{margin-right:8px !important;}
+	.right_top_header.mobile_opc.active .custom-menu:before{content:'c';}
+	.right_top_header.mobile_opc ul.ul_mob_menu{font-size:0px;width:100%;text-align:right;display:block;}
+	.right_top_header.mobile_opc ul.ul_mob_menu li{display:inline-block;font-size:16px;}
+	.right_top_header.mobile_opc ul.ul_mob_menu li a{color:#ffffff;height:44px !important;line-height:44px !important;vertical-align:middle;}
+	.right_top_header.mobile_opc.active ul.ul_mob_menu li a{color:#61bde9 !important;}
+	.right_top_header.mobile_opc ul.ul_mob_menu li a:hover{border:none !important;}
+	.right_top_header.mobile_opc .user_menu{float:inherit;padding-top:5px;padding-bottom:5px;text-align:center;}
+	.right_top_header.mobile_opc .user_menu a{color:#61bde9 !important; }
+	.right_top_header.mobile_opc .user_menu a:hover{ }
+	.right_top_header.mobile_opc .user_menu li:nth-child(2),.right_top_header.mobile_opc .user_menu li:nth-child(1){display:block !important;}
+	.right_top_header.mobile_opc .user_menu li:nth-child(2) a,.right_top_header.mobile_opc .user_menu li:nth-child(1) a{margin-right:0 !important;margin-bottom:10px;}
+	.right_top_header.mobile_opc .user_menu li:nth-child(2) a:hover,.right_top_header.mobile_opc .user_menu li:nth-child(1) a:hover{border:none !important;}
+	.extend_menu_mob{z-index:100;position:relative;padding-bottom:20px;display:none;}
+	.extend_menu_mob ul li.btn_header a{color:#61bde9 !important;border:2px solid #61bde9 !important;}
+	.extend_menu_mob ul li.btn_header a:hover{color:#ffffff !important;background:#61bde9 !important;}
+	#header.home{position:absolute;}
 }
 
 @media screen and (max-width: 480px) {

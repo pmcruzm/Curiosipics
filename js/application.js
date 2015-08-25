@@ -10,7 +10,7 @@ Cliente: Curiosipics
 VARIABLES
 **********************/
 var slider_l_1_1,slider_l_1_2,slider_l_1_3_1,slider_l_1_3_2,slider_l_2_1,slider_l_2_2,slider_l_2_3,slider_l_2_4;
-var slider_r_1_1,slider_r_1_2,slider_r_1_3,slider_r_2_1,slider_l_2_2,slider_r_2_3_1,slider_r_2_3_2,slider_last_pics;
+var slider_r_1_1,slider_r_1_2,slider_r_1_3,slider_r_2_1,slider_l_2_2,slider_r_2_3_1,slider_r_2_3_2,slider_last_pics,slider_jurado;
 var speedA, speedB, speedC, speedD, speedE;
 var posX,intervalo,posY;
 var top_curiosidades,top_participar,top_premios,top_jurado;
@@ -52,13 +52,13 @@ jQuery(document).ready(function(){
 	speedF = 0.3;
 	
 	//Reiniciar Scroll a 0
-	/*jQuery('body').scrollTo( "0px", 0,function(){
+	jQuery('body').scrollTo( "0px", 0,function(){
 		//Pillar anclas de la url si las hay 
 		var hash = window.location.hash.substring(1);
 		if(hash!=""){
 			//jQuery('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
 		}
-	});*/
+	});
 	
 	//Miramos si la cookie de aceptación está creada
 	if(jQuery.cookie('cambridge-curiosipics') == 'acepta'){
@@ -208,7 +208,9 @@ jQuery(document).ready(function(){
 		/*Últimos Pics*/
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:5,maxSlides:5,slideWidth:3200,slideMargin:0,ticker:true});
-	
+		
+		/*Jurado mobile*/
+		slider_jurado=jQuery('.bxslider_jurado').bxSlider({pager: true,infiniteLoop:true,useCSS:false,controls:false,adaptiveHeight:true});
 	}
 	
 	//Cuando queremos desplegar ventana de login
@@ -297,6 +299,19 @@ jQuery(document).ready(function(){
 	jQuery(document).on('click','.close_c',function(event){
 		event.preventDefault();
 		jQuery('.block-cookies').fadeOut(600);
+	});
+	
+	//Abrir menú mobile
+	jQuery(document).on('click','.right_top_header.mobile_opc .custom-menu',function(event){
+		event.preventDefault();
+		if(jQuery(this).parents('.mobile_opc').hasClass('active')){
+			jQuery('.extend_menu_mob').slideUp(600,function(){
+				jQuery(this).parents('.mobile_opc').removeClass('active');
+			});
+		}else{
+			jQuery(this).parents('.mobile_opc').addClass('active');
+			jQuery('.extend_menu_mob').delay(200).slideDown(600);
+		}
 	});
 	
 	//Aceptar cookies en el cuadro
@@ -410,6 +425,11 @@ jQuery(document).ready(function(){
 		h_win=jQuery(window).height();
 		w_win=jQuery(window).width();
 		
+		//Siestamos haciendo resize en home reiniciar scroll o
+		if ( jQuery("#galeria_sup").is(":visible") ) {
+			jQuery('body').scrollTo( "0px", 0,function(){});
+		}
+		
 		//Ajustamos cuadro de preview en Mis pics 
 		if ( jQuery("#preview_box").is(":visible") ) {	
 			jQuery("#preview_box").height(jQuery("#preview_box").width());	
@@ -432,6 +452,10 @@ jQuery(document).ready(function(){
 			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
 			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 		}
+		
+		//Resize ticker de home (Falta nº de cuadros según resolución)
+		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
+		slider_last_pics.reloadSlider();
 	
 	});
 
@@ -469,7 +493,7 @@ function control_scroll(e){
   }
   
   //Solo ejecutar si es visible la galería (HOME)
-  if ( jQuery("#galeria_sup").is(":visible") && device=='none' ) {
+  if ( jQuery("#galeria_sup").is(":visible") && device=='none' && w_win>800) {
 	   
 	   	  top_curiosidades=jQuery('#box_curiosidad').offset().top;
 		  top_participar=jQuery('#box_participar').offset().top;
