@@ -60,15 +60,26 @@
                     </div>
                 </div>
                 <div id="box_login" style="display:none;">
-                	<form role="form" action="json/login_ok.json" method="get" id="form-login">
+                	<div class="box_login">
+                	<form action="json/login_ko.json" method="get" role="form" id="form-login">
                         <label for="email_login">Email</label>
                         <input type="text"  id="email_login">
                         <label for="password_login">Contraseña</label>
                         <input type="text"  id="password_login">
-                        <div><a href="#">Recordar contraseña</a></div>
+                        <div><a href="#" class="reset_password">Recordar contraseña</a></div>
                         <span class="feedback"></span>
                         <input type="submit" class="btn" value="Entrar">
-                    </form> 
+                    </form>
+                    </div>
+                    <div class="box_forget" style="display:none;">
+                    	<form action="json/login_ko.json" method="get" role="form" id="form-forgot-password">
+                            <p>Introduce la cuenta de correo con la que estás registrado para restablecer la contraseña.</p>
+                            <label for="email_forget">Email</label>
+                            <input type="text"  id="email_forget">
+                            <span class="feedback"></span>
+                            <input type="submit" class="btn" value="Restablecer">
+                        </form>
+                    </div> 
                 </div>
             </div>
         </div><!--Fin header--> 
@@ -85,6 +96,14 @@
                                             <li><a href="#">Pics Profes</a></li>
                                             <li class="item_search"><a href="#"><i class="fa fa-search"></i></a></li>
                                         </ul>
+                                        <div class="over_search" style="display:none;">
+                                        	<form action="#" method="get" role="form" id="form-search-pic">
+                                                <label for="search_term">Buscar</label>
+                                                <input type="text"  id="search_term" placeholder="Buscar">
+                                                <input type="submit" class="fa" value="&#xf002;">
+                                            </form>	
+                                            <a href="#" class="close_search">Cerrar</a>
+                                        </div>
                                     </div>
                                     <div class="right_navigation_pics">
                                         <ul>

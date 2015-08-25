@@ -220,6 +220,9 @@ jQuery(document).ready(function(){
 			jQuery(this).removeClass('active');
 			jQuery('#box_login').stop().clearQueue().fadeOut(600,function(){
 				//Limpiamos los campos
+				jQuery('.box_login').show();
+				jQuery('.box_forget').hide();
+				jQuery('.feedback').text('').hide();
 			});
 		}else{
 			jQuery(this).addClass('active');
@@ -302,8 +305,8 @@ jQuery(document).ready(function(){
 	});
 	
 	//Abrir menú mobile
-	jQuery(document).on('click','.right_top_header.mobile_opc .custom-menu',function(event){
-		event.preventDefault();
+	jQuery(document).on('click','.right_top_header.mobile_opc .custom-menu',function(e){
+		e.preventDefault();
 		if(jQuery(this).parents('.mobile_opc').hasClass('active')){
 			jQuery('.extend_menu_mob').slideUp(600,function(){
 				jQuery(this).parents('.mobile_opc').removeClass('active');
@@ -329,6 +332,31 @@ jQuery(document).ready(function(){
 			ga('create', 'UA-31155962-13', 'auto');
 			ga('send', 'pageview');*/
 		});
+	});
+
+	//Mostrar formulario de resetar password
+	jQuery(document).on('click','.reset_password',function(e){
+		e.preventDefault();
+		jQuery('.box_login').fadeOut(600,function(){
+			jQuery('.box_forget').fadeIn(600);
+		});
+		
+	});
+	
+	//Abrir modal de busqueda 
+	jQuery(document).on('click','.item_search a',function(e){
+		e.preventDefault();
+		jQuery('.over_search').fadeIn(600);
+		
+	});
+	
+	//Cerrar modal de busqueda close_search
+	jQuery(document).on('click','.close_search',function(e){
+		e.preventDefault();
+		jQuery('.over_search').fadeOut(600,function(){
+			jQuery('#form-search-pic input[type=text]').val("");
+		});
+		
 	});
 	
 	//Comprobación del login/forgot-password vía AJAX
