@@ -140,7 +140,7 @@ PROPIEDADES HEADER
 .logged_box a:hover:before{}
 
 
-#header h2.logo_top a{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;}
+#header h2.logo_top a{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
 
 #box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;/*height:280px;*/position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:100;padding-bottom:80px;}
 #form-login label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
@@ -185,7 +185,7 @@ PROPIEDADES HEADER
 PROPIEDADES GALERÍ SUPERIOR HOME
 *************************************/
 #gallery_home{position:relative;}
-#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/logo_concurso.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;}
+#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/logo_concurso.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
 
 #galeria_sup{height:795px;overflow:hidden;position:relative;}
 #galeria_sup:after{content:'';display:block;height:795px;background:rgba(0,0,0,0.5);position:absolute;top:0;width:100%;z-index:50;}
@@ -663,6 +663,7 @@ MEDIA QUERIES
 	.inside_curiosidad{width:80%;}
 	.#box_jurado h4{width:90%;}
 	#box_jurado .intro_jurado{width:75%;}
+	.box_img_small{width:25%;}
 }
 
 @media screen and (max-width: 815px) {	
@@ -674,6 +675,7 @@ MEDIA QUERIES
 
 @media screen and (max-width: 768px) {	
 	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
+	.box_img_small{width:33.3%;}
 }
 
 @media screen and (max-width: 640px) {
@@ -718,11 +720,14 @@ MEDIA QUERIES
 	.extend_menu_mob ul li.btn_header a{color:#61bde9 !important;border:2px solid #61bde9 !important;}
 	.extend_menu_mob ul li.btn_header a:hover{color:#ffffff !important;background:#61bde9 !important;}
 	#header.home{position:absolute;}
+	.box_img_small{width:50%;}
 }
 
 @media screen and (max-width: 480px) {
+	#gallery_home h2.logo_gall{height:302px;width:303px;}
 }
 
 @media screen and (max-width: 320px) {
+	#gallery_home h2.logo_gall{height:302px;width:303px;}
 }
 		

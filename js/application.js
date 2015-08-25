@@ -427,7 +427,12 @@ jQuery(document).ready(function(){
 		
 		//Siestamos haciendo resize en home reiniciar scroll o
 		if ( jQuery("#galeria_sup").is(":visible") ) {
+			
 			jQuery('body').scrollTo( "0px", 0,function(){});
+			
+			//Resize ticker de home (Falta nº de cuadros según resolución)
+			jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
+			slider_last_pics.reloadSlider();
 		}
 		
 		//Ajustamos cuadro de preview en Mis pics 
@@ -452,10 +457,6 @@ jQuery(document).ready(function(){
 			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
 			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 		}
-		
-		//Resize ticker de home (Falta nº de cuadros según resolución)
-		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
-		slider_last_pics.reloadSlider();
 	
 	});
 
@@ -834,7 +835,11 @@ function validate_form(id){
 
 function show_pic(id_pic){
 		//Cambiar secciones según resolución
-		var n_secc=5;
+		var n_secc;
+		if(w_win>1100){n_secc=5;}
+		if(w_win<=1100 && w_win>768){n_secc=4;}
+		if(w_win<=768 && w_win>640){n_secc=3;}
+		if(w_win<=640){n_secc=2;}
 		
 		//Eliminamos el indicador de bloque activo 
 		jQuery('.box_img_small').removeClass('active');
