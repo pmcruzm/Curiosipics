@@ -253,76 +253,8 @@ jQuery(document).ready(function(){
 	//Desplegar la info de un pic en concreto
 	jQuery(document).on("click",".box_img_small a", function(e) {
 		e.preventDefault();
-		var row_padre=jQuery(this).parents('.row').attr('rel');
 		var id_pic=jQuery(this).attr('rel');
-		//Eliminamos el indicador de bloque activo 
-		jQuery('.box_img_small').removeClass('active');
-		jQuery('.box_img_small a').removeClass('active');
-		jQuery(this).parents('.box_img_small').addClass('active');
-		jQuery(this).addClass('active');
-		
-		if ( jQuery(".detalle_pic").is(":visible") ) {	
-			jQuery(".detalle_pic").stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
-				//Removemos el bloque anterior
-				jQuery(".detalle_pic").remove();
-				//Hacemos llamada de AJAX para obtener detalles del pic
-				/*var data_var1='q='+ Math.random()+'&id='+id_pic;
-				jQuery.ajax({
-						url: 'detalles_pic.php',
-						type: 'POST',
-						async: true,
-						dataType: 'html',
-						data: data_var1,
-						success: function(msg1){
-							//Pintamos la respuesta del AJAX y desplegamos detalle
-						}
-				});*/
-				// Pintamos detalles
-				jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><div class="img_big_detalle" style="background-image:url(img/test1.jpg);"></div></div><div class="cont_detalle_pic"><h4>Alumno</h4><p class="nombre_persona">Estefania Randez Pérez</p><h5>Beauty and The Beast</h5><p class="descrip_pic">Integer dolor nunc, lacinia a mi eu, hendrerit blandit augue. Fusce tincidunt enim lorem, eget varius velit semper euismod. Duis semper id nulla ut fringilla. Cras a ante ac nibh scelerisque cursus eget eu lorem. Etiam consectetur risus vel pharetra semper. Aliquam libero tortor, dapibus eget sapien ac, ultricies pulvinar.</p><div class="bottom_detalle"><div class="votos_detalle"><span>132 Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div><a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a></div>').insertAfter( ".row[rel="+row_padre+"]" );
-				//Ajustamos alturas
-				jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-				jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-				jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
-				jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
-				//Desplegamos el cuadro de detalle
-				jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
-					//Alineamos el scroll al pie del detalle 
-					var h_detalle=jQuery(".detalle_pic").outerHeight();
-					var h_offset;
-					if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}
-					jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
-				});
-			});
-			
-		}else{
-			//Hacemos llamada de AJAX para obtener detalles del pic
-			/*var data_var1='q='+ Math.random()+'&id='+id_pic;
-			jQuery.ajax({
-					url: 'detalles_pic.php',
-					type: 'POST',
-					async: true,
-					dataType: 'html',
-					data: data_var1,
-					success: function(msg1){
-						//Pintamos la respuesta del AJAX y desplegamos detalle
-					}
-			});*/
-			// Pintamos detalles
-			jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><div class="img_big_detalle" style="background-image:url(img/test1.jpg);"></div></div><div class="cont_detalle_pic"><h4>Alumno</h4><p class="nombre_persona">Estefania Randez Pérez</p><h5>Beauty and The Beast</h5><p class="descrip_pic">Integer dolor nunc, lacinia a mi eu, hendrerit blandit augue. Fusce tincidunt enim lorem, eget varius velit semper euismod. Duis semper id nulla ut fringilla. Cras a ante ac nibh scelerisque cursus eget eu lorem. Etiam consectetur risus vel pharetra semper. Aliquam libero tortor, dapibus eget sapien ac, ultricies pulvinar.</p><div class="bottom_detalle"><div class="votos_detalle"><span>132 Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div><a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a></div>').insertAfter( ".row[rel="+row_padre+"]" );
-			//Ajustamos alturas
-			jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-			jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
-			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
-			//Desplegamos el cuadro de detalle
-			jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
-				//Alineamos el scroll al pie del detalle 
-				var h_detalle=jQuery(".detalle_pic").outerHeight();
-				var h_offset;
-				if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}
-				jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
-			});
-		}
+		show_pic(id_pic);	
 	});
 	
 	//Cuando queremos cerrar detalles de pic
@@ -330,19 +262,35 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		jQuery('.detalle_pic').stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
 			jQuery(".detalle_pic").remove();
+			jQuery('.box_img_small').removeClass('active');
+			jQuery('.box_img_small a').removeClass('active');
 		});
 	});
 	
 	//Cuando queremos pasar al siguiente pic
 	jQuery(document).on("click",".next_pic", function(e) {
 		e.preventDefault();
-		console.log('Pic Siguiente');
+		//Miramos cual es el pic siguiente
+		var id_next; 
+		//Cerramos cuadro actual desplegado y buscamos el siguiente  
+		jQuery('.detalle_pic').stop().clearQueue().slideUp(600,'easeInOutExpo',function(){	
+			jQuery(".detalle_pic").remove();
+			id_next=jQuery('.box_img_small  a.active').parents('.box_img_small').next('div').find('a').attr('rel');
+			show_pic(id_next);
+		});
 	});
 	
 	//Cuando queremos pasar al pic anterior
 	jQuery(document).on("click",".prev_pic", function(e) {
 		e.preventDefault();
-		console.log('Pic Anterior');
+		//Miramos cual es el pic siguiente
+		var id_prev; 
+		//Cerramos cuadro actual desplegado y buscamos el siguiente  
+		jQuery('.detalle_pic').stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
+			jQuery(".detalle_pic").remove();
+			id_prev=jQuery('.box_img_small  a.active').parents('.box_img_small').prev().find('a').attr('rel');
+			show_pic(id_prev);
+		});
 	});
 	
 	//Cerrar cuadro info cookies
@@ -391,6 +339,67 @@ jQuery(document).ready(function(){
 		 }
 	   });
 		
+	});
+	
+	//Cambios en en los campos fecha para mostrar tutor
+	jQuery(document).on('change','#birth_day,#birth_month,#birth_year', function() {
+			//Busca todos los campos requeridos de día
+			if(jQuery('#registro-form').find('.validation-rule-day').length > 0){
+				var error_day=0;
+				jQuery('#registro-form').find('.validation-rule-day').each(function() {
+					var res_campo=jQuery(this).val();
+					if((res_campo=="") || (res_campo!="" && isNumber(res_campo)==false) || (res_campo!="" && isNumber(res_campo)==true && res_campo<1) || (res_campo!="" && isNumber(res_campo)==true && res_campo>31) ){
+						error_day=1;
+					}
+
+				});
+			}
+			
+			//Busca todos los campos requeridos de mes
+			if(jQuery('#registro-form').find('.validation-rule-month').length > 0){
+				var error_month=0;
+				jQuery('#registro-form').find('.validation-rule-month').each(function() {
+					var res_campo=jQuery(this).val();
+					if((res_campo=="") || (res_campo!="" && isNumber(res_campo)==false) || (res_campo!="" && isNumber(res_campo)==true && res_campo<1) || (res_campo!="" && isNumber(res_campo)==true && res_campo>12)  ){
+						error_month=1;
+					}
+
+				});
+			}
+			
+			//Busca todos los campos requeridos de año
+			if(jQuery('#registro-form').find('.validation-rule-year').length > 0){
+				var error_year=0;
+				jQuery('#registro-form').find('.validation-rule-year').each(function() {
+					var res_campo=jQuery(this).val();
+					if((res_campo=="") || (res_campo!="" && isNumber(res_campo)==false) || (res_campo!="" && isNumber(res_campo)==true && res_campo<1900) ){
+						error_year=1;
+					}
+
+				});
+			}
+			
+			//Comprobar si la fecha introducida es mayor de 14años
+			if( error_day==0 && error_month==0 && error_year==0){
+				var error_big_14=0;
+				var year=jQuery('.validation-rule-year').val();
+				var month=(jQuery('.validation-rule-month').val()-1);
+				var day=jQuery('.validation-rule-day').val();
+				if (meetsMinimumAge(new Date(year, month, day),14)) {
+					error_big_14=0;
+					jQuery('.tutor_datos').hide();
+				}else{
+					error_big_14=1;
+					//Mostramos el campo de tutor legal
+					if(jQuery('.tutor_datos').is(":visible")){
+						 jQuery('.tutor_datos').show();
+					}else{
+						var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
+						jQuery('.errores').append('<p>'+message+'</p>');	
+						jQuery('.tutor_datos').show();
+					}
+				}
+			}
 	});
 	
 	
@@ -663,7 +672,7 @@ function validate_form(id){
 				});
 			}
 			
-			//Busca todos los campos requeridos de codigo postal
+			//Busca todos los campos requeridos de mes
 			if(jQuery(id).find('.validation-rule-month').length > 0){
 				var error_month=0;
 				jQuery(id).find('.validation-rule-month').each(function() {
@@ -676,7 +685,7 @@ function validate_form(id){
 				});
 			}
 			
-			//Busca todos los campos requeridos de codigo postal
+			//Busca todos los campos requeridos de año
 			if(jQuery(id).find('.validation-rule-year').length > 0){
 				var error_year=0;
 				jQuery(id).find('.validation-rule-year').each(function() {
@@ -727,13 +736,14 @@ function validate_form(id){
 			}
 			
 			//Comprobar si la fecha introducida es mayor de 14años
-			if( error_day==0 || error_month==0 || error_year==0){
+			if( error_day==0 && error_month==0 && error_year==0){
 				var error_big_14=0;
 				var year=jQuery('.validation-rule-year').val();
 				var month=(jQuery('.validation-rule-month').val()-1);
 				var day=jQuery('.validation-rule-day').val();
 				if (meetsMinimumAge(new Date(year, month, day),14)) {
 					error_big_14=0;
+					jQuery('.tutor_datos').hide();
 				}else{
 					error_big_14=1;
 					//Mostramos el campo de tutor legal
@@ -798,18 +808,122 @@ function validate_form(id){
 			}
 }
 
-//Previsualizar imagen antes de subir al server 
-function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                jQuery('.preview_box').css('background', 'transparent url('+e.target.result +') left top no-repeat');
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+function show_pic(id_pic){
+		//Cambiar secciones según resolución
+		var n_secc=5;
+		
+		//Eliminamos el indicador de bloque activo 
+		jQuery('.box_img_small').removeClass('active');
+		jQuery('.box_img_small a').removeClass('active');
+		
+		//Recorremos todos los divs hasta obtener la posicion del div pulsado 
+		var pos_div=1;
+		var total_cuadros=jQuery('.row').find('.box_img_small').length;
+		jQuery('.row').find('.box_img_small').each(function() {
+			if(jQuery(this).find('a').attr('rel')==id_pic){
+				jQuery(this).addClass('active');
+				jQuery(this).find('a').addClass('active');
+				return false;
+			}else{
+				pos_div++;
+			}
+		});
+		
+		var fila=parseInt(pos_div/n_secc);
+		var mod_fila=pos_div%n_secc;
+		var n_fila=parseInt(total_cuadros/n_secc);
+		var mod_t_fila=total_cuadros%n_secc;
+		//console.log(total_cuadros+'--'+fila+'--'+mod_fila+'--'+n_fila+'--'+pos_div);
+		
+		if ( jQuery(".detalle_pic").is(":visible") ) {	
+			jQuery(".detalle_pic").stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
+				//Removemos el bloque anterior
+				jQuery(".detalle_pic").remove();
+				 
+			    //Hacemos llamada de AJAX para obtener detalles del pic
+				jQuery.ajax({
+				  type: "GET",   
+				  url: 'json/pic_info.json',   
+				  data: {"id": id_pic},
+				  async: false,
+				  dataType: 'json',
+				  success : function(data){ 
+					//console.log(data);
+					if(mod_fila==0){
+						var pos_final_det=(fila*n_secc)-1;	
+					}else{
+						var pos_final_det=((fila+1)*n_secc)-1;
+						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
+					}
+					// Pintamos detalles
+					jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><div class="img_big_detalle" style="background-image:url('+data.img+');"></div></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="http://twitter.com/home?status='+data.title+' http://curiosipics.cambridge.es/pic/'+data.id+'" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/'+data.id+'&amp;t='+data.title+'" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/'+data.id+'&media='+data.img+'&description='+data.title+'" target="_blank" data-pin-do="buttonBookmark" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+					//Comprobamos las flechas de navegación que hay que añadir 
+					if(pos_div!=1 && pos_div!=total_cuadros){
+						jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
+					}else{
+						if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+						if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+					}
+				  }
+			  });
+				//Ajustamos alturas
+				jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+				jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+				jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
+				jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+				//Desplegamos el cuadro de detalle
+				jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
+					//Alineamos el scroll al pie del detalle 
+					var h_detalle=jQuery(".detalle_pic").outerHeight();
+					var h_offset;
+					if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}
+					jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
+				});
+			});
+			
+		}else{
+			//Hacemos llamada de AJAX para obtener detalles del pic
+			//var data_var1='q='+ Math.random()+'&id='+id_pic;
+			jQuery.ajax({
+			  type: "GET",   
+			  url: 'json/pic_info.json',   
+			  data: {"id": id_pic},
+			  async: false,
+			  dataType: 'json',
+			  success : function(data){ 
+					//console.log(data);
+					if(mod_fila==0){
+						var pos_final_det=(fila*n_secc)-1;	
+					}else{
+						var pos_final_det=((fila+1)*n_secc)-1;
+						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
+					}
+					// Pintamos detalles
+					jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><div class="img_big_detalle" style="background-image:url('+data.img+');"></div></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="http://twitter.com/home?status='+data.title+' http://curiosipics.cambridge.es/pic/'+data.id+'" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/'+data.id+'&amp;t='+data.title+'" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/'+data.id+'&media='+data.img+'&description='+data.title+'" target="_blank" data-pin-do="buttonBookmark" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+					//Comprobamos las flechas de navegación que hay que añadir 
+					if(pos_div!=1 && pos_div!=total_cuadros){
+						jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
+					}else{
+						if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+						if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+					}
+				  }
+		  });
+			//Ajustamos alturas
+			jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+			jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
+			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
+			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+			//Desplegamos el cuadro de detalle
+			jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
+				//Alineamos el scroll al pie del detalle 
+				var h_detalle=jQuery(".detalle_pic").outerHeight();
+				var h_offset;
+				if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}
+				jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
+			});
+		}
+}
 
 
 

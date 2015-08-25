@@ -1,0 +1,9 @@
+{
+  "id": 11,
+  "title": "Lorem ipsum dolor sit amet",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  "votes": 5,
+  "author_name": "David Mateos",
+  "author_type": "Profesor",
+  "img": "img/test1.jpg"
+}

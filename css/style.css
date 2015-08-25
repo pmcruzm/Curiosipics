@@ -352,6 +352,7 @@ PROPIEDADES REGISTRO
 
 .tutor_datos{display:none;}
 .tutor_datos h4{margin-top:20px;}
+.tutor_datos p{padding-left:30%;margin-bottom:25px;}
 
 /**********************
 PROPIEDADES MIS PICS
@@ -446,7 +447,7 @@ PROPIEDADES PICS (TODOS)
 .right_navigation_pics ul li:last-child{background:green;}
 .left_navigation_pics ul li.item_search a:hover{border-bottom:none !important;}
 
-.detalle_pic{background:#323232;/*height:640px;*/box-sizing:border-box;padding:45px;position:relative;display:none;}
+.detalle_pic{background:#323232;/*height:640px;*/box-sizing:border-box;padding:45px;position:relative;display:none;clear:both;}
 .inside_detalle_pic{overflow:hidden;width:80%;margin:0 auto;}
 .img_detalle_pic{width:60%;float:left;position:relative;}
 .img_big_detalle{width:90%;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center; background-repeat:no-repeat;}
