@@ -721,6 +721,9 @@ MEDIA QUERIES
 	.extend_menu_mob ul li.btn_header a:hover{color:#ffffff !important;background:#61bde9 !important;}
 	#header.home{position:absolute;}
 	.box_img_small{width:50%;}
+	.logo_top{z-index:-2;position:relative;}
+	.extend_menu_mob .logged_box{float:inherit;text-align:center;}
+	.extend_menu_mob .logged_box a:before{display:inline-block;float:inherit;vertical-align:bottom;padding-left:0px;background-position:center left;}
 }
 
 @media screen and (max-width: 480px) {
