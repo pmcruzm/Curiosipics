@@ -144,13 +144,15 @@ PROPIEDADES HEADER
 
 #box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;/*height:280px;*/position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:300;padding-bottom:80px;}
 #form-login label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
-#form-login input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;}
+#form-login input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
+#form-login input[type=password]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
 #form-login a{font-size:14px;color:#7f7f7f;text-decoration:underline;}
-#form-login input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:1px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;}
+#form-login input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;font-family:'cabinregular', Helvetica, sans-serif;}
 #form-forgot-password label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
-#form-forgot-password input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;}
+#form-forgot-password input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
+#form-forgot-password input[type=password]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
 #form-forgot-password p{font-size:14px;color:#7f7f7f;line-height:21px;margin-bottom:20px;}
-#form-forgot-password input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:1px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;}
+#form-forgot-password input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;font-family:'cabinregular', Helvetica, sans-serif;}
 .feedback{text-align:center;color:#f05456;font-size:14px;margin-top:20px;display:none;width:100%;}
 
 .deco_1{display:block;display:block;width:284px;height:131px;position:absolute;top:0;left:50%;margin-left:-384px;z-index:100;}
@@ -318,9 +320,9 @@ PROPIEDADES REGISTRO
 #registro-form{}
 .form-group{overflow:hidden;margin-bottom:10px;}
 #registro-form .form-group label{display:block;text-align:right;width:30%;float:left;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:17px;}
-#registro-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
-#registro-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
-#registro-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
+#registro-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
+#registro-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
+#registro-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
 
 #registro-form .form-group input[type=text].error{border:2px solid #f05456;}
 #registro-form .form-group input[type=password].error{border:2px solid #f05456;}
@@ -348,7 +350,7 @@ PROPIEDADES REGISTRO
 #registro-form .checkbox a{color:#484647;text-decoration:underline;}
 
 .submit_group{padding-left:30%;padding-top:40px;}
-.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;background:none !important;}
+.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;background:none !important;font-family:'cabinregular', Helvetica, sans-serif;}
 
 .errores{color:#f05456;font-size:14px;display:block;padding-left:30%;width:95%;box-sizing:border-box;margin-top:20px;}
 
@@ -374,10 +376,10 @@ PROPIEDADES MIS PICS
 .preview_pic{width:33.3%;float:left;box-sizing:border-box;}
 .fields_pic{width:66.6%;float:left;box-sizing:border-box;padding-left:50px;}
 .submit_btn_pic{clear:both;box-sizing:border-box;padding-left:33.3%;}
-.submit_btn_pic input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;background:none;margin-left:50px;}
+.submit_btn_pic input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;background:none;margin-left:50px;font-family:'cabinregular', Helvetica, sans-serif;}
 #form-upload-pic span,#form-upload-pic label{display:block;}
 .fields_pic label{color:#484647;font-size:18px;margin-bottom:10px;}
-.fields_pic input[type=text]{height:40px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding-left:10px;padding-right:10px;margin-bottom:20px;}
+.fields_pic input[type=text]{height:40px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding-left:10px;padding-right:10px;margin-bottom:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
 .fields_pic span{text-align:right;font-size:13px;color:#adaaab;margin-bottom:10px;}
 .fields_pic textarea{height:220px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding:10px;}
 	
@@ -438,7 +440,7 @@ PROPIEDADES PICS (TODOS)
 
 .navigation_pics{overflow:hidden;position:relative;}
 .left_navigation_pics{display:inline-block;float:left;position:absolute;bottom:0px;}
-.left_navigation_pics ul{margin-left:20px;margin-bottom:20px;}
+.left_navigation_pics ul{margin-left:40px;margin-bottom:20px;}
 .left_navigation_pics ul li{display:inline-block;}
 .left_navigation_pics ul li a{font-size:20px;color:#373737;height:45px;line-height:45px;margin-right:20px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 .left_navigation_pics ul li a:hover{border-bottom:solid 3px #61bde9;color:#61bde9;}
@@ -449,12 +451,13 @@ PROPIEDADES PICS (TODOS)
 .right_navigation_pics ul li a{display:inline-block;height:105px;text-indent:-99999px;width:290px;position:relative;z-index:210;}
 .right_navigation_pics ul li:first-child{background:red;}
 .right_navigation_pics ul li:last-child{background:green;}
-.left_navigation_pics ul li.item_search a:hover{border-bottom:none !important;}
+.left_navigation_pics ul li.item_search a:hover{border-bottom:none !important;background:url(../img/lupa_search_b.png) center center no-repeat;}
+.left_navigation_pics ul li.item_search a{display:block;text-indent:-99999px;height:45px;width:22px;background:url(../img/lupa_search_black.png) center center no-repeat;}
 
-.over_search{position:absolute;z-index:100;background:red;height:45px;top:0;right:0;width:100%;}
+.over_search{position:absolute;z-index:100;background:red;height:45px;top:0;right:0;width:400px;}
 #form-search-pic label{display:none;}
-#form-search-pic input[type=text]{height:45px;line-height:45px;border:0;background:#fffffff;-webkit-appearance:none;box-sizing:border-box;width:100%;padding-right:70px;padding-left:10px;font-size:18px;color:#61bde9;}
-#form-search-pic input[type=submit]{position:absolute;top:0;right:0;height:45px;width:59px;border:none;-webkit-appearance:none;cursor:pointer;/*background:url(../img/lupa_search.png) center center no-repeat;*/font-family: 'FontAwesome', Helvetica, Arial, sans-serif;font-size:20px;background:#ffffff;color:#61bde9;}
+#form-search-pic input[type=text]{height:45px;line-height:45px;border:0;background:#fffffff;-webkit-appearance:none;box-sizing:border-box;width:100%;padding-right:70px;padding-left:10px;font-size:18px;color:#61bde9;font-family:'cabinregular', Helvetica, sans-serif;}
+#form-search-pic input[type=submit]{position:absolute;top:0;right:0;height:45px;width:59px;border:none;-webkit-appearance:none;cursor:pointer;background:#ffffff url(../img/lupa_search_b.png) center center no-repeat;text-indent:-9999px;}
 .over_search a{position:absolute;background:url(../img/close_search.png) top left no-repeat;height:32px;width:32px;text-indent:-99999px;top:7px;right:-47px;}
 #form-search-pic input[placeholder], #form-search-pic [placeholder], #form-search-pic *[placeholder] {color:#61bde9;}
 
@@ -468,7 +471,7 @@ PROPIEDADES PICS (TODOS)
 .cont_detalle_pic h5{font-size:28px;color:#ffffff;line-height:36px;margin-bottom:10px;}
 .cont_detalle_pic .descrip_pic{font-size:16px;line-height:22px;color:#ffffff;}
 .bottom_detalle{position:absolute;bottom:0px;width:100%;}
-.cont_detalle_pic .votos_detalle{margin-bottom:20px;}
+.cont_detalle_pic .votos_detalle{margin-bottom:20px;width:120px;text-align:center;}
 .cont_detalle_pic .votos_detalle span{color:#ffffff;font-size:20px;display:inline-block;padding-left:10px;padding-right:10px;}
 .cont_detalle_pic .votos_detalle span:before{content:'';display:block;background:url(../img/icon_star.png) top center no-repeat;height:24px;padding-bottom:15px;}
 .cont_detalle_pic .rrss_vote_detalle{overflow:hidden;width:100%;position:relative;}
@@ -486,8 +489,8 @@ PROPIEDADES PICS (TODOS)
 .pop_votar p{text-align:center;color:#61bde9;font-size:16px;line-height:24px;margin-bottom:20px;}
 
 #form-votar-pic label{display:none;}
-#form-votar-pic input[type=email]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;text-align:center;box-sizing:border-box;}
-#form-votar-pic input[type=submit]{bottom:35px;width:120px;height:40px;box-sizing:border-box;border:2px solid #61bde9;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;color:#61bde9;display:block;margin:0 auto;margin-top:20px;}
+#form-votar-pic input[type=email]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;text-align:center;box-sizing:border-box;font-family:'cabinregular', Helvetica, sans-serif;color:#323232;}
+#form-votar-pic input[type=submit]{bottom:35px;width:120px;height:40px;box-sizing:border-box;border:2px solid #61bde9;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;color:#61bde9;display:block;margin:0 auto;margin-top:20px;font-family:'cabinregular', Helvetica, sans-serif;}
 #form-votar-pic input[placeholder], #form-votar-pic [placeholder], #form-votar-pic *[placeholder] {color:#323232;text-align:center;}
 
 #form-votar-pic input[type=email].error{border:2px solid #f05456;}
@@ -504,7 +507,7 @@ PROPIEDADES NEW PASSWORD
 .form_box_new_password{width:60%;margin:0 auto;}
 
 #new-password-form .form-group label{display:block;text-align:left;width:100%;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:17px;}
-#new-password-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:100%;float:inherit;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;margin-bottom:20px;}
+#new-password-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:100%;float:inherit;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;margin-bottom:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
 #new-password-form span.ind_password{color:#adaaab;font-size:13px;display:block;width:100%;text-align:left;box-sizing:border-box;margin-bottom:20px;}
 
 #new-password-form .form-group input[type=password].error{border:2px solid #f05456;}
@@ -517,11 +520,11 @@ PROPIEDADES CONTACTO
 #contacto-form{}
 .form-group{overflow:hidden;margin-bottom:10px;}
 #contacto-form .form-group label{display:block;text-align:right;width:20%;float:left;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:17px;}
-#contacto-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
-#contacto-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
-#contacto-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;}
+#contacto-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
+#contacto-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
+#contacto-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
 
-#contacto-form textarea{border:none;display:block;width: 65%;box-sizing:border-box;padding:15px;height:300px;}
+#contacto-form textarea{border:none;display:block;width: 65%;box-sizing:border-box;padding:15px;height:300px;font-size:20px;font-family:'cabinregular', Helvetica, sans-serif;color:#929091;}
 
 #contacto-form .form-group input[type=text].error{border:2px solid #f05456;}
 #contacto-form .form-group input[type=password].error{border:2px solid #f05456;}
@@ -530,12 +533,38 @@ PROPIEDADES CONTACTO
 
 #contacto-form .checkbox label{display:inline-block;}
 #contacto-form  .checkbox{padding-left:50px;margin-bottom:18px;display:block;padding-left:20%;}
-#contacto-form  .checkbox p{margin-top:-30px;font-size:16px;padding-left:40px;color:#484647;}
+#contacto-form  .checkbox p{margin-top:-30px;font-size:16px;padding-left:40px;color:#484647;width:65%;}
 #contacto-form .checkbox a{color:#484647;text-decoration:underline;}
 
 #contacto-form .maquetacion_captcha{padding-left:20%;}
 #contacto-form .submit_group{padding-left:20%;}
 #contacto-form .errores{padding-left:20%;}
+
+/*****************************
+PROPIEDADES VOTO CONFIRMADO
+******************************/
+
+.inside_detalle_pic_vote{overflow:hidden;width:60%;margin:0 auto;}
+.inside_detalle_pic_vote .rrss_vote_detalle{height:50px;}
+.header_vote{clear:both;margin-bottom:60px;}
+.header_vote h3{font-size:40px;line-height:52px;color:#f1e87c;font-family:'santa_fe', Helvetica, sans-serif;text-align:center;}
+.header_vote h3:before{content:'';display:block;width:100%;height:37px;background:url(../img/star_big.png) top center no-repeat;margin-top:20px;margin-bottom:20px;}
+
+.img_detalle_pic_vote{width:60%;float:left;position:relative;}
+.img_big_detalle_vote{width:90%;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center; background-repeat:no-repeat;height:300px;}
+.cont_detalle_pic_vote{width:40%;float:left;box-sizing:border-box;padding-left:30px;position:relative;height:300px;}
+.cont_detalle_pic_vote h4{color:#61bde9;font-size:28px;font-family:'santa_fe', Helvetica, sans-serif;padding-top:10px;}
+.cont_detalle_pic_vote .nombre_persona{color:#61bde9;font-size:18px;margin-bottom:30px;}
+.cont_detalle_pic_vote h5{font-size:28px;color:#ffffff;line-height:36px;margin-bottom:10px;}
+.cont_detalle_pic_vote .descrip_pic{font-size:16px;line-height:22px;color:#ffffff;}
+.bottom_detalle{position:absolute;bottom:0px;width:100%;}
+.cont_detalle_pic_vote .votos_detalle{margin-bottom:20px;}
+.cont_detalle_pic_vote .votos_detalle span{color:#ffffff;font-size:20px;display:inline-block;padding-left:10px;padding-right:10px;}
+.cont_detalle_pic_vote .votos_detalle span:before{content:'';display:block;background:url(../img/icon_star.png) top center no-repeat;height:24px;padding-bottom:15px;}
+.cont_detalle_pic_vote .rrss_vote_detalle{overflow:hidden;width:100%;position:relative;}
+.cont_detalle_pic_vote .rrss_vote_detalle .btn_votar{display:block;height:40px;border:2px solid #999999;color:#999999;font-size:16px;line-height:40px;text-align:center;float:left;border-radius:8px;width:120px;}
+.cont_detalle_pic_vote .rrss_vote_detalle .btns_share{display:inline-block;color:#999999;font-size:16px;line-height:40px;position:absolute;right:30px;}
+.cont_detalle_pic_vote .rrss_vote_detalle .btns_share a{color:#999999;border:2px solid #999999;border-radius:30px;display:inline-block;width:40px;height:40px;line-height:40px;text-align:center;font-size:20px;margin-left:10px;}
 
 /*****************************
 PROPIEDADES FOOTER

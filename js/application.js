@@ -139,9 +139,12 @@ jQuery(document).ready(function(){
 	
 	//Si detalle está desplegado calculamos altura de los bloques
 	if ( jQuery(".detalle_pic").is(":visible") ) {	
-		jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-		jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-		jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
+	    //console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
+		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
+		//console.log('Total:'+h_total);
+		jQuery(".detalle_pic").height(h_total);	
+		jQuery(".img_detalle_pic").height(h_total);	
+		jQuery(".cont_detalle_pic").height(h_total);
 		jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 	}
 	
@@ -550,11 +553,14 @@ jQuery(document).ready(function(){
 		
 		//Si detalle está desplegado calculamos altura de los bloques
 		if ( jQuery(".detalle_pic").is(":visible") ) {	
-			jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-			jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
-		}
+	    //console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
+		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
+		//console.log('Total:'+h_total);
+		jQuery(".detalle_pic").height(h_total);	
+		jQuery(".img_detalle_pic").height(h_total);	
+		jQuery(".cont_detalle_pic").height(h_total);
+		jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+	}
 	
 	});
 
@@ -995,10 +1001,12 @@ function show_pic(id_pic){
 					jQuery('<div class="box_pop_votar" style="display:none;"><div class="pop_votar"><h3>Votar Pic</h3><p>Para votar debes introducir una dirección de correo electrónico y confirmar tu voto en el email que te enviaremos.</p><form action="#" method="get" novalidate role="form" id="form-votar-pic"><label for="search_term">Votar</label><input type="email" autocorrect="off"  id="mail_pic" name="mail_pic" placeholder="Introduce tu email"><input type="submit" class="" value="Enviar"></form><a href="#" class="close_votar">Cerrar</a></div>').insertAfter('.inside_detalle_pic');
 				  }
 			  });
+			  
 				//Ajustamos alturas
-				jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-				jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-				jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
+				var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
+				jQuery(".detalle_pic").height(h_total);	
+				jQuery(".img_detalle_pic").height(h_total);	
+				jQuery(".cont_detalle_pic").height(h_total);
 				jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 				//Desplegamos el cuadro de detalle
 				jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
@@ -1040,9 +1048,10 @@ function show_pic(id_pic){
 				  }
 		  });
 			//Ajustamos alturas
-			jQuery(".detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-			jQuery(".img_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));	
-			jQuery(".cont_detalle_pic").height((jQuery(".box_img_small").outerHeight()*2));
+			var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
+			jQuery(".detalle_pic").height(h_total);	
+			jQuery(".img_detalle_pic").height(h_total);	
+			jQuery(".cont_detalle_pic").height(h_total);
 			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 			//Desplegamos el cuadro de detalle
 			jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
