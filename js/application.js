@@ -661,26 +661,26 @@ function control_scroll(e){
 		  }
 		  
 		  //Animación de decoración de la sección curiosidades 
-		  if(scrollAmount>top_curiosidades){
-			  jQuery('.deco_4_1').stop().clearQueue().animate({ top: 60-((scrollAmount-top_curiosidades) * speedE)}, 0);
-			  jQuery('.deco_4_2').stop().clearQueue().animate({ bottom: 7+((scrollAmount-top_curiosidades) * speedA)}, 0);
-			  jQuery('.deco_4_3').stop().clearQueue().animate({ top: 0-((scrollAmount-top_curiosidades) * speedD)}, 0);
+		  if(scrollAmount>(top_curiosidades-parseInt(3*h_win/4))){
+			  jQuery('.deco_4_1').stop().clearQueue().animate({ top: 60-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedE)}, 0);
+			  jQuery('.deco_4_2').stop().clearQueue().animate({ bottom: 7+((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedA)}, 0);
+			  jQuery('.deco_4_3').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedD)}, 0);
 			  
-			 jQuery('.deco_5_1').stop().clearQueue().animate({ top: 0-((scrollAmount-top_curiosidades) * speedD)}, 0);
-			  jQuery('.deco_5_2').stop().clearQueue().animate({ top: 100-((scrollAmount-top_curiosidades) * speedE)}, 0);
-			  jQuery('.deco_5_3').stop().clearQueue().animate({ top: 0-((scrollAmount-top_curiosidades) * speedA)}, 0);
+			 jQuery('.deco_5_1').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedD)}, 0);
+			  jQuery('.deco_5_2').stop().clearQueue().animate({ top: 100-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedB)}, 0);
+			  jQuery('.deco_5_3').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedA)}, 0);
 		  }
 		  
 		   //Animación de decoración de la sección participar 
-		  if(scrollAmount>top_participar){
-			 posY=-(scrollAmount-top_participar);
+		  if(scrollAmount>(top_participar-h_win)){
+			 posY=-(scrollAmount-(top_participar-h_win));
 			 //console.log(posY);
 			jQuery('#box_participar .container').css({ backgroundPosition:"50% "+posY+"px" });
 		  }
 		  
 		   //Animación de decoración de la sección premios 
-		  if(scrollAmount>top_premios){
-			 posX=-(scrollAmount-top_premios);
+		  if(scrollAmount>(top_premios-h_win)){
+			 posX=-(scrollAmount-(top_premios-h_win));
 			 //console.log(posY);
 			jQuery('#box_premios').css({ backgroundPosition: posX+"px bottom" });
 		  }
