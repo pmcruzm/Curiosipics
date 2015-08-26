@@ -87,89 +87,29 @@
         	<div class="container">
             	<div class="box_space_top">
                 	<div id="box_registro">
-                    	<h3>Registro</h3>
+                    	<h3>Contacto</h3>
                         <div class="box_inside_float">
-                        	<div class="form_box_registro">
-                            	<form id="registro-form" action="" method="post" role="form" novalidate data-error-msg="Ha habido un error, por favor revisa los campos resaltados">
-									<h4>Datos del usuario</h4>	
+                            	<form id="contacto-form" action="" method="post" role="form" novalidate data-error-msg="Ha habido un error, por favor revisa los campos resaltados">
                                     <div class="form-group required">
                                         <label for="first_name">Nombre</label>
                                         <input type="text" class="form-control validation-rule-empty" id="first_name" name="first_name">
                                     </div>
-                                    <div class="form-group required">
-                                         <label for="last_name">Apellidos</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="last_name" name="last_name">
-                                     </div>
                                      <div class="form-group required">
                                          <label for="email">Email</label>
                                          <input type="email" class="form-control validation-rule-mail" id="email" name="email" autocorrect="off" data-error-msg="El email no es válido">
                                      </div>
                                      <div class="form-group required">
-                                         <label for="city">Ciudad</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="city" name="city">
-                                     </div>
+                                         <label for="center_name">Nombre</label>
+                                         <input type="text" class="form-control validation-rule-empty" id="center_name" name="center_name" >
+                                     </div> 
                                      <div class="form-group required">
                                          <label for="province">Provincia</label>
                                          <input type="text" class="form-control validation-rule-empty" id="province" name="province" >
                                      </div>
-                                     <div class="date-group required">
-                                     	<div class="titul_radio">Fecha de Nacimiento</div>
-                                        <div class="cont_radio">
-                                            <label for="birth_day">Día</label>
-                                         	<input type="text" class="form-control validation-rule-day" maxlength="2" id="birth_day" name="birth_day" data-error-msg="Formato día no es válido">
-                                            <span>/</span>
-                                            <label for="birth_month">Mes</label>
-                                         	<input type="text" class="form-control validation-rule-month" maxlength="2" id="birth_month" name="birth_month" data-error-msg="Formato mes no es válido">
-                                            <span>/</span>
-                                         	<label for="birth_year">Año</label>
-                                         	<input type="text" class="form-control validation-rule-year" maxlength="4" id="birth_year" name="birth_year" data-error-msg="Formato año no es válido">
-                                        </div>   
-                                     </div>
-                                     <div class="tutor_datos">
-                                     	<h4>RELLENAR POR MENORES DE 14 AÑOS</h4>	
-                                        <p>Necesitamos la autorización de tu padre, madre o tutor legal para que puedas participar en nuestra promoción. Para ello necesitamos que introduzcas los siguientes datos que chequearemos:</p>
-                                        <div class="form-group required">
-                                            <label for="tutor_name">Nombre</label>
-                                            <input type="text" class="form-control validation-rule-empty" id="tutor_name" name="tutor_name">
-                                        </div>
-                                        <div class="form-group required">
-                                             <label for="tutor_email">Email</label>
-                                             <input type="email" class="form-control validation-rule-mail" id="tutor_email" name="tutor_email" autocorrect="off" data-error-msg="El email de tutor no es válido">
-                                         </div>
-                                         <div class="form-group required">
-                                         	<label for="tutor_id">DNI</label>
-                                         	<input type="text" class="form-control validation-rule-empty" id="tutor_id" name="tutor_id">
-                                     	 </div>
-                                     </div>
-                                     <div class="radio-group required">
-                                     	<div class="titul_radio">Tipo de usuario</div>
-                                        <div class="cont_radio">
-                                            <input type="radio" checked="checked" value="1" id="radiosalumno" name="user_type">
-                                            <label class="radio-inline" for="radiosalumno"><span class="hide">Alumno</span></label>
-                                            <span>Alumno</span> 
-                                            <input type="radio" value="2" id="radiosprofesor" name="user_type">
-                                            <label class="radio-inline" for="radiosprofesor"><span class="hide">Profesor</span></label>
-                                            <span>Profesor</span>
-                                        </div>   
-                                     </div>
                                      <div class="form-group required">
-                                         <label for="username">Nombre de usuario</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="username">
+                                         <label for="asunto">Asunto</label>
+                                         <textarea class="form-control validation-rule-empty" id="asunto" name="asunto" ></textarea>
                                      </div>
-                                     <div class="form-group required">
-                                         <label for="password">Contraseña</label>
-                                         <input type="password" class="form-control validation-rule-password init_password" id="password" name="password" data-error-msg="Error contraseña">
-                                     </div>
-                                     <div class="form-group required">
-                                         <label for="password_confirm">Confirmar contraseña</label>
-                                         <input type="password" class="form-control validation-rule-password repeat_password" id="password_confirm" name="password_confirm" data-error-msg="Error contraseña" >
-                                     </div>
-                                     <span class="ind_password">La contraseña ha de ser de un mínimo de 6 caracteres y un máximo de 12</span>
-                                     <h4>Datos del centro</h4>	
-                                     <div class="form-group required">
-                                         <label for="center_name">Nombre</label>
-                                         <input type="text" class="form-control validation-rule-empty" id="center_name" name="center_name" >
-                                     </div> 
                                      <div class="group_checkbox">
                                          <div class="checkbox"><input id="legal" name="legal" class="validation-rule-checkbox" data-error-msg="Debe aceptar política de privacidad." type="checkbox"><label for="legal"></label><p><span>He leído y acepto la </span> <a href="#" title="Privacy Policy">Política de privacidad</a>.</p></div>
                                          <div class="checkbox"><input id="no_subscription" name="no_subscription" type="checkbox"><label for="no_subscription"></label><p><span>No deseo estar informado sobre nuevas promociones, acontecimientos de interés e información de Cambridge University Press.</span></p></div>
@@ -178,14 +118,6 @@
                                      <div class="errores"></div>
                                      <div class="submit_group"><input type="submit"  value="Enviar"></div>
                                 </form>
-                            </div>
-                            <div class="info_box_registro">
-                            	<div class="box_bg_txt">
-                                    <div class="inside_box_bg_txt">
-                                        <p>¿Necesitas ayuda? Contacta con nosotros y te ayudamos<br/><a href="#">Contacto</a></p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
               	</div>

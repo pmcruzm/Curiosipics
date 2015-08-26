@@ -245,6 +245,60 @@ jQuery(document).ready(function(){
 		}
 	});
 	
+	//Enviar formulario de nueva contraseña
+	jQuery(document).on("submit","#new-password-form", function(e) {
+		if(send_form==0){
+			send_form=1;
+			//Limpiamos errores si no es la primera vez
+			jQuery(".errores").html("");
+			//Llamamos a la función de validar (id formulario y contenedor errores)
+			var result=validate_form('#new-password-form');
+			console.log(result);
+			if(result==1){
+				e.preventDefault();
+				send_form=0;
+			}
+		}
+	});
+	
+	//Enviar formulario de contacto
+	jQuery(document).on("submit","#contacto-form", function(e) {
+		if(send_form==0){
+			send_form=1;
+			//Limpiamos errores si no es la primera vez
+			jQuery(".errores").html("");
+			//Llamamos a la función de validar (id formulario y contenedor errores)
+			var result=validate_form('#contacto-form');
+			console.log(result);
+			if(result==1){
+				e.preventDefault();
+				send_form=0;
+			}
+		}
+	});
+	
+	//Enviar formulario de votar pic
+	jQuery(document).on("submit","#form-votar-pic", function(e) {
+		if(send_form==0){
+			send_form=1;
+			//Limpiamos errores si no es la primera vez
+			jQuery(".errores").html("");
+			//Llamamos a la función de validar (id formulario y contenedor errores)
+			var result=0;
+			//Busca todos los campos requeridos de mail
+			var res_campo=jQuery('#mail_pic').val();
+			if((res_campo=="") || (res_campo!="" && validateEmail(res_campo)==false) ){
+				result=1;
+				jQuery('#mail_pic').addClass('error').val('');
+			}
+			
+			if(result==1){
+				e.preventDefault();
+				send_form=0;
+			}
+		}
+	});
+	
 	//Eliminar marco de error cuando se hace click sobre un input con error
 	jQuery(document).on('focus','form input,form textarea,form input[type=checkbox]',function(event){
 		event.preventDefault();
@@ -355,6 +409,22 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		jQuery('.over_search').fadeOut(600,function(){
 			jQuery('#form-search-pic input[type=text]').val("");
+		});
+		
+	});
+	
+	//Mostrar modal votar pic
+	jQuery(document).on('click','.btn_votar',function(e){
+		e.preventDefault();
+		jQuery('.box_pop_votar').fadeIn(600,function(){});
+		
+	});
+	
+	//Cerrar modal votar pic
+	jQuery(document).on('click','.close_votar',function(e){
+		e.preventDefault();
+		jQuery('.box_pop_votar').fadeOut(600,function(){
+			jQuery('#form-votar-pic input[type=email]').val("").removeClass('error');
 		});
 		
 	});
@@ -668,18 +738,20 @@ function meetsMinimumAge(birthDate, minAge) {
 //Funcion para validar genéricamnete un formulario
 function validate_form(id){
 		//Comprobar el Captcha 
-		grecaptcha.reset();
-		jQuery.ajax({
-          type: "POST",   
-          url: 'http://pedroxmujica.com/recaptcha/api.php',   
-          data: {"response": grecaptcha.getResponse()},
-          async: false,
-          dataType: 'json',
-          success : function(data){ 
-              alert("Am I a human? " + data.success);
-          },
-		  error: function(data){console.log(data);}
-      });
+		if(jQuery('.maquetacion_captcha').is(":visible")){
+			grecaptcha.reset();
+			jQuery.ajax({
+			  type: "POST",   
+			  url: 'http://pedroxmujica.com/recaptcha/api.php',   
+			  data: {"response": grecaptcha.getResponse()},
+			  async: false,
+			  dataType: 'json',
+			  success : function(data){ 
+				  alert("Am I a human? " + data.success);
+			  },
+			  error: function(data){console.log(data);}
+		  });
+		}
 		//console.log('captcha response: ' + grecaptcha.getResponse()); 
 	
 		//Busca todos los campos requeridos de texto
@@ -809,10 +881,9 @@ function validate_form(id){
 					}
 				}
 			}
-
-
+			
 			//Error general campos vacíos
-			if(error_empty==1 || error_checkbox_centre==1 || error_checkbox_teacher==1 || error_course_book==1){
+			if(error_empty==1){
 				var message=jQuery(id).attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}
@@ -921,6 +992,7 @@ function show_pic(id_pic){
 						if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
 						if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
 					}
+					jQuery('<div class="box_pop_votar" style="display:none;"><div class="pop_votar"><h3>Votar Pic</h3><p>Para votar debes introducir una dirección de correo electrónico y confirmar tu voto en el email que te enviaremos.</p><form action="#" method="get" novalidate role="form" id="form-votar-pic"><label for="search_term">Votar</label><input type="email" autocorrect="off"  id="mail_pic" name="mail_pic" placeholder="Introduce tu email"><input type="submit" class="" value="Enviar"></form><a href="#" class="close_votar">Cerrar</a></div>').insertAfter('.inside_detalle_pic');
 				  }
 			  });
 				//Ajustamos alturas
@@ -964,6 +1036,7 @@ function show_pic(id_pic){
 						if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
 						if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
 					}
+					jQuery('<div class="box_pop_votar" style="display:none;"><div class="pop_votar"><h3>Votar Pic</h3><p>Para votar debes introducir una dirección de correo electrónico y confirmar tu voto en el email que te enviaremos.</p><form action="#" method="get" novalidate role="form" id="form-votar-pic"><label for="search_term">Votar</label><input type="email" autocorrect="off"  id="mail_pic" name="mail_pic" placeholder="Introduce tu email"><input type="submit" class="" value="Enviar"></form><a href="#" class="close_votar">Cerrar</a></div>').insertAfter('.inside_detalle_pic');
 				  }
 		  });
 			//Ajustamos alturas
