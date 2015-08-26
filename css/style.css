@@ -268,7 +268,8 @@ PROPIEDADES COMO PARTICIPAR
 /*************************************
 PROPIEDADES PREMIOS
 *************************************/
-#box_premios{background:#f9f9f9 url(../img/bg_premios.gif) 0px bottom repeat-x;padding-top:60px;padding-bottom:150px;/*min-height:870px;*/}
+#box_premios{background:#f9f9f9;/*min-height:870px;*/}
+#box_premios .container{background:url(../img/bg_premios.gif) 0px bottom repeat-x;padding-top:60px;padding-bottom:150px;}
 #box_premios h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_premios h3:after{content:'';display:block;margin-bottom:135px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
 
@@ -283,7 +284,8 @@ PROPIEDADES PREMIOS
 /*************************************
 PROPIEDADES EL JURADO
 *************************************/
-#box_jurado{background:#f05456 url(../img/bg_jurado.gif) bottom center repeat-x;/*min-height:1055px;*/padding-top:60px;padding-bottom:150px;}
+#box_jurado{background:#f05456}
+#box_jurado .container{background:url(../img/bg_jurado.gif) bottom center no-repeat;/*min-height:1055px;*/padding-top:60px;padding-bottom:150px;}
 #box_jurado h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_jurado h3:after{content:'';display:block;margin-bottom:45px;background:url(../img/dots_jurado.png) bottom center no-repeat;height:15px;padding-top:20px;}
 
