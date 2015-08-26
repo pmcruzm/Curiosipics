@@ -998,7 +998,6 @@ function show_pic(id_pic){
 						if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
 						if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
 					}
-					jQuery('<div class="box_pop_votar" style="display:none;"><div class="pop_votar"><h3>Votar Pic</h3><p>Para votar debes introducir una dirección de correo electrónico y confirmar tu voto en el email que te enviaremos.</p><form action="#" method="get" novalidate role="form" id="form-votar-pic"><label for="search_term">Votar</label><input type="email" autocorrect="off"  id="mail_pic" name="mail_pic" placeholder="Introduce tu email"><input type="submit" class="" value="Enviar"></form><a href="#" class="close_votar">Cerrar</a></div>').insertAfter('.inside_detalle_pic');
 				  }
 			  });
 			  
@@ -1044,7 +1043,6 @@ function show_pic(id_pic){
 						if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
 						if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
 					}
-					jQuery('<div class="box_pop_votar" style="display:none;"><div class="pop_votar"><h3>Votar Pic</h3><p>Para votar debes introducir una dirección de correo electrónico y confirmar tu voto en el email que te enviaremos.</p><form action="#" method="get" novalidate role="form" id="form-votar-pic"><label for="search_term">Votar</label><input type="email" autocorrect="off"  id="mail_pic" name="mail_pic" placeholder="Introduce tu email"><input type="submit" class="" value="Enviar"></form><a href="#" class="close_votar">Cerrar</a></div>').insertAfter('.inside_detalle_pic');
 				  }
 		  });
 			//Ajustamos alturas
