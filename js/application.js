@@ -111,6 +111,7 @@ jQuery(document).ready(function(){
 		});
 	};
 	
+	//Comprobar altura de las secciones de la home
 	if ( jQuery("#galeria_sup").is(":visible")){
 	  //Obtenemos las alturas de todas las secciones 
 	  top_curiosidades=jQuery('#box_curiosidad').offset().top;
@@ -146,6 +147,15 @@ jQuery(document).ready(function(){
 		jQuery(".img_detalle_pic").height(h_total);	
 		jQuery(".cont_detalle_pic").height(h_total);
 		jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+	}
+	
+	//Si está desplegado cuadro de voto confirmado 
+	if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {	
+		//console.log(jQuery(".header_vote").outerHeight());
+		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
+		jQuery(".img_detalle_pic_vote").height(h_total);	
+		jQuery(".cont_detalle_pic_vote").height(h_total);
+		jQuery(".img_big_detalle_vote").height((jQuery(".img_detalle_pic_vote").outerHeight()));
 	}
 	
 	//Solo ejecutar si es visible la galería
@@ -553,14 +563,23 @@ jQuery(document).ready(function(){
 		
 		//Si detalle está desplegado calculamos altura de los bloques
 		if ( jQuery(".detalle_pic").is(":visible") ) {	
-	    //console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
-		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
-		//console.log('Total:'+h_total);
-		jQuery(".detalle_pic").height(h_total);	
-		jQuery(".img_detalle_pic").height(h_total);	
-		jQuery(".cont_detalle_pic").height(h_total);
-		jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
-	}
+			//console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
+			var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
+			//console.log('Total:'+h_total);
+			jQuery(".detalle_pic").height(h_total);	
+			jQuery(".img_detalle_pic").height(h_total);	
+			jQuery(".cont_detalle_pic").height(h_total);
+			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+		}
+		
+		//Si está desplegado cuadro de voto confirmado 
+		if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {	
+			//console.log(jQuery(".header_vote").outerHeight());
+			var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
+			jQuery(".img_detalle_pic_vote").height(h_total);	
+			jQuery(".cont_detalle_pic_vote").height(h_total);
+			jQuery(".img_big_detalle_vote").height((jQuery(".img_detalle_pic_vote").outerHeight()));
+		}
 	
 	});
 

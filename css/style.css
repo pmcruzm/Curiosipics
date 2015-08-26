@@ -546,13 +546,13 @@ PROPIEDADES VOTO CONFIRMADO
 
 .inside_detalle_pic_vote{overflow:hidden;width:60%;margin:0 auto;}
 .inside_detalle_pic_vote .rrss_vote_detalle{height:50px;}
-.header_vote{clear:both;margin-bottom:60px;}
+.header_vote{clear:both;padding-bottom:60px;}
 .header_vote h3{font-size:40px;line-height:52px;color:#f1e87c;font-family:'santa_fe', Helvetica, sans-serif;text-align:center;}
-.header_vote h3:before{content:'';display:block;width:100%;height:37px;background:url(../img/star_big.png) top center no-repeat;margin-top:20px;margin-bottom:20px;}
+.header_vote h3:before{content:'';display:block;width:100%;height:37px;background:url(../img/star_big.png) top center no-repeat;padding-bottom:20px;}
 
 .img_detalle_pic_vote{width:60%;float:left;position:relative;}
-.img_big_detalle_vote{width:90%;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center; background-repeat:no-repeat;height:300px;}
-.cont_detalle_pic_vote{width:40%;float:left;box-sizing:border-box;padding-left:30px;position:relative;height:300px;}
+.img_big_detalle_vote{width:90%;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center; background-repeat:no-repeat;}
+.cont_detalle_pic_vote{width:40%;float:left;box-sizing:border-box;padding-left:30px;position:relative;}
 .cont_detalle_pic_vote h4{color:#61bde9;font-size:28px;font-family:'santa_fe', Helvetica, sans-serif;padding-top:10px;}
 .cont_detalle_pic_vote .nombre_persona{color:#61bde9;font-size:18px;margin-bottom:30px;}
 .cont_detalle_pic_vote h5{font-size:28px;color:#ffffff;line-height:36px;margin-bottom:10px;}
