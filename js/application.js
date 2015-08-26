@@ -673,9 +673,9 @@ function control_scroll(e){
 		  }
 		  
 		   //Animación de decoración de la sección participar 
-		  if(scrollAmount>(top_participar-(3*h_win/4))){
+		  if(scrollAmount>(top_participar-(h_win+100))){
 			  //console.log(scrollAmount+'--'+(top_participar-(h_win/2)));
-			 posY=(scrollAmount-(top_participar-(3*h_win/4)))*0.2;
+			 posY=(scrollAmount-(top_participar-(h_win+100)))*0.15;
 			 //console.log(posY);
 			jQuery('#box_participar .container').css({ backgroundPosition:"50% "+(-posY)+"px" });
 		  }
