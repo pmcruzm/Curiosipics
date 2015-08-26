@@ -651,7 +651,7 @@ function control_scroll(e){
 			jQuery('.deco_2_2').stop().clearQueue().animate({ top: 145-(scrollAmount * speedA)}, 0);
 			jQuery('.deco_2_3').stop().clearQueue().animate({ top: 261-(scrollAmount * speedE)}, 0);
 			jQuery('.deco_2_4').stop().clearQueue().animate({ top: 0-(scrollAmount * speedB)}, 0);
-			jQuery('.deco_2_5').stop().clearQueue().animate({ bottom: 0+(scrollAmount * speedC)}, 0);
+			jQuery('.deco_2_5').stop().clearQueue().animate({ bottom: 0+(scrollAmount * speedF)}, 0);
 			
 			jQuery('.deco_3_1').stop().clearQueue().animate({ bottom: 0+(scrollAmount * speedA)}, 0);
 			jQuery('.deco_3_2').stop().clearQueue().animate({ bottom: 150+(scrollAmount * speedB)}, 0);
