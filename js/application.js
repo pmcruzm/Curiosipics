@@ -435,7 +435,7 @@ jQuery(document).ready(function(){
 	});
 	
 	//Cerrar modal votar pic
-	jQuery(document).on('click','.close_votar',function(e){
+	jQuery(document).on('click','.close_votar,.bg_pop_votar',function(e){
 		e.preventDefault();
 		jQuery('.box_pop_votar').fadeOut(600,function(){
 			jQuery('#form-votar-pic input[type=email]').val("").removeClass('error');
@@ -689,9 +689,9 @@ function control_scroll(e){
 		  
 		   //Animación de decoración de la sección premios 
 		  if(scrollAmount>(top_jurado-(3*h_win/4))){
-			 posXj=-(scrollAmount-(top_jurado-(3*h_win/4)))*0.3;
+			 posXj=-(scrollAmount-(top_jurado-(3*h_win/4)))*0.1;
 			 //console.log(posY);
-			jQuery('#box_jurado .container').css({ backgroundPosition: posX+"px bottom" });
+			jQuery('#box_jurado .container').css({ backgroundPosition: "right "+posXj+"px" });
 		  }
 		  
 		  //Animación flecha home
