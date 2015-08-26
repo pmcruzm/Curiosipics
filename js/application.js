@@ -12,7 +12,7 @@ VARIABLES
 var slider_l_1_1,slider_l_1_2,slider_l_1_3_1,slider_l_1_3_2,slider_l_2_1,slider_l_2_2,slider_l_2_3,slider_l_2_4;
 var slider_r_1_1,slider_r_1_2,slider_r_1_3,slider_r_2_1,slider_l_2_2,slider_r_2_3_1,slider_r_2_3_2,slider_last_pics,slider_jurado;
 var speedA, speedB, speedC, speedD, speedE;
-var posX,intervalo,posY;
+var posX,intervalo,posY,posXj;
 var top_curiosidades,top_participar,top_premios,top_jurado;
 var send_form=0;
 var h_win,w_win;
@@ -43,6 +43,7 @@ jQuery(document).ready(function(){
 	
 	//Reinicio de variables
 	posX=0; 
+	posXj=0; 
 	posY=0;
     speedA = 1.3;
     speedB = 0.8;
@@ -661,14 +662,14 @@ function control_scroll(e){
 		  }
 		  
 		  //Animación de decoración de la sección curiosidades 
-		  if(scrollAmount>(top_curiosidades-parseInt(3*h_win/4))){
-			  jQuery('.deco_4_1').stop().clearQueue().animate({ top: 60-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedE)}, 0);
-			  jQuery('.deco_4_2').stop().clearQueue().animate({ bottom: 7+((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedA)}, 0);
-			  jQuery('.deco_4_3').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedD)}, 0);
+		  if(scrollAmount>(top_curiosidades-parseInt(5*h_win/8))){
+			  jQuery('.deco_4_1').stop().clearQueue().animate({ top: 60-((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedF)}, 0);
+			  jQuery('.deco_4_2').stop().clearQueue().animate({ bottom: 7+((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedB)}, 0);
+			  jQuery('.deco_4_3').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedD)}, 0);
 			  
-			 jQuery('.deco_5_1').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedD)}, 0);
-			  jQuery('.deco_5_2').stop().clearQueue().animate({ top: 100-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedB)}, 0);
-			  jQuery('.deco_5_3').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(3*h_win/4))) * speedA)}, 0);
+			 jQuery('.deco_5_1').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedD)}, 0);
+			  jQuery('.deco_5_2').stop().clearQueue().animate({ top: 100-((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedB)}, 0);
+			  jQuery('.deco_5_3').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedF)}, 0);
 		  }
 		  
 		   //Animación de decoración de la sección participar 
@@ -683,6 +684,13 @@ function control_scroll(e){
 			 posX=-(scrollAmount-(top_premios-h_win));
 			 //console.log(posY);
 			jQuery('#box_premios').css({ backgroundPosition: posX+"px bottom" });
+		  }
+		  
+		   //Animación de decoración de la sección premios 
+		  if(scrollAmount>(top_jurado-h_win)){
+			 posXj=-(scrollAmount-(top_jurado-h_win));
+			 //console.log(posY);
+			jQuery('#box_jurado').css({ backgroundPosition: posX+"px bottom" });
 		  }
 		  
 		  //Animación flecha home
