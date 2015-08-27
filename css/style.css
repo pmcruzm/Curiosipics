@@ -78,7 +78,7 @@ PROPIEDADES HEADER
 #header .container{position:relative;}
 
 #top_header{position:absolute;top:0;left:0;z-index:100;width:100%;}
-#top_header h1 a{display:block;width:149px;height:44px;text-indent:-99999px;background:url(../img/logo_cambridge.jpg) top left no-repeat;position:absolute;top:0;left:0;}
+#top_header h1 a{display:block;width:149px;height:44px;text-indent:-99999px;background:url(../img/logo_cambridge.jpg) top left no-repeat;position:absolute;top:0;left:0;background-size:149px 44px;}
 
 #top_header .right_top_header{position:absolute;top:15px;right:0;overflow:hidden;}
 .right_top_header .navigation_menu{float:right;}
@@ -191,7 +191,7 @@ PROPIEDADES HEADER
 PROPIEDADES GALERÍ SUPERIOR HOME
 *************************************/
 #gallery_home{position:relative;}
-#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/logo_concurso.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/rombo_logo_grande.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;background-size:433px 432px;/*background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);*/}
 
 #galeria_sup{height:795px;overflow:hidden;position:relative;}
 #galeria_sup:after{content:'';display:block;height:795px;background:rgba(0,0,0,0.5);position:absolute;top:0;width:100%;z-index:50;}
@@ -232,7 +232,7 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 #box_curiosidad .container{position:relative;}
 .inside_curiosidad{width:60%;margin:0 auto;padding-top:100px;padding-bottom:40px;}
 #box_curiosidad h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
-#box_curiosidad h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
+#box_curiosidad h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:92px 16px;}
 #box_curiosidad h4{color:#484647;font-size:24px;text-align:center;margin-bottom:20px;line-height:36px;font-family:'cabinsemibold', Helvetica, sans-serif;}
 #box_curiosidad p{color:#484647;text-align:center;font-size:18px;margin-bottom:20px;line-height:24px;font-family:'cabinregular', Helvetica, sans-serif;}
 #box_curiosidad p a{font-family:'cabinsemibold', Helvetica, sans-serif;color:#484647;}
@@ -245,7 +245,7 @@ PROPIEDADES COMO PARTICIPAR
 #box_participar .container{position:relative;height:820px;background:url(../img/bg_como.gif) 50% 0px no-repeat;overflow:hidden;}
 
 #box_participar h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;position:absolute;top:60px;width:100%;font-family:'santa_fe', Helvetica, sans-serif;}
-#box_participar h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
+#box_participar h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:92px 16px;}
 #box_participar h4{font-size:24px;position:absolute;bottom:180px;color:#ffffff;text-align:center;width:100%;}
 .txt_legal{font-size:14px;position:absolute;bottom:30px;color:#ffffff;width:100%;text-align:center;}
 .btn_participar{color:#ffffff;font-size:16px;border:2px solid #ffffff;display:block;height:50px;width:270px;position:absolute;bottom:105px;line-height:50px;text-align:center;left:50%;border-radius:5px;margin-left:5px;}
@@ -272,7 +272,7 @@ PROPIEDADES PREMIOS
 #box_premios{background:#f9f9f9;/*min-height:870px;*/}
 #box_premios .container{background:url(../img/bg_premios.gif) 0px bottom repeat-x;padding-top:60px;padding-bottom:150px;}
 #box_premios h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
-#box_premios h3:after{content:'';display:block;margin-bottom:135px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
+#box_premios h3:after{content:'';display:block;margin-bottom:135px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:92px 16px;}
 
 .premios_alumnos,.premios_profesores{width:40%;float:left;padding-left:5%;padding-right:5%;}
 .box_jurado,.box_publico{width:45%;float:left;padding-left:2.5%;padding-right:2.5%;}
@@ -306,7 +306,7 @@ PROPIEDADES REGISTRO
 *************************************/
 #box_registro{width:60%;margin:0 auto;padding-top:40px;padding-bottom:150px;}
 #box_registro h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
-#box_registro h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;}
+#box_registro h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;background-size:92px 16px;}
 
 .form_box_registro{float:left;width:70%;}
 
@@ -368,7 +368,7 @@ PROPIEDADES MIS PICS
 ***********************/
 #box_mis_pics{padding-top:40px;}
 #box_mis_pics h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
-#box_mis_pics h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;}
+#box_mis_pics h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;background-size:92px 16px;}
 #box_mis_pics h4{color:#61bde9;font-size:24px;line-height:32px;text-align:center;margin-bottom:15px;}
 
 .box_new_pic{background:#ffffff;padding-top:40px;padding-bottom:70px;margin-bottom:30px;}
@@ -506,7 +506,7 @@ PROPIEDADES NEW PASSWORD
 ***************************/
 #box_new_password{width:60%;margin:0 auto;padding-top:40px;padding-bottom:250px;}
 #box_new_password h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
-#box_new_password h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;}
+#box_new_password h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;background-size:92px 16px;}
 
 .form_box_new_password{width:60%;margin:0 auto;}
 
@@ -524,9 +524,9 @@ PROPIEDADES CONTACTO
 #contacto-form{}
 .form-group{overflow:hidden;margin-bottom:10px;}
 #contacto-form .form-group label{display:block;text-align:right;width:20%;float:left;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:17px;}
-#contacto-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
-#contacto-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
-#contacto-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
+#contacto-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
+#contacto-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
+#contacto-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
 
 #contacto-form textarea{border:none;display:block;width: 65%;box-sizing:border-box;padding:15px;height:300px;font-size:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
 
