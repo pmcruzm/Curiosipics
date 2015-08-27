@@ -843,6 +843,17 @@ MEDIA QUERIES
 
 @media screen and (max-width: 480px) {
 	#gallery_home h2.logo_gall{height:302px;width:303px;}
+	
+	#contacto-form .form-group label{float:inherit;width:100%;text-align:left;}
+	#contacto-form .form-group input[type="text"]{width:100%;}
+	#contacto-form .form-group input[type="email"]{width:100%;}
+	#contacto-form textarea{width:100%;}
+	#contacto-form .checkbox{padding-left:0;}
+	#contacto-form .maquetacion_captcha{padding-left:0;}
+	#contacto-form .submit_group{padding-left:0;}
+	.submit_group input{display:block;margin:0 auto;}
+	#contacto-form .checkbox p{width:100%;}
+	.maquetacion_captcha div{margin:0 auto;}
 }
 
 @media screen and (max-width: 320px) {
