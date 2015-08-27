@@ -755,7 +755,7 @@ MEDIA QUERIES
 @media screen and (max-width: 1210px) {
 	/*.container{max-width:1024px;}*/
 	#header.header_normal .right_top_header .user_menu{position:absolute;top:60px;right:0;float:inherit;}
-	#header.header_normal .right_top_header .navigation_menu{width:260px;}
+	#header.header_normal .right_top_header .navigation_menu{}
 	#header.header_normal #top_header .right_top_header{overflow:auto;height:100px;width:240px;}
 	#header.header_normal #box_login{top:130px;}
 	
@@ -769,6 +769,7 @@ MEDIA QUERIES
 	.#box_jurado h4{width:90%;}
 	#box_jurado .intro_jurado{width:75%;}
 	.box_img_small{width:25%;}
+	#box_registro{width:80%;}
 }
 
 @media screen and (max-width: 815px) {	
@@ -781,6 +782,7 @@ MEDIA QUERIES
 @media screen and (max-width: 768px) {	
 	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
 	.box_img_small{width:33.3%;}
+	
 }
 
 @media screen and (max-width: 640px) {
