@@ -522,11 +522,15 @@ jQuery(document).ready(function(){
 					error_big_14=1;
 					//Mostramos el campo de tutor legal
 					if(jQuery('.tutor_datos').is(":visible")){
-						 jQuery('.tutor_datos').show();
+						 jQuery('.tutor_datos').show("slow",function(){
+							jQuery('body').stop().clearQueue().scrollTo(jQuery('.tutor_datos'),600,{axis:'y',easing:'easeInOutExpo',offset:-20});
+						});
 					}else{
 						var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
 						jQuery('.errores').append('<p>'+message+'</p>');	
-						jQuery('.tutor_datos').show();
+						jQuery('.tutor_datos').show("slow",function(){
+							jQuery('body').stop().clearQueue().scrollTo(jQuery('.tutor_datos'),600,{axis:'y',easing:'easeInOutExpo',offset:-20});
+						});
 					}
 				}
 			}
