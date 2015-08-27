@@ -314,8 +314,8 @@ PROPIEDADES REGISTRO
 .info_box_registro{float:left;width:30%;}
 .info_box_registro .box_bg_txt{background:#f1e87c;display:table;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);height:150px;width:150px;margin:0 auto;margin-top:25px;}
 .info_box_registro .inside_box_bg_txt{width:100%;text-align:center;display:table-cell;vertical-align:middle;height:100%;}
-.info_box_registro .inside_box_bg_txt p{width:100%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:16px;line-height:21px;color:#373737;}
-.info_box_registro .inside_box_bg_txt p a{color:#373737;display:block;height:31px;width:120px;margin:0 auto;border:2px solid #373737;line-height:31px;border-radius:5px;margin-top:10px;}
+.info_box_registro .inside_box_bg_txt p{width:100%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:16px;line-height:21px;color:#373737;width:102%;}
+.info_box_registro .inside_box_bg_txt a{color:#373737;display:block;height:31px;width:120px;margin:0 auto;border:2px solid #373737;line-height:31px;border-radius:5px;margin-top:10px;margin:0 auto;}
 
 .form_box_registro{}
 .form_box_registro h4{color:#61bde9;font-size:24px;line-height:32px;text-align:center;margin-bottom:20px;padding-left:25%;}
