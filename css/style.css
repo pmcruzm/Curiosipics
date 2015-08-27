@@ -752,8 +752,12 @@ MEDIA QUERIES
 	.box_jurado h5, .box_publico h5{font-size:19px;}
 }
  
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1210px) {
 	/*.container{max-width:1024px;}*/
+	#header.header_normal .right_top_header .user_menu{position:absolute;top:60px;right:0;float:inherit;}
+	#header.header_normal .right_top_header .navigation_menu{}
+	#header.header_normal #top_header .right_top_header{overflow:auto;height:100px;width:240px;}
+	header.header_normal #box_login{top:130px;}
 	
 }
 
