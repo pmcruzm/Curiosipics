@@ -808,9 +808,15 @@ MEDIA QUERIES
 @media screen and (max-width: 768px) {	
 	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
 	.box_img_small{width:33.3%;}
-	
 	#box_registro{width:90%;}
 }
+
+@media screen and (max-width: 700px) {
+	#header.header_normal .right_top_header.mobile_opc{background:#ffffff;} 
+	#header h2.logo_top a{margin-top:44px;}
+	.box_space_top{padding-top:228px;}
+}
+
 
 @media screen and (max-width: 640px) {
 	.inside_curiosidad{width:90%;}
@@ -854,6 +860,10 @@ MEDIA QUERIES
 	.submit_group input{display:block;margin:0 auto;}
 	#contacto-form .checkbox p{width:100%;}
 	.maquetacion_captcha div{margin:0 auto;}
+}
+
+@media screen and (max-width: 397px) {
+	#header h2.logo_top a{width:320px;height:148px;}	
 }
 
 @media screen and (max-width: 320px) {
