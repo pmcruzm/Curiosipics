@@ -808,6 +808,8 @@ MEDIA QUERIES
 	.extend_menu_mob ul li.btn_header a{color:#61bde9 !important;border:2px solid #61bde9 !important;}
 	.extend_menu_mob ul li.btn_header a:hover{color:#ffffff !important;background:#61bde9 !important;}
 	#header.home{position:absolute;}
+	
+	#box_registro{width:90%;}
 }
 
 @media screen and (max-width: 640px) {
