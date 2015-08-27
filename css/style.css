@@ -364,6 +364,10 @@ PROPIEDADES REGISTRO
 .tutor_datos h4{margin-top:20px;}
 .tutor_datos p{padding-left:30%;margin-bottom:25px;}
 
+.info_contact_menores{background:#f0e783;border-radius:10px;box-sizing:border-box;padding:25px;text-align:center;margin-top:30px;display:none;}
+.info_contact_menores p{color: #373737;font-size: 16px;line-height: 21px;margin: 0 auto;}
+.info_contact_menores a{border: 2px solid #373737;border-radius:5px;color:#373737;display:block;height:31px;line-height:31px;margin:0 auto;width:120px;margin-top:20px;}
+
 /**********************
 PROPIEDADES MIS PICS
 ***********************/
@@ -840,9 +844,7 @@ MEDIA QUERIES
 	.titul_radio{width:100%;float:inherit;text-align:left;}
 	.tutor_datos p{padding-left:0;}
 	.cont_radio{width:100%;}
-	.info_contact_menores{background:#f0e783;border-radius:10px;box-sizing:border-box;padding:25px;text-align:center;margin-top:30px;}
-	.info_contact_menores p{color: #373737;font-size: 16px;line-height: 21px;margin: 0 auto;}
-	.info_contact_menores a{border: 2px solid #373737;border-radius:5px;color:#373737;display:block;height:31px;line-height:31px;margin:0 auto;width:120px;margin-top:20px;}
+	.info_contact_menores{display:block;}
 }
 
 
