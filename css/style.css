@@ -772,12 +772,7 @@ MEDIA QUERIES
 	#box_registro{width:80%;}
 }
 
-@media screen and (max-width: 815px) {	
-	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
-	.menu_pie{float:inherit !important;width:100%;margin-left:0 !important;text-align:center;}
-	.right_p_rrss{float:inherit;width:100%;text-align:center;}
-	#top_footer p{display:block;margin-right:0;margin-top:40px;margin-bottom:15px;}
-	
+@media screen and (max-width: 835px) {
 	.desktop_opc{display:none;}
 	.mobile_opc{display:block;}
 	
@@ -803,6 +798,13 @@ MEDIA QUERIES
 	.extend_menu_mob ul li.btn_header a{color:#61bde9 !important;border:2px solid #61bde9 !important;}
 	.extend_menu_mob ul li.btn_header a:hover{color:#ffffff !important;background:#61bde9 !important;}
 	#header.home{position:absolute;}
+}
+
+@media screen and (max-width: 815px) {	
+	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
+	.menu_pie{float:inherit !important;width:100%;margin-left:0 !important;text-align:center;}
+	.right_p_rrss{float:inherit;width:100%;text-align:center;}
+	#top_footer p{display:block;margin-right:0;margin-top:40px;margin-bottom:15px;}
 }
 
 @media screen and (max-width: 768px) {	
