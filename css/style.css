@@ -353,7 +353,7 @@ PROPIEDADES REGISTRO
 #registro-form .checkbox a{color:#484647;text-decoration:underline;}
 
 .submit_group{padding-left:30%;padding-top:40px;}
-.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;background:none !important;font-family:'cabinregular', Helvetica, sans-serif;}
+.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;cursor:pointer;background:none !important;font-family:'cabinregular', Helvetica, sans-serif;}
 
 .errores{color:#f05456;font-size:14px;display:block;padding-left:30%;width:95%;box-sizing:border-box;margin-top:20px;}
 
@@ -505,7 +505,7 @@ PROPIEDADES PICS (TODOS)
 PROPIEDADES NEW PASSWORD
 ***************************/
 #box_new_password{width:60%;margin:0 auto;padding-top:40px;padding-bottom:250px;}
-#box_new_password h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
+#box_new_password h3{color:#61bde9;font-size:60px;text-align:center;line-height:50px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_new_password h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;background-size:92px 16px;}
 
 .form_box_new_password{width:60%;margin:0 auto;}
