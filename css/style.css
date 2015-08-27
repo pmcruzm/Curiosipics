@@ -78,7 +78,7 @@ PROPIEDADES HEADER
 #header .container{position:relative;}
 
 #top_header{position:absolute;top:0;left:0;z-index:100;width:100%;}
-#top_header h1 a{display:block;width:149px;height:44px;text-indent:-99999px;background:url(../img/logo_cambridge.jpg) top left no-repeat;position:absolute;top:0;left:0;background-size:149px 44px;}
+#top_header h1 a{display:block;width:149px;height:44px;text-indent:-99999px;background:url(../img/logo_cambridge.png) top left no-repeat;position:absolute;top:0;left:0;background-size:149px 44px;}
 
 #top_header .right_top_header{position:absolute;top:15px;right:0;overflow:hidden;}
 .right_top_header .navigation_menu{float:right;}
