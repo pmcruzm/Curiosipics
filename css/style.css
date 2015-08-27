@@ -637,6 +637,7 @@ ul.bxslider {margin: 0;padding: 0;}
 .custom-menu:before{content:'h';font-family:'icomoon', Helvetica, sans-serif;font-size:44px;}
 input{-webkit-border-radius:0; border-radius:0;}
 textarea{-webkit-border-radius:0; border-radius:0;}
+input, textarea, select {-webkit-appearance: none;}
 
 
 /**********************************
