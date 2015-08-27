@@ -332,7 +332,7 @@ PROPIEDADES REGISTRO
 #registro-form .form-group input[type=password].error{border:2px solid #f05456;}
 #registro-form .form-group input[type=email].error{border:2px solid #f05456;}
 
-#registro-form span.ind_password{color:#adaaab;font-size:13px;display:block;padding-left:30%;width:95%;text-align:center;box-sizing:border-box;margin-bottom:40px;}
+#registro-form span.ind_password{color:#adaaab;font-size:13px;display:block;padding-left:30%;width:95%;text-align:center;box-sizing:border-box;margin-bottom:40px;line-height:16px;}
 
 .radio-group{overflow:hidden;margin-bottom:3px;margin-top:60px;}
 .titul_radio{display:block;text-align:right;width:30%;float:left;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:18px;}
@@ -767,9 +767,18 @@ MEDIA QUERIES
 	#header.header_normal .right_top_header.desktop_opc .navigation_menu{}
 	#header.header_normal #top_header .right_top_header.desktop_opc{overflow:auto;height:100px;width:240px;}
 	#header.header_normal #box_login{top:130px;}
-	.reg_form{width:90% !important;}
-	.form_box_registro{width:75%;}
-	.info_box_registro{width:25%;}
+	.reg_form{width:95% !important;}
+	.form_box_registro{width:68%;}
+	.info_box_registro{width:30%;}
+	#registro-form .form-group input[type="text"]{width:55%}
+	#registro-form .form-group input[type="email"]{width:55%;}
+	#registro-form .form-group input[type="password"]{width:55%;}
+	#registro-form .form-group label{width:40%;padding-right:20px;}
+	#registro-form .titul_radio{width:40%;padding-right:20px;}
+	#registro-form .cont_radio{width:55%;}
+	#registro-form span.ind_password{padding-left:40%;}
+	.tutor_datos h4{padding-left:40%;}
+	.tutor_datos p{padding-left:40%;}
 	
 }
 
