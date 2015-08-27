@@ -304,14 +304,14 @@ PROPIEDADES EL JURADO
 /*************************************
 PROPIEDADES REGISTRO
 *************************************/
-#box_registro{width:80%;margin:0 auto;padding-top:40px;padding-bottom:150px;}
+#box_registro{width:70%;margin:0 auto;padding-top:40px;padding-bottom:150px;}
 #box_registro h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_registro h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;background-size:92px 16px;}
 
-.form_box_registro{float:left;width:70%;}
+.form_box_registro{float:left;width:80%;}
 
 
-.info_box_registro{float:left;width:30%;}
+.info_box_registro{float:left;width:20%;}
 .info_box_registro .box_bg_txt{background:#f1e87c;display:table;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);height:150px;width:150px;margin:0 auto;margin-top:25px;}
 .info_box_registro .inside_box_bg_txt{width:100%;text-align:center;display:table-cell;vertical-align:middle;height:100%;}
 .info_box_registro .inside_box_bg_txt p{width:100%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:16px;line-height:21px;color:#373737;width:102%;}
@@ -759,6 +759,7 @@ MEDIA QUERIES
 	
 	.premios_alumnos,.premios_profesores{width:45%;float:left;padding-left:2.5%;padding-right:2.5%;}	
 	.box_jurado h5, .box_publico h5{font-size:19px;}
+	/*.reg_form{width:85% !important;}*/
 }
  
 @media screen and (max-width: 1220px) {
@@ -767,18 +768,19 @@ MEDIA QUERIES
 	#header.header_normal .right_top_header.desktop_opc .navigation_menu{}
 	#header.header_normal #top_header .right_top_header.desktop_opc{overflow:auto;height:100px;width:240px;}
 	#header.header_normal #box_login{top:130px;}
-	.reg_form{width:95% !important;}
-	.form_box_registro{width:68%;}
-	.info_box_registro{width:30%;}
-	#registro-form .form-group input[type="text"]{width:55%}
-	#registro-form .form-group input[type="email"]{width:55%;}
-	#registro-form .form-group input[type="password"]{width:55%;}
-	#registro-form .form-group label{width:40%;padding-right:20px;}
-	#registro-form .titul_radio{width:40%;padding-right:20px;}
-	#registro-form .cont_radio{width:55%;}
-	#registro-form span.ind_password{padding-left:40%;}
-	.tutor_datos h4{padding-left:40%;}
-	.tutor_datos p{padding-left:40%;}
+	.reg_form{width:85% !important;}
+	.form_box_registro{width:75%;}
+	.info_box_registro{width:25%;}
+	#registro-form .form-group input[type="text"]{width:70%}
+	#registro-form .form-group input[type="email"]{width:70%;}
+	#registro-form .form-group input[type="password"]{width:70%;}
+	#registro-form .form-group label{width:30%;padding-right:20px;}
+	#registro-form .titul_radio{width:30%;padding-right:20px;}
+	#registro-form .cont_radio{width:70%;}
+	#registro-form span.ind_password{padding-left:30%;}
+	.tutor_datos h4{padding-left:30%;}
+	.tutor_datos p{padding-left:30%;}
+	.form_box_registro h4{padding-left:30%;}
 	
 }
 
@@ -793,6 +795,23 @@ MEDIA QUERIES
 	#box_registro{width:80%;}
 	#box_new_password{width:80%;}
 	.form_box_new_password{width:70%;}
+}
+
+@media screen and (max-width: 950px) {	
+	.reg_form{width:85% !important;}
+	.form_box_registro{width:70%;}
+	.info_box_registro{width:30%;}
+	
+	#registro-form .form-group input[type="text"]{width:60%}
+	#registro-form .form-group input[type="email"]{width:60%;}
+	#registro-form .form-group input[type="password"]{width:60%;}
+	#registro-form .form-group label{width:40%;padding-right:20px;}
+	#registro-form .titul_radio{width:40%;padding-right:20px;}
+	#registro-form .cont_radio{width:60%;}
+	#registro-form span.ind_password{padding-left:40%;}
+	.tutor_datos h4{padding-left:40%;}
+	.tutor_datos p{padding-left:40%;}
+	.form_box_registro h4{padding-left:40%;}
 }
 
 @media screen and (max-width: 815px) {	
@@ -834,6 +853,21 @@ MEDIA QUERIES
 	.box_img_small{width:33.3%;}
 	#box_registro{width:90%;}
 	#box_new_password{width:90%;}
+	.reg_form{width:90% !important;}
+	.form_box_registro{width:68%;}
+	.info_box_registro{width:32%;}
+	.cont_radio span{margin-right:9px;}
+	
+	#registro-form .form-group input[type="text"]{width:57%}
+	#registro-form .form-group input[type="email"]{width:57%;}
+	#registro-form .form-group input[type="password"]{width:57%;}
+	#registro-form .form-group label{width:42%;padding-right:20px;}
+	#registro-form .titul_radio{width:42%;padding-right:20px;}
+	#registro-form .cont_radio{width:57%;}
+	#registro-form span.ind_password{padding-left:42%;}
+	.tutor_datos h4{padding-left:42%;}
+	.tutor_datos p{padding-left:42%;}
+	.form_box_registro h4{padding-left:42%;}
 }
 
 @media screen and (max-width: 700px) {
