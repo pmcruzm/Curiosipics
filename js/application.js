@@ -717,9 +717,9 @@ function control_scroll(e){
 	if ( jQuery("#registro-form").is(":visible")){
 		top_registro=jQuery('#registro-form').offset().top;
 		var center_tope=jQuery('#center_name').offset().top;
-		if(scrollAmount>top_registro+50){
+		if(scrollAmount>top_registro){
 			if(scrollAmount<center_tope){
-				jQuery('.mov_box_bg_txt').stop().clearQueue().animate({ top: 0+((scrollAmount-top_registro)*speedE)}, 0);
+				jQuery('.mov_box_bg_txt').stop().clearQueue().animate({ top: 50+((scrollAmount-top_registro)*speedE)}, 0);
 			}
 		}else{
 			jQuery('.mov_box_bg_txt').stop().clearQueue().animate({top:50});
