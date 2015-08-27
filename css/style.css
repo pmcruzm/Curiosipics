@@ -324,9 +324,9 @@ PROPIEDADES REGISTRO
 #registro-form{}
 .form-group{overflow:hidden;margin-bottom:10px;}
 #registro-form .form-group label{display:block;text-align:right;width:30%;float:left;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:17px;}
-#registro-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
-#registro-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
-#registro-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
+#registro-form .form-group input[type=text]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
+#registro-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
+#registro-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
 
 #registro-form .form-group input[type=text].error{border:2px solid #f05456;}
 #registro-form .form-group input[type=password].error{border:2px solid #f05456;}
@@ -342,7 +342,7 @@ PROPIEDADES REGISTRO
 .date-group{overflow:hidden;}
 .date-group label{display:none;}
 .date-group .cont_radio{overflow:hidden;padding-top:0;}
-.date-group input{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;width:50px;margin-right:10px;text-align:center;}
+.date-group input{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;width:50px;margin-right:10px;text-align:center;font-size:16px;font-family:Verdana, Geneva, sans-serif;}
 .date-group .cont_radio span{display:block;float:left;height:40px;line-height:40px;width:20px;color:#484647;font-size:20px;margin-right:0;}
 .date-group input.error{border:2px solid #ff0000;}
 .date-group input:last-child{width:70px;}
@@ -823,6 +823,26 @@ MEDIA QUERIES
 	#header h2.logo_top a{margin-top:44px;}*/
 	.box_space_top{padding-top:228px;}
 	#header h2.logo_top a{background-image:url(../img/logo_menu.png);height:235px;background-size:512px 235px;background-position:center top;width:100%;}
+	.info_box_registro{display:none;}
+	.form_box_registro{width:100%;}
+	#registro-form .checkbox{width:65%;}
+	#registro-form .form-group label{float:inherit;width:100%;text-align:left;}
+	#registro-form .form-group input[type="text"]{width:100%;}
+	#registro-form .form-group input[type="email"]{width:100%;}
+	#registro-form .form-group input[type="password"]{width:100%;}
+	.form_box_registro h4{padding-left:0;}
+	#registro-form .checkbox{padding-left:0;width:100%;}
+	#registro-form .maquetacion_captcha{padding-left:0;}
+	#registro-form .maquetacion_captcha div{margin:0 auto;}
+	#registro-form .submit_group{padding-left:0;} 
+	#registro-form .submit_group input{margin:0 auto;display:block;}
+	#registro-form span.ind_password{width:100%;padding-left:0;}
+	.titul_radio{width:100%;float:inherit;text-align:left;}
+	.tutor_datos p{padding-left:0;}
+	.cont_radio{width:100%;}
+	.info_contact_menores{background:#f0e783;border-radius:10px;box-sizing:border-box;padding:25px;text-align:center;margin-top:30px;}
+	.info_contact_menores p{color: #373737;font-size: 16px;line-height: 21px;margin: 0 auto;}
+	.info_contact_menores a{border: 2px solid #373737;border-radius:5px;color:#373737;display:block;height:31px;line-height:31px;margin:0 auto;width:120px;margin-top:20px;}
 }
 
 
