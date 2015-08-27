@@ -519,7 +519,7 @@ PROPIEDADES NEW PASSWORD
 
 #new-password-form .form-group label{display:block;text-align:left;width:100%;box-sizing:border-box;padding-right:40px;height:40px;line-height:40px;color:#484647;font-size:17px;}
 #new-password-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:100%;float:inherit;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:20px;margin-bottom:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
-#new-password-form span.ind_password{color:#adaaab;font-size:13px;display:block;width:100%;text-align:left;box-sizing:border-box;margin-bottom:20px;}
+#new-password-form span.ind_password{color:#adaaab;font-size:13px;display:block;width:100%;text-align:left;box-sizing:border-box;margin-bottom:20px;line-height:16px;}
 
 #new-password-form .form-group input[type=password].error{border:2px solid #f05456;}
 #new-password-form .submit_group {padding-left:0;padding-top:10px;}
@@ -923,6 +923,13 @@ MEDIA QUERIES
 	.logo_top{z-index:-2;position:relative;}
 	.extend_menu_mob .logged_box{float:inherit;text-align:center;}
 	.extend_menu_mob .logged_box a:before{display:inline-block;float:inherit;vertical-align:bottom;padding-left:0px;background-position:center left;}
+	
+	#contacto-form .form-group label{width:25%;padding-right:20px;}
+	#contacto-form .form-group input[type="text"]{width:65%;}
+	#contacto-form .form-group input[type="email"]{width:65%;}
+	#contacto-form textarea{width:65%;}
+	
+	.form_box_new_password{width:80%;}
 }
 
 @media screen and (max-width: 480px) {
@@ -938,7 +945,8 @@ MEDIA QUERIES
 	.submit_group input{display:block;margin:0 auto;}
 	#contacto-form .checkbox p{width:100%;}
 	.maquetacion_captcha div{margin:0 auto;}
-	.form_box_new_password{width:80%;}
+	
+	.form_box_new_password{width:90%;}
 }
 
 @media screen and (max-width: 397px) {
