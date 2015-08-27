@@ -754,9 +754,9 @@ MEDIA QUERIES
  
 @media screen and (max-width: 1210px) {
 	/*.container{max-width:1024px;}*/
-	#header.header_normal .right_top_header .user_menu{position:absolute;top:60px;right:0;float:inherit;}
-	#header.header_normal .right_top_header .navigation_menu{}
-	#header.header_normal #top_header .right_top_header{overflow:auto;height:100px;width:240px;}
+	#header.header_normal .right_top_header.desktop_opc .user_menu{position:absolute;top:60px;right:0;float:inherit;}
+	#header.header_normal .right_top_header.desktop_opc .navigation_menu{}
+	#header.header_normal #top_header .right_top_header.desktop_opc{overflow:auto;height:100px;width:240px;}
 	#header.header_normal #box_login{top:130px;}
 	
 }
@@ -783,31 +783,12 @@ MEDIA QUERIES
 	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
 	.box_img_small{width:33.3%;}
 	
-}
-
-@media screen and (max-width: 640px) {
-	.inside_curiosidad{width:90%;}
-	.premios_alumnos, .premios_profesores{width:90%;margin-bottom:40px;}
-	.box_jurado, .box_publico{width:100%;padding-left:0;padding-right:0;margin-bottom:40px;}
 	.desktop_opc{display:none;}
 	.mobile_opc{display:block;}
-	#top_footer .menu_pie li{display:block;margin-left:0px;margin-bottom:20px;}
-	.logo_foot{float:inherit;margin-left:0;text-align:center;margin-bottom:20px;}
-	.copy_foot{float:inherit;margin-right:0;text-align:center;}
-	.copy_foot span{display:block;margin-top:10px;}
-	.copy_foot a:before{content:'';padding:0;}
-	.box_jurado_single{width:100%;}
-	.box_jurado_single img{margin:0 auto;margin-bottom:35px;}
-	#box_jurado{padding-bottom:30px;}
-	.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{bottom:-60px;}
-	body{-webkit-text-size-adjust:none}
-	.bx-wrapper .bx-pager.bx-default-pager a{height:16px;width:16px;background:url(../img/radio_jurado.png) 0px 0px no-repeat;}
-	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{background:url(../img/radio_jurado.png) 0px -16px no-repeat;}
-	#box_jurado h4{width:90%;}
-	#box_jurado .intro_jurado{width:85%;}
-	.left_galeria .colum_2,.right_galeria .colum_2{display:none;}
-	.left_galeria .colum_1,.right_galeria .colum_1{width:100% !important;}
-	.galeria_curiosidad{height:125px;}
+	
+	#header.header_normal .right_top_header.mobile_opc{z-index:100;width:100% !important;height:auto !important;overflow:hidden !important;}
+	#header.header_normal #top_header h1 a{z-index:101;}
+	
 	.right_top_header.mobile_opc{min-height:44px;top:0 !important;z-index:-1;width:100%;overflow:hidden;}
 	.right_top_header.mobile_opc.active{background:#ffffff;}
 	.right_top_header.mobile_opc .custom-menu{margin-right:8px !important;}
@@ -827,6 +808,31 @@ MEDIA QUERIES
 	.extend_menu_mob ul li.btn_header a{color:#61bde9 !important;border:2px solid #61bde9 !important;}
 	.extend_menu_mob ul li.btn_header a:hover{color:#ffffff !important;background:#61bde9 !important;}
 	#header.home{position:absolute;}
+}
+
+@media screen and (max-width: 640px) {
+	.inside_curiosidad{width:90%;}
+	.premios_alumnos, .premios_profesores{width:90%;margin-bottom:40px;}
+	.box_jurado, .box_publico{width:100%;padding-left:0;padding-right:0;margin-bottom:40px;}
+
+	#top_footer .menu_pie li{display:block;margin-left:0px;margin-bottom:20px;}
+	.logo_foot{float:inherit;margin-left:0;text-align:center;margin-bottom:20px;}
+	.copy_foot{float:inherit;margin-right:0;text-align:center;}
+	.copy_foot span{display:block;margin-top:10px;}
+	.copy_foot a:before{content:'';padding:0;}
+	.box_jurado_single{width:100%;}
+	.box_jurado_single img{margin:0 auto;margin-bottom:35px;}
+	#box_jurado{padding-bottom:30px;}
+	.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{bottom:-60px;}
+	body{-webkit-text-size-adjust:none}
+	.bx-wrapper .bx-pager.bx-default-pager a{height:16px;width:16px;background:url(../img/radio_jurado.png) 0px 0px no-repeat;}
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{background:url(../img/radio_jurado.png) 0px -16px no-repeat;}
+	#box_jurado h4{width:90%;}
+	#box_jurado .intro_jurado{width:85%;}
+	.left_galeria .colum_2,.right_galeria .colum_2{display:none;}
+	.left_galeria .colum_1,.right_galeria .colum_1{width:100% !important;}
+	.galeria_curiosidad{height:125px;}
+	
 	.box_img_small{width:50%;}
 	.logo_top{z-index:-2;position:relative;}
 	.extend_menu_mob .logged_box{float:inherit;text-align:center;}
