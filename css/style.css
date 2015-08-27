@@ -242,7 +242,7 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 PROPIEDADES COMO PARTICIPAR
 *************************************/
 #box_participar{height:820px;background:#61bde9;}
-#box_participar .container{position:relative;height:820px;background:url(../img/bg_como.gif) 50% 0px no-repeat;overflow:hidden;}
+#box_participar .container{position:relative;height:820px;background:url(../img/bg_como_r.gif) 50% 0px no-repeat;overflow:hidden;background-size:1600px 1153px;}
 
 #box_participar h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;position:absolute;top:60px;width:100%;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_participar h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:92px 16px;}
@@ -270,7 +270,7 @@ PROPIEDADES COMO PARTICIPAR
 PROPIEDADES PREMIOS
 *************************************/
 #box_premios{background:#f9f9f9;/*min-height:870px;*/}
-#box_premios .container{background:url(../img/bg_premios.gif) 0px bottom repeat-x;padding-top:60px;padding-bottom:150px;}
+#box_premios .container{background:url(../img/bg_premios_r.gif) 0px bottom repeat-x;padding-top:60px;padding-bottom:150px;background-size:2340px 873px;}
 #box_premios h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_premios h3:after{content:'';display:block;margin-bottom:135px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:92px 16px;}
 
@@ -286,7 +286,7 @@ PROPIEDADES PREMIOS
 PROPIEDADES EL JURADO
 *************************************/
 #box_jurado{background:#f05456}
-#box_jurado .container{background:url(../img/bg_jurado.gif) right 0px no-repeat;/*min-height:1055px;*/padding-top:60px;padding-bottom:150px;}
+#box_jurado .container{background:url(../img/bg_jurado_r.gif) right 0px no-repeat;/*min-height:1055px;*/padding-top:60px;padding-bottom:150px;background-size:1600px 1200px;}
 #box_jurado h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_jurado h3:after{content:'';display:block;margin-bottom:45px;background:url(../img/dots_jurado.png) bottom center no-repeat;height:15px;padding-top:20px;}
 
