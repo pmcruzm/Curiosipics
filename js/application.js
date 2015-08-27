@@ -383,7 +383,7 @@ jQuery(document).ready(function(){
 		}else{
 			jQuery(this).parents('.mobile_opc').addClass('active');
 			jQuery(".right_top_header.mobile_opc").animate({backgroundColor:"rgba(255,255,255,1)"},600,function(){
-				jQuery('.extend_menu_mob').delay(200).slideDown(600);
+				jQuery('.extend_menu_mob').slideDown(600);
 			});
 		}
 	});
