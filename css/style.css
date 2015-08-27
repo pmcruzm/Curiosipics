@@ -785,7 +785,7 @@ MEDIA QUERIES
 	#header.header_normal #top_header h1 a{z-index:101;}
 	
 	.right_top_header.mobile_opc{min-height:44px;top:0 !important;z-index:-1;width:100%;overflow:hidden;}
-	.right_top_header.mobile_opc.active{background:#ffffff;}
+	/*.right_top_header.mobile_opc.active{background:#ffffff;}*/
 	.right_top_header.mobile_opc .custom-menu{margin-right:8px !important;}
 	.right_top_header.mobile_opc.active .custom-menu:before{content:'c';}
 	.right_top_header.mobile_opc ul.ul_mob_menu{font-size:0px;width:100%;text-align:right;display:block;}
