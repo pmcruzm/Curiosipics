@@ -945,6 +945,7 @@ MEDIA QUERIES
 	.submit_group input{display:block;margin:0 auto;}
 	#contacto-form .checkbox p{width:100%;}
 	.maquetacion_captcha div{margin:0 auto;}
+	#new-password-form span.ind_password{text-align:center;}
 	
 	.form_box_new_password{width:90%;}
 }
