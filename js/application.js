@@ -771,22 +771,6 @@ function meetsMinimumAge(birthDate, minAge) {
 
 //Funcion para validar genéricamnete un formulario
 function validate_form(id){
-		//Comprobar el Captcha 
-		if(jQuery('.maquetacion_captcha').is(":visible")){
-			grecaptcha.reset();
-			jQuery.ajax({
-			  type: "POST",   
-			  url: 'http://pedroxmujica.com/recaptcha/api.php',   
-			  data: {"response": grecaptcha.getResponse()},
-			  async: false,
-			  dataType: 'json',
-			  success : function(data){ 
-				  alert("Am I a human? " + data.success);
-			  },
-			  error: function(data){console.log(data);}
-		  });
-		}
-		//console.log('captcha response: ' + grecaptcha.getResponse()); 
 	
 		//Busca todos los campos requeridos de texto
 			if(jQuery(id).find('.validation-rule-empty').length > 0){
