@@ -377,14 +377,14 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		if(jQuery(this).parents('.mobile_opc').hasClass('active')){
 			jQuery('.extend_menu_mob').slideUp(600,function(){
-				jQuery(this).parents('.mobile_opc').removeClass('active');
-				jQuery(".right_top_header.mobile_opc").animate({backgroundColor:"rgba(0,0,0,0)"},600 );
+				jQuery('.right_top_header.mobile_opc').removeClass('active');
+				//jQuery(".right_top_header.mobile_opc").animate({backgroundColor:"rgba(0,0,0,0)"},600 );
 			});
 		}else{
-			jQuery(this).parents('.mobile_opc').addClass('active');
-			jQuery(".right_top_header.mobile_opc").animate({backgroundColor:"rgba(255,255,255,1)"},600,function(){
+			jQuery('.right_top_header.mobile_opc').addClass('active');
+			//jQuery(".right_top_header.mobile_opc").animate({backgroundColor:"rgba(255,255,255,1)"},600,function(){
 				jQuery('.extend_menu_mob').slideDown(600);
-			});
+			//});
 		}
 	});
 	
