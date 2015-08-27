@@ -140,7 +140,7 @@ PROPIEDADES HEADER
 .logged_box a:hover:before{}
 
 
-#header h2.logo_top a{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);}
+#header h2.logo_top a{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;background-size:397px 184px;}
 
 #box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;/*height:280px;*/position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:300;padding-bottom:80px;}
 #form-login label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
@@ -770,6 +770,8 @@ MEDIA QUERIES
 	#box_jurado .intro_jurado{width:75%;}
 	.box_img_small{width:25%;}
 	#box_registro{width:80%;}
+	#box_new_password{width:80%;}
+	.form_box_new_password{width:70%;}
 }
 
 @media screen and (max-width: 815px) {	
@@ -810,6 +812,7 @@ MEDIA QUERIES
 	/*.premios_alumnos, .premios_profesores{width:85%;padding-left:0;padding-right:0;margin:0 auto;margin-bottom:60px;float:inherit;}*/
 	.box_img_small{width:33.3%;}
 	#box_registro{width:90%;}
+	#box_new_password{width:90%;}
 }
 
 @media screen and (max-width: 700px) {
@@ -862,6 +865,7 @@ MEDIA QUERIES
 	.submit_group input{display:block;margin:0 auto;}
 	#contacto-form .checkbox p{width:100%;}
 	.maquetacion_captcha div{margin:0 auto;}
+	.form_box_new_password{width:80%;}
 }
 
 @media screen and (max-width: 397px) {
