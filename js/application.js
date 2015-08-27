@@ -13,7 +13,7 @@ var slider_l_1_1,slider_l_1_2,slider_l_1_3_1,slider_l_1_3_2,slider_l_2_1,slider_
 var slider_r_1_1,slider_r_1_2,slider_r_1_3,slider_r_2_1,slider_l_2_2,slider_r_2_3_1,slider_r_2_3_2,slider_last_pics,slider_jurado;
 var speedA, speedB, speedC, speedD, speedE;
 var posX,intervalo,posY,posXj;
-var top_curiosidades,top_participar,top_premios,top_jurado;
+var top_curiosidades,top_participar,top_premios,top_jurado,top_registro;
 var send_form=0;
 var h_win,w_win;
 
@@ -632,6 +632,8 @@ function control_scroll(e){
 		  top_premios=jQuery('#box_premios').offset().top;
 		  top_jurado=jQuery('#box_jurado').offset().top;
 		  
+		  
+		  
 		    /*
 		    speedA = 1.3;
 			speedB = 0.8;
@@ -707,7 +709,23 @@ function control_scroll(e){
 		  }else{
 			jQuery('.flecha_scroll').stop().clearQueue().animate({top:0},0).fadeOut(400);
 		  }
+		  
+		  
     }
+	
+	//Animación cuadro de registro lateral 
+	if ( jQuery("#registro-form").is(":visible")){
+		top_registro=jQuery('#registro-form').offset().top;
+		var center_tope=jQuery('#center_name').offset().top;
+		if(scrollAmount>top_registro+50){
+			if(scrollAmount<center_tope){
+				jQuery('.mov_box_bg_txt').stop().clearQueue().animate({ top: 0+((scrollAmount-top_registro)*speedE)}, 0);
+			}
+		}else{
+			jQuery('.mov_box_bg_txt').stop().clearQueue().animate({top:50});
+		}
+	}
+	
    jQuery('.marcador').html(scrollAmount+'px');
 }
 

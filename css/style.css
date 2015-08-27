@@ -368,6 +368,8 @@ PROPIEDADES REGISTRO
 .info_contact_menores p{color: #373737;font-size: 16px;line-height: 21px;margin: 0 auto;}
 .info_contact_menores a{border: 2px solid #373737;border-radius:5px;color:#373737;display:block;height:31px;line-height:31px;margin:0 auto;width:120px;margin-top:20px;}
 
+.mov_box_bg_txt{position:relative;top:50px;}
+
 /**********************
 PROPIEDADES MIS PICS
 ***********************/
