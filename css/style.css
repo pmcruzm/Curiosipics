@@ -248,7 +248,8 @@ PROPIEDADES COMO PARTICIPAR
 #box_participar h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;}
 #box_participar h4{font-size:24px;position:absolute;bottom:180px;color:#ffffff;text-align:center;width:100%;}
 .txt_legal{font-size:14px;position:absolute;bottom:30px;color:#ffffff;width:100%;text-align:center;}
-.btn_participar{color:#ffffff;font-size:16px;border:2px solid #ffffff;display:block;height:50px;width:270px;position:absolute;bottom:105px;line-height:50px;text-align:center;left:0;right:0;margin:0 auto;border-radius:5px;}
+.btn_participar{color:#ffffff;font-size:16px;border:2px solid #ffffff;display:block;height:50px;width:270px;position:absolute;bottom:105px;line-height:50px;text-align:center;left:50%;border-radius:5px;margin-left:5px;}
+.btn_participar_2{color:#ffffff;font-size:16px;border:2px solid #ffffff;display:block;height:50px;width:270px;position:absolute;bottom:105px;line-height:50px;text-align:center;right:50%;border-radius:5px;margin-right:5px;}
 
 .rombo{background:#ffffff;display:table;position:absolute;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);}
 .rombo.registro_rombo{background:#f05456 !important;}
