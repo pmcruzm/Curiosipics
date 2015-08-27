@@ -635,7 +635,8 @@ ul.bxslider {margin: 0;padding: 0;}
 .desktop_opc{display:block;}
 .mobile_opc{display:none;}
 .custom-menu:before{content:'h';font-family:'icomoon', Helvetica, sans-serif;font-size:44px;}
-input {-webkit-border-radius:0; border-radius:0;}
+input{-webkit-border-radius:0; border-radius:0;}
+textarea{-webkit-border-radius:0; border-radius:0;}
 
 
 /**********************************
