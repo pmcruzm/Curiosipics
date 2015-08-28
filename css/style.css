@@ -641,11 +641,12 @@ ul.bxslider {margin: 0;padding: 0;}
 .box_space_top{padding-top:184px;}
 .desktop_opc{display:block;}
 .mobile_opc{display:none;}
-.custom-menu:before{content:'h';font-family:'icomoon', Helvetica, sans-serif;font-size:44px;}
+/*.custom-menu:before{content:'h';font-family:'icomoon', Helvetica, sans-serif;font-size:44px;}*/
 input{-webkit-border-radius:0; border-radius:0;}
 textarea{-webkit-border-radius:0; border-radius:0;}
 input, textarea, select {-webkit-appearance: none;}
 .extend_menu_mob{display:none;}
+
 
 
 /**********************************
@@ -832,8 +833,8 @@ MEDIA QUERIES
 	.desktop_opc{display:none;}
 	.mobile_opc{display:block;}
 	
-	#header.header_normal .right_top_header.mobile_opc{z-index:100;width:100% !important;height:auto !important;overflow:hidden !important;}
-	#header.header_normal #top_header h1 a{z-index:101;}
+	#header .right_top_header.mobile_opc{z-index:100;width:100% !important;height:auto !important;overflow:hidden !important;}
+	#header #top_header h1 a{z-index:101;}
 	
 	.right_top_header.mobile_opc{min-height:44px;top:0 !important;z-index:-1;width:100%;overflow:hidden;}
 	/*.right_top_header.mobile_opc.active{background:#ffffff;}*/
@@ -841,20 +842,27 @@ MEDIA QUERIES
 	.right_top_header.mobile_opc.active .custom-menu:before{content:'c';}
 	.right_top_header.mobile_opc ul.ul_mob_menu{font-size:0px;width:100%;text-align:right;display:block;z-index:120;}
 	.right_top_header.mobile_opc ul.ul_mob_menu li{display:inline-block;font-size:16px;}
-	.right_top_header.mobile_opc ul.ul_mob_menu li a{color:#ffffff;height:44px !important;line-height:44px !important;vertical-align:middle;}
-	.right_top_header.mobile_opc.active ul.ul_mob_menu li a{color:#61bde9 !important;}
+	.right_top_header.mobile_opc ul.ul_mob_menu li a{color:#ffffff;height:44px !important;line-height:44px !important;background:url(../img/ico_mob_menu_w.png) center center no-repeat;width:30px;margin-right:15px !important;}
+	#top_header.black_enl .right_top_header.mobile_opc ul.ul_mob_menu li a{background:url(../img/ico_mob_menu_b.png) center center no-repeat;}
+	.right_top_header.mobile_opc.active ul.ul_mob_menu li a{background:url(../img/close_mob_menu_a.png) center center no-repeat;}
+	#top_header.black_enl .right_top_header.mobile_opc.active ul.ul_mob_menu li a{background:url(../img/close_mob_menu_b.png) center center no-repeat;}
 	.right_top_header.mobile_opc ul.ul_mob_menu li a:hover{border:none !important;}
 	
 	.extend_menu_mob .user_menu{float:inherit;padding-top:5px;padding-bottom:5px;text-align:center;}
-	.extend_menu_mob .user_menu a{color:#61bde9 !important; }
-	.extend_menu_mob .user_menu a:hover{ }
+	.extend_menu_mob .user_menu a{color:#61bde9 !important;margin-right:0 !important;}
+	.extend_menu_mob .user_menu a:hover{border-bottom:none !important;}
 	.extend_menu_mob .user_menu li:nth-child(2),.right_top_header.mobile_opc .user_menu li:nth-child(1){display:block !important;}
 	.extend_menu_mob .user_menu li:nth-child(2) a,.right_top_header.mobile_opc .user_menu li:nth-child(1) a{margin-right:0 !important;margin-bottom:10px;}
 	.extend_menu_mob .user_menu li:nth-child(2) a:hover,.right_top_header.mobile_opc .user_menu li:nth-child(1) a:hover{border:none !important;}
 	.extend_menu_mob{z-index:100;position:absolute;padding-bottom:20px;display:none;background:#ffffff;padding-top:44px;z-index:90;display:block;width:100%;top:0;}
 	.extend_menu_mob ul li.btn_header a{color:#61bde9 !important;border:2px solid #61bde9 !important;}
 	.extend_menu_mob ul li.btn_header a:hover{color:#ffffff !important;background:#61bde9 !important;}
+	#top_header.black_enl .extend_menu_mob ul li.btn_header a{color:#373737 !important;border:2px solid #373737 !important;}
+	#top_header.black_enl .extend_menu_mob ul li.btn_header a:hover{color:#ffffff !important;background:#373737 !important;}
 	#header.home{position:absolute;}
+	.logged_box{text-align:center;}
+	.logged_box a{display:inline-block;color:#61bde9 !important;}
+	.logged_box a:before{margin-right:10px;}
 	
 	.fields_pic{padding-left:30px;width:64.6%;}
 	.form_new_pic{width:65%;}

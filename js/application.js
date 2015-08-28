@@ -221,7 +221,7 @@ jQuery(document).ready(function(){
 		
 		/*Últimos Pics*/
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
-		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:5,maxSlides:5,slideWidth:3200,slideMargin:0,ticker:true});
+		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:2,maxSlides:5,slideWidth:320,slideMargin:0,ticker:true});
 		
 		/*Jurado mobile*/
 		slider_jurado=jQuery('.bxslider_jurado').bxSlider({pager: true,infiniteLoop:true,useCSS:false,controls:false,adaptiveHeight:true});
@@ -373,7 +373,7 @@ jQuery(document).ready(function(){
 	});
 	
 	//Abrir menú mobile
-	jQuery(document).on('click','.right_top_header.mobile_opc .custom-menu',function(e){
+	jQuery(document).on('click','.right_top_header.mobile_opc .mobile-menu-icon',function(e){
 		e.preventDefault();
 		if(jQuery(this).parents('.mobile_opc').hasClass('active')){
 			jQuery('.extend_menu_mob').slideUp(600,function(){
