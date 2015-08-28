@@ -867,6 +867,9 @@ MEDIA QUERIES
 	.fields_pic{padding-left:30px;width:64.6%;}
 	.form_new_pic{width:65%;}
 	.info_new_pic{width:35%;}
+	
+	#box_jurado .desktop_opc{display:block;}
+	#box_jurado .mobile_opc{display:none;}
 
 }
 
@@ -925,6 +928,7 @@ MEDIA QUERIES
 
 
 @media screen and (max-width: 640px) {
+	
 	.inside_curiosidad{width:90%;}
 	.premios_alumnos, .premios_profesores{width:90%;margin-bottom:40px;}
 	.box_jurado, .box_publico{width:100%;padding-left:0;padding-right:0;margin-bottom:40px;}
@@ -958,6 +962,9 @@ MEDIA QUERIES
 	#contacto-form textarea{width:65%;}
 	
 	.form_box_new_password{width:80%;}
+	
+	#box_jurado .desktop_opc{display:none;}
+	#box_jurado .mobile_opc{display:block;}
 }
 
 @media screen and (max-width: 480px) {

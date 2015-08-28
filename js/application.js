@@ -221,7 +221,7 @@ jQuery(document).ready(function(){
 		
 		/*Últimos Pics*/
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
-		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:2,maxSlides:5,slideWidth:320,slideMargin:0,ticker:true});
+		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:5,maxSlides:5,slideWidth:320,slideMargin:0,ticker:true});
 		
 		/*Jurado mobile*/
 		slider_jurado=jQuery('.bxslider_jurado').bxSlider({pager: true,infiniteLoop:true,useCSS:false,controls:false,adaptiveHeight:true});
@@ -547,7 +547,7 @@ jQuery(document).ready(function(){
 		//Siestamos haciendo resize en home reiniciar scroll o
 		if ( jQuery("#galeria_sup").is(":visible") ) {
 			
-			jQuery('body').scrollTo( "0px", 0,function(){});
+			//jQuery('body').scrollTo( "0px", 0,function(){});
 			
 			//Resize ticker de home (Falta nº de cuadros según resolución)
 			jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
