@@ -163,8 +163,6 @@ jQuery(document).ready(function(){
 	if ( jQuery("#galeria_sup").is(":visible") ) {
 		//Slider columnas de la izquierda
 
-		//var h_parent=jQuery('.left_galeria .colum_1 .box_img_2').height();
-		//jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(h_parent);
 
 		var json_url = jQuery("#galeria_sup").data('json');
 		var all_img;
@@ -259,7 +257,9 @@ jQuery(document).ready(function(){
 		/*Últimos Pics*/
 		for(var i=1;i< 11;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"></div></li>').appendTo( ".bxslider_ultimos_pics" );}
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
-		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:5,maxSlides:5,slideWidth:320,slideMargin:0,ticker:true});
+		var n_slides=5;
+		if(w_win<768){if(w_win<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
+		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:n_slides,maxSlides:n_slides,slideWidth:320,slideMargin:0,ticker:true});
 
 		/*Jurado mobile*/
 		slider_jurado=jQuery('.bxslider_jurado').bxSlider({pager: true,infiniteLoop:true,useCSS:false,controls:false,adaptiveHeight:true});
@@ -290,6 +290,7 @@ jQuery(document).ready(function(){
 			jQuery(".errores").html("");
 			//Llamamos a la función de validar (id formulario y contenedor errores)
 			var result=validate_form('#registro-form');
+			console.log(result);
 			if(result==1){
 				e.preventDefault();
 				send_form=0;
@@ -549,15 +550,12 @@ jQuery(document).ready(function(){
 
 			//Comprobar si la fecha introducida es mayor de 14años
 			if( error_day==0 && error_month==0 && error_year==0){
-				var error_big_14=0;
 				var year=jQuery('.validation-rule-year').val();
 				var month=(jQuery('.validation-rule-month').val()-1);
 				var day=jQuery('.validation-rule-day').val();
 				if (meetsMinimumAge(new Date(year, month, day),14)) {
-					error_big_14=0;
 					jQuery('.tutor_datos').hide();
 				}else{
-					error_big_14=1;
 					//Mostramos el campo de tutor legal
 					if(jQuery('.tutor_datos').is(":visible")){
 						 jQuery('.tutor_datos').show("slow",function(){
@@ -585,7 +583,7 @@ jQuery(document).ready(function(){
 		//Siestamos haciendo resize en home reiniciar scroll o
 		if ( jQuery("#galeria_sup").is(":visible") ) {
 
-			//jQuery('body').scrollTo( "0px", 0,function(){});
+			jQuery('body').scrollTo( "0px", 0,function(){});
 			
 			jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
 			jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_2').height());
@@ -605,7 +603,9 @@ jQuery(document).ready(function(){
 			
 			//Resize ticker de home (Falta nº de cuadros según resolución)
 			jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
-			slider_last_pics.reloadSlider();
+			var n_slides=5;
+			if(w_win<768){if(w_win<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
+			slider_last_pics.reloadSlider({minSlides:n_slides,maxSlides:n_slides,controls:false});
 		}
 
 		//Ajustamos cuadro de preview en Mis pics
@@ -860,11 +860,11 @@ function validate_form(id){
 			if(jQuery(id).find('.validation-rule-empty').length > 0){
 				var error_empty=0;
 				jQuery(id).find('.validation-rule-empty').each(function() {
+					if(jQuery(this).is(":visible")){
 					var res_campo=jQuery(this).val();
-					if(res_campo==""){
-						error_empty=1;
-						if(jQuery(this).is(":visible")){
-							jQuery(this).addClass('error').val('');
+						if(res_campo==""){
+							error_empty=1;
+								jQuery(this).addClass('error').val('');
 						}
 					}
 
@@ -875,11 +875,11 @@ function validate_form(id){
 			if(jQuery(id).find('.validation-rule-mail').length > 0){
 				var error_mail=0;
 				jQuery(id).find('.validation-rule-mail').each(function() {
-					var res_campo=jQuery(this).val();
-					if((res_campo=="") || (res_campo!="" && validateEmail(res_campo)==false) ){
-						error_mail=1;
-						if(jQuery(this).is(":visible")){
-							jQuery(this).addClass('error').val('');
+					if(jQuery(this).is(":visible")){
+						var res_campo=jQuery(this).val();
+						if((res_campo=="") || (res_campo!="" && validateEmail(res_campo)==false) ){
+							error_mail=1;
+								jQuery(this).addClass('error').val('');
 						}
 					}
 
@@ -963,7 +963,7 @@ function validate_form(id){
 			}
 
 			//Comprobar si la fecha introducida es mayor de 14años
-			if( error_day==0 && error_month==0 && error_year==0){
+			/*if( error_day==0 && error_month==0 && error_year==0){
 				var error_big_14=0;
 				var year=jQuery('.validation-rule-year').val();
 				var month=(jQuery('.validation-rule-month').val()-1);
@@ -982,7 +982,9 @@ function validate_form(id){
 						jQuery('.tutor_datos').show();
 					}
 				}
-			}
+			}else{
+				var error_big_14=1;
+			}*/
 
 			//Error general campos vacíos
 			if(error_empty==1){
@@ -1024,10 +1026,8 @@ function validate_form(id){
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}
 
-
-
 			//Salida
-			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1 || error_big_14==1){
+			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1 /*|| error_big_14==1*/){
 				return 1;
 			}else{
 				return 0;
