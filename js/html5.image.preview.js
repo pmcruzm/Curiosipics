@@ -15,7 +15,7 @@ function previewImage(el,widths,limit){
 	var files = el.files;
 	var wrap = el.parentNode;
 	var output = wrap.getElementsByClassName('imagePreview')[0];
-	var allowedTypes = ['JPG','JPEG','GIF','PNG','SVG','WEBP'];
+	var allowedTypes = ['JPG','JPEG','GIF','PNG'];
 
 	output.innerHTML='Loading...';
 
