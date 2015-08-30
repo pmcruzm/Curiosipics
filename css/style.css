@@ -467,7 +467,7 @@ PROPIEDADES PICS (TODOS)
 .right_navigation_pics{display:inline-block;float:right;}
 .right_navigation_pics ul{font-size:0px;}
 .right_navigation_pics ul li{display:inline-block;font-size:16px;}
-.right_navigation_pics ul li a{display:inline-block;height:105px;text-indent:-99999px;width:290px;position:relative;z-index:210;}
+.right_navigation_pics ul li a{display:inline-block;height:105px;text-indent:-99999px;width:290px;position:relative;z-index:89;}
 .right_navigation_pics ul li:first-child{background:red;}
 .right_navigation_pics ul li:last-child{background:green;}
 .left_navigation_pics ul li.item_search a:hover{border-bottom:none !important;background:url(../img/lupa_search_b.png) center center no-repeat;}
@@ -767,6 +767,10 @@ MEDIA QUERIES
 	.rombo .inside_rombo p{font-size:17px;width:86%;}
 	.rombo .inside_rombo a{width:80px;height:80px;}
 	.rombo .inside_rombo a span{font-size:17px;top:35px;left:18px;}
+	
+	.inside_detalle_pic{width:90%;}
+	.img_detalle_pic{width:50%;}
+	.cont_detalle_pic{width:50%;}
 }
  
 @media screen and (max-width: 1220px) {
@@ -837,6 +841,12 @@ MEDIA QUERIES
 	.rombo .inside_rombo a span{font-size:15px;left:16px;}
 }
 
+@media screen and (max-width: 980px) {	
+	.inside_detalle_pic{width:90%;}
+	.img_detalle_pic{width:45%;}
+	.cont_detalle_pic{width:55%;}
+}
+
 @media screen and (max-width: 950px) {	
 	.reg_form{width:85% !important;}
 	.form_box_registro{width:70%;}
@@ -876,6 +886,12 @@ MEDIA QUERIES
 	.rombo .inside_rombo a{width:80px;height:80px;}
 	.rombo .inside_rombo a span{font-size:17px;top:35px;left:18px;}
 
+}
+
+@media screen and (max-width: 880px) {	
+	.inside_detalle_pic{width:90%;}
+	.img_detalle_pic{width:40%;}
+	.cont_detalle_pic{width:60%;}
 }
 
 @media screen and (max-width: 815px) {	
@@ -924,6 +940,11 @@ MEDIA QUERIES
 	
 	#box_jurado .desktop_opc{display:block;}
 	#box_jurado .mobile_opc{display:none;}
+	
+	.inside_detalle_pic{width:100%;}
+	/*.img_detalle_pic{width:100%;float:inherit;height:auto !important;}
+	.cont_detalle_pic{width:100%;float:inherit;height:auto !important;}
+	.img_big_detalle{width:200px !important;height:150px !important;}*/
 
 }
 
