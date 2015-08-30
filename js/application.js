@@ -589,10 +589,11 @@ jQuery(document).ready(function(){
 			var w_win_r=jQuery(this).width();
 			w_win=jQuery(this).width();
 			
-			jQuery('body').scrollTo( "0px", 0,function(){});
 	
 			//Siestamos haciendo resize en home reiniciar scroll o
 			if ( jQuery("#galeria_sup").is(":visible") ) {
+				
+				jQuery('body').scrollTo( "0px", 0,function(){});
 				
 				//if(w_win<800){reset_parallax();}else{}
 				
