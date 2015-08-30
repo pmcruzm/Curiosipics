@@ -583,7 +583,7 @@ jQuery(document).ready(function(){
 		//Siestamos haciendo resize en home reiniciar scroll o
 		if ( jQuery("#galeria_sup").is(":visible") ) {
 
-			jQuery('body').scrollTo( "0px", 0,function(){});
+			//jQuery('body').scrollTo( "0px", 0,function(){});
 			
 			jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
 			jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_2').height());
