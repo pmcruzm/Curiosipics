@@ -41,6 +41,7 @@ jQuery(document).ready(function(){
 	//Obtenemos altura y anchura del navegador
 	h_win=jQuery(window).height();
 	w_win=jQuery(window).width();
+	w_win_init=jQuery(window).width();
 
 	//Reinicio de variables
 	posX=0;
@@ -367,6 +368,7 @@ jQuery(document).ready(function(){
 	jQuery(document).on("click",".box_img_small a", function(e) {
 		e.preventDefault();
 		var id_pic=jQuery(this).attr('rel');
+		id_pic_open=id_pic;
 		show_pic(id_pic);
 	});
 
@@ -389,6 +391,7 @@ jQuery(document).ready(function(){
 		jQuery('.detalle_pic').stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
 			jQuery(".detalle_pic").remove();
 			id_next=jQuery('.box_img_small  a.active').parents('.box_img_small').next('div').find('a').attr('rel');
+			id_pic_open=id_next;
 			show_pic(id_next);
 		});
 	});
@@ -402,6 +405,7 @@ jQuery(document).ready(function(){
 		jQuery('.detalle_pic').stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
 			jQuery(".detalle_pic").remove();
 			id_prev=jQuery('.box_img_small  a.active').parents('.box_img_small').prev().find('a').attr('rel');
+			id_pic_open=id_prev;
 			show_pic(id_prev);
 		});
 	});
@@ -577,19 +581,20 @@ jQuery(document).ready(function(){
 	//Evento para capturar el resize de la ventana
 	jQuery( window ).resize(function() {
 		
-		if(jQuery(this).width() != w_win){
+		if(jQuery(this).width() != w_win_init){
 			//console.log('aqui');
 
 			//Obtenemos altura y anchura del navegador
 			var h_win_r=jQuery(this).height();
 			var w_win_r=jQuery(this).width();
+			w_win=jQuery(this).width();
+			
+			jQuery('body').scrollTo( "0px", 0,function(){});
 	
 			//Siestamos haciendo resize en home reiniciar scroll o
 			if ( jQuery("#galeria_sup").is(":visible") ) {
 				
 				//if(w_win<800){reset_parallax();}else{}
-	
-				jQuery('body').scrollTo( "0px", 0,function(){});
 				
 				jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
 				jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_2').height());
@@ -631,13 +636,26 @@ jQuery(document).ready(function(){
 	
 			//Si detalle está desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
-				//console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
-				var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
-				//console.log('Total:'+h_total);
-				jQuery(".detalle_pic").height(h_total);
-				jQuery(".img_detalle_pic").height(h_total);
-				jQuery(".cont_detalle_pic").height(h_total);
-				jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+				//Si es detalle de RSS
+				if ( jQuery(".detalle_pic").hasClass('pic_rrss')){
+					//console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
+					var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
+					//console.log('Total:'+h_total);
+					jQuery(".detalle_pic").height(h_total);
+					jQuery(".img_detalle_pic").height(h_total);
+					jQuery(".cont_detalle_pic").height(h_total);
+					jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+				}else{
+					//console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
+					/*var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
+					//console.log('Total:'+h_total);
+					jQuery(".detalle_pic").height(h_total);
+					jQuery(".img_detalle_pic").height(h_total);
+					jQuery(".cont_detalle_pic").height(h_total);
+					jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));*/
+					jQuery(".detalle_pic").stop().clearQueue().remove();
+					show_pic(id_pic_open);
+				}
 			}
 	
 			//Si está desplegado cuadro de voto confirmado
