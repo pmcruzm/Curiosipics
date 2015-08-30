@@ -191,7 +191,7 @@ PROPIEDADES HEADER
 PROPIEDADES GALERÍ SUPERIOR HOME
 *************************************/
 #gallery_home{position:relative;}
-#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/rombo_logo_grande.png) top left no-repeat;top:50%;margin-top:-216px;z-index:80;background-size:433px 432px;/*background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);*/}
+#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/rombo_logo_grande.png) top left no-repeat;top:50%;margin-top:-216px;z-index:90;background-size:433px 432px;/*background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);*/}
 
 #galeria_sup{height:795px;overflow:hidden;position:relative;}
 #galeria_sup:after{content:'';display:block;height:795px;background:rgba(0,0,0,0.5);position:absolute;top:0;width:100%;z-index:50;}
@@ -228,7 +228,7 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 #contenidos{position:relative;}
 #contenidos.home{z-index:150;}
 .flecha_scroll{display:block;width:119px;height:120px;position:absolute;left:0;right:0;margin:0 auto;background:url(../img/flecha_scroll.png) top left no-repeat;top:-40px;z-index:105;}
-#box_curiosidad{position:relative;background:#ffffff;z-index:80;}
+#box_curiosidad{position:relative;background:#ffffff;z-index:91;}
 #box_curiosidad .container{position:relative;}
 .inside_curiosidad{width:60%;margin:0 auto;padding-top:100px;padding-bottom:40px;}
 #box_curiosidad h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
@@ -807,6 +807,8 @@ MEDIA QUERIES
 	.rombo .inside_rombo p{font-size:17px;width:86%;}
 	.rombo .inside_rombo a{width:80px;height:80px;}
 	.rombo .inside_rombo a span{font-size:17px;top:33px;left:14px;}
+	
+	/*#box_premios .container{background-repeat:repeat-y;}*/
 }
 
 
@@ -1000,11 +1002,13 @@ MEDIA QUERIES
 	.info_new_pic{width:100%;float:inherit;margin-top:30px;}
 	.info_new_pic .box_bg_txt{display:none;}
 	
-	.deco_1{display:none;}
-	.deco_2{display:none;}
-	.deco_3{display:none;}
-	.deco_4{display:none;}
-	.deco_5{display:none;}
+	
+	.deco_1_1,.deco_1_2,.deco_2_1,.deco_2_2,.deco_2_3,.deco_2_4,.deco_2_5,.deco_3_1,.deco_3_2,.deco_3_3,.deco_3_4,.deco_4_1,.deco_4_2,.deco_4_3,.deco_5_1,.deco_5_2,.deco_5_3{display:none !important;}
+	.deco_1{background:url(../img/deco_1_mob.png) top left no-repeat;width:186px;height:99px;margin-left:-93px;}
+	.deco_2{background:url(../img/deco_2_mob.png) top left no-repeat;width:102px;height:309px;top:-210px;}
+	.deco_3{background:url(../img/deco_3_mob.png) top left no-repeat;width:57px;height:248px;top:-210px;}
+	.deco_4{background:url(../img/deco_4_mob.png) top left no-repeat;width:198px;height:225px;bottom:345px;z-index:-1;}
+	.deco_5{background:url(../img/deco_5_mob.png) top left no-repeat;width:138px;height:400px;bottom:230px;z-index:-1;}
 }
 
 @media screen and (max-width: 680px){	
@@ -1123,6 +1127,10 @@ MEDIA QUERIES
 	.rombo .inside_rombo p{font-size:17px;width:86%;}
 	.rombo .inside_rombo a{width:80px;height:80px;}
 	.rombo .inside_rombo a span{font-size:17px;top:30px;left:13px;}
+	
+	#box_participar h4{bottom:240px;}
+	.btn_participar{bottom:160px;}
+	.btn_participar_2{bottom:95px;}
 	
 }
 

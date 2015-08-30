@@ -15,7 +15,7 @@ var speedA, speedB, speedC, speedD, speedE;
 var posX,intervalo,posY,posXj;
 var top_curiosidades,top_participar,top_premios,top_jurado,top_registro;
 var send_form=0;
-var h_win,w_win;
+var h_win,w_win,w_win_init;
 var id_pic_open;
 
 //Eventos para dispositivos móviles
@@ -667,6 +667,10 @@ function control_scroll(e){
   //Variable de scroll
   var scrollAmount = jQuery(window).scrollTop();
   var h_foot=jQuery('#pie').height();
+  
+  //Obtenemos altura y anchura del navegador
+  h_win=jQuery(window).height();
+  w_win=jQuery(window).width();
 
   //Añadir Cookie si se hace scroll a +100px
   if(scrollAmount>100){
