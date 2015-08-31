@@ -866,6 +866,9 @@ MEDIA QUERIES
 	
 	.rombo .inside_rombo p{font-size:15px;width:83%;}
 	.rombo .inside_rombo a span{font-size:15px;left:16px;}
+	
+	.deco_2{left:-10%;}
+	.deco_3{right:-10%;}
 }
 
 @media screen and (max-width: 980px) {	
@@ -972,6 +975,9 @@ MEDIA QUERIES
 	/*.img_detalle_pic{width:100%;float:inherit;height:auto !important;}
 	.cont_detalle_pic{width:100%;float:inherit;height:auto !important;}
 	.img_big_detalle{width:200px !important;height:150px !important;}*/
+	
+	.deco_2{left:-15%;}
+	.deco_3{right:-13%;}
 
 }
 
@@ -1030,8 +1036,8 @@ MEDIA QUERIES
 	
 	.deco_1_1,.deco_1_2,.deco_2_1,.deco_2_2,.deco_2_3,.deco_2_4,.deco_2_5,.deco_3_1,.deco_3_2,.deco_3_3,.deco_3_4,.deco_4_1,.deco_4_2,.deco_4_3,.deco_5_1,.deco_5_2,.deco_5_3{display:none !important;}
 	.deco_1{background:url(../img/deco_1_mob.png) top left no-repeat;width:186px;height:99px;margin-left:-93px;}
-	.deco_2{background:url(../img/deco_2_mob.png) top left no-repeat;width:102px;height:309px;top:-210px;}
-	.deco_3{background:url(../img/deco_3_mob.png) top left no-repeat;width:57px;height:248px;top:-210px;}
+	.deco_2{background:url(../img/deco_2_mob.png) top left no-repeat;width:102px;height:309px;top:-210px;left:0;}
+	.deco_3{background:url(../img/deco_3_mob.png) top left no-repeat;width:57px;height:248px;top:-210px;right:0;}
 	.deco_4{background:url(../img/deco_4_mob.png) top left no-repeat;width:198px;height:225px;bottom:345px;z-index:-1;}
 	.deco_5{background:url(../img/deco_5_mob.png) top left no-repeat;width:138px;height:400px;bottom:230px;z-index:-1;}
 	
