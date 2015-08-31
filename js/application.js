@@ -387,7 +387,7 @@ jQuery(document).ready(function(){
 	});
 	
 	//Desplegar la info de un pic en concreto(mobile)
-	jQuery(document).on('touchstart',".box_img_small a", function(e) {
+	jQuery(document).on('tap',".box_img_small a", function(e) {
 		e.preventDefault();
 		var id_pic=jQuery(this).attr('rel');
 		id_pic_open=id_pic;
