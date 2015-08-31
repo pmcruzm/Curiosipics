@@ -385,6 +385,14 @@ jQuery(document).ready(function(){
 		id_pic_open=id_pic;
 		show_pic(id_pic);
 	});
+	
+	//Desplegar la info de un pic en concreto(mobile)
+	jQuery(document).on('touchstart',".box_img_small a", function(e) {
+		e.preventDefault();
+		var id_pic=jQuery(this).attr('rel');
+		id_pic_open=id_pic;
+		show_pic(id_pic);
+	});
 
 	//Cuando queremos cerrar detalles de pic
 	jQuery(document).on("click",".close_pic", function(e) {
