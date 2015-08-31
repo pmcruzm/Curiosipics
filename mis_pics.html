@@ -93,19 +93,24 @@
                         	<div class="inside_new_pic">
                                 <div class="form_new_pic">
                                 	<form id="form-upload-pic" action="" method="post" enctype="multipart/form-data">
-                                    	<div class="preview_pic">
+                                		<div class="info_mis_pics_mob">
+                                        	<h5>Recuerda</h5>
+                                            <p>Tanto el título como la descripción de la foto tienen que ir en inglés. </p>
+                                            <p>La descripción tiene que tener un mínimo de 10 palabras y un máximo de 50.</p>
+                                        </div>    
+                                        <div class="fields_pic">
+                                        	<label for="titul_pic">Título en inglés</label>
+                                        	<input type="text" class="form-control validation-rule-empty" id="titul_pic">
+                                            <label for="descrip_pic">Descripción en inglés</label>
+                                        	<textarea id="descrip_pic"></textarea>
+                                        </div>
+                                        <div class="preview_pic">
                                         	<div id="preview_box">
                                             	<div class="imagePreview"></div>
                                             </div>
                                             <span>Peso máximo del archivo 5 mb</span>
                                         	<input type="file" name="imagefile" onchange="previewImage(this,[512],5);" />
                                            <!-- <input type="file" name="imagefile" onchange="readURL(this);" />-->
-                                        </div>
-                                        <div class="fields_pic">
-                                        	<label for="titul_pic">Título en inglés</label>
-                                        	<input type="text" class="form-control validation-rule-empty" id="titul_pic">
-                                            <label for="descrip_pic">Descripción en inglés</label>
-                                        	<textarea id="descrip_pic"></textarea>
                                         </div>
                                         <div class="submit_btn_pic"><input type="submit" name="enviar_pic" value="Enviar" /></div>
                                     </form>

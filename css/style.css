@@ -394,7 +394,7 @@ PROPIEDADES MIS PICS
 .form_new_pic{float:left;width:75%;}
 #form-upload-pic{overflow:hidden;}
 .preview_pic{width:33.3%;float:left;box-sizing:border-box;overflow:hidden;}
-.fields_pic{width:66.6%;float:left;box-sizing:border-box;padding-left:50px;}
+.fields_pic{width:66.6%;float:right;box-sizing:border-box;padding-left:50px;}
 .submit_btn_pic{clear:both;box-sizing:border-box;padding-left:33.3%;}
 .submit_btn_pic input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;cursor:pointer;background:none;margin-left:50px;font-family:'cabinregular', Helvetica, sans-serif;-webkit-appearance:none;}
 #form-upload-pic span,#form-upload-pic label{display:block;}
@@ -429,6 +429,10 @@ PROPIEDADES MIS PICS
 .info_s_pic h4.no_aprovado_pic{background:url(../img/icon_no_aceptado.png) center right no-repeat;}
 .info_s_pic p{color:#373737;font-size:16px;line-height:24px;margin-bottom:30px;}
 .info_s_pic .count_votos{color:#373737;font-size:20px;line-height:24px;background:url(../img/icon_star.png) center right no-repeat;padding-right:34px;}
+
+.info_mis_pics_mob{display:none;}
+.info_mis_pics_mob h5{color: #373737;font-size: 16px;margin-bottom: 15px;}
+.info_mis_pics_mob p{color: #373737;font-size: 13px;line-height: 18px;margin: 0 auto 15px;width: 80%;}
 
 /**********************
 PROPIEDADES PICS (TODOS)
@@ -1002,7 +1006,7 @@ MEDIA QUERIES
 	
 	.fields_pic{padding-left:30px;width:66.6%;}
 	.info_new_pic{width:100%;float:inherit;margin-top:30px;}
-	.info_new_pic .box_bg_txt{display:none;}
+	#box_mis_pics .info_new_pic{display:none;}
 	
 	
 	.deco_1_1,.deco_1_2,.deco_2_1,.deco_2_2,.deco_2_3,.deco_2_4,.deco_2_5,.deco_3_1,.deco_3_2,.deco_3_3,.deco_3_4,.deco_4_1,.deco_4_2,.deco_4_3,.deco_5_1,.deco_5_2,.deco_5_3{display:none !important;}
@@ -1011,6 +1015,8 @@ MEDIA QUERIES
 	.deco_3{background:url(../img/deco_3_mob.png) top left no-repeat;width:57px;height:248px;top:-210px;}
 	.deco_4{background:url(../img/deco_4_mob.png) top left no-repeat;width:198px;height:225px;bottom:345px;z-index:-1;}
 	.deco_5{background:url(../img/deco_5_mob.png) top left no-repeat;width:138px;height:400px;bottom:230px;z-index:-1;}
+	
+	.info_mis_pics_mob{display:block;text-align:center;margin-bottom:25px;}
 }
 
 @media screen and (max-width: 680px){	
@@ -1114,6 +1120,7 @@ MEDIA QUERIES
 	.submit_btn_pic{padding-left:0;}
 	.submit_btn_pic input{margin-left:0;display:block;margin:0 auto;}
 	.info_s_pic{padding-left:0;width:100%;}
+	.info_mis_pics_mob p{width:90%;}
 	
 }
 
