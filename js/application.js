@@ -710,7 +710,7 @@ function control_scroll(e){
   }
 
   //Solo ejecutar si es visible la galería (HOME)
-  if ( jQuery("#galeria_sup").is(":visible") && device=='none' && w_win>800) {
+  if ( jQuery("#galeria_sup").is(":visible") && device=='none' && w_win>1100) {
 
 	   	  top_curiosidades=jQuery('#box_curiosidad').offset().top;
 		  top_participar=jQuery('#box_participar').offset().top;
@@ -812,20 +812,6 @@ function control_scroll(e){
 	}
 
    jQuery('.marcador').html(scrollAmount+'px');
-}
-
-// autoplay video Youtube
-function onPlayerReady(event) {
-	if(device!='yes'){
-        event.target.playVideo();
-	}
-}
-
-// when video ends Youtube
-function onPlayerStateChange(event) {
-   if(event.data === 0) {
-           //Cuando acaba el video
-    }
 }
 
 
