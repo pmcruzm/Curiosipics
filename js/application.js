@@ -379,10 +379,9 @@ jQuery(document).ready(function(){
 	});
 
 	//Desplegar la info de un pic en concreto
-	jQuery(document).on("click",".box_img_small a", function(e) {
-		alert('aqui');
+	jQuery(document).on("click",".box_img_small", function(e) {
 		e.preventDefault();
-		var id_pic=jQuery(this).attr('rel');
+		var id_pic=jQuery(this).find('a').attr('rel');
 		id_pic_open=id_pic;
 		show_pic(id_pic);
 	});
