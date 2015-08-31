@@ -386,13 +386,12 @@ jQuery(document).ready(function(){
 		show_pic(id_pic);
 	});
 	
-	//Desplegar la info de un pic en concreto(mobile)
-	jQuery(document).on('click touchend',".box_img_small a", function(e) {
-		e.preventDefault();
-		var id_pic=jQuery(this).attr('rel');
-		id_pic_open=id_pic;
-		show_pic(id_pic);
+	jQuery(document).on("mouseenter",".box_img_small a", function(e) {
+		jQuery( this ).parent().addClass('overjs');
+	}).on("mouseleave",".box_img_small a", function(e) {
+		jQuery( this ).parent().removeClass('overjs');
 	});
+	
 
 	//Cuando queremos cerrar detalles de pic
 	jQuery(document).on("click",".close_pic", function(e) {
