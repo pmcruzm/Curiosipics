@@ -703,8 +703,6 @@ function control_scroll(e){
   var scrollAmount = jQuery(window).scrollTop();
   var h_foot=jQuery('#pie').height();
   
-  top_curiosidades=jQuery('#box_curiosidad').offset().top;
-  
   //Obtenemos altura y anchura del navegador
   h_win=jQuery(window).height();
   w_win=jQuery(window).width();
@@ -730,14 +728,19 @@ function control_scroll(e){
 	//Para los enlaces de la home
 	//Solo ejecutar si es visible la galería (HOME)
   if ( jQuery("#galeria_sup").is(":visible") && device=='none'){
-	  	 top_curiosidades=jQuery('#box_curiosidad').offset().top;
+	  	/* top_curiosidades=jQuery('#box_curiosidad').offset().top;
 		 top_participar=jQuery('#box_participar').offset().top;
 		 top_premios=jQuery('#box_premios').offset().top;
-		 top_jurado=jQuery('#box_jurado').offset().top;
+		 top_jurado=jQuery('#box_jurado').offset().top;*/
+		 
+		 top_curiosidades=document.getElementById('box_curiosidad').offsetTop;
+		 top_participar=document.getElementById('box_participar').offsetTop;
+		 top_premios=document.getElementById('box_premios').offsetTop;
+		 top_jurado=document.getElementById('box_jurado').offsetTop;
 	  
 		//Añadir clases a los enlaces del menú según scroll
 		if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
-		if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');alert('block1');}
+		if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');}
 		if(scrollAmount>(top_participar) && scrollAmount<(top_premios)){jQuery("#top_header").removeClass().addClass('block2');}
 		if(scrollAmount>(top_premios) && scrollAmount<(top_jurado)){jQuery("#top_header").removeClass().addClass('block3');}
 		if(scrollAmount>(top_jurado)){jQuery("#top_header").removeClass().addClass('block4');}	
@@ -838,7 +841,7 @@ function control_scroll(e){
 		}
 	}
 
-   jQuery('.marcador').html(scrollAmount+'px -'+top_curiosidades);
+   jQuery('.marcador').html(scrollAmount+'px');
 }
 
 
