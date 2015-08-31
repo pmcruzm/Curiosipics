@@ -840,6 +840,7 @@ MEDIA QUERIES
 	.inside_single_pic{width:90%;}
 	
 	#box_premios .container{background-repeat:repeat-y !important;background-position:top center !important;}
+	#box_curiosidad p{z-index:101;position:relative;}
 }
 
 @media screen and (max-width: 1024px) {
