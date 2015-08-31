@@ -703,6 +703,8 @@ function control_scroll(e){
   var scrollAmount = jQuery(window).scrollTop();
   var h_foot=jQuery('#pie').height();
   
+  top_curiosidades=jQuery('#box_curiosidad').offset().top;
+  
   //Obtenemos altura y anchura del navegador
   h_win=jQuery(window).height();
   w_win=jQuery(window).width();
@@ -836,7 +838,7 @@ function control_scroll(e){
 		}
 	}
 
-   jQuery('.marcador').html(scrollAmount+'px');
+   jQuery('.marcador').html(scrollAmount+'px -'+top_curiosidades);
 }
 
 
