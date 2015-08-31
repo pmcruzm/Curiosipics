@@ -735,7 +735,7 @@ function control_scroll(e){
 	  
 		//Añadir clases a los enlaces del menú según scroll
 		if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
-		if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');}
+		if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');alert('block1');}
 		if(scrollAmount>(top_participar) && scrollAmount<(top_premios)){jQuery("#top_header").removeClass().addClass('block2');}
 		if(scrollAmount>(top_premios) && scrollAmount<(top_jurado)){jQuery("#top_header").removeClass().addClass('block3');}
 		if(scrollAmount>(top_jurado)){jQuery("#top_header").removeClass().addClass('block4');}	
