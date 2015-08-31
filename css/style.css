@@ -479,16 +479,16 @@ PROPIEDADES PICS (TODOS)
 .left_navigation_pics ul li a{font-size:20px;color:#373737;height:45px;line-height:45px;margin-right:20px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 .left_navigation_pics ul li a:hover{border-bottom:solid 3px #61bde9;color:#61bde9;}
 .left_navigation_pics ul li a.active{border-bottom:solid 3px #61bde9;color:#61bde9;}
-.right_navigation_pics{display:inline-block;float:right;}
-.right_navigation_pics ul{font-size:0px;}
-.right_navigation_pics ul li{display:inline-block;font-size:16px;}
-.right_navigation_pics ul li a{display:inline-block;height:105px;text-indent:-99999px;width:290px;position:relative;z-index:89;}
+.right_navigation_pics{display:block;float:right;width:40%;}
+.right_navigation_pics ul{font-size:0px;overflow:hidden;display:block;}
+.right_navigation_pics ul li{display:block;font-size:16px;width:50%;float:right;}
+.right_navigation_pics ul li a{display:inline-block;height:105px;text-indent:-99999px;width:100%;position:relative;z-index:89;}
 .right_navigation_pics ul li:first-child{background:red;}
 .right_navigation_pics ul li:last-child{background:green;}
 .left_navigation_pics ul li.item_search a:hover{border-bottom:none !important;background:url(../img/lupa_search_b.png) center center no-repeat;}
 .left_navigation_pics ul li.item_search a{display:block;text-indent:-99999px;height:45px;width:22px;background:url(../img/lupa_search_black.png) center center no-repeat;}
 
-.over_search{position:absolute;z-index:100;background:red;height:45px;top:0;right:0;width:400px;}
+.over_search{position:absolute;z-index:100;height:45px;top:0;right:0;width:400px;}
 #form-search-pic label{display:none;}
 #form-search-pic input[type=text]{height:45px;line-height:45px;border:0;background:#fffffff;-webkit-appearance:none;box-sizing:border-box;width:100%;padding-right:70px;padding-left:10px;font-size:18px;color:#61bde9;font-family:Verdana, Geneva, sans-serif;-webkit-appearance:none;}
 #form-search-pic input[type=submit]{position:absolute;top:0;right:0;height:45px;width:59px;border:none;-webkit-appearance:none;cursor:pointer;background:#ffffff url(../img/lupa_search_b.png) center center no-repeat;text-indent:-9999px;-webkit-appearance:none;}
@@ -849,6 +849,8 @@ MEDIA QUERIES
 	
 	#box_premios .container{background-repeat:repeat-y !important;background-position:top center !important;}
 	#box_curiosidad p{z-index:101;position:relative;}
+	
+	.right_navigation_pics{width:50%;}
 }
 
 @media screen and (max-width: 1024px) {
@@ -876,18 +878,19 @@ MEDIA QUERIES
 	.deco_2{left:-10%;}
 	.deco_4{left:-8%;}
 	
-	.right_navigation_pics{float:inherit;width:100%;}
-	.left_navigation_pics{float:inherit;width:auto;position:relative;}
-	/*.right_navigation_pics ul{overflow:hidden;}
-	.right_navigation_pics ul li{display:block;float:left;width:50%;}
-	.right_navigation_pics ul li a{width:100%;}
-	.left_navigation_pics{float:inherit;width:100%;position:relative;}*/
 }
 
 @media screen and (max-width: 980px) {	
 	.inside_detalle_pic{width:90%;}
 	.img_detalle_pic{width:45%;}
 	.cont_detalle_pic{width:55%;}
+	
+	.right_navigation_pics{float:inherit;width:50%;}
+	.left_navigation_pics{float:inherit;width:auto;position:relative;}
+	.right_navigation_pics ul{overflow:hidden;}
+	.right_navigation_pics ul li{display:block;float:left;width:50%;}
+	.right_navigation_pics ul li a{width:100%;}
+	.left_navigation_pics{float:inherit;width:auto;position:relative;}
 }
 
 @media screen and (max-width: 950px) {	
@@ -1131,6 +1134,18 @@ MEDIA QUERIES
 	#galeria_sup .left_galeria .colum_1{width:100% !important;}
 	.right_galeria{width:50% !important;}
 	#galeria_sup .right_galeria .colum_1{display:block !important;}
+	
+	.right_navigation_pics{float:inherit;width:100%;}
+	.left_navigation_pics{width:100%;text-align:center;}
+	.left_navigation_pics ul{margin-left:0px;display:inline-block;}
+	.over_search{box-sizing: border-box;left: 0; margin: 0 auto 0 -56px;padding-left: 64px;right:0;width:100%;opacity:0.5;}
+	
+	/*.right_navigation_pics{float:inherit;width:50%;}
+	.left_navigation_pics{float:inherit;width:auto;position:relative;}
+	.right_navigation_pics ul{overflow:hidden;}
+	.right_navigation_pics ul li{display:block;float:left;width:50%;}
+	.right_navigation_pics ul li a{width:100%;}
+	.left_navigation_pics{float:inherit;width:auto;position:relative;}*/
 
 }
 
@@ -1174,6 +1189,12 @@ MEDIA QUERIES
 	#galeria_sup .right_galeria .colum_1{height:645px;}
 	#galeria_sup .right_galeria .colum_2{height:645px;}
 	
+	.left_navigation_pics ul li a{font-size:17px;margin-right:10px;}
+	
+}
+
+@media screen and (max-width: 425px) {
+	.left_navigation_pics ul li a{font-size:16px;}
 }
 
 @media screen and (max-width: 400px) {
