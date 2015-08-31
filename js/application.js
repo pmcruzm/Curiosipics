@@ -709,6 +709,17 @@ function control_scroll(e){
 		}
   }
 
+	//Para los enlaces de la home
+	//Solo ejecutar si es visible la galería (HOME)
+  if ( jQuery("#galeria_sup").is(":visible") && device=='none'){
+		//Añadir clases a los enlaces del menú según scroll
+		if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
+		if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');}
+		if(scrollAmount>(top_participar) && scrollAmount<(top_premios)){jQuery("#top_header").removeClass().addClass('block2');}
+		if(scrollAmount>(top_premios) && scrollAmount<(top_jurado)){jQuery("#top_header").removeClass().addClass('block3');}
+		if(scrollAmount>(top_jurado)){jQuery("#top_header").removeClass().addClass('block4');}	
+  }	
+
   //Solo ejecutar si es visible la galería (HOME)
   if ( jQuery("#galeria_sup").is(":visible") && device=='none' && w_win>1100) {
 
@@ -727,13 +738,6 @@ function control_scroll(e){
 			speedE = 1;
 			speedF = 0.3
 			  */
-
-	  	  //Añadir clases a los enlaces del menú según scroll
-		  if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
-		  if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');}
-		  if(scrollAmount>(top_participar) && scrollAmount<(top_premios)){jQuery("#top_header").removeClass().addClass('block2');}
-		  if(scrollAmount>(top_premios) && scrollAmount<(top_jurado)){jQuery("#top_header").removeClass().addClass('block3');}
-		  if(scrollAmount>(top_jurado)){jQuery("#top_header").removeClass().addClass('block4');}
 
 		  //Animación decoración superior de la home
 		  if(scrollAmount<top_curiosidades){
