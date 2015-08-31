@@ -92,7 +92,7 @@
                         <div class="box_new_pic">
                         	<div class="inside_new_pic">
                                 <div class="form_new_pic">
-                                	<form id="form-upload-pic" action="" method="post" enctype="multipart/form-data">
+                                	<form id="form-upload-pic" action="" method="post" enctype="multipart/form-data" novalidate data-error-msg="Ha habido un error, por favor revisa los campos resaltados">
                                 		<div class="info_mis_pics_mob">
                                         	<h5>Recuerda</h5>
                                             <p>Tanto el título como la descripción de la foto tienen que ir en inglés. </p>
@@ -102,7 +102,7 @@
                                         	<label for="titul_pic">Título en inglés</label>
                                         	<input type="text" class="form-control validation-rule-empty" id="titul_pic">
                                             <label for="descrip_pic">Descripción en inglés</label>
-                                        	<textarea id="descrip_pic"></textarea>
+                                        	<textarea id="descrip_pic" class="form-control validation-rule-empty"></textarea>
                                         </div>
                                         <div class="preview_pic">
                                         	<div id="preview_box">

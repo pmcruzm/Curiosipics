@@ -778,14 +778,14 @@ function control_scroll(e){
 		  if(scrollAmount>(top_premios-(3*h_win/4))){
 			 posX=-(scrollAmount-(top_premios-(3*h_win/4)))*0.3;
 			 //console.log(posY);
-			jQuery('#box_premios .container').css({ backgroundPosition: posX+"px bottom" });
+			//jQuery('#box_premios .container').css({ backgroundPosition: posX+"px bottom" });
 		  }
 
 		   //Animación de decoración de la sección premios
 		  if(scrollAmount>(top_jurado-(3*h_win/4))){
 			 posXj=-(scrollAmount-(top_jurado-(3*h_win/4)))*0.1;
 			 //console.log(posY);
-			jQuery('#box_jurado .container').css({ backgroundPosition: "right "+posXj+"px" });
+			//jQuery('#box_jurado .container').css({ backgroundPosition: "right "+posXj+"px" });
 		  }
 
 		  //Animación flecha home
