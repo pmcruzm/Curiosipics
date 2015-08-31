@@ -712,6 +712,11 @@ function control_scroll(e){
 	//Para los enlaces de la home
 	//Solo ejecutar si es visible la galería (HOME)
   if ( jQuery("#galeria_sup").is(":visible") && device=='none'){
+	  	 top_curiosidades=jQuery('#box_curiosidad').offset().top;
+		 top_participar=jQuery('#box_participar').offset().top;
+		 top_premios=jQuery('#box_premios').offset().top;
+		 top_jurado=jQuery('#box_jurado').offset().top;
+	  
 		//Añadir clases a los enlaces del menú según scroll
 		if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
 		if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');}
