@@ -191,7 +191,8 @@ PROPIEDADES HEADER
 /*************************************
 PROPIEDADES GALERÍ SUPERIOR HOME
 *************************************/
-#gallery_home{position:relative;background:#000000;}
+#gallery_home{position:relative;}
+#gallery_home .container{background:#000000;}
 #gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/rombo_logo_grande.png) top left no-repeat;top:50%;margin-top:-216px;z-index:90;background-size:433px 432px;/*background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);*/}
 
 #galeria_sup{height:795px;overflow:hidden;position:relative;}
@@ -1139,13 +1140,6 @@ MEDIA QUERIES
 	.left_navigation_pics{width:100%;text-align:center;}
 	.left_navigation_pics ul{margin-left:0px;display:inline-block;}
 	.over_search{box-sizing: border-box;left: 0; margin: 0 auto 0 -56px;padding-left: 64px;right:0;width:100%;}
-	
-	/*.right_navigation_pics{float:inherit;width:50%;}
-	.left_navigation_pics{float:inherit;width:auto;position:relative;}
-	.right_navigation_pics ul{overflow:hidden;}
-	.right_navigation_pics ul li{display:block;float:left;width:50%;}
-	.right_navigation_pics ul li a{width:100%;}
-	.left_navigation_pics{float:inherit;width:auto;position:relative;}*/
 
 }
 
