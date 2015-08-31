@@ -257,11 +257,11 @@ jQuery(document).ready(function(){
 		slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3150,speed:1200,touchEnabled:false});
 
 		/*Últimos Pics*/
-		/*for(var i=1;i< 11;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"></div></li>').appendTo( ".bxslider_ultimos_pics" );}
+		for(var i=1;i< 11;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"></div></li>').appendTo( ".bxslider_ultimos_pics" );}
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 		var n_slides=5;
 		if(w_win<768){if(w_win<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
-		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:n_slides,maxSlides:n_slides,slideWidth:320,slideMargin:0,ticker:true,touchEnabled:false});*/
+		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:n_slides,maxSlides:n_slides,slideWidth:320,slideMargin:0,ticker:true,touchEnabled:false});
 
 		/*Jurado mobile*/
 		slider_jurado=jQuery('.bxslider_jurado').bxSlider({pager: true,infiniteLoop:true,useCSS:false,controls:false,adaptiveHeight:true});
@@ -778,14 +778,14 @@ function control_scroll(e){
 		  if(scrollAmount>(top_premios-(3*h_win/4))){
 			 posX=-(scrollAmount-(top_premios-(3*h_win/4)))*0.3;
 			 //console.log(posY);
-			//jQuery('#box_premios .container').css({ backgroundPosition: posX+"px bottom" });
+			jQuery('#box_premios .container').css({ backgroundPosition: posX+"px bottom" });
 		  }
 
 		   //Animación de decoración de la sección premios
 		  if(scrollAmount>(top_jurado-(3*h_win/4))){
 			 posXj=-(scrollAmount-(top_jurado-(3*h_win/4)))*0.1;
 			 //console.log(posY);
-			//jQuery('#box_jurado .container').css({ backgroundPosition: "right "+posXj+"px" });
+			jQuery('#box_jurado .container').css({ backgroundPosition: "right "+posXj+"px" });
 		  }
 
 		  //Animación flecha home
