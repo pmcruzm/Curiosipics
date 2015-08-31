@@ -386,11 +386,14 @@ jQuery(document).ready(function(){
 		show_pic(id_pic);
 	});
 	
-	/*jQuery(document).on("mouseenter",".box_img_small a", function(e) {
-		jQuery( this ).parent().addClass('overjs');
-	}).on("mouseleave",".box_img_small a", function(e) {
-		jQuery( this ).parent().removeClass('overjs');
-	});*/
+	//Mouse-over pics solo en escritorio
+	if(device=='none'){
+		jQuery(document).on("mouseenter",".box_img_small a", function(e) {
+			jQuery( this ).parent().addClass('overjs');
+		}).on("mouseleave",".box_img_small a", function(e) {
+			jQuery( this ).parent().removeClass('overjs');
+		});
+	}
 	
 
 	//Cuando queremos cerrar detalles de pic
