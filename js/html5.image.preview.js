@@ -30,7 +30,8 @@ function previewImage(el,widths,limit){
 			var description = document.createElement('p');
 			output.innerHTML='';
 			description.innerHTML='No es un fichero de imagen válido';
-			output.appendChild(description);
+			//output.appendChild(description);
+			document.getElementById('errores_mis_pics').appendChild(description);
 			return false;
 		}
 	}
@@ -78,6 +79,7 @@ function previewImage(el,widths,limit){
 					output.appendChild(image);
 					//Eliminar la altura de los bloques 
 					document.getElementById('preview_box').style.height = 'auto';
+					document.getElementById('preview_box').className = "subido_ok";
 					
 					//var encoded = window.btoa(src);
 					//output.style.background = "transparent url("+src+") center center no-repeat";
@@ -86,8 +88,9 @@ function previewImage(el,widths,limit){
 				//description.innerHTML += '<span style="color:green;">Picture seems to be fine for upload.</span>';
 			} else {
 				var description = document.createElement('p');
-			    description.innerHTML += '<span style="color:#f05456;">Formato/tamaño no correcto! Formatos aceptados son: '+allowedTypes.join(', ')+'. Peso máximo del archivo: '+limit+'MB</span>';
-				output.appendChild(description);
+			    description.innerHTML += 'Formato/tamaño no correcto! Formatos aceptados son: '+allowedTypes.join(', ')+'. Peso máximo del archivo: '+limit+'MB';
+				document.getElementById('errores_mis_pics').appendChild(description);
+				//output.appendChild(description);
 			}						
 
 		};

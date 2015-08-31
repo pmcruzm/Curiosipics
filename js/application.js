@@ -292,7 +292,6 @@ jQuery(document).ready(function(){
 			jQuery(".errores").html("");
 			//Llamamos a la función de validar (id formulario y contenedor errores)
 			var result=validate_form('#registro-form');
-			console.log(result);
 			if(result==1){
 				e.preventDefault();
 				send_form=0;
@@ -308,7 +307,6 @@ jQuery(document).ready(function(){
 			jQuery(".errores").html("");
 			//Llamamos a la función de validar (id formulario y contenedor errores)
 			var result=validate_form('#new-password-form');
-			console.log(result);
 			if(result==1){
 				e.preventDefault();
 				send_form=0;
@@ -324,7 +322,6 @@ jQuery(document).ready(function(){
 			jQuery(".errores").html("");
 			//Llamamos a la función de validar (id formulario y contenedor errores)
 			var result=validate_form('#contacto-form');
-			console.log(result);
 			if(result==1){
 				e.preventDefault();
 				send_form=0;
@@ -362,8 +359,9 @@ jQuery(document).ready(function(){
 			jQuery(".errores").html("");
 			//Llamamos a la función de validar (id formulario y contenedor errores)
 			var result=validate_form('#form-upload-pic');
-			console.log(result);
 			if(result==1){
+				//Comprobamos si hay error en img
+				if(jQuery('#imagefile').hasClass('error')){jQuery('#preview_box').addClass('error');}
 				e.preventDefault();
 				send_form=0;
 			}
@@ -728,15 +726,10 @@ function control_scroll(e){
 	//Para los enlaces de la home
 	//Solo ejecutar si es visible la galería (HOME)
   if ( jQuery("#galeria_sup").is(":visible")){
-	  	/* top_curiosidades=jQuery('#box_curiosidad').offset().top;
+	  	 top_curiosidades=jQuery('#box_curiosidad').offset().top;
 		 top_participar=jQuery('#box_participar').offset().top;
 		 top_premios=jQuery('#box_premios').offset().top;
-		 top_jurado=jQuery('#box_jurado').offset().top;*/
-		 
-		 top_curiosidades=document.getElementById('box_curiosidad').offsetTop;
-		 top_participar=document.getElementById('box_participar').offsetTop;
-		 top_premios=document.getElementById('box_premios').offsetTop;
-		 top_jurado=document.getElementById('box_jurado').offsetTop;
+		 top_jurado=jQuery('#box_jurado').offset().top;
 	  
 		//Añadir clases a los enlaces del menú según scroll
 		if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
