@@ -103,7 +103,7 @@ jQuery(document).ready(function(){
 				    wordcount = jQuery.trim(text).split(" ").length;
 				}
 			    if(wordcount > options.limit) {
-			        jQuery("#counter-text").html('<span style="color: #DD0000;">0 palabras restantes</span>');
+			        jQuery("#counter-text").html('<span style="color:#f05456;">0 palabras restantes</span>');
 					limited = jQuery.trim(text).split(" ", options.limit);
 					limited = limited.join(" ");
 					jQuery(this).val(limited);
@@ -347,6 +347,22 @@ jQuery(document).ready(function(){
 				jQuery('#mail_pic').addClass('error').val('');
 			}
 
+			if(result==1){
+				e.preventDefault();
+				send_form=0;
+			}
+		}
+	});
+	
+	//Enviar formulario de registro
+	jQuery(document).on("submit","#form-upload-pic", function(e) {
+		if(send_form==0){
+			send_form=1;
+			//Limpiamos errores si no es la primera vez
+			jQuery(".errores").html("");
+			//Llamamos a la función de validar (id formulario y contenedor errores)
+			var result=validate_form('#form-upload-pic');
+			console.log(result);
 			if(result==1){
 				e.preventDefault();
 				send_form=0;

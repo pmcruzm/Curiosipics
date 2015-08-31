@@ -838,6 +838,13 @@ MEDIA QUERIES
 @media screen and (max-width: 1024px) {
 	.rombo_1_c{margin-left:-78px;}
 	.rombo_2_c{margin-left:-38px;}
+	
+	.left_galeria{width:66% !important;}
+	#galeria_sup .left_galeria .colum_1{width:50%;}
+	#galeria_sup .left_galeria .colum_2{width:50%;}
+	.right_galeria{width:33% !important;}
+	#galeria_sup .right_galeria .colum_1{display:none;}
+	#galeria_sup .right_galeria .colum_2{width:100%;}
 
 }
 
@@ -1090,6 +1097,11 @@ MEDIA QUERIES
 	.rombo .inside_rombo p{font-size:17px;width:86%;}
 	.rombo .inside_rombo a{width:80px;height:80px;}
 	.rombo .inside_rombo a span{font-size:17px;top:35px;left:18px;}
+	
+	.left_galeria{width:50% !important;}
+	#galeria_sup .left_galeria .colum_1{width:100% !important;}
+	.right_galeria{width:50% !important;}
+	#galeria_sup .right_galeria .colum_1{display:block !important;}
 
 }
 

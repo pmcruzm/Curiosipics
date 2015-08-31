@@ -86,7 +86,7 @@ function previewImage(el,widths,limit){
 				//description.innerHTML += '<span style="color:green;">Picture seems to be fine for upload.</span>';
 			} else {
 				var description = document.createElement('p');
-			    description.innerHTML += '<span style="color:red;">Formato/tamaño no correcto! Formatos aceptados son: '+allowedTypes.join(', ')+'. Peso máximo del archivo: '+limit+'MB</span>';
+			    description.innerHTML += '<span style="color:#f05456;">Formato/tamaño no correcto! Formatos aceptados son: '+allowedTypes.join(', ')+'. Peso máximo del archivo: '+limit+'MB</span>';
 				output.appendChild(description);
 			}						
 
