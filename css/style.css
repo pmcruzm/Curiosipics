@@ -417,7 +417,8 @@ PROPIEDADES MIS PICS
 .info_new_pic .box_bg_txt{background:#f1e87c;display:table;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);height:160px;width:160px;margin:0 auto;margin-top:45px;}
 .info_new_pic .inside_box_bg_txt{width:100%;text-align:center;display:table-cell;vertical-align:middle;height:100%;}
 .info_new_pic .inside_box_bg_txt p{width:100%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:16px;line-height:21px;color:#373737;}
-.info_new_pic .inside_box_bg_txt p a{color:#373737;display:block;height:30px;width:120px;margin:0 auto;border:2px solid #373737;line-height:30px;border-radius:5px;margin-top:10px;}
+.info_new_pic .inside_box_bg_txt p a{color:#373737;display:block;height:30px;width:120px;margin:0 auto;border:2px solid #373737;line-height:30px;border-radius:5px;margin-top:10px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
+.info_new_pic .inside_box_bg_txt p a:hover{background:#373737;color:#f1e87c;}
 
 .box_single_pic{background:#ffffff;border-top:solid 2px #f1f1f1;}
 .inside_single_pic{margin: 0 auto;overflow: hidden;width: 80%;padding-top:40px;padding-bottom:70px;}
@@ -605,7 +606,7 @@ PROPIEDADES FOOTER
 #top_footer .menu_pie li:first-child{margin-left:0;}
 #top_footer .menu_pie li a{color:#61bde9;font-family:'cabinregular', Helvetica, sans-serif;font-size:18px;display:inline-block;line-height:30px;height:30px;}
 #top_footer ul li.btn_footer a{font-size:18px;border:2px solid #61bde9;padding-left:20px;padding-right:20px;border-radius:5px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
-#top_footer ul li.btn_footer a:hover{background:#ffffff;}
+#top_footer ul li.btn_footer a:hover{color:#ffffff;background:#61bde9;}
 
 /** BOTONES RRSS **/
 #rrss_cab{position:absolute;top:10px;right:10px;z-index:20;}
