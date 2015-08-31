@@ -425,10 +425,10 @@ PROPIEDADES MIS PICS
 .info_s_pic{box-sizing: border-box;float: left;padding-left: 50px;width:56.6%;}
 .single_pic img{max-width:100%;}
 .info_s_pic h4{text-align:left !important;color:#373737 !important;font-size:28px !important;line-height:32px;padding-right:52px;display:inline-block;}
-.info_s_pic h4.aprovado_pic{background:url(../img/icon_aceptado.png) center right no-repeat;}
-.info_s_pic h4.no_aprovado_pic{background:url(../img/icon_no_aceptado.png) center right no-repeat;}
+.info_s_pic h4.aprovado_pic{background:url(../img/icon_aceptado.png) center right no-repeat;background-size:32px 32px;}
+.info_s_pic h4.no_aprovado_pic{background:url(../img/icon_no_aceptado.png) center right no-repeat;background-size:32px 32px;}
 .info_s_pic p{color:#373737;font-size:16px;line-height:24px;margin-bottom:30px;}
-.info_s_pic .count_votos{color:#373737;font-size:20px;line-height:24px;background:url(../img/icon_star.png) center right no-repeat;padding-right:34px;}
+.info_s_pic .count_votos{color:#373737;font-size:20px;line-height:24px;background:url(../img/icon_star.png) center right no-repeat;padding-right:34px;background-size:24px 24px;}
 
 .info_mis_pics_mob{display:none;}
 .info_mis_pics_mob h5{color: #373737;font-size: 16px;margin-bottom: 15px;}
