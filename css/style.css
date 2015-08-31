@@ -877,10 +877,11 @@ MEDIA QUERIES
 	.deco_4{left:-8%;}
 	
 	.right_navigation_pics{float:inherit;width:100%;}
-	.right_navigation_pics ul{overflow:hidden;}
+	.left_navigation_pics{float:inherit;width:auto;position:relative;}
+	/*.right_navigation_pics ul{overflow:hidden;}
 	.right_navigation_pics ul li{display:block;float:left;width:50%;}
 	.right_navigation_pics ul li a{width:100%;}
-	.left_navigation_pics{float:inherit;width:100%;position:relative;}
+	.left_navigation_pics{float:inherit;width:100%;position:relative;}*/
 }
 
 @media screen and (max-width: 980px) {	
