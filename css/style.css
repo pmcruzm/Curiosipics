@@ -132,6 +132,7 @@ PROPIEDADES HEADER
 
 
 #top_header.black_enl ul li.btn_header a{border:2px solid #373737 !important;}
+#top_header.black_enl ul li.btn_header a:hover{background:#373737 !important;color:#ffffff !important;}
 
 .logged_box a{font-size:18px;color:#61bde9;line-height:35px;height:35px;margin-right:25px;margin-left:15px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 .logged_box a:before{content:'';display:block;width:35px;height:35px;background:url(../img/ico_logged.png) right center no-repeat;float:left;}
