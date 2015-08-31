@@ -405,9 +405,13 @@ PROPIEDADES MIS PICS
 	
 .preview_pic{text-align:center;}
 .preview_pic span{font-size:13px;color:#adaaab;display:block;margin-top:10px;margin-bottom:30px;line-height:16px;}
-#preview_box{background:#e2e2e2;height:200px;display:block;margin:0 auto;margin-top:30px;overflow:hidden;}
+#preview_box{background:#e2e2e2;height:200px;display:block;margin:0 auto;margin-top:30px;overflow:hidden;box-sizing:border-box;}
 #preview_box img{max-width:100%;}
 .imagePreview{background-size:cover !important;-ms-behavior:url(/backgroundsize.min.htc);}
+
+#preview_box.error{border:2px solid #f05456;}
+.fields_pic input[type=text].error{border:2px solid #f05456;}
+.fields_pic textarea.error{border:2px solid #f05456;}
 
 
 .info_new_pic{float:left;width:25%;text-align:center;}
@@ -433,6 +437,9 @@ PROPIEDADES MIS PICS
 .info_mis_pics_mob{display:none;}
 .info_mis_pics_mob h5{color: #373737;font-size: 16px;margin-bottom: 15px;}
 .info_mis_pics_mob p{color: #373737;font-size: 13px;line-height: 18px;margin: 0 auto 15px;width: 80%;}
+
+#form-upload-pic #errores_mis_pics{padding-left:33%;clear:both;margin-bottom:20px;}
+#form-upload-pic #errores_mis_pics p{padding-left:50px;}
 
 /**********************
 PROPIEDADES PICS (TODOS)

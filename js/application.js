@@ -703,8 +703,6 @@ function control_scroll(e){
   var scrollAmount = jQuery(window).scrollTop();
   var h_foot=jQuery('#pie').height();
   
-  top_curiosidades=document.getElementById('box_curiosidad').offsetTop;
-  
   //Obtenemos altura y anchura del navegador
   h_win=jQuery(window).height();
   w_win=jQuery(window).width();
@@ -729,7 +727,7 @@ function control_scroll(e){
 
 	//Para los enlaces de la home
 	//Solo ejecutar si es visible la galería (HOME)
-  if ( jQuery("#galeria_sup").is(":visible") && device=='none'){
+  if ( jQuery("#galeria_sup").is(":visible")){
 	  	/* top_curiosidades=jQuery('#box_curiosidad').offset().top;
 		 top_participar=jQuery('#box_participar').offset().top;
 		 top_premios=jQuery('#box_premios').offset().top;
@@ -843,7 +841,7 @@ function control_scroll(e){
 		}
 	}
 
-   jQuery('.marcador').html(scrollAmount+'px -'+top_curiosidades);
+   jQuery('.marcador').html(scrollAmount+'px');
 }
 
 
