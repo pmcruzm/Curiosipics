@@ -831,6 +831,8 @@ MEDIA QUERIES
 	.form_box_new_password{width:70%;}
 	.inside_new_pic{width:90%;}
 	.inside_single_pic{width:90%;}
+	
+	#box_premios .container{background-repeat:repeat-y !important;background-position:top center !important;}
 }
 
 @media screen and (max-width: 1024px) {
