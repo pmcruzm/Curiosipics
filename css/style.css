@@ -395,7 +395,7 @@ PROPIEDADES MIS PICS
 .preview_pic{width:33.3%;float:left;box-sizing:border-box;overflow:hidden;}
 .fields_pic{width:66.6%;float:left;box-sizing:border-box;padding-left:50px;}
 .submit_btn_pic{clear:both;box-sizing:border-box;padding-left:33.3%;}
-.submit_btn_pic input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:8px;cursor:pointer;background:none;margin-left:50px;font-family:'cabinregular', Helvetica, sans-serif;-webkit-appearance:none;}
+.submit_btn_pic input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;cursor:pointer;background:none;margin-left:50px;font-family:'cabinregular', Helvetica, sans-serif;-webkit-appearance:none;}
 #form-upload-pic span,#form-upload-pic label{display:block;}
 .fields_pic label{color:#484647;font-size:18px;margin-bottom:10px;}
 .fields_pic input[type=text]{height:40px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding-left:10px;padding-right:10px;margin-bottom:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
