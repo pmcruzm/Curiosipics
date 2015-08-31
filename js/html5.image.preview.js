@@ -32,6 +32,7 @@ function previewImage(el,widths,limit){
 			description.innerHTML='No es un fichero de imagen válido';
 			//output.appendChild(description);
 			document.getElementById('errores_mis_pics').appendChild(description);
+			document.getElementById('preview_box').className = "error";
 			return false;
 		}
 	}
