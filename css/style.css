@@ -1138,7 +1138,7 @@ MEDIA QUERIES
 	.right_navigation_pics{float:inherit;width:100%;}
 	.left_navigation_pics{width:100%;text-align:center;}
 	.left_navigation_pics ul{margin-left:0px;display:inline-block;}
-	.over_search{box-sizing: border-box;left: 0; margin: 0 auto 0 -56px;padding-left: 64px;right:0;width:100%;opacity:0.5;}
+	.over_search{box-sizing: border-box;left: 0; margin: 0 auto 0 -56px;padding-left: 64px;right:0;width:100%;}
 	
 	/*.right_navigation_pics{float:inherit;width:50%;}
 	.left_navigation_pics{float:inherit;width:auto;position:relative;}
