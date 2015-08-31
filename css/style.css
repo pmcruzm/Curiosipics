@@ -428,7 +428,7 @@ PROPIEDADES MIS PICS
 .info_s_pic h4.aprovado_pic{background:url(../img/icon_aceptado.png) center right no-repeat;background-size:32px 32px;}
 .info_s_pic h4.no_aprovado_pic{background:url(../img/icon_no_aceptado.png) center right no-repeat;background-size:32px 32px;}
 .info_s_pic p{color:#373737;font-size:16px;line-height:24px;margin-bottom:30px;}
-.info_s_pic .count_votos{color:#373737;font-size:20px;line-height:24px;background:url(../img/icon_star.png) center right no-repeat;padding-right:34px;background-size:24px 24px;}
+.info_s_pic .count_votos{color:#373737;font-size:20px;line-height:25px;background:url(../img/icon_star.png) center right no-repeat;padding-right:34px;background-size:25px 25px;}
 
 .info_mis_pics_mob{display:none;}
 .info_mis_pics_mob h5{color: #373737;font-size: 16px;margin-bottom: 15px;}
