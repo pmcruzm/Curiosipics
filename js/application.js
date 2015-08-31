@@ -380,6 +380,7 @@ jQuery(document).ready(function(){
 
 	//Desplegar la info de un pic en concreto
 	jQuery(document).on("click",".box_img_small a", function(e) {
+		alert('aqui');
 		e.preventDefault();
 		var id_pic=jQuery(this).attr('rel');
 		id_pic_open=id_pic;
