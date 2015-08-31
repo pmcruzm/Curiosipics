@@ -1158,6 +1158,10 @@ MEDIA QUERIES
 	
 	#galeria_sup:after{height:645px;}
 	#galeria_sup{height:645px;}
+	#galeria_sup .left_galeria .colum_1{height:645px;}
+	#galeria_sup .left_galeria .colum_2{height:645px;}
+	#galeria_sup .right_galeria .colum_1{height:645px;}
+	#galeria_sup .right_galeria .colum_2{height:645px;}
 	
 }
 
