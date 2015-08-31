@@ -787,6 +787,12 @@ MEDIA QUERIES
 	.img_detalle_pic{width:50%;}
 	.cont_detalle_pic{width:50%;}
 }
+
+@media screen and (max-width: 1319px) {
+	.wall_pics{margin-top:20px;}
+	.right_navigation_pics{}
+
+}
  
 @media screen and (max-width: 1220px) {
 	/*.container{max-width:1024px;}*/
@@ -868,9 +874,13 @@ MEDIA QUERIES
 	.rombo .inside_rombo a span{font-size:15px;left:16px;}
 	
 	.deco_2{left:-10%;}
-	.deco_3{right:-10%;}
 	.deco_4{left:-8%;}
-	.deco_5{right:-8%;}
+	
+	.right_navigation_pics{float:inherit;width:100%;}
+	.right_navigation_pics ul{overflow:hidden;}
+	.right_navigation_pics ul li{display:block;float:left;width:50%;}
+	.right_navigation_pics ul li a{width:100%;}
+	.left_navigation_pics{float:inherit;width:100%;position:relative;}
 }
 
 @media screen and (max-width: 980px) {	
