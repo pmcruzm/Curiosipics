@@ -1091,9 +1091,7 @@ MEDIA QUERIES
 	.form_box_registro h4{padding-left:42%;}
 	
 	.right_navigation_pics{width:66.6%;}
-}
 
-@media screen and (max-width: 767px) {	
 	.detalle_pic .inside_detalle_pic{height:100%;}
 	.detalle_pic .img_detalle_pic{height:50% !important;float:inherit;width:100%;}
 	.detalle_pic .cont_detalle_pic{height:50% !important;float:inherit;width:100%;}
