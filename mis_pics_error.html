@@ -65,51 +65,7 @@
             <div class="box_space_top">
                 <div id="box_mis_pics">
                     <h3>Mis pics</h3>
-                        <h4>Subir nuevo Pic</h4>
-                        <div class="box_new_pic">
-                        	<div class="inside_new_pic">
-                                <div class="form_new_pic">
-                                	<form id="form-upload-pic" action="" method="post" enctype="multipart/form-data" novalidate data-error-msg="Ha habido un error, por favor revisa los campos resaltados">
-                                		<div class="info_mis_pics_mob">
-                                        	<h5>Recuerda</h5>
-                                            <p>Tanto el título como la descripción de la foto tienen que ir en inglés. </p>
-                                            <p>La descripción tiene que tener un mínimo de 10 palabras y un máximo de 50.</p>
-                                        </div>    
-                                        <div class="fields_pic">
-                                        	<label for="titul_pic">Título en inglés</label>
-                                        	<input type="text" class="form-control validation-rule-empty" id="titul_pic">
-                                            <label for="descrip_pic">Descripción en inglés</label>
-                                        	<textarea id="descrip_pic" class="form-control validation-rule-empty"></textarea>
-                                        </div>
-                                        <div class="preview_pic">
-                                        	<div id="preview_box">
-                                            	<div class="imagePreview"></div>
-                                            </div>
-                                            <span>Peso máximo del archivo 5 mb</span>
-                                        	<input type="file" name="imagefile" id="imagefile" class="form-control validation-rule-empty" onchange="previewImage(this,[512],5);" />
-                                           <!-- <input type="file" name="imagefile" onchange="readURL(this);" />-->
-                                        </div>
-                                        <div id="errores_mis_pics" class="errores"></div>
-                                        <div class="submit_btn_pic"><input type="submit" name="enviar_pic" value="Enviar" /></div>
-                                    </form>
-                                </div>
-                                <div class="info_new_pic">
-                                	<h5>Recuerda</h5>
-                                	<p>Tanto el título como la descripción de la foto tienen que ir en inglés. </p>
-                                    <p>La descripción tiene que tener un mínimo de 10 palabras y un máximo de 50.</p>
-                                    <div class="box_bg_txt">
-                                        <div class="inside_box_bg_txt">
-                                            <p>¿Necesitas ayuda? Contacta con nosotros y te ayudamos<br/><a href="#">Contacto</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Info ayuda mobile-->
-                                <div class="info_contact_menores">
-                                   <p>¿Necesitas ayuda?<br/>Contacta con nosotros y te ayudamos</p>
-                                   <div><a href="#">Contacto</a></div>
-                                </div>
-                            </div>
-                        </div>
+                        <h4 class="error_pics">Ya has participado con 5 Pics, no puedes subir más.</h4>
                         <h4>Pics subidos</h4>
                         <div class="resumen_mis_pics">
                         	<div class="box_single_pic">
