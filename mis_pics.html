@@ -37,13 +37,13 @@
                 	<h1><a href="http://www.cambridge.es/">Cambridge University Press</a></h1>
                     <h2 class="logo_top"><a href="index.html">Curiosipics</a></h2>
                     <div class="right_top_header desktop_opc">
-                    	<ul class="user_menu">
-                        	<li class="btn_header"><a href="registro.html" class="btn_registro">Registro</a></li>
-                            <li class="btn_header"><a href="#" class="btn_login">Login</a></li>
-                        </ul>
+                    	<div class="logged_box">
+                        	<a class="enl_ico" href="mis_pics.html">Sonia Albarán</a>
+                            <div><a href="#" class="log_out">Salir</a></div>
+                        </div>
                         <ul class="navigation_menu">
-                            <li><a href="#">EL CONCURSO</a></li>
-                            <li><a href="pics.html">PICS</a></li>
+                            <li><a href="index.html" class="active">EL CONCURSO</a></li>
+                            <li><a href="mis_pics.html">PICS</a></li>
                         </ul>
                     </div>
                     <div class="right_top_header mobile_opc">
@@ -55,31 +55,8 @@
                        <ul class="user_menu">
                            <li><a href="#">EL CONCURSO</a></li>
                            <li><a href="pics.html">PICS</a></li>
-                           <li class="btn_header"><a href="registro.html" class="btn_registro">Registro</a></li>
-                           <li class="btn_header"><a href="#" class="btn_login">Login</a></li>
                         </ul>
-                    </div>
-                </div>
-                <div id="box_login" style="display:none;">
-                	<div class="box_login">
-                	<form action="json/login_ko.json" method="get" role="form" id="form-login">
-                        <label for="email_login">Email</label>
-                        <input type="text"  id="email_login">
-                        <label for="password_login">Contraseña</label>
-                        <input type="password"  id="password_login">
-                        <div><a href="#" class="reset_password">Recordar contraseña</a></div>
-                        <span class="feedback"></span>
-                        <input type="submit" class="btn" value="Entrar">
-                    </form>
-                    </div>
-                    <div class="box_forget" style="display:none;">
-                    	<form action="json/login_ko.json" method="get" role="form" id="form-forgot-password">
-                            <p>Introduce la cuenta de correo con la que estás registrado para restablecer la contraseña.</p>
-                            <label for="email_forget">Email</label>
-                            <input type="text"  id="email_forget">
-                            <span class="feedback"></span>
-                            <input type="submit" class="btn" value="Restablecer">
-                        </form>
+                         <div class="logged_box"><a class="enl_ico" href="mis_pics.html">Sonia Albarán</a> <a href="#" class="log_out">Salir</a></div>
                     </div>
                 </div>
             </div>

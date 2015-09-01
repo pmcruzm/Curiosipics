@@ -481,6 +481,15 @@ jQuery(document).ready(function(){
 		});
 
 	});
+	
+	//Mostrar formulario de resetar password (mobile)
+	jQuery(document).on('click','.reset_password_mob',function(e){
+		e.preventDefault();
+		jQuery('.box_login_mob').fadeOut(600,function(){
+			jQuery('.box_forget_mob').fadeIn(600);
+		});
+
+	});
 
 	//Abrir modal de busqueda
 	jQuery(document).on('click','.item_search a',function(e){
@@ -515,7 +524,7 @@ jQuery(document).ready(function(){
 	});
 
 	//Comprobación del login/forgot-password vía AJAX
-	jQuery('#form-login,#form-forgot-password').on('submit', function(e){
+	jQuery('#form-login,#form-forgot-password,#form-login-mob,#form-forgot-password-mob').on('submit', function(e){
 		e.preventDefault();
 
 		var f = jQuery(this);
@@ -612,6 +621,12 @@ jQuery(document).ready(function(){
 			var h_win_r=jQuery(this).height();
 			var w_win_r=jQuery(this).width();
 			w_win=jQuery(this).width();
+			
+			if(w_win_r>815){
+				if (jQuery(".extend_menu_mob").is(":visible") ) {
+					jQuery(".extend_menu_mob").css({display:'none'});
+				}
+			}
 			
 	
 			//Siestamos haciendo resize en home reiniciar scroll o

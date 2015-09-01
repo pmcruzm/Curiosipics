@@ -54,9 +54,31 @@
                        <ul class="user_menu">
                            <li><a href="#">EL CONCURSO</a></li>
                            <li><a href="pics.html">PICS</a></li>
-                           <li class="btn_header"><a href="registro.html" class="btn_registro">Registro</a></li>
-                           <li class="btn_header"><a href="#" class="btn_login">Login</a></li>
+                           <li class="btn_header"><a href="registro.html" class="btn_registro">Regístrate aquí para participar</a></li>
                         </ul>
+                        <div id="box_login_mob">
+                            <div class="box_login_mob">
+                                <p>¿Ya tienes cuenta? Accede aquí</p>
+                                <form action="json/login_ko.json" method="get" role="form" id="form-login-mob">
+                                    <label for="email_login">Email</label>
+                                    <input type="text"  id="email_login" placeholder="Email">
+                                    <label for="password_login">Contraseña</label>
+                                    <input type="password"  id="password_login" placeholder="Contraseña">
+                                    <span class="feedback"></span>
+                                    <input type="submit" class="btn" value="Login">
+                                    <div><a href="#" class="reset_password_mob">Recordar contraseña</a></div>
+                                </form>
+                            </div>
+                            <div class="box_forget_mob" style="display:none;">
+                                <form action="json/login_ko.json" method="get" role="form" id="form-forgot-password-mob">
+                                    <p>Introduce la cuenta de correo con la que estás registrado para restablecer la contraseña.</p>
+                                    <label for="email_forget">Email</label>
+                                    <input type="text"  id="email_forget" placeholder="Email">
+                                    <span class="feedback"></span>
+                                    <input type="submit" class="btn" value="Restablecer">
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="box_login" style="display:none;">
