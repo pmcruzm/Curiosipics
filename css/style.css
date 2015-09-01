@@ -1061,6 +1061,7 @@ MEDIA QUERIES
 	
 	.detalle_pic .img_detalle_pic{width:60%;}
 	.detalle_pic .cont_detalle_pic{width:40%;}
+	.cont_detalle_pic .rrss_vote_detalle .btns_share{position:relative;margin-top:15px;right:0;}
 
 }
 
