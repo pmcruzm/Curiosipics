@@ -1061,11 +1061,11 @@ MEDIA QUERIES
 	
 	.detalle_pic .img_detalle_pic{width:60%;}
 	.detalle_pic .cont_detalle_pic{width:40%;}
-	.cont_detalle_pic .rrss_vote_detalle .btns_share{position:relative;margin-top:15px;right:0;}
+	.cont_detalle_pic .rrss_vote_detalle .btns_share{position:relative;margin-top:15px;right:20px;}
 	.bottom_detalle{text-align:center;}
 	.cont_detalle_pic .rrss_vote_detalle .btn_votar{margin:0 auto;float:inherit;}
 	.cont_detalle_pic .votos_detalle{margin:0 auto;display:block;margin-bottom:10px;}
-	.cont_detalle_pic .rrss_vote_detalle .btns_share a{margin-left:3px;}
+	.cont_detalle_pic .rrss_vote_detalle .btns_share a{margin-left:10px;}
 
 }
 
