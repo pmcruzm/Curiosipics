@@ -623,10 +623,8 @@ jQuery(document).ready(function(){
 			w_win=jQuery(this).width();
 			
 			if(w_win_r>815){
-				if (jQuery(".extend_menu_mob").is(":visible") ) {
-					jQuery(".extend_menu_mob").css({display:'none'});
-					jQuery(".right_top_header mobile_opc").removeClass('active');
-				}
+				jQuery(".extend_menu_mob").css({display:'none'});
+				jQuery(".right_top_header.mobile_opc").removeClass('active');
 			}
 			
 	
