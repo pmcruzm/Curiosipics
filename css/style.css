@@ -77,7 +77,7 @@ PROPIEDADES HEADER
 #header.header_normal{position:relative !important;/*z-index:100;*/}
 #header .container{position:relative;}
 
-#top_header{position:absolute;top:0;left:0;width:100%;}
+#top_header{position:absolute;top:0;left:0;z-index:100;width:100%;}
 #top_header h1 a{display:block;width:149px;height:44px;text-indent:-99999px;background:url(../img/logo_cambridge.png) top left no-repeat;position:absolute;top:0;left:0;background-size:149px 44px;}
 
 #top_header .right_top_header{position:absolute;top:15px;right:0;overflow:hidden;}
@@ -1034,6 +1034,9 @@ MEDIA QUERIES
 	
 	.deco_2{left:-15%;}
 	.deco_3{right:-13%;}
+	
+	#contenidos{z-index:89;}
+	#box_login{display:none !important;}
 
 }
 
