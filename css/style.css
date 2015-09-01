@@ -503,7 +503,7 @@ PROPIEDADES PICS (TODOS)
 .next_pag{display:inline-block;width:23px;height:16px;background-image:url(../img/arrow_pag_r.png); background-position:0px 0px;background-repeat:no-repeat;text-indent:-99999px;vertical-align:middle;}
 .next_pag:hover{background-position:0px -16px;}
 
-.navigation_pics{overflow:hidden;position:relative;}
+.navigation_pics{overflow:hidden;position:relative;z-index:101;}
 .left_navigation_pics{display:inline-block;float:left;position:absolute;bottom:0px;}
 .left_navigation_pics ul{margin-left:40px;margin-bottom:20px;}
 .left_navigation_pics ul li{display:inline-block;}
@@ -512,10 +512,10 @@ PROPIEDADES PICS (TODOS)
 .left_navigation_pics ul li a.active{border-bottom:solid 3px #61bde9;color:#61bde9;}
 .right_navigation_pics{display:block;float:right;width:40%;}
 .right_navigation_pics ul{font-size:0px;overflow:hidden;display:block;}
-.right_navigation_pics ul li{display:block;font-size:16px;width:50%;float:right;}
-.right_navigation_pics ul li a{display:inline-block;height:105px;text-indent:-99999px;width:100%;position:relative;z-index:89;}
-.right_navigation_pics ul li:first-child{background:red;}
-.right_navigation_pics ul li:last-child{background:green;}
+.right_navigation_pics ul li{display:block;font-size:16px;width:50%;float:right;text-align:center;}
+.right_navigation_pics ul li a{position:relative;z-index:101;color:#61bde9;border:2px solid #e2e2e2;font-size:16px;line-height:21px;box-sizing:border-box;border-radius:5px; width:95%;display:block;margin:0 auto;padding-top:10px;padding-bottom:10px;margin-bottom:10px;}
+/*.right_navigation_pics ul li:first-child{background:red;}
+.right_navigation_pics ul li:last-child{background:green;}*/
 .left_navigation_pics ul li.item_search a:hover{border-bottom:none !important;background:url(../img/lupa_search_b.png) center center no-repeat;}
 .left_navigation_pics ul li.item_search a{display:block;text-indent:-99999px;height:45px;width:22px;background:url(../img/lupa_search_black.png) center center no-repeat;}
 
@@ -920,7 +920,7 @@ MEDIA QUERIES
 	.left_navigation_pics{float:inherit;width:auto;position:relative;}
 	.right_navigation_pics ul{overflow:hidden;}
 	.right_navigation_pics ul li{display:block;float:left;width:50%;}
-	.right_navigation_pics ul li a{width:100%;}
+	/*.right_navigation_pics ul li a{width:100%;}*/
 	.left_navigation_pics{float:inherit;width:auto;position:relative;}
 }
 
@@ -1049,6 +1049,8 @@ MEDIA QUERIES
 	.tutor_datos h4{padding-left:42%;}
 	.tutor_datos p{padding-left:42%;}
 	.form_box_registro h4{padding-left:42%;}
+	
+	.right_navigation_pics{width:66.6%;}
 }
 
 @media screen and (max-width: 700px) {
@@ -1238,6 +1240,8 @@ MEDIA QUERIES
 	#box_participar h4{bottom:240px;}
 	.btn_participar{bottom:160px;}
 	.btn_participar_2{bottom:95px;}
+	
+	.right_navigation_pics ul li a{font-size:14px;line-height:18px;}
 	
 }
 
