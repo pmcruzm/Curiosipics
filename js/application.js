@@ -149,7 +149,7 @@ jQuery(document).ready(function(){
 		jQuery(".detalle_pic").height(h_total);
 		jQuery(".img_detalle_pic").height(h_total);
 		jQuery(".cont_detalle_pic").height(h_total);
-		jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+		//jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 	}
 
 	//Si está desplegado cuadro de voto confirmado
@@ -158,7 +158,7 @@ jQuery(document).ready(function(){
 		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
 		jQuery(".img_detalle_pic_vote").height(h_total);
 		jQuery(".cont_detalle_pic_vote").height(h_total);
-		jQuery(".img_big_detalle_vote").height((jQuery(".img_detalle_pic_vote").outerHeight()));
+		//jQuery(".img_big_detalle_vote").height((jQuery(".img_detalle_pic_vote").outerHeight()));
 	}
 
 	//Solo ejecutar si es visible la galería
@@ -683,7 +683,7 @@ jQuery(document).ready(function(){
 					jQuery(".detalle_pic").height(h_total);
 					jQuery(".img_detalle_pic").height(h_total);
 					jQuery(".cont_detalle_pic").height(h_total);
-					jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+					//jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
 				}else{
 					//console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
 					/*var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
@@ -1152,7 +1152,7 @@ function show_pic(id_pic){
 						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 					}
 					// Pintamos detalles
-					jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><div class="img_big_detalle" style="background-image:url('+data.img+');"></div></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="http://twitter.com/home?status='+data.title+' http://curiosipics.cambridge.es/pic/'+data.id+'" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/'+data.id+'&amp;t='+data.title+'" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/'+data.id+'&media='+data.img+'&description='+data.title+'" target="_blank" data-pin-do="buttonBookmark" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+					jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="http://twitter.com/home?status='+data.title+' http://curiosipics.cambridge.es/pic/'+data.id+'" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/'+data.id+'&amp;t='+data.title+'" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/'+data.id+'&media='+data.img+'&description='+data.title+'" target="_blank" data-pin-do="buttonBookmark" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
 					//Comprobamos las flechas de navegación que hay que añadir
 					if(pos_div!=1 && pos_div!=total_cuadros){
 						jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
@@ -1197,7 +1197,7 @@ function show_pic(id_pic){
 						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 					}
 					// Pintamos detalles
-					jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><div class="img_big_detalle" style="background-image:url('+data.img+');"></div></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="http://twitter.com/home?status='+data.title+' http://curiosipics.cambridge.es/pic/'+data.id+'" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/'+data.id+'&amp;t='+data.title+'" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/'+data.id+'&media='+data.img+'&description='+data.title+'" target="_blank" data-pin-do="buttonBookmark" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+					jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share">Compartir <a href="http://twitter.com/home?status='+data.title+' http://curiosipics.cambridge.es/pic/'+data.id+'" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/'+data.id+'&amp;t='+data.title+'" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/'+data.id+'&media='+data.img+'&description='+data.title+'" target="_blank" data-pin-do="buttonBookmark" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
 					//Comprobamos las flechas de navegación que hay que añadir
 					if(pos_div!=1 && pos_div!=total_cuadros){
 						jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
