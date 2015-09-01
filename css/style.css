@@ -861,7 +861,7 @@ MEDIA QUERIES
 @media screen and (max-width: 1200px) {
 	.cont_detalle_pic h4{display:inline-block;}
 	.cont_detalle_pic .nombre_persona{margin-bottom:10px;display:inline-block;margin-left:15px;}
-	.cont_detalle_pic h5{font-size:22px;}	
+	.cont_detalle_pic h5{font-size:22px;line-height:26px;}	
 	.cont_detalle_pic .votos_detalle span:before{width:25px;float:left;margin-right:10px;padding-bottom:0;position:relative;top:-4px;}
 	.cont_detalle_pic .votos_detalle span{line-height:25px;font-size:18px;}
 	.cont_detalle_pic .votos_detalle{text-align:left;}
