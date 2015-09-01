@@ -350,7 +350,7 @@ jQuery(document).ready(function(){
 			}
 		}
 	});
-	
+
 	//Enviar formulario de registro
 	jQuery(document).on("submit","#form-upload-pic", function(e) {
 		if(send_form==0){
@@ -385,7 +385,7 @@ jQuery(document).ready(function(){
 		id_pic_open=id_pic;
 		show_pic(id_pic);
 	});
-	
+
 	//Mouse-over pics solo en escritorio
 	if(device=='none'){
 		jQuery(document).on("mouseenter",".box_img_small a", function(e) {
@@ -394,7 +394,7 @@ jQuery(document).ready(function(){
 			jQuery( this ).parent().removeClass('overjs');
 		});
 	}
-	
+
 
 	//Cuando queremos cerrar detalles de pic
 	jQuery(document).on("click",".close_pic", function(e) {
@@ -481,7 +481,7 @@ jQuery(document).ready(function(){
 		});
 
 	});
-	
+
 	//Mostrar formulario de resetar password (mobile)
 	jQuery(document).on('click','.reset_password_mob',function(e){
 		e.preventDefault();
@@ -613,7 +613,7 @@ jQuery(document).ready(function(){
 
 	//Evento para capturar el resize de la ventana
 	jQuery( window ).resize(function() {
-		
+
 		if(jQuery(this).width() != w_win_init){
 			//console.log('aqui');
 
@@ -621,20 +621,20 @@ jQuery(document).ready(function(){
 			var h_win_r=jQuery(this).height();
 			var w_win_r=jQuery(this).width();
 			w_win=jQuery(this).width();
-			
+
 			if(w_win_r>815){
 				jQuery(".extend_menu_mob").css({display:'none'});
 				jQuery(".right_top_header.mobile_opc").removeClass('active');
 			}
-			
-	
+
+
 			//Siestamos haciendo resize en home reiniciar scroll o
 			if ( jQuery("#galeria_sup").is(":visible") ) {
-				
+
 				jQuery('body').scrollTo( "0px", 0,function(){});
-				
+
 				//if(w_win<800){reset_parallax();}else{}
-				
+
 				jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
 				jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_2').height());
 				jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
@@ -650,29 +650,29 @@ jQuery(document).ready(function(){
 				jQuery('.right_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_2').height());
 				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
 				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height())
-				
+
 				//Resize ticker de home (Falta nº de cuadros según resolución)
 				jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 				var n_slides=5;
 				if(w_win_r<768){if(w_win_r<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
 				slider_last_pics.reloadSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:n_slides,maxSlides:n_slides,slideWidth:320,slideMargin:0,ticker:true,touchEnabled:false});
 			}
-	
+
 			//Ajustamos cuadro de preview en Mis pics
 			if ( jQuery("#preview_box").is(":visible") ) {
 				jQuery("#preview_box").height(jQuery("#preview_box").width());
 			}
-	
+
 			//Ajustamos cuadros en el muro de pics
 			if ( jQuery(".wall_pics").is(":visible") ) {
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
-	
+
 			//Ajustamos cuadros en el muro de pics
 			if ( jQuery(".wall_pics").is(":visible") ) {
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
-	
+
 			//Si detalle está desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
 				//Si es detalle de RSS
@@ -696,7 +696,7 @@ jQuery(document).ready(function(){
 					show_pic(id_pic_open);
 				}
 			}
-	
+
 			//Si está desplegado cuadro de voto confirmado
 			if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
 				//console.log(jQuery(".header_vote").outerHeight());
@@ -705,7 +705,7 @@ jQuery(document).ready(function(){
 				jQuery(".cont_detalle_pic_vote").height(h_total);
 				jQuery(".img_big_detalle_vote").height((jQuery(".img_detalle_pic_vote").outerHeight()));
 			}
-			
+
 		}
 
 	});
@@ -724,7 +724,7 @@ function control_scroll(e){
   //Variable de scroll
   var scrollAmount = jQuery(window).scrollTop();
   var h_foot=jQuery('#pie').height();
-  
+
   //Obtenemos altura y anchura del navegador
   h_win=jQuery(window).height();
   w_win=jQuery(window).width();
@@ -754,14 +754,14 @@ function control_scroll(e){
 		 top_participar=jQuery('#box_participar').offset().top;
 		 top_premios=jQuery('#box_premios').offset().top;
 		 top_jurado=jQuery('#box_jurado').offset().top;
-	  
+
 		//Añadir clases a los enlaces del menú según scroll
 		if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
 		if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');}
 		if(scrollAmount>(top_participar) && scrollAmount<(top_premios)){jQuery("#top_header").removeClass().addClass('block2');}
 		if(scrollAmount>(top_premios) && scrollAmount<(top_jurado)){jQuery("#top_header").removeClass().addClass('block3');}
-		if(scrollAmount>(top_jurado)){jQuery("#top_header").removeClass().addClass('block4');}	
-  }	
+		if(scrollAmount>(top_jurado)){jQuery("#top_header").removeClass().addClass('block4');}
+  }
 
   //Solo ejecutar si es visible la galería (HOME)
   if ( jQuery("#galeria_sup").is(":visible") && device=='none' && w_win>1100) {
@@ -1129,6 +1129,8 @@ function show_pic(id_pic){
 		var mod_t_fila=total_cuadros%n_secc;
 		//console.log(total_cuadros+'--'+fila+'--'+mod_fila+'--'+n_fila+'--'+pos_div);
 
+        var picUrl = jQuery(".wall_pics").data("pic-url").replace('{id}', id_pic);
+
 		if ( jQuery(".detalle_pic").is(":visible") ) {
 			jQuery(".detalle_pic").stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
 				//Removemos el bloque anterior
@@ -1137,7 +1139,7 @@ function show_pic(id_pic){
 			    //Hacemos llamada de AJAX para obtener detalles del pic
 				jQuery.ajax({
 				  type: "GET",
-				  url: 'json/pic_info.json',
+				  url: picUrl,
 				  data: {"id": id_pic},
 				  async: false,
 				  dataType: 'json',
@@ -1182,7 +1184,7 @@ function show_pic(id_pic){
 			//var data_var1='q='+ Math.random()+'&id='+id_pic;
 			jQuery.ajax({
 			  type: "GET",
-			  url: 'json/pic_info.json',
+			  url: picUrl,
 			  data: {"id": id_pic},
 			  async: false,
 			  dataType: 'json',
@@ -1238,7 +1240,7 @@ function reset_parallax(){
 	jQuery('.deco_3_4').stop().clearQueue().animate({top:0}, 0);
 
 	jQuery('#box_curiosidad').stop().clearQueue().animate({marginTop: 0}, 0);
-	
+
 	jQuery('.deco_4_1').stop().clearQueue().animate({top:60}, 0);
 	jQuery('.deco_4_2').stop().clearQueue().animate({bottom:7}, 0);
 	jQuery('.deco_4_3').stop().clearQueue().animate({top:0},0);
