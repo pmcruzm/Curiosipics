@@ -826,7 +826,7 @@ function control_scroll(e){
 		  if(scrollAmount>(top_premios-(3*h_win/4))){
 			 posX=-(scrollAmount-(top_premios-(3*h_win/4)))*0.3;
 			 //console.log(posY);
-			jQuery('#box_premios .container').css({ backgroundPosition: posX+"px bottom" });
+			jQuery('#box_premios .container').css({ backgroundPosition: posX+"px top" });
 		  }
 
 		   //Animación de decoración de la sección premios

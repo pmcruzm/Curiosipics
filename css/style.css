@@ -94,18 +94,26 @@ PROPIEDADES HEADER
 #top_header.block1 ul li a{color:#61bde9;}
 #top_header.block1 ul li a.active{border-bottom:solid 5px #f05456;}
 #top_header.block1 ul li a:hover{border-bottom:solid 5px #f05456;}
+#top_header.block1 .logged_box a.enl_ico{}
+#top_header.block1 .logged_box a.enl_ico:before{}
 
 #top_header.block2 ul li a{color:#ffffff;}
 #top_header.block2 ul li a.active{border-bottom:solid 5px #f05456;}
 #top_header.block2 ul li a:hover{border-bottom:solid 5px #f05456;}
+#top_header.block2 .logged_box a.enl_ico{color:#ffffff;}
+#top_header.block2 .logged_box a.enl_ico:before{background:url(../img/ico_logged_w.png) right center no-repeat;}
 
 #top_header.block3 ul li a{color:#61bde9;}
 #top_header.block3 ul li a.active{border-bottom:solid 5px #f05456;}
 #top_header.block3 ul li a:hover{border-bottom:solid 5px #f05456;}
+#top_header.block3 .logged_box a.enl_ico{}
+#top_header.block4 .logged_box a.enl_ico:before{}
 
 #top_header.block4 ul li a{color:#ffffff;}
 #top_header.block4 ul li a.active{border-bottom:solid 5px #61bde9;}
 #top_header.block4 ul li a:hover{border-bottom:solid 5px #61bde9;}
+#top_header.block4 .logged_box a.enl_ico{color:#ffffff;}
+#top_header.block4 .logged_box a.enl_ico:before{background:url(../img/ico_logged_w.png) right center no-repeat;}
 
 
 #top_header ul li.btn_header a{font-size:16px;border:2px solid #ffffff;padding-left:25px;padding-right:25px;border-radius:5px;margin-right:5px;}
@@ -138,7 +146,7 @@ PROPIEDADES HEADER
 .logged_box a.enl_ico:before{content:'';display:block;width:35px;height:35px;background:url(../img/ico_logged.png) right center no-repeat;float:left;}
 
 #top_header.black_enl .logged_box a.enl_ico{color:#373737;}
-#top_header.black_enl .logged_box a.enl_ico:before{background:url(../img/ico_logged.png) right center no-repeat;}
+#top_header.black_enl .logged_box a.enl_ico:before{background:url(../img/ico_logged_b.png) right center no-repeat;}
 
 .logged_box div{text-align:right;padding-right:25px;}
 .logged_box a.log_out{color:#a1a1a1;font-size:14px;text-decoration:underline;}
@@ -307,7 +315,7 @@ PROPIEDADES COMO PARTICIPAR
 PROPIEDADES PREMIOS
 *************************************/
 #box_premios{background:#f9f9f9;/*min-height:870px;*/}
-#box_premios .container{background:url(../img/bg_premios_r.gif) 0px bottom repeat-x;padding-top:60px;padding-bottom:150px;background-size:2340px 873px;}
+#box_premios .container{background:url(../img/bg_premios_r.gif) 0px top repeat-x;padding-top:60px;padding-bottom:150px;background-size:1600px;}
 #box_premios h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_premios h3:after{content:'';display:block;margin-bottom:135px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:92px 16px;}
 
@@ -323,7 +331,7 @@ PROPIEDADES PREMIOS
 PROPIEDADES EL JURADO
 *************************************/
 #box_jurado{background:#f05456}
-#box_jurado .container{background:url(../img/bg_jurado_r.gif) right 0px no-repeat;/*min-height:1055px;*/padding-top:60px;padding-bottom:150px;background-size:1600px 1200px;}
+#box_jurado .container{background:url(../img/bg_jurado_r.gif) right 0px no-repeat;/*min-height:1055px;*/padding-top:60px;padding-bottom:150px;background-size:1600px;}
 #box_jurado h3{color:#ffffff;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_jurado h3:after{content:'';display:block;margin-bottom:45px;background:url(../img/dots_jurado.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:91px 15px;}
 
@@ -1013,7 +1021,7 @@ MEDIA QUERIES
 	.logged_box a.log_out{color:#a1a1a1 !important;text-decoration:underline;}
 	
 	#top_header.black_enl .logged_box a.enl_ico{color:#373737 !important;}
-	#top_header.black_enl .logged_box a.enl_ico:before{background:url(../img/ico_logged.png) right center no-repeat;}
+	#top_header.black_enl .logged_box a.enl_ico:before{background:url(../img/ico_logged_b.png) right center no-repeat;}
 	
 	.fields_pic{padding-left:30px;width:64.6%;}
 	.form_new_pic{width:65%;}
