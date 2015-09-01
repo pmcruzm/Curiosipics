@@ -985,6 +985,8 @@ MEDIA QUERIES
 	.rombo .inside_rombo a span{font-size:17px;top:35px;left:18px;}
 	
 	.cont_detalle_pic .descrip_pic{font-size:14px;line-height:20px;}
+	.cont_detalle_pic .rrss_vote_detalle .btn_votar{height:35px;line-height:35px;}
+	.cont_detalle_pic .rrss_vote_detalle .btns_share a{width:35px;height:35px;line-height:35px;}
 
 }
 
