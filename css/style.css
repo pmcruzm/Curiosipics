@@ -468,6 +468,10 @@ PROPIEDADES MIS PICS
 #form-upload-pic #errores_mis_pics{padding-left:33%;clear:both;margin-bottom:20px;}
 #form-upload-pic #errores_mis_pics p{padding-left:50px;}
 
+.pic_subido_correcto{width:430px;display:block;margin:0 auto;text-align:center;padding-top:130px;padding-bottom:100px;}
+.pic_subido_correcto h5{font-size:60px;color:#61bde9;font-family:'santa_fe', Helvetica, sans-serif;margin-bottom:30px;line-height:56px;}
+.pic_subido_correcto p{font-size:18px;color:#565656;}
+
 /**********************
 PROPIEDADES PICS (TODOS)
 ***********************/
