@@ -548,7 +548,7 @@ PROPIEDADES PICS (TODOS)
 .bottom_detalle{position:absolute;bottom:0px;width:100%;}
 .cont_detalle_pic .votos_detalle{margin-bottom:20px;width:120px;text-align:center;}
 .cont_detalle_pic .votos_detalle span{color:#ffffff;font-size:20px;display:inline-block;padding-left:10px;padding-right:10px;}
-.cont_detalle_pic .votos_detalle span:before{content:'';display:block;background:url(../img/icon_star.png) top center no-repeat;height:24px;padding-bottom:15px;background-size:25px 25px;}
+.cont_detalle_pic .votos_detalle span:before{content:'';display:block;background:url(../img/icon_star.png) top center no-repeat;height:25px;padding-bottom:15px;background-size:25px 25px;}
 .cont_detalle_pic .rrss_vote_detalle{overflow:hidden;width:100%;position:relative;}
 .cont_detalle_pic .rrss_vote_detalle .btn_votar{display:block;height:40px;border:2px solid #999999;color:#999999;font-size:16px;line-height:40px;text-align:center;float:left;border-radius:8px;width:120px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 .cont_detalle_pic .rrss_vote_detalle .btn_votar:hover{background:#999999;color:#323232;}
@@ -859,8 +859,11 @@ MEDIA QUERIES
 }
 
 @media screen and (max-width: 1200px) {
-	.cont_detalle_pic h4{font-size:22px;}
-	.cont_detalle_pic .nombre_persona{margin-bottom:10px;}	
+	.cont_detalle_pic h4{font-size:22px;display:inline-block;}
+	.cont_detalle_pic .nombre_persona{margin-bottom:10px;display:inline-block;}	
+	.cont_detalle_pic .votos_detalle span:before{width:25px;float:left;margin-right:10px;}
+	.cont_detalle_pic .votos_detalle span{line-height:25px;}
+	.cont_detalle_pic .votos_detalle{text-align:left;}
 }
 
 @media screen and (max-width: 1180px) {
@@ -874,7 +877,7 @@ MEDIA QUERIES
 	
 	.rombo .inside_rombo p{font-size:17px;width:86%;}
 	.rombo .inside_rombo a{width:80px;height:80px;}
-	.rombo .inside_rombo a span{font-size:17px;top:33px;left:14px;}
+	.rombo .inside_rombo a span{font-size:17px;top:33px;left:14px;padding-left:0;padding-right:0;}
 	
 	/*#box_premios .container{background-repeat:repeat-y;}*/
 }
