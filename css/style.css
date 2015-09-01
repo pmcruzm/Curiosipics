@@ -1239,6 +1239,10 @@ MEDIA QUERIES
 	.btn_participar_2{left:0;right:0;margin:0 auto;bottom:85px;}
 }
 
+@media screen and (max-width: 569px) {
+	.cont_detalle_pic .rrss_vote_detalle .btns_share span{display:none;}
+}
+
 
 @media screen and (max-width: 480px) {
 	#gallery_home h2.logo_gall{height:302px;width:303px;background-size:303px 302px;}
