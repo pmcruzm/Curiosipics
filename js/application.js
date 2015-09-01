@@ -1002,7 +1002,7 @@ function validate_form(id){
 						jQuery('.init_password').addClass('error').val('');
 						jQuery('.repeat_password').addClass('error').val('');
 					}else{
-						if(txt_ini.length < 6 || txt_ini.length > 12){
+						if(txt_ini.length < 8){
 							error_password=1;
 							jQuery('.init_password').addClass('error').val('');
 							jQuery('.repeat_password').addClass('error').val('');
