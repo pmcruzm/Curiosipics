@@ -987,6 +987,7 @@ MEDIA QUERIES
 	.cont_detalle_pic .descrip_pic{font-size:14px;line-height:20px;}
 	.cont_detalle_pic .rrss_vote_detalle .btn_votar{height:35px;line-height:35px;}
 	.cont_detalle_pic .rrss_vote_detalle .btns_share a{width:35px;height:35px;line-height:35px;}
+	..cont_detalle_pic .votos_detalle{margin-bottom:10px;}
 
 }
 
