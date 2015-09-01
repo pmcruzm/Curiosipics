@@ -1100,6 +1100,8 @@ MEDIA QUERIES
 	.cont_detalle_pic .rrss_vote_detalle .btns_share{position:absolute;bottom:-3px;right:30px;}
 	.cont_detalle_pic .votos_detalle{margin:0;margin-bottom:10px;}
 	.cont_detalle_pic h4{margin-top:20px;}
+	.cont_detalle_pic .votos_detalle{float:left;position:relative;bottom:-8px;}
+	.cont_detalle_pic .rrss_vote_detalle{width:auto;}
 }
 
 
