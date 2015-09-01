@@ -1058,6 +1058,9 @@ MEDIA QUERIES
 	
 	#contenidos{z-index:89;}
 	#box_login{display:none !important;}
+	
+	.detalle_pic .img_detalle_pic{width:60%;}
+	.detalle_pic .cont_detalle_pic{width:40%;}
 
 }
 
