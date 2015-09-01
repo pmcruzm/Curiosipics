@@ -856,7 +856,11 @@ MEDIA QUERIES
 	.tutor_datos h4{padding-left:30%;}
 	.tutor_datos p{padding-left:30%;}
 	.form_box_registro h4{padding-left:30%;}
-	
+}
+
+@media screen and (max-width: 1200px) {
+	.cont_detalle_pic h4{font-size:22px;}
+	.cont_detalle_pic .nombre_persona{margin-bottom:10px;}	
 }
 
 @media screen and (max-width: 1180px) {
