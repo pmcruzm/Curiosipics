@@ -144,7 +144,7 @@ jQuery(document).ready(function(){
 	//Si detalle está desplegado calculamos altura de los bloques
 	if ( jQuery(".detalle_pic").is(":visible") ) {
 	   var n_block_h=2;
-	   if(w_win<815){n_block_h=3;}else{n_block_h=2}
+	   if(w_win<816){n_block_h=3;}else{n_block_h=2}
 		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90;//-90 de padding:45px;
 		//console.log('Total:'+h_total);
 		jQuery(".detalle_pic").height(h_total);
@@ -156,7 +156,7 @@ jQuery(document).ready(function(){
 	//Si está desplegado cuadro de voto confirmado
 	if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
 		var n_block_h=2;
-	    if(w_win<815){n_block_h=3;}else{n_block_h=2}
+	    if(w_win<816){n_block_h=3;}else{n_block_h=2}
 		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
 		jQuery(".img_detalle_pic_vote").height(h_total);
 		jQuery(".cont_detalle_pic_vote").height(h_total);
@@ -1170,7 +1170,7 @@ function show_pic(id_pic){
 
 				//Ajustamos alturas
 				var n_block_h=2;
-	   			if(w_win<815){n_block_h=3;}else{n_block_h=2}
+	   			if(w_win<816){n_block_h=3;}else{n_block_h=2}
 				var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90;//-90 de padding:45px;
 				jQuery(".detalle_pic").height(h_total);
 				jQuery(".img_detalle_pic").height(h_total);
@@ -1216,7 +1216,7 @@ function show_pic(id_pic){
 		  });
 			//Ajustamos alturas
 			var n_block_h=2;
-	   		if(w_win<815){n_block_h=3;}else{n_block_h=2}
+	   		if(w_win<816){n_block_h=3;}else{n_block_h=2}
 			var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90;//-90 de padding:45px;
 			jQuery(".detalle_pic").height(h_total);
 			jQuery(".img_detalle_pic").height(h_total);
