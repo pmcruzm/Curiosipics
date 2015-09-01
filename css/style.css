@@ -1231,6 +1231,7 @@ MEDIA QUERIES
 	.next_pic{display:none;}
 	.prev_pic{display:none;}
 	.detalle_pic{padding-left:20px;padding-right:20px;}
+	.cont_detalle_pic .rrss_vote_detalle .btns_share{right:20px;}
 }
 
 @media screen and (max-width: 600px) {
