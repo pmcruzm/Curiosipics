@@ -1108,8 +1108,8 @@ function show_pic(id_pic){
 		var n_secc;
 		if(w_win>1100){n_secc=5;}
 		if(w_win<=1100 && w_win>768){n_secc=4;}
-		if(w_win<=768 && w_win>640){n_secc=3;}
-		if(w_win<=640){n_secc=2;}
+		if(w_win<=768 && w_win>480){n_secc=3;}
+		if(w_win<=480){n_secc=2;}
 
 		//Eliminamos el indicador de bloque activo
 		jQuery('.box_img_small').removeClass('active');

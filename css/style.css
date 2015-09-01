@@ -1187,7 +1187,6 @@ MEDIA QUERIES
 	.left_galeria .colum_1,.right_galeria .colum_1{width:100% !important;}
 	.galeria_curiosidad{height:125px;}
 	
-	.box_img_small{width:50%;}
 	.logo_top{z-index:-2;position:relative;}
 	.extend_menu_mob .logged_box{float:inherit;text-align:center;}
 	.extend_menu_mob .logged_box a:before{display:inline-block;float:inherit;vertical-align:bottom;padding-left:0px;background-position:center left;}
@@ -1260,6 +1259,7 @@ MEDIA QUERIES
 	.info_mis_pics_mob p{width:90%;}
 	
 	.deco_4{left:-10%;}
+	.box_img_small{width:50%;}
 	
 	#galeria_sup:after{height:645px;}
 	#galeria_sup{height:645px;}
