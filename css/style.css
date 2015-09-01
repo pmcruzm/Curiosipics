@@ -1289,6 +1289,9 @@ MEDIA QUERIES
 	.cont_detalle_pic .rrss_vote_detalle .btn_votar {height:30px;line-height:30px;width:90px;}
 	.cont_detalle_pic .rrss_vote_detalle .btns_share{bottom:-6px;}
 	.cont_detalle_pic .votos_detalle{bottom:-3px;}
+	.cont_detalle_pic .votos_detalle{float:inherit;}
+	.detalle_pic .img_detalle_pic{ height:33%!important;}
+	.detalle_pic .cont_detalle_pic{height: 67% !important;}
 }
 
 @media screen and (max-width: 425px) {
