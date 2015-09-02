@@ -596,11 +596,11 @@ jQuery(document).ready(function(){
 			share_url;
 
 		if( this.className.indexOf("twitter") > -1 ){
-			share_url = "http://twitter.com/home?" + encodeURIComponent('status=' + pic_tit + ' ' + pic_url);
+			share_url = "http://twitter.com/home?status=" + encodeURIComponent(pic_tit + ' ' + pic_url);
 		}else if( this.className.indexOf("facebook") > -1 ){
-			share_url = "http://facebook.com/share.php?" + encodeURIComponent('u=' + pic_url + '&t=' + pic_tit);
+			share_url = "http://facebook.com/share.php?u=" + encodeURIComponent(pic_url) + '&t=' + encodeURIComponent(pic_tit);
 		}else if( this.className.indexOf("pinterest") > -1 ){
-			share_url = "http://pinterest.com/pin/create/button/?" + encodeURIComponent('url=' + pic_url + '&media=' + pic_src + '&description=' + pic_tit);
+			share_url = "http://pinterest.com/pin/create/button/?url=" + encodeURIComponent(pic_url) + '&media=' + encodeURIComponent(pic_src) + '&description=' + encodeURIComponent(pic_tit);
 		}
 
 		jQuery(this).attr({'href':share_url, 'target':'_blank'});
