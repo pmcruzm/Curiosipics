@@ -841,6 +841,19 @@ MEDIA QUERIES
 	.inside_detalle_pic_vote{width:80%;}
 
 }
+
+@media screen and (max-width: 1280px) {
+	.cont_detalle_pic_vote h5{font-size:22px;line-height:26px;}	
+	.cont_detalle_pic_vote .nombre_persona{margin-bottom:10px;}
+	.cont_detalle_pic_vote h4{display:inline-block;}
+	.cont_detalle_pic_vote .nombre_persona{margin-bottom:10px;display:inline-block;margin-left:15px;}
+	.cont_detalle_pic_vote h5{font-size:22px;line-height:26px;}	
+	.cont_detalle_pic_vote .votos_detalle{margin-bottom:0px;}
+	.cont_detalle_pic_vote .votos_detalle span:before{padding-bottom:10px;}
+	
+	.header_vote h3{font-size:34px;line-height:46px;}
+	.header_vote h3:before{padding-bottom:10px;}
+}
  
 @media screen and (max-width: 1220px) {
 	/*.container{max-width:1024px;}*/
@@ -865,16 +878,6 @@ MEDIA QUERIES
 	.cont_detalle_pic h5{font-size:22px;line-height:26px;}	
 	.cont_detalle_pic .nombre_persona{margin-bottom:10px;}
 	
-	.cont_detalle_pic_vote h5{font-size:22px;line-height:26px;}	
-	.cont_detalle_pic_vote .nombre_persona{margin-bottom:10px;}
-	.cont_detalle_pic_vote h4{display:inline-block;}
-	.cont_detalle_pic_vote .nombre_persona{margin-bottom:10px;display:inline-block;margin-left:15px;}
-	.cont_detalle_pic_vote h5{font-size:22px;line-height:26px;}	
-	.cont_detalle_pic_vote .votos_detalle{margin-bottom:0px;}
-	.cont_detalle_pic_vote .votos_detalle span:before{padding-bottom:10px;}
-	
-	.header_vote h3{font-size:34px;line-height:46px;}
-	.header_vote h3:before{padding-bottom:10px;}
 }
 
 @media screen and (max-width: 1200px) {
