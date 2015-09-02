@@ -333,6 +333,8 @@ jQuery(document).ready(function(){
 
 	//Enviar formulario de votar pic
 	jQuery(document).on("submit","#form-votar-pic", function(e) {
+		e.preventDefault();
+		
 		if(send_form==0){
 			send_form=1;
 			//Limpiamos errores si no es la primera vez
@@ -341,15 +343,48 @@ jQuery(document).ready(function(){
 			var result=0;
 			//Busca todos los campos requeridos de mail
 			var res_campo=jQuery('#mail_pic').val();
+			
 			if((res_campo=="") || (res_campo!="" && validateEmail(res_campo)==false) ){
 				result=1;
 				jQuery('#mail_pic').addClass('error').val('');
 			}
-
+			
+			//Acción si el mail es correcto o no
 			if(result==1){
-				e.preventDefault();
 				send_form=0;
+			}else{
+				//Con el mail correcto se procede a votar
+				var url_vote=jQuery('.wall_pics').attr('data-pic-vote-url');
+				//Enviamos el voto vía AJAX
+				jQuery.ajax({
+					  type: "POST",
+					  url: url_vote,
+					  async: false,
+					  data: {"email": res_campo},
+					  dataType: 'json',
+					  success : function(data){
+								console.log(data);
+								if(data.errorCode==0){
+									//Si se ha añadido correctamente actualizamos  
+									jQuery('.cont_detalle_pic .votos_detalle span').text(data.votos+' Votos');
+									//Cerramos el modal de Voto
+									jQuery('.box_pop_votar').fadeOut(600,function(){
+										jQuery('#form-votar-pic input[type=email]').val("").removeClass('error');
+										alert(data.message);
+									});
+								}else{
+									//Cerramos el modal de voto
+									jQuery('.box_pop_votar').fadeOut(600,function(){
+										jQuery('#form-votar-pic input[type=email]').val("").removeClass('error');
+										alert(data.message);
+									});
+								}
+								send_form=0;
+					  }
+				});
+				
 			}
+			
 		}
 	});
 
@@ -508,13 +543,43 @@ jQuery(document).ready(function(){
 		});
 
 	});
+	
 
 	//Mostrar modal votar pic
 	jQuery(document).on('click','.btn_votar',function(e){
 		e.preventDefault();
-		jQuery('.box_pop_votar').fadeIn(600,function(){});
+		//Miramos si el usuarios está registrado
+		var user_loged=jQuery('.wall_pics').attr('data-user-logged');
+		var url_vote=jQuery('.wall_pics').attr('data-pic-vote-url');
+		//console.log(user_loged+'--'+url_vote);
+		if(user_loged=='true'){
+		 	//Enviamos el voto vía AJAX
+			jQuery.ajax({
+				  type: "POST",
+				  url: url_vote,
+				  async: false,
+				  dataType: 'json',
+				  success : function(data){
+					  		console.log(data);
+				  			if(data.errorCode==0){
+								//Si se ha añadido correctamente actualizamos  
+								jQuery('.cont_detalle_pic .votos_detalle span').text(data.votos+' Votos');
+								alert(data.message);
+							}else{
+								//Si se ha producido un error
+								alert(data.message);
+							}
+				  }
+			});
+		
+		}else{
+			//Mostramos el modal 
+			jQuery('.box_pop_votar').fadeIn(600,function(){});
+		}
 
 	});
+	
+	
 
 	//Cerrar modal votar pic
 	jQuery(document).on('click','.close_votar,.bg_pop_votar',function(e){
@@ -1133,8 +1198,10 @@ function show_pic(id_pic){
 		var n_fila=parseInt(total_cuadros/n_secc);
 		var mod_t_fila=total_cuadros%n_secc;
 		//console.log(total_cuadros+'--'+fila+'--'+mod_fila+'--'+n_fila+'--'+pos_div);
-
+		
+		//Completamos las urls de visualización y voto de un pic
         var picUrl = jQuery(".wall_pics").data("pic-url").replace('{id}', id_pic);
+		var picVoteUrl = jQuery(".wall_pics").data("pic-vote-url").replace('{id}', id_pic);
 
 		if ( jQuery(".detalle_pic").is(":visible") ) {
 			jQuery(".detalle_pic").stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
