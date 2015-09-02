@@ -109,7 +109,7 @@
         <div id="contenidos">
             <div class="box_space_top">
                 <div id="box_all_pics">
-                      <div class="wall_pics" data-pic-url="json/pic_info.json" data-pic-vote-url="json/pic_vote_error.json" data-user-logged="false">
+                      <div class="wall_pics" data-pic-url="json/pic_info.json?id={id}" data-pic-vote-url="json/pic_vote_error.json?id={id}" data-user-logged="false">
                           <div class="container">
                           	  <div class="navigation_pics">
                                     <div class="left_navigation_pics">
@@ -136,7 +136,7 @@
                                     </div>
                               </div>
                               <div class="row">
-                              <div class="detalle_pic pic_rrss" style="display:block;">
+                              <div class="detalle_pic pic_rrss" data-id="123" style="display:block;">
                               	<div class="inside_detalle_pic">
                                 	<div class="img_detalle_pic">
                                     	<img src="img/test1.jpg" />
@@ -149,24 +149,16 @@
                                     	<div class="bottom_detalle">
                                     		<div class="votos_detalle"><span>5 Votos</span></div>
                                     		<div class="rrss_vote_detalle">
-                                    			<a rel="1" class="btn_votar" href="#">Votar</a>
-                                        		<p class="btns_share"><span>Compartir</span> <a class="fa fa-twitter" target="_blank" href="http://twitter.com/home?status=Lorem ipsum dolor sit amet http://curiosipics.cambridge.es/pic/11"><span class="hide">Twitter</span></a><a class="fa fa-facebook" target="_blank" href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/11&amp;t=Lorem ipsum dolor sit amet"><span class="hide">Facebook</span></a><a class="fa fa-pinterest-p" data-pin-do="buttonBookmark" target="_blank" href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/11&amp;media=img/test1.jpg&amp;description=Lorem ipsum dolor sit amet"><span class="hide">Pinterest</span></a></p>
+                                    			<a class="btn_votar" href="#">Votar</a>
+                                        		<p class="btns_share"><span>Compartir</span>
+                                                    <a class="fa fa-twitter" href="#"><span class="hide">Twitter</span></a>
+                                                    <a class="fa fa-facebook" href="#"><span class="hide">Facebook</span></a>
+                                                    <a class="fa fa-pinterest-p" href="#"><span class="hide">Pinterest</span></a>
+                                                </p>
                                         	</div>
                                         </div>
-                                     </div>
-                                   </div>
-                                   <div style="display:none;" class="box_pop_votar">
-                                      <div class="pop_votar">
-                                      	<h3>Votar Pic</h3>
-                                      	<p>Para votar debes introducir una dirección de correo electrónico y confirmar tu voto en el email que te enviaremos.</p>
-                                        <form id="form-votar-pic" role="form" novalidate method="get" action="#">
-                                            <label for="search_term">Votar</label>
-                                            <input type="email" placeholder="Introduce tu email" name="mail_pic" id="mail_pic" autocorrect="off">
-                                            <input type="submit" value="Enviar" class="">
-                                        </form>
-                                        <a class="close_votar" href="#">Cerrar</a>
-                                       </div>
-                                    </div>
+                                	</div>
+                                </div>
                                     <a class="close_pic" href="#">Cerrar</a>
                                     </div>
                                     <div class="box_img_small" style="background-image:url(img/test1.jpg);"><a href="#" rel="1"><h3>Lorem ipsum lorem</h3></a></div>
