@@ -334,7 +334,7 @@ jQuery(document).ready(function(){
 	//Enviar formulario de votar pic
 	jQuery(document).on("submit","#form-votar-pic", function(e) {
 		e.preventDefault();
-		
+
 		if(send_form==0){
 			send_form=1;
 			//Limpiamos errores si no es la primera vez
@@ -343,18 +343,19 @@ jQuery(document).ready(function(){
 			var result=0;
 			//Busca todos los campos requeridos de mail
 			var res_campo=jQuery('#mail_pic').val();
-			
+
 			if((res_campo=="") || (res_campo!="" && validateEmail(res_campo)==false) ){
 				result=1;
 				jQuery('#mail_pic').addClass('error').val('');
 			}
-			
+
 			//Acción si el mail es correcto o no
 			if(result==1){
 				send_form=0;
 			}else{
 				//Con el mail correcto se procede a votar
-				var url_vote=jQuery('.wall_pics').attr('data-pic-vote-url');
+				var pic_id   = jQuery('.detalle_pic').data('id');
+				var url_vote = jQuery('.wall_pics').attr('data-pic-vote-url').replace('{id}', pic_id);
 				//Enviamos el voto vía AJAX
 				jQuery.ajax({
 					  type: "POST",
@@ -365,7 +366,7 @@ jQuery(document).ready(function(){
 					  success : function(data){
 								console.log(data);
 								if(data.errorCode==0){
-									//Si se ha añadido correctamente actualizamos  
+									//Si se ha añadido correctamente actualizamos
 									jQuery('.cont_detalle_pic .votos_detalle span').text(data.votos+' Votos');
 									//Cerramos el modal de Voto
 									jQuery('.box_pop_votar').fadeOut(600,function(){
@@ -382,9 +383,9 @@ jQuery(document).ready(function(){
 								send_form=0;
 					  }
 				});
-				
+
 			}
-			
+
 		}
 	});
 
@@ -543,14 +544,19 @@ jQuery(document).ready(function(){
 		});
 
 	});
-	
+
 
 	//Mostrar modal votar pic
 	jQuery(document).on('click','.btn_votar',function(e){
 		e.preventDefault();
+
+		var parent     = jQuery(this).closest('.detalle_pic');
+		var pic_id     = parent.data('id');
+		var url_vote   = jQuery('.wall_pics').attr('data-pic-vote-url').replace('{id}', pic_id);
+
 		//Miramos si el usuarios está registrado
-		var user_loged=jQuery('.wall_pics').attr('data-user-logged');
-		var url_vote=jQuery('.wall_pics').attr('data-pic-vote-url');
+		var user_loged = jQuery('.wall_pics').attr('data-user-logged');
+
 		//console.log(user_loged+'--'+url_vote);
 		if(user_loged=='true'){
 		 	//Enviamos el voto vía AJAX
@@ -562,7 +568,7 @@ jQuery(document).ready(function(){
 				  success : function(data){
 					  		console.log(data);
 				  			if(data.errorCode==0){
-								//Si se ha añadido correctamente actualizamos  
+								//Si se ha añadido correctamente actualizamos
 								jQuery('.cont_detalle_pic .votos_detalle span').text(data.votos+' Votos');
 								alert(data.message);
 							}else{
@@ -571,15 +577,35 @@ jQuery(document).ready(function(){
 							}
 				  }
 			});
-		
+
 		}else{
-			//Mostramos el modal 
+			//Mostramos el modal
 			jQuery('.box_pop_votar').fadeIn(600,function(){});
 		}
 
 	});
-	
-	
+
+
+	jQuery(document).on('click','.btns_share a',function(e){
+
+		var parent  = jQuery(this).closest('.detalle_pic'),
+			pic_id  = parent.data('id'),
+			pic_url = jQuery(".wall_pics").data("pic-url").replace('{id}', pic_id),
+			pic_tit = jQuery('.cont_detalle_pic h5', parent).text(),
+			pic_src = jQuery('.img_detalle_pic img', parent).attr('src'),
+			share_url;
+
+		if( this.className.indexOf("twitter") > -1 ){
+			share_url = "http://twitter.com/home?" + encodeURIComponent('status=' + pic_tit + ' ' + pic_url);
+		}else if( this.className.indexOf("facebook") > -1 ){
+			share_url = "http://facebook.com/share.php?" + encodeURIComponent('u=' + pic_url + '&t=' + pic_tit);
+		}else if( this.className.indexOf("pinterest") > -1 ){
+			share_url = "http://pinterest.com/pin/create/button/?" + encodeURIComponent('url=' + pic_url + '&media=' + pic_src + '&description=' + pic_tit);
+		}
+
+		jQuery(this).attr({'href':share_url, 'target':'_blank'});
+	});
+
 
 	//Cerrar modal votar pic
 	jQuery(document).on('click','.close_votar,.bg_pop_votar',function(e){
@@ -1198,9 +1224,9 @@ function show_pic(id_pic){
 		var n_fila=parseInt(total_cuadros/n_secc);
 		var mod_t_fila=total_cuadros%n_secc;
 		//console.log(total_cuadros+'--'+fila+'--'+mod_fila+'--'+n_fila+'--'+pos_div);
-		
+
 		//Completamos las urls de visualización y voto de un pic
-        var picUrl = jQuery(".wall_pics").data("pic-url").replace('{id}', id_pic);
+		var picUrl     = jQuery(".wall_pics").data("pic-url").replace('{id}', id_pic);
 		var picVoteUrl = jQuery(".wall_pics").data("pic-vote-url").replace('{id}', id_pic);
 
 		if ( jQuery(".detalle_pic").is(":visible") ) {
@@ -1212,7 +1238,6 @@ function show_pic(id_pic){
 				jQuery.ajax({
 				  type: "GET",
 				  url: picUrl,
-				  data: {"id": id_pic},
 				  async: false,
 				  dataType: 'json',
 				  success : function(data){
@@ -1224,7 +1249,7 @@ function show_pic(id_pic){
 						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 					}
 					// Pintamos detalles
-					jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share"><span>Compartir</span> <a href="http://twitter.com/home?status='+data.title+' http://curiosipics.cambridge.es/pic/'+data.id+'" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/'+data.id+'&amp;t='+data.title+'" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/'+data.id+'&media='+data.img+'&description='+data.title+'" target="_blank" data-pin-do="buttonBookmark" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+					jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
 					//Comprobamos las flechas de navegación que hay que añadir
 					if(pos_div!=1 && pos_div!=total_cuadros){
 						jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
@@ -1259,7 +1284,6 @@ function show_pic(id_pic){
 			jQuery.ajax({
 			  type: "GET",
 			  url: picUrl,
-			  data: {"id": id_pic},
 			  async: false,
 			  dataType: 'json',
 			  success : function(data){
@@ -1271,7 +1295,7 @@ function show_pic(id_pic){
 						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 					}
 					// Pintamos detalles
-					jQuery('<div class="detalle_pic"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar" rel="1">Votar</a><p class="btns_share"><span>Compartir</span> <a href="http://twitter.com/home?status='+data.title+' http://curiosipics.cambridge.es/pic/'+data.id+'" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/'+data.id+'&amp;t='+data.title+'" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/'+data.id+'&media='+data.img+'&description='+data.title+'" target="_blank" data-pin-do="buttonBookmark" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+					jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
 					//Comprobamos las flechas de navegación que hay que añadir
 					if(pos_div!=1 && pos_div!=total_cuadros){
 						jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
