@@ -628,7 +628,8 @@ PROPIEDADES VOTO CONFIRMADO
 .header_vote h3{font-size:40px;line-height:52px;color:#f1e87c;font-family:'santa_fe', Helvetica, sans-serif;text-align:center;}
 .header_vote h3:before{content:'';display:block;width:100%;height:37px;background:url(../img/star_big.png) top center no-repeat;padding-bottom:20px;}
 
-.img_detalle_pic_vote{width:60%;float:left;position:relative;}
+.img_detalle_pic_vote{width:60%;float:left;position:relative;text-align:center;}
+.img_detalle_pic_vote img{max-width:100%;max-height:100%;}
 .img_big_detalle_vote{width:90%;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center; background-repeat:no-repeat;}
 .cont_detalle_pic_vote{width:40%;float:left;box-sizing:border-box;padding-left:30px;position:relative;}
 .cont_detalle_pic_vote h4{color:#61bde9;font-size:28px;font-family:'santa_fe', Helvetica, sans-serif;padding-top:10px;}
@@ -638,7 +639,7 @@ PROPIEDADES VOTO CONFIRMADO
 .bottom_detalle{position:absolute;bottom:0px;width:100%;}
 .cont_detalle_pic_vote .votos_detalle{margin-bottom:20px;}
 .cont_detalle_pic_vote .votos_detalle span{color:#ffffff;font-size:20px;display:inline-block;padding-left:10px;padding-right:10px;}
-.cont_detalle_pic_vote .votos_detalle span:before{content:'';display:block;background:url(../img/icon_star.png) top center no-repeat;height:24px;padding-bottom:15px;}
+.cont_detalle_pic_vote .votos_detalle span:before{content:'';display:block;background:url(../img/icon_star.png) top center no-repeat;height:25px;padding-bottom:15px;background-size:25px 25px;}
 .cont_detalle_pic_vote .rrss_vote_detalle{overflow:hidden;width:100%;position:relative;}
 .cont_detalle_pic_vote .rrss_vote_detalle .btn_votar{display:block;height:40px;border:2px solid #999999;color:#999999;font-size:16px;line-height:40px;text-align:center;float:left;border-radius:8px;width:120px;}
 .cont_detalle_pic_vote .rrss_vote_detalle .btns_share{display:inline-block;color:#999999;font-size:16px;line-height:40px;position:absolute;right:30px;}
