@@ -1055,20 +1055,26 @@ function doOnOrientationChange()
 
 			//Si detalle está desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
-		
-				//Ajustamos cuadros dependiendo de resolución
-				var h_detalle_opc;
-				var n_block_h=2;
-				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+				//Si es detalle de RSS
+				if ( jQuery(".detalle_pic").hasClass('pic_rrss')){
+					
+					//Ajustamos cuadros dependiendo de resolución
+					var h_detalle_opc;
+					var n_block_h=2;
+					if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
 							
-				if(w_win<426){
-					h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
-					jQuery(".detalle_pic").height('auto');
+					if(w_win<426){
+						h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+						jQuery(".detalle_pic").height('auto');
+					}else{
+						h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
+						jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+						jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+						jQuery(".detalle_pic").height(h_detalle_opc);
+					}
 				}else{
-					h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
-					jQuery(".img_detalle_pic").height(h_detalle_opc-90);
-					jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
-					jQuery(".detalle_pic").height(h_detalle_opc);
+					jQuery(".detalle_pic").stop().clearQueue().remove();
+					show_pic(id_pic_open);
 				}
 			}
 
@@ -1148,20 +1154,26 @@ function doOnOrientationChange()
 
 			//Si detalle está desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
-		
-				//Ajustamos cuadros dependiendo de resolución
-				var h_detalle_opc;
-				var n_block_h=2;
-				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+				//Si es detalle de RSS
+				if ( jQuery(".detalle_pic").hasClass('pic_rrss')){
+					
+					//Ajustamos cuadros dependiendo de resolución
+					var h_detalle_opc;
+					var n_block_h=2;
+					if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
 							
-				if(w_win<426){
-					h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
-					jQuery(".detalle_pic").height('auto');
+					if(w_win<426){
+						h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+						jQuery(".detalle_pic").height('auto');
+					}else{
+						h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
+						jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+						jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+						jQuery(".detalle_pic").height(h_detalle_opc);
+					}
 				}else{
-					h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
-					jQuery(".img_detalle_pic").height(h_detalle_opc-90);
-					jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
-					jQuery(".detalle_pic").height(h_detalle_opc);
+					jQuery(".detalle_pic").stop().clearQueue().remove();
+					show_pic(id_pic_open);
 				}
 			}
 
