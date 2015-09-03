@@ -1346,6 +1346,8 @@ MEDIA QUERIES
 	.detalle_pic .cont_detalle_pic{height: auto !important;padding-bottom:100px;}
 	.detalle_pic{height:auto !important;}
 	
+	.cont_detalle_pic .votos_detalle span{padding-left:0;}
+	
 	
 }
 
