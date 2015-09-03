@@ -733,7 +733,7 @@ jQuery(document).ready(function(){
 	//Evento para capturar el resize de la ventana
 	jQuery( window ).resize(function() {
 
-		if(jQuery(this).width() != w_win_init){
+		if(jQuery(this).width() != w_win_init && device=='none'){
 			
 			//console.log('aqui');
 
