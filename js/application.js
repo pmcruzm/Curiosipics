@@ -1270,7 +1270,7 @@ function show_pic(id_pic){
 					//Alineamos el scroll al pie del detalle
 					var h_detalle=jQuery(".detalle_pic").outerHeight();
 					var h_offset;
-					if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}
+					if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
 					jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
 				});
 			});
@@ -1315,7 +1315,7 @@ function show_pic(id_pic){
 				//Alineamos el scroll al pie del detalle
 				var h_detalle=jQuery(".detalle_pic").outerHeight();
 				var h_offset;
-				if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}
+				if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
 				jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
 			});
 		}
