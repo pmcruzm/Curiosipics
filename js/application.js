@@ -1273,7 +1273,10 @@ function show_pic(id_pic){
 						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 					}
 					// Pintamos detalles
-						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det)).imagesLoaded().then(function(){
+						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+							
+							//No mostramos el contenidos hasta que la imagen está cargada	
+						imagesLoaded( jQuery('.detalle_pic'),function( instance ) {
 							
 							//Comprobamos las flechas de navegación que hay que añadir
 							if(pos_div!=1 && pos_div!=total_cuadros){
@@ -1290,23 +1293,25 @@ function show_pic(id_pic){
 							
 							if(w_win<425){
 								h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+								jQuery(".detalle_pic").stop().clearQueue().css({'height':'auto',display:'none'}).slideDown(600,'easeInOutExpo',function(){
+									//Alineamos el scroll al pie del detalle
+									var h_detalle=jQuery(".detalle_pic").outerHeight();
+									var h_offset;
+									if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
+									jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
+								});
 							}else{
-								h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;	
+								h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
+								jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+								jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+								jQuery(".detalle_pic").stop().clearQueue().animate({height:h_detalle_opc},600,'easeInOutExpo',function(){
+									//Alineamos el scroll al pie del detalle
+									var h_detalle=jQuery(".detalle_pic").outerHeight();
+									var h_offset;
+									if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
+									jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
+								});	
 							}
-							
-							//jQuery(".detalle_pic").height(h_detalle_opc);
-							jQuery(".img_detalle_pic").height(h_detalle_opc-90);
-							jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
-							//jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
-							
-							//Desplegamos el cuadro de detalle
-							jQuery(".detalle_pic").stop().clearQueue().animate({height:h_detalle_opc},600,'easeInOutExpo',function(){
-								//Alineamos el scroll al pie del detalle
-								var h_detalle=jQuery(".detalle_pic").outerHeight();
-								var h_offset;
-								if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
-								jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
-							});
 							
 						});
 				  }
@@ -1332,10 +1337,9 @@ function show_pic(id_pic){
 						
 						// Pintamos detalles
 						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
-						//.imagesLoaded().then(function(){
-							
+						
+						//No mostramos el contenidos hasta que la imagen está cargada	
 						imagesLoaded( jQuery('.detalle_pic'),function( instance ) {
-							//console.log('all images are loaded');
 							
 							//Comprobamos las flechas de navegación que hay que añadir
 							if(pos_div!=1 && pos_div!=total_cuadros){
@@ -1374,7 +1378,6 @@ function show_pic(id_pic){
 							
 						});
 							
-						//});
 				  }
 		  });
 		  	
