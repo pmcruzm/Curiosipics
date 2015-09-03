@@ -169,24 +169,37 @@ jQuery(document).ready(function(){
 
 	//Si detalle está desplegado calculamos altura de los bloques
 	if ( jQuery(".detalle_pic").is(":visible") ) {
-	   var n_block_h=2;
-	   if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90;//-90 de padding:45px;
-		//console.log('Total:'+h_total);
-		jQuery(".detalle_pic").height(h_total);
-		jQuery(".img_detalle_pic").height(h_total);
-		jQuery(".cont_detalle_pic").height(h_total);
-		//jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+	   //Ajustamos cuadros dependiendo de resolución
+		var h_detalle_opc;
+		var n_block_h=2;
+		if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+							
+		if(w_win<426){
+			h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+			jQuery(".detalle_pic").height('auto');
+		}else{
+			h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
+			jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+			jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+			jQuery(".detalle_pic").height(h_detalle_opc);
+		}
 	}
 
 	//Si está desplegado cuadro de voto confirmado
 	if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
+		//Ajustamos cuadros dependiendo de resolución
+		var h_detalle_opc;
 		var n_block_h=2;
-	    if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-		var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
-		jQuery(".img_detalle_pic_vote").height(h_total);
-		jQuery(".cont_detalle_pic_vote").height(h_total);
-		//jQuery(".img_big_detalle_vote").height((jQuery(".img_detalle_pic_vote").outerHeight()));
+		if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+							
+		if(w_win<426){
+			//h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+			jQuery(".detalle_pic").height('auto');
+		}else{
+			h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
+			jQuery(".img_detalle_pic_vote").height(h_detalle_opc-90);
+			jQuery(".cont_detalle_pic_vote").height(h_detalle_opc-90);
+		}
 	}
 
 	//Solo ejecutar si es visible la galería
@@ -748,7 +761,7 @@ jQuery(document).ready(function(){
 			}
 
 
-			//Siestamos haciendo resize en home reiniciar scroll o
+			//Si estamos haciendo resize en home reiniciar scroll o
 			if ( jQuery("#galeria_sup").is(":visible") ) {
 
 				jQuery('body').scrollTo("0px",0);
@@ -795,22 +808,22 @@ jQuery(document).ready(function(){
 			if ( jQuery(".detalle_pic").is(":visible") ) {
 				//Si es detalle de RSS
 				if ( jQuery(".detalle_pic").hasClass('pic_rrss')){
+					
+					//Ajustamos cuadros dependiendo de resolución
+					var h_detalle_opc;
 					var n_block_h=2;
-					if(w_win_r<816){if(w_win_r<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-					var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90;//-90 de padding:45px;
-					//console.log('Total:'+h_total);
-					jQuery(".detalle_pic").height(h_total);
-					jQuery(".img_detalle_pic").height(h_total);
-					jQuery(".cont_detalle_pic").height(h_total);
-					//jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+					if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+							
+					if(w_win<426){
+						h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+						jQuery(".detalle_pic").height('auto');
+					}else{
+						h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
+						jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+						jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+						jQuery(".detalle_pic").height(h_detalle_opc);
+					}
 				}else{
-					//console.log(jQuery(".box_img_small").outerHeight()+'--'+jQuery(".box_img_small").height())
-					/*var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*2)-90;//-90 de padding:45px;
-					//console.log('Total:'+h_total);
-					jQuery(".detalle_pic").height(h_total);
-					jQuery(".img_detalle_pic").height(h_total);
-					jQuery(".cont_detalle_pic").height(h_total);
-					jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));*/
 					jQuery(".detalle_pic").stop().clearQueue().remove();
 					show_pic(id_pic_open);
 				}
@@ -818,12 +831,19 @@ jQuery(document).ready(function(){
 
 			//Si está desplegado cuadro de voto confirmado
 			if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
+				//Ajustamos cuadros dependiendo de resolución
+				var h_detalle_opc;
 				var n_block_h=2;
 				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-				var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
-				jQuery(".img_detalle_pic_vote").height(h_total);
-				jQuery(".cont_detalle_pic_vote").height(h_total);
-				//jQuery(".img_big_detalle_vote").height((jQuery(".img_detalle_pic_vote").outerHeight()));
+									
+				if(w_win<426){
+					//h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+					jQuery(".detalle_pic").height('auto');
+				}else{
+					h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
+					jQuery(".img_detalle_pic_vote").height(h_detalle_opc-90);
+					jQuery(".cont_detalle_pic_vote").height(h_detalle_opc-90);
+				}
 			}
 
 		}
@@ -890,17 +910,6 @@ function control_scroll(e){
 		  top_participar=jQuery('#box_participar').offset().top;
 		  top_premios=jQuery('#box_premios').offset().top;
 		  top_jurado=jQuery('#box_jurado').offset().top;
-
-
-
-		    /*
-		    speedA = 1.3;
-			speedB = 0.8;
-			speedC = 1.5;
-			speedD = 0.6;
-			speedE = 1;
-			speedF = 0.3
-			  */
 
 		  //Animación decoración superior de la home
 		  if(scrollAmount<top_curiosidades){
@@ -989,21 +998,193 @@ function doOnOrientationChange()
     {
       case -90:
       case 90:
-       // alert('landscape');
+       
+	   		//Obtenemos altura y anchura del navegador
+			var h_win_r=jQuery(this).height();
+			var w_win_r=jQuery(this).width();
+			w_win=jQuery(this).width();
+
+			if(w_win_r>815){
+				jQuery(".extend_menu_mob").css({display:'none'});
+				jQuery(".right_top_header.mobile_opc").removeClass('active');
+			}
+
+
+			//Si estamos haciendo resize en home reiniciar scroll o
+			if ( jQuery("#galeria_sup").is(":visible") ) {
+
+				jQuery('body').scrollTo("0px",0);
+
+				jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
+				jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_2').height());
+				jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
+				jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
+				jQuery('.left_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_1').height());
+				jQuery('.left_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_2').height());
+				jQuery('.left_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_3').height());
+				jQuery('.left_galeria .colum_2 .box_img_4 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_4').height());
+				jQuery('.right_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_1').height());
+				jQuery('.right_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_2').height());
+				jQuery('.right_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_3').height());
+				jQuery('.right_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_1').height());
+				jQuery('.right_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_2').height());
+				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
+				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height())
+
+				//Resize ticker de home (Falta nº de cuadros según resolución)
+				jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
+				var n_slides=5;
+				if(w_win_r<768){if(w_win_r<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
+				slider_last_pics.reloadSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:n_slides,maxSlides:n_slides,slideWidth:320,slideMargin:0,ticker:true,touchEnabled:false});
+			}
+
+			//Ajustamos cuadro de preview en Mis pics
+			if ( jQuery("#preview_box").is(":visible") ) {
+				jQuery("#preview_box").height(jQuery("#preview_box").width());
+			}
+
+			//Ajustamos cuadros en el muro de pics
+			if ( jQuery(".wall_pics").is(":visible") ) {
+				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
+			}
+
+			//Ajustamos cuadros en el muro de pics
+			if ( jQuery(".wall_pics").is(":visible") ) {
+				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
+			}
+
+			//Si detalle está desplegado calculamos altura de los bloques
+			if ( jQuery(".detalle_pic").is(":visible") ) {
+		
+				//Ajustamos cuadros dependiendo de resolución
+				var h_detalle_opc;
+				var n_block_h=2;
+				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+							
+				if(w_win<426){
+					h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+					jQuery(".detalle_pic").height('auto');
+				}else{
+					h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
+					jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+					jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+					jQuery(".detalle_pic").height(h_detalle_opc);
+				}
+			}
+
+			//Si está desplegado cuadro de voto confirmado
+			if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
+				//Ajustamos cuadros dependiendo de resolución
+				var h_detalle_opc;
+				var n_block_h=2;
+				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+									
+				if(w_win<426){
+					//h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+					jQuery(".detalle_pic").height('auto');
+				}else{
+					h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
+					jQuery(".img_detalle_pic_vote").height(h_detalle_opc-90);
+					jQuery(".cont_detalle_pic_vote").height(h_detalle_opc-90);
+				}
+			}
+	   
         break;
       default:
-       // alert('portrait');
+       
+	   		//Obtenemos altura y anchura del navegador
+			var h_win_r=jQuery(this).height();
+			var w_win_r=jQuery(this).width();
+			w_win=jQuery(this).width();
+
+			if(w_win_r>815){
+				jQuery(".extend_menu_mob").css({display:'none'});
+				jQuery(".right_top_header.mobile_opc").removeClass('active');
+			}
+
+
+			//Si estamos haciendo resize en home reiniciar scroll o
+			if ( jQuery("#galeria_sup").is(":visible") ) {
+
+				jQuery('body').scrollTo("0px",0);
+
+				jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
+				jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_2').height());
+				jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
+				jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
+				jQuery('.left_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_1').height());
+				jQuery('.left_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_2').height());
+				jQuery('.left_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_3').height());
+				jQuery('.left_galeria .colum_2 .box_img_4 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_4').height());
+				jQuery('.right_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_1').height());
+				jQuery('.right_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_2').height());
+				jQuery('.right_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_3').height());
+				jQuery('.right_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_1').height());
+				jQuery('.right_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_2').height());
+				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
+				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height())
+
+				//Resize ticker de home (Falta nº de cuadros según resolución)
+				jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
+				var n_slides=5;
+				if(w_win_r<768){if(w_win_r<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
+				slider_last_pics.reloadSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:n_slides,maxSlides:n_slides,slideWidth:320,slideMargin:0,ticker:true,touchEnabled:false});
+			}
+
+			//Ajustamos cuadro de preview en Mis pics
+			if ( jQuery("#preview_box").is(":visible") ) {
+				jQuery("#preview_box").height(jQuery("#preview_box").width());
+			}
+
+			//Ajustamos cuadros en el muro de pics
+			if ( jQuery(".wall_pics").is(":visible") ) {
+				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
+			}
+
+			//Ajustamos cuadros en el muro de pics
+			if ( jQuery(".wall_pics").is(":visible") ) {
+				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
+			}
+
+			//Si detalle está desplegado calculamos altura de los bloques
+			if ( jQuery(".detalle_pic").is(":visible") ) {
+		
+				//Ajustamos cuadros dependiendo de resolución
+				var h_detalle_opc;
+				var n_block_h=2;
+				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+							
+				if(w_win<426){
+					h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+					jQuery(".detalle_pic").height('auto');
+				}else{
+					h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;
+					jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+					jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+					jQuery(".detalle_pic").height(h_detalle_opc);
+				}
+			}
+
+			//Si está desplegado cuadro de voto confirmado
+			if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
+				//Ajustamos cuadros dependiendo de resolución
+				var h_detalle_opc;
+				var n_block_h=2;
+				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+									
+				if(w_win<426){
+					//h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
+					jQuery(".detalle_pic").height('auto');
+				}else{
+					h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90-jQuery(".header_vote").outerHeight();//-90 de padding:45px;
+					jQuery(".img_detalle_pic_vote").height(h_detalle_opc-90);
+					jQuery(".cont_detalle_pic_vote").height(h_detalle_opc-90);
+				}
+			}
+	   
         break;
     }
   }
-
-//Animcación de imágenes de galería
-/*function posterAnimation()
-{
-    posX += 1.5;
-  	jQuery('.galeria_curiosidad').css({ backgroundPosition: -posX +"px 0px" });
-}*/
-
 
 //Función para alinear top los cuadros
 function align_top_box(id){
@@ -1146,30 +1327,6 @@ function validate_form(id){
 				});
 			}
 
-			//Comprobar si la fecha introducida es mayor de 14años
-			/*if( error_day==0 && error_month==0 && error_year==0){
-				var error_big_14=0;
-				var year=jQuery('.validation-rule-year').val();
-				var month=(jQuery('.validation-rule-month').val()-1);
-				var day=jQuery('.validation-rule-day').val();
-				if (meetsMinimumAge(new Date(year, month, day),14)) {
-					error_big_14=0;
-					jQuery('.tutor_datos').hide();
-				}else{
-					error_big_14=1;
-					//Mostramos el campo de tutor legal
-					if(jQuery('.tutor_datos').is(":visible")){
-						 jQuery('.tutor_datos').show();
-					}else{
-						var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
-						jQuery('.errores').append('<p>'+message+'</p>');
-						jQuery('.tutor_datos').show();
-					}
-				}
-			}else{
-				var error_big_14=1;
-			}*/
-
 			//Error general campos vacíos
 			if(error_empty==1){
 				var message=jQuery(id).attr('data-error-msg');
@@ -1273,7 +1430,7 @@ function show_pic(id_pic){
 						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 					}
 					// Pintamos detalles
-						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
 							
 							//No mostramos el contenidos hasta que la imagen está cargada	
 						imagesLoaded( jQuery('.detalle_pic'),function( instance ) {
@@ -1291,7 +1448,7 @@ function show_pic(id_pic){
 							var n_block_h=2;
 							if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
 							
-							if(w_win<425){
+							if(w_win<426){
 								h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 								jQuery(".detalle_pic").stop().clearQueue().css({'height':'auto',display:'none'}).slideDown(600,'easeInOutExpo',function(){
 									//Alineamos el scroll al pie del detalle
@@ -1336,7 +1493,7 @@ function show_pic(id_pic){
 						}
 						
 						// Pintamos detalles
-						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
 						
 						//No mostramos el contenidos hasta que la imagen está cargada	
 						imagesLoaded( jQuery('.detalle_pic'),function( instance ) {
@@ -1354,7 +1511,7 @@ function show_pic(id_pic){
 							var n_block_h=2;
 							if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
 							
-							if(w_win<425){
+							if(w_win<426){
 								h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 								jQuery(".detalle_pic").stop().clearQueue().css({'height':'auto',display:'none'}).slideDown(600,'easeInOutExpo',function(){
 									//Alineamos el scroll al pie del detalle
@@ -1383,33 +1540,6 @@ function show_pic(id_pic){
 		  	
 		}
 }
-
-function reset_parallax(){
-	jQuery('.deco_1_1').stop().clearQueue().animate({top:64},0);
-	jQuery('.deco_1_2').stop().clearQueue().animate({top:0},0);
-
-	jQuery('.deco_2_1').stop().clearQueue().animate({top:180},0);
-	jQuery('.deco_2_2').stop().clearQueue().animate({top:145},0);
-	jQuery('.deco_2_3').stop().clearQueue().animate({top:261},0);
-	jQuery('.deco_2_4').stop().clearQueue().animate({top:0},0);
-	jQuery('.deco_2_5').stop().clearQueue().animate({bottom:0},0);
-
-	jQuery('.deco_3_1').stop().clearQueue().animate({bottom:0}, 0);
-	jQuery('.deco_3_2').stop().clearQueue().animate({bottom:150}, 0);
-	jQuery('.deco_3_3').stop().clearQueue().animate({top:35}, 0);
-	jQuery('.deco_3_4').stop().clearQueue().animate({top:0}, 0);
-
-	jQuery('#box_curiosidad').stop().clearQueue().animate({marginTop: 0}, 0);
-
-	jQuery('.deco_4_1').stop().clearQueue().animate({top:60}, 0);
-	jQuery('.deco_4_2').stop().clearQueue().animate({bottom:7}, 0);
-	jQuery('.deco_4_3').stop().clearQueue().animate({top:0},0);
-
-	jQuery('.deco_5_1').stop().clearQueue().animate({top:0}, 0);
-	jQuery('.deco_5_2').stop().clearQueue().animate({top:100}, 0);
-	jQuery('.deco_5_3').stop().clearQueue().animate({top:0}, 0);
-}
-
 
 
 

@@ -543,7 +543,7 @@ PROPIEDADES PICS (TODOS)
 .detalle_pic{background:#323232;/*height:640px;*/box-sizing:border-box;position:relative;display:block;clear:both;height:0;overflow:hidden;padding-left:45px;padding-right:45px;}
 .inside_detalle_pic{overflow:hidden;width:80%;margin:0 auto;box-sizing:border-box;padding-top:45px;padding-bottom:45px;}
 .img_detalle_pic{width:60%;float:left;position:relative; text-align:center;overflow:hidden;}
-.img_detalle_pic img{max-width:100%;max-height:100%;}
+.img_detalle_pic img{max-width:100%;max-height:100%;vertical-align:top;}
 /*.img_big_detalle{width:90%;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center; background-repeat:no-repeat;}*/
 .cont_detalle_pic{width:40%;float:left;box-sizing:border-box;padding-left:30px;position:relative;}
 .cont_detalle_pic h4{color:#61bde9;font-size:28px;font-family:'santa_fe', Helvetica, sans-serif;padding-top:10px;}
@@ -627,14 +627,14 @@ PROPIEDADES CONTACTO
 PROPIEDADES VOTO CONFIRMADO
 ******************************/
 
-.inside_detalle_pic_vote{overflow:hidden;width:60%;margin:0 auto;}
+.inside_detalle_pic_vote{overflow:hidden;width:60%;margin:0 auto;box-sizing:border-box;padding-top:45px;padding-bottom:45px;}
 .inside_detalle_pic_vote .rrss_vote_detalle{height:50px;}
 .header_vote{clear:both;padding-bottom:25px;}
 .header_vote h3{font-size:40px;line-height:52px;color:#f1e87c;font-family:'santa_fe', Helvetica, sans-serif;text-align:center;}
 .header_vote h3:before{content:'';display:block;width:100%;height:37px;background:url(../img/star_big.png) top center no-repeat;padding-bottom:20px;}
 
 .img_detalle_pic_vote{width:60%;float:left;position:relative;text-align:center;}
-.img_detalle_pic_vote img{max-width:100%;max-height:100%;}
+.img_detalle_pic_vote img{max-width:100%;max-height:100%;vertical-align:top;}
 .img_big_detalle_vote{width:90%;margin:0 auto;background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center; background-repeat:no-repeat;}
 .cont_detalle_pic_vote{width:40%;float:left;box-sizing:border-box;padding-left:30px;position:relative;}
 .cont_detalle_pic_vote h4{color:#61bde9;font-size:28px;font-family:'santa_fe', Helvetica, sans-serif;padding-top:10px;}
@@ -722,6 +722,7 @@ input{-webkit-border-radius:0; border-radius:0;}
 textarea{-webkit-border-radius:0; border-radius:0;}
 input, textarea, select {-webkit-appearance: none;}
 .extend_menu_mob{display:none;}
+.helper{display: inline-block;height: 100%;vertical-align: middle;}
 
 
 
@@ -1141,6 +1142,9 @@ MEDIA QUERIES
 	.cont_detalle_pic_vote .nombre_persona{margin-top:20px;}
 	.cont_detalle_pic_vote .votos_detalle{display:block;position:absolute;bottom:0px;left:0px;}
 	.cont_detalle_pic_vote .rrss_vote_detalle .btns_share{bottom:0px;}
+	
+	.img_detalle_pic_vote img{vertical-align:middle;}
+	.img_detalle_pic img{vertical-align:middle;}
 }
 
 
@@ -1330,10 +1334,6 @@ MEDIA QUERIES
 	
 	.pop_votar{width:80%;margin-left:-40%;}
 	
-	.pic_rrss{height:auto !important;}
-	.detalle_pic .img_detalle_pic_vote{height:auto !important;}
-	.detalle_pic .cont_detalle_pic_vote{height:auto !important;padding-bottom:100px;}
-	
 	
 }
 
@@ -1356,6 +1356,10 @@ MEDIA QUERIES
 	.detalle_pic .img_detalle_pic{ height:auto!important;padding-top:15px;}
 	.detalle_pic .cont_detalle_pic{height: auto !important;padding-bottom:100px;}
 	.detalle_pic{/*height:auto !important;*/}
+	
+	.pic_rrss{/*height:auto !important;*/}
+	.detalle_pic .img_detalle_pic_vote{height:auto !important;}
+	.detalle_pic .cont_detalle_pic_vote{height:auto !important;padding-bottom:100px;}
 }
 
 @media screen and (max-width: 400px) {
