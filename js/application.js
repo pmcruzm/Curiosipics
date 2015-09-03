@@ -263,7 +263,7 @@ jQuery(document).ready(function(){
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 		var n_slides=5;
 		if(w_win<768){if(w_win<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
-		//slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:n_slides,maxSlides:n_slides,slideWidth:320,slideMargin:0,ticker:true,touchEnabled:false});
+		slider_last_pics=jQuery('.bxslider_ultimos_pics').bxSlider({mode:'horizontal',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,speed:60000,minSlides:n_slides,maxSlides:n_slides,slideWidth:320,slideMargin:0,ticker:true,touchEnabled:false});
 
 		/*Jurado mobile*/
 		slider_jurado=jQuery('.bxslider_jurado').bxSlider({pager: true,infiniteLoop:true,useCSS:false,controls:false,adaptiveHeight:true});
