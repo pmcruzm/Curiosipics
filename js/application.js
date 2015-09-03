@@ -113,6 +113,32 @@ jQuery(document).ready(function(){
 			});
 		});
 	};
+	
+	//Función para controlar la carga de las imagenes dinámicas
+	jQuery.fn.imagesLoaded = function () {
+
+    imgs = this.find('img[src!=""]');
+    // if there's no images, just return an already resolved promise
+    if (!imgs.length) {return jQuery.Deferred.resolve().promise();}
+
+    // for each image, add a deferred object to the array which resolves when the image is loaded
+    var dfds = [];  
+    imgs.each(function(){
+
+        var dfd = jQuery.Deferred();
+        dfds.push(dfd);
+        var img = new Image();
+        img.onload = function(){dfd.resolve();}
+        img.src = this.src;
+
+    });
+
+    // return a master promise object which will resolve when all the deferred objects have resolved
+    // IE - when all the images are loaded
+    return jQuery.when.apply(jQuery,dfds);
+
+}
+	
 
 	//Comprobar altura de las secciones de la home
 	if ( jQuery("#galeria_sup").is(":visible")){
@@ -1227,7 +1253,7 @@ function show_pic(id_pic){
 		var picVoteUrl = jQuery(".wall_pics").data("pic-vote-url").replace('{id}', id_pic);
 
 		if ( jQuery(".detalle_pic").is(":visible") ) {
-			jQuery(".detalle_pic").stop().clearQueue().slideUp(600,'easeInOutExpo',function(){
+			jQuery(".detalle_pic").stop().clearQueue().animate({height:0},600,'easeInOutExpo',function(){
 				//Removemos el bloque anterior
 				jQuery(".detalle_pic").remove();
 
@@ -1246,33 +1272,45 @@ function show_pic(id_pic){
 						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 					}
 					// Pintamos detalles
-					jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
-					//Comprobamos las flechas de navegación que hay que añadir
-					if(pos_div!=1 && pos_div!=total_cuadros){
-						jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
-					}else{
-						if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
-						if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
-					}
+						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det)).imagesLoaded().then(function(){
+							
+							//Comprobamos las flechas de navegación que hay que añadir
+							if(pos_div!=1 && pos_div!=total_cuadros){
+								jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
+							}else{
+								if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+								if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+							}
+							
+							//Ajustamos cuadros dependiendo de resolución
+							var h_detalle_opc;
+							var n_block_h=2;
+							if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+							
+							if(w_win<425){
+								h_detalle_opc=jQuery(".img_detalle_pic").outerHeight()+jQuery(".cont_detalle_pic").outerHeight()+90;
+							}else{
+								h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;	
+							}
+							
+							
+							//jQuery(".detalle_pic").height(h_detalle_opc);
+							jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+							jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+							//jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+							
+							//Desplegamos el cuadro de detalle
+							jQuery(".detalle_pic").stop().clearQueue().animate({height:h_detalle_opc},600,'easeInOutExpo',function(){
+								//Alineamos el scroll al pie del detalle
+								var h_detalle=jQuery(".detalle_pic").outerHeight();
+								var h_offset;
+								if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
+								jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
+							});
+							
+						});
 				  }
 			  });
-
-				//Ajustamos alturas
-				var n_block_h=2;
-	   			if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-				var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90;//-90 de padding:45px;
-				jQuery(".detalle_pic").height(h_total);
-				jQuery(".img_detalle_pic").height(h_total);
-				jQuery(".cont_detalle_pic").height(h_total);
-				jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
-				//Desplegamos el cuadro de detalle
-				jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
-					//Alineamos el scroll al pie del detalle
-					var h_detalle=jQuery(".detalle_pic").outerHeight();
-					var h_offset;
-					if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
-					jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
-				});
 			});
 
 		}else{
@@ -1284,40 +1322,54 @@ function show_pic(id_pic){
 			  async: false,
 			  dataType: 'json',
 			  success : function(data){
-					//console.log(data);
-					if(mod_fila==0){
-						var pos_final_det=(fila*n_secc)-1;
-					}else{
-						var pos_final_det=((fila+1)*n_secc)-1;
-						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
-					}
-					// Pintamos detalles
-					jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
-					//Comprobamos las flechas de navegación que hay que añadir
-					if(pos_div!=1 && pos_div!=total_cuadros){
-						jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
-					}else{
-						if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
-						if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
-					}
+						//console.log(data);
+						if(mod_fila==0){
+							var pos_final_det=(fila*n_secc)-1;
+						}else{
+							var pos_final_det=((fila+1)*n_secc)-1;
+							if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
+						}
+						
+						// Pintamos detalles
+						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det)).imagesLoaded().then(function(){
+							
+							//Comprobamos las flechas de navegación que hay que añadir
+							if(pos_div!=1 && pos_div!=total_cuadros){
+								jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
+							}else{
+								if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+								if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+							}
+							
+							//Ajustamos cuadros dependiendo de resolución
+							var h_detalle_opc;
+							var n_block_h=2;
+							if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
+							
+							if(w_win<425){
+								h_detalle_opc=jQuery(".img_detalle_pic").outerHeight()+jQuery(".cont_detalle_pic").outerHeight()+90;
+							}else{
+								h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;	
+							}
+							
+							//jQuery(".detalle_pic").height(h_detalle_opc);
+							jQuery(".img_detalle_pic").height(h_detalle_opc-90);
+							jQuery(".cont_detalle_pic").height(h_detalle_opc-90);
+							//jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
+							
+							//Desplegamos el cuadro de detalle
+							jQuery(".detalle_pic").stop().clearQueue().animate({height:h_detalle_opc},600,'easeInOutExpo',function(){
+								//Alineamos el scroll al pie del detalle
+								var h_detalle=jQuery(".detalle_pic").outerHeight();
+								var h_offset;
+								if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
+								jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
+							});
+							
+						});
 				  }
 		  });
-			//Ajustamos alturas
-			var n_block_h=2;
-	   		if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-			var h_total=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)-90;//-90 de padding:45px;
-			jQuery(".detalle_pic").height(h_total);
-			jQuery(".img_detalle_pic").height(h_total);
-			jQuery(".cont_detalle_pic").height(h_total);
-			jQuery(".img_big_detalle").height((jQuery(".img_detalle_pic").outerHeight()));
-			//Desplegamos el cuadro de detalle
-			jQuery(".detalle_pic").stop().clearQueue().slideDown(600,'easeInOutExpo',function(){
-				//Alineamos el scroll al pie del detalle
-				var h_detalle=jQuery(".detalle_pic").outerHeight();
-				var h_offset;
-				if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
-				jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
-			});
+		  	
 		}
 }
 
