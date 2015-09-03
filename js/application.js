@@ -1294,6 +1294,7 @@ function show_pic(id_pic){
 								h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;	
 							}
 							
+							alert(h_detalle_opc);
 							
 							//jQuery(".detalle_pic").height(h_detalle_opc);
 							jQuery(".img_detalle_pic").height(h_detalle_opc-90);
@@ -1352,6 +1353,8 @@ function show_pic(id_pic){
 							}else{
 								h_detalle_opc=(parseInt(jQuery(".box_img_small").outerHeight())*n_block_h)+90;//-90 de padding:45px;	
 							}
+							
+							alert(h_detalle_opc);
 							
 							//jQuery(".detalle_pic").height(h_detalle_opc);
 							jQuery(".img_detalle_pic").height(h_detalle_opc-90);
