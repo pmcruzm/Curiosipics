@@ -43,7 +43,7 @@
                         </ul>
                         <ul class="navigation_menu">
                             <li><a href="#">EL CONCURSO</a></li>
-                            <li><a href="pics.html" class="active">PICS</a></li>
+                            <li><a href="pics.html">PICS</a></li>
                         </ul>
                     </div>
                     <div class="right_top_header mobile_opc">
@@ -109,111 +109,75 @@
         <div id="contenidos">
             <div class="box_space_top">
                 <div id="box_all_pics">
-                      <div class="wall_pics" data-pic-url="json/pic_info.json" data-pic-vote-url="json/pic_vote_error.json" data-user-logged="false">
+                    <div class="wall_pics pics_ganadores" data-pic-url="json/pic_info.json?id={id}" data-pic-vote-url="json/pic_vote_ok.json?id={id}" data-user-logged="false">
                           <div class="container">
                           	  <div class="navigation_pics">
-                                    <div class="left_navigation_pics">
-                                        <ul>
-                                            <li><a href="#" class="active">Ver todas</a></li>
-                                            <li><a href="#">Pics Alumnos</a></li>
-                                            <li><a href="#">Pics Profes</a></li>
-                                            <li class="item_search"><a href="#"><i class="fa fa-search"></i></a></li>
-                                        </ul>
-                                        <div class="over_search" style="display:none;">
-                                        	<form action="#" method="get" role="form" id="form-search-pic">
-                                                <label for="search_term">Buscar</label>
-                                                <input type="text"  id="search_term" placeholder="Buscar">
-                                                <input type="submit" class="fa" value="&#xf002;">
-                                            </form>
-                                            <a href="#" class="close_search">Cerrar</a>
-                                        </div>
-                                    </div>
-                                    <div class="right_navigation_pics">
+                              		<div class="right_navigation_pics">
                                         <ul>
                                             <li><a href="#">Ganadores de ediciones<br/>anteriores</a></li>
                                             <li><a href="#">Consejos y preguntas<br/>frequentes</a></li>
                                         </ul>
                                     </div>
+                                    <div class="left_navigation_pics">
+                                        <ul class="list_fechas">
+                                        	<li><p>Ganadores</p></li>
+                                            <li><a href="#" class="active">2013</a></li>
+                                            <li><a href="#">2014</a></li>
+                                            <li><a href="#">2015</a></li>
+                                            <li><a href="#">2015</a></li>
+                                        </ul>
+                                    </div>
                               </div>
                               <div class="row">
-                              <div class="detalle_pic pic_rrss" style="display:block;">
-                              	<div class="inside_detalle_pic_vote">
-                                	<div class="header_vote">
-                                    	<h3>¡Voto confirmado!</h3>
+                              		<!--Premios Jurado Alumnos-->
+                                    <div class="separador ganadores_alumnos"><h3>Premios del Jurado para Alumnos</h3></div>
+                                    <div class="row" id="list_ganadores_alumnos_jurado">
+                                        <div class="box_img_small ganador" style="background-image:url(img/test1.jpg);"><a href="#" rel="1"><h3>The heart of a dragon and a mind of a genius</h3></a><span class="sello_r sello_1_r"></span></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test2.jpg);"><a href="#" rel="2"><h3>Lorem ipsum lorem</h3></a><span class="sello_r sello_2_r"></span></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test3.jpg);"><a href="#" rel="3"><h3>Lorem ipsum lorem</h3></a><span class="sello_r sello_3_r"></span></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test4.jpg);"><a href="#" rel="4"><h3>Lorem ipsum lorem</h3></a><span class="sello_r sello_4_r"></span></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test1.jpg);"><a href="#" rel="5"><h3>Lorem ipsum lorem</h3></a><span class="sello_r sello_5_r"></span></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test2.jpg);"><a href="#" rel="6"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test1.jpg);"><a href="#" rel="7"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test4.jpg);"><a href="#" rel="8"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test1.jpg);"><a href="#" rel="9"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test3.jpg);"><a href="#" rel="10"><h3>Lorem ipsum lorem</h3></a></div>
                                     </div>
-                                	<div class="img_detalle_pic_vote"><span class="helper"></span><img src="img/K3XFxJntQVLvwiFXsSKl.jpg"></div>
-                                    <div class="cont_detalle_pic_vote">
-                                    	<h4>Profesor</h4>
-                                    	<p class="nombre_persona">David Mateos</p>
-                                    	<h5>The heart of a dragon and a mind of a genius</h5>
-                                    	<div class="bottom_detalle">
-                                    		<div class="votos_detalle"><span>5 Votos</span></div>
-                                    		<div class="rrss_vote_detalle">
-                                        		<p class="btns_share"><span>Compartir</span> <a class="fa fa-twitter" target="_blank" href="http://twitter.com/home?status=Lorem ipsum dolor sit amet http://curiosipics.cambridge.es/pic/11"><span class="hide">Twitter</span></a><a class="fa fa-facebook" target="_blank" href="http://facebook.com/share.php?u=http://curiosipics.cambridge.es/pic/11&amp;t=Lorem ipsum dolor sit amet"><span class="hide">Facebook</span></a><a class="fa fa-pinterest-p" data-pin-do="buttonBookmark" target="_blank" href="http://pinterest.com/pin/create/button/?url=http://curiosipics.cambridge.es/pic/11&amp;media=img/test1.jpg&amp;description=Lorem ipsum dolor sit amet"><span class="hide">Pinterest</span></a></p>
-                                        	</div>
-                                        </div>
-                                     </div>
-                                   </div>
-                                   <div style="display:none;" class="box_pop_votar">
-                                      <div class="pop_votar">
-                                      	<h3>Votar Pic</h3>
-                                      	<p>Para votar debes introducir una dirección de correo electrónico y confirmar tu voto en el email que te enviaremos.</p>
-                                        <form id="form-votar-pic" role="form" novalidate method="get" action="#">
-                                            <label for="search_term">Votar</label>
-                                            <input type="email" placeholder="Introduce tu email" name="mail_pic" id="mail_pic" autocorrect="off">
-                                            <input type="submit" value="Enviar" class="">
-                                        </form>
-                                        <a class="close_votar" href="#">Cerrar</a>
-                                       </div>
+                                    <!--Premios Público Alumnos-->
+                                    <div class="separador ganadores_alumnos"><h3>Premios del Público para Alumnos</h3></div>
+                                    <div class="row" id="list_ganadores_alumnos_publico">
+                                        <div class="box_img_small ganador" style="background-image:url(img/test3.jpg);"><a href="#" rel="11"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test2.jpg);"><a href="#" rel="12"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test4.jpg);"><a href="#" rel="13"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test2.jpg);"><a href="#" rel="14"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test3.jpg);"><a href="#" rel="15"><h3>Lorem ipsum lorem</h3></a></div>
                                     </div>
-                                    <a class="close_pic" href="#">Cerrar</a>
+                                    <!--Premios Jurado Profesores-->
+                                    <div class="separador ganadores_profesores"><h3>Premios del Jurado para Profesores</h3></div>
+                                    <div class="row" id="list_ganadores_profesores_jurado">
+                                        <div class="box_img_small ganador" style="background-image:url(img/test2.jpg);"><a href="#" rel="16"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test3.jpg);"><a href="#" rel="17"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test1.jpg);"><a href="#" rel="18"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test4.jpg);"><a href="#" rel="19"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test1.jpg);"><a href="#" rel="20"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test4.jpg);"><a href="#" rel="21"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test1.jpg);"><a href="#" rel="22"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test2.jpg);"><a href="#" rel="23"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test3.jpg);"><a href="#" rel="24"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test4.jpg);"><a href="#" rel="25"><h3>Lorem ipsum lorem</h3></a></div>
                                     </div>
-                                    <div class="box_img_small" style="background-image:url(img/test1.jpg);"><a href="#" rel="1"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test2.jpg);"><a href="#" rel="2"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test3.jpg);"><a href="#" rel="3"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test4.jpg);"><a href="#" rel="4"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test1.jpg);"><a href="#" rel="5"><h3>Lorem ipsum lorem</h3></a></div>
-                                	<div class="box_img_small" style="background-image:url(img/test2.jpg);"><a href="#" rel="6"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test1.jpg);"><a href="#" rel="7"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test4.jpg);"><a href="#" rel="8"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test1.jpg);"><a href="#" rel="9"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test3.jpg);"><a href="#" rel="10"><h3>Lorem ipsum lorem</h3></a></div>
-                                	<div class="box_img_small" style="background-image:url(img/test3.jpg);"><a href="#" rel="11"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test2.jpg);"><a href="#" rel="12"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test4.jpg);"><a href="#" rel="13"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test2.jpg);"><a href="#" rel="14"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test3.jpg);"><a href="#" rel="15"><h3>Lorem ipsum lorem</h3></a></div>
-                                	<div class="box_img_small" style="background-image:url(img/test2.jpg);"><a href="#" rel="16"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test3.jpg);"><a href="#" rel="17"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test1.jpg);"><a href="#" rel="18"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test4.jpg);"><a href="#" rel="19"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test1.jpg);"><a href="#" rel="20"><h3>Lorem ipsum lorem</h3></a></div>
-                                	<div class="box_img_small" style="background-image:url(img/test4.jpg);"><a href="#" rel="21"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test1.jpg);"><a href="#" rel="22"><h3>Lorem ipsum lorem</h3></a></div>
-                                   <!-- <div class="box_img_small" style="background-image:url(img/test2.jpg);"><a href="#" rel="23"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test3.jpg);"><a href="#" rel="24"><h3>Lorem ipsum lorem</h3></a></div>
-                                    <div class="box_img_small" style="background-image:url(img/test4.jpg);"><a href="#" rel="25"><h3>Lorem ipsum lorem</h3></a></div>-->
-                                </div>
+                                    <!--Premios Público Profesores-->
+                                    <div class="separador ganadores_profesores"><h3>Premios del Público para Profesores</h3></div>
+                                    <div class="row" id="list_ganadores_profesores_publico">
+                                        <div class="box_img_small ganador" style="background-image:url(img/test4.jpg);"><a href="#" rel="26"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test1.jpg);"><a href="#" rel="27"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test2.jpg);"><a href="#" rel="28"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test3.jpg);"><a href="#" rel="29"><h3>Lorem ipsum lorem</h3></a></div>
+                                        <div class="box_img_small ganador" style="background-image:url(img/test4.jpg);"><a href="#" rel="30"><h3>Lorem ipsum lorem</h3></a></div>
+                                    </div>
+                               </div>
                           </div>
                       </div>
-                      <div class="pagination_pics">
-                      	 <div class="container">
-                         		<a href="#" class="prev_pag">Anterior</a>
-                                <ul>
-                                	<li><a href="#" class="active">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">6</a></li>
-                                    <li><a href="#">7</a></li>
-                                    <li><a href="#">8</a></li>
-                                    <li><a href="#">9</a></li>
-                                </ul>
-                                <a href="#" class="next_pag">Siguiente</a>
-                         </div>
-                      </div>
-
                   </div>
              </div>
         </div><!--Fin contenidos-->

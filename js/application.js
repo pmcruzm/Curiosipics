@@ -460,7 +460,14 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		var id_pic=jQuery(this).find('a').attr('rel');
 		id_pic_open=id_pic;
-		show_pic(id_pic);
+		if(jQuery(this).hasClass('ganador')){
+			//Pic ganadores
+			var padre_cont=jQuery(this).parents('.row').attr('id');
+			show_pic(id_pic,padre_cont);
+		}else{
+			//Pics de all_pics
+			show_pic(id_pic,'all_pics');
+		}
 	});
 
 	//Mouse-over pics solo en escritorio
@@ -493,7 +500,15 @@ jQuery(document).ready(function(){
 			jQuery(".detalle_pic").remove();
 			id_next=jQuery('.box_img_small  a.active').parents('.box_img_small').next('div').find('a').attr('rel');
 			id_pic_open=id_next;
-			show_pic(id_next);
+			if(jQuery(this).hasClass('ganador')){
+				//Pic ganadores
+				var padre_cont=jQuery(this).parents('.row').attr('id');
+				show_pic(id_next,padre_cont);
+			}else{
+				//Pics de all_pics
+				show_pic(id_next,'all_pics');
+			}
+			//show_pic(id_next);
 		});
 	});
 
@@ -507,7 +522,15 @@ jQuery(document).ready(function(){
 			jQuery(".detalle_pic").remove();
 			id_prev=jQuery('.box_img_small  a.active').parents('.box_img_small').prev().find('a').attr('rel');
 			id_pic_open=id_prev;
-			show_pic(id_prev);
+			if(jQuery(this).hasClass('ganador')){
+				//Pic ganadores
+				var padre_cont=jQuery(this).parents('.row').attr('id');
+				show_pic(id_prev,padre_cont);
+			}else{
+				//Pics de all_pics
+				show_pic(id_prev,'all_pics');
+			}
+			//show_pic(id_prev);
 		});
 	});
 
@@ -824,8 +847,18 @@ jQuery(document).ready(function(){
 						jQuery(".detalle_pic").height(h_detalle_opc);
 					}
 				}else{
+					//Desplegable Detalle abierto {Ganadores|All pics}
 					jQuery(".detalle_pic").stop().clearQueue().remove();
-					show_pic(id_pic_open);
+					if(jQuery(".pics_ganadores").is(":visible") ) {
+						//Pic ganadores
+						var padre_cont=jQuery('.box_img_small.active').parents('.row').attr('id');
+						show_pic(id_pic_open,padre_cont);
+					}else{
+						//Pics de all_pics
+						show_pic(id_pic_open,'all_pics');
+					}
+					//jQuery(".detalle_pic").stop().clearQueue().remove();
+					//show_pic(id_pic_open,'all_pics');
 				}
 			}
 
@@ -1074,7 +1107,7 @@ function doOnOrientationChange()
 					}
 				}else{
 					jQuery(".detalle_pic").stop().clearQueue().remove();
-					show_pic(id_pic_open);
+					show_pic(id_pic_open,'all_pics');
 				}
 			}
 
@@ -1173,7 +1206,7 @@ function doOnOrientationChange()
 					}
 				}else{
 					jQuery(".detalle_pic").stop().clearQueue().remove();
-					show_pic(id_pic_open);
+					show_pic(id_pic_open,'all_pics');
 				}
 			}
 
@@ -1387,7 +1420,7 @@ function validate_form(id){
 			}
 }
 
-function show_pic(id_pic){
+function show_pic(id_pic,seccion){
 		//Cambiar secciones según resolución
 		var n_secc;
 		if(w_win>1100){n_secc=5;}
@@ -1398,11 +1431,19 @@ function show_pic(id_pic){
 		//Eliminamos el indicador de bloque activo
 		jQuery('.box_img_small').removeClass('active');
 		jQuery('.box_img_small a').removeClass('active');
+		
 
 		//Recorremos todos los divs hasta obtener la posicion del div pulsado
+		var seccion_afectada;
+		if(seccion=='all_pics'){
+			seccion_afectada='.row';	
+		}else{
+			seccion_afectada='#'+seccion;
+		}
+		
 		var pos_div=1;
-		var total_cuadros=jQuery('.row').find('.box_img_small').length;
-		jQuery('.row').find('.box_img_small').each(function() {
+		var total_cuadros=jQuery(seccion_afectada).find('.box_img_small').length;
+		jQuery(seccion_afectada).find('.box_img_small').each(function() {
 			if(jQuery(this).find('a').attr('rel')==id_pic){
 				jQuery(this).addClass('active');
 				jQuery(this).find('a').addClass('active');
@@ -1442,17 +1483,20 @@ function show_pic(id_pic){
 						if(n_fila==fila && total_cuadros<pos_final_det){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 					}
 					// Pintamos detalles
-						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery(seccion_afectada).find('.box_img_small').eq(pos_final_det));
 							
 							//No mostramos el contenidos hasta que la imagen está cargada	
 						imagesLoaded( jQuery('.detalle_pic'),function( instance ) {
 							
-							//Comprobamos las flechas de navegación que hay que añadir
-							if(pos_div!=1 && pos_div!=total_cuadros){
-								jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
-							}else{
-								if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
-								if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+							//Solo flecha para pics
+							if(seccion=='all_pics'){
+								//Comprobamos las flechas de navegación que hay que añadir
+								if(pos_div!=1 && pos_div!=total_cuadros){
+									jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
+								}else{
+									if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+									if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+								}
 							}
 							
 							//Ajustamos cuadros dependiendo de resolución
@@ -1505,17 +1549,19 @@ function show_pic(id_pic){
 						}
 						
 						// Pintamos detalles
-						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery('.row').find('.box_img_small').eq(pos_final_det));
+						jQuery('<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>').insertAfter( jQuery(seccion_afectada).find('.box_img_small').eq(pos_final_det));
 						
 						//No mostramos el contenidos hasta que la imagen está cargada	
 						imagesLoaded( jQuery('.detalle_pic'),function( instance ) {
-							
-							//Comprobamos las flechas de navegación que hay que añadir
-							if(pos_div!=1 && pos_div!=total_cuadros){
-								jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
-							}else{
-								if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
-								if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+							//Solo flecha para pics
+							if(seccion=='all_pics'){
+								//Comprobamos las flechas de navegación que hay que añadir
+								if(pos_div!=1 && pos_div!=total_cuadros){
+									jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
+								}else{
+									if(pos_div==1){jQuery('<a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+									if(pos_div==total_cuadros){jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');}
+								}
 							}
 							
 							//Ajustamos cuadros dependiendo de resolución

@@ -521,9 +521,11 @@ PROPIEDADES PICS (TODOS)
 .left_navigation_pics{display:inline-block;float:left;position:absolute;bottom:0px;}
 .left_navigation_pics ul{margin-left:40px;margin-bottom:20px;}
 .left_navigation_pics ul li{display:inline-block;}
+.left_navigation_pics ul li p{font-size:20px;color:#373737;line-height:45px;margin-right:10px;}
 .left_navigation_pics ul li a{font-size:20px;color:#373737;height:45px;line-height:45px;margin-right:20px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 .left_navigation_pics ul li a:hover{border-bottom:solid 3px #61bde9;color:#61bde9;}
 .left_navigation_pics ul li a.active{border-bottom:solid 3px #61bde9;color:#61bde9;}
+.left_navigation_pics ul.list_fechas li a{margin-right:10px;}
 .right_navigation_pics{display:block;float:right;width:40%;}
 .right_navigation_pics ul{font-size:0px;overflow:hidden;display:block;}
 .right_navigation_pics ul li{display:block;font-size:16px;width:50%;float:right;text-align:center;}
@@ -652,7 +654,20 @@ PROPIEDADES VOTO CONFIRMADO
 .cont_detalle_pic_vote .rrss_vote_detalle .btns_share a{color:#999999;border:2px solid #999999;border-radius:30px;display:inline-block;width:40px;height:40px;line-height:40px;text-align:center;font-size:20px;margin-left:10px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 .cont_detalle_pic_vote .rrss_vote_detalle .btns_share a:hover{background:#999999;color:#323232;}
 
+/**********************
+GANADORES
+***********************/
+.separador{background:#ffffff;clear:both;height:45px;display:block;overflow:hidden;width:100%;}
+.separador h3{font-size:30px;font-family:'santa_fe', Helvetica, sans-serif;line-height:60px;padding-left:30px;}
+.ganadores_alumnos{color:#ee358e;}
+.ganadores_profesores{color:#61bde9;}
 
+.sello_r{height:48px;width:41px;position:absolute;top:10px;right:10px;background-image:url(../img/sprite_ganadores.png);background-repeat:no-repeat;background-size:41px;z-index:25;}
+.sello_1_r{background-position:0px 0px;}
+.sello_2_r{background-position:0px -48px;}
+.sello_3_r{background-position:0px -96px;}
+.sello_4_r{background-position:0px -144px;}
+.sello_5_r{background-position:0px -192px;}
 
 /*****************************
 PROPIEDADES FOOTER
