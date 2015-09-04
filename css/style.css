@@ -289,12 +289,13 @@ PROPIEDADES COMO PARTICIPAR
 
 .rombo{background:#ffffff;display:table;position:absolute;border-radius:20px;-ms-transform:rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);}
 .rombo.registro_rombo{background:#f05456 !important;-webkit-transition: all 0.3s linear;-moz-transition: all 0.3s linear;-o-transition: all 0.3s linear;transition: all 0.3s linear;}
-.rombo.registro_rombo:hover{-ms-transform:rotate(225deg);-webkit-transform: rotate(225deg);transform: rotate(225deg);background:#000000 !important;}
+.rombo.registro_rombo:hover{-ms-transform:rotate(225deg);-webkit-transform: rotate(225deg);transform: rotate(225deg);background:#f1e87c !important;}
 
 .rombo .inside_rombo{width:100%;text-align:center;display:table-cell;vertical-align:middle;height:100%;}
 .rombo .inside_rombo a{-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);display:block;width:110px;height:110px;position:relative;-webkit-transition: all 0.3s linear;-moz-transition: all 0.3s linear;-o-transition: all 0.3s linear;transition: all 0.3s linear;}
 .rombo.registro_rombo:hover .inside_rombo a{-ms-transform:rotate(-225deg);-webkit-transform: rotate(-225deg);transform: rotate(-225deg);}
 .rombo .inside_rombo a span{font-size:17px;color:#ffffff;position:absolute;display:block;text-align:center;margin:0 auto;top:43px;left: 25px;}
+.rombo.registro_rombo:hover .inside_rombo a span{color:#f05456;}
 .rombo .inside_rombo p{width:83%;margin:0 auto;-ms-transform:rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);font-size:18px;line-height:24px;color:#484647;}
 .rombo .inside_rombo p strong{font-family:'cabinsemibold', Helvetica, sans-serif;}
 
