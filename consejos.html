@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title></title>
+    <meta name="description" content="" />
+	<meta property="og:title" content=""/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/fontface.css" />
+     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+     <link rel="stylesheet" type="text/css" href="css/style.css" />
+     <!-- Font Awesome styles-->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--El siguiente comentario es un comentario condicional que solo IE sabe interpretar-->
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/css_ie.css"/>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+<body>
+  	<div id="wrapper">
+    	<div id="header" class="header_normal">
+        	<div class="container">
+        		<div id="top_header" class="black_enl">
+                	<h1><a href="http://www.cambridge.es/">Cambridge University Press</a></h1>
+                    <h2 class="logo_top"><a href="index.html">Curiosipics</a><span class="ind_titul">Ganadores</span></h2>
+                    <div class="right_top_header desktop_opc">
+                    	<ul class="user_menu">
+                        	<li class="btn_header"><a href="registro.html" class="btn_registro">Registro</a></li>
+                            <li class="btn_header"><a href="#" class="btn_login">Login</a></li>
+                        </ul>
+                        <ul class="navigation_menu">
+                            <li><a href="#">EL CONCURSO</a></li>
+                            <li><a href="pics.html">PICS</a></li>
+                        </ul>
+                    </div>
+                    <div class="right_top_header mobile_opc">
+                    	<ul class="ul_mob_menu">
+                    		<li><a class="mobile-menu-icon" href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="extend_menu_mob" style="display:none;">
+                       <ul class="user_menu">
+                           <li><a href="#">EL CONCURSO</a></li>
+                           <li><a href="pics.html">PICS</a></li>
+                           <li class="btn_header"><a href="registro.html" class="btn_registro">Regístrate aquí para participar</a></li>
+                        </ul>
+                        <div id="box_login_mob">
+                            <div class="box_login_mob">
+                                <p>¿Ya tienes cuenta? Accede aquí</p>
+                                <form action="json/login_ko.json" method="get" role="form" id="form-login-mob">
+                                    <label for="email_login">Email</label>
+                                    <input type="text"  id="email_login" placeholder="Email">
+                                    <label for="password_login">Contraseña</label>
+                                    <input type="password"  id="password_login" placeholder="Contraseña">
+                                    <span class="feedback"></span>
+                                    <input type="submit" class="btn" value="Login">
+                                    <div><a href="#" class="reset_password_mob">Recordar contraseña</a></div>
+                                </form>
+                            </div>
+                            <div class="box_forget_mob" style="display:none;">
+                                <form action="json/login_ko.json" method="get" role="form" id="form-forgot-password-mob">
+                                    <p>Introduce la cuenta de correo con la que estás registrado para restablecer la contraseña.</p>
+                                    <label for="email_forget">Email</label>
+                                    <input type="text"  id="email_forget" placeholder="Email">
+                                    <span class="feedback"></span>
+                                    <input type="submit" class="btn" value="Restablecer">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box_login" style="display:none;">
+                	<div class="box_login">
+                	<form action="json/login_ko.json" method="get" role="form" id="form-login">
+                        <label for="email_login">Email</label>
+                        <input type="text"  id="email_login">
+                        <label for="password_login">Contraseña</label>
+                        <input type="password"  id="password_login">
+                        <div><a href="#" class="reset_password">Recordar contraseña</a></div>
+                        <span class="feedback"></span>
+                        <input type="submit" class="btn" value="Entrar">
+                    </form>
+                    </div>
+                    <div class="box_forget" style="display:none;">
+                    	<form action="json/login_ko.json" method="get" role="form" id="form-forgot-password">
+                            <p>Introduce la cuenta de correo con la que estás registrado para restablecer la contraseña.</p>
+                            <label for="email_forget">Email</label>
+                            <input type="text"  id="email_forget">
+                            <span class="feedback"></span>
+                            <input type="submit" class="btn" value="Restablecer">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!--Fin header-->
+        <div id="contenidos">
+            <div class="box_space_top">
+                <div id="box_all_pics">
+                    <div class="wall_pics">
+                          <div class="container">
+                          	  <div class="navigation_pics">
+                              		<div class="right_navigation_pics consejos_navigation">
+                                        <ul>
+                                            <li><a href="#">Ganadores de ediciones<br/>anteriores</a></li>
+                                            <li><a href="#">Consejos y preguntas<br/>frequentes</a></li>
+                                        </ul>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  	  <div class="list_consejos">
+                              	
+                        <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Cómo puedo representar la curiosidad en una fotografía?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>De millones de maneras. Es un tema muy amplio, y nosotros no queremos ponerle límites. Siéntete libre de expresarte como mejor te parezca. La creatividad es subjetiva, y con una descripción o explicación adecuada, seguramente cualquier fotografía podría representar la curiosidad. Por ejemplo, una fotografía que por cualquier razón provoque curiosidad en quien la ve, podría ser una forma sencilla de resumir la propia curiosidad.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Por qué hace falta una descripción de la fotografía en inglés?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>En primer lugar, porque la descripción/explicación puede ser un buen complemento para que quien ve la foto pueda entenderla mejor. En segundo lugar, somos la editorial de Cambridge, y este concurso tiene que ver con la enseñanza y el fomento del inglés. Por lo tanto, el título y la descripción/explicación tienen que ser en inglés. No es necesario que sea un inglés perfecto, nos conformamos con el esfuerzo de que lo escribas en inglés.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Quién es el jurado del concurso?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Puedes consultarlo <a href="http://www.cambridgediscovery.es/page/premios" target="_blank">aquí</a>. Son fotógrafos expertos, pero lo que premiarán no es la calidad técnica de la fotografía, sino la creatividad a la hora de representar la curiosidad. No te preocupes, porque la técnica es muy secundaria.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Cómo puedo inspirarme para ser creativo a la hora de hacer una fotografía?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Busca referencias, en Internet hay multitud de webs y referencias que te pueden servir de inspiración. Puedes utilizar un montón de trucos para hacer fotos curiosas: <a href="http://weloveadvertising.es/increibles-perspectivas-con-coches-en-miniatura/" target="_blank">juegos con la perspectiva</a>, <a href="http://www.apogeephoto.com/june2011/jroth62011.shtml" target="_blank">jugar con las formas</a>, <a href="http://yorokobu.es/el-hombre-que-desafio-a-la-guerra-con-munequitos-de-juguete/" target="_blank">ideas originales</a>, <a href="http://sincerelyhana.com/post/50933610114/switcheroo-for-marie-claire-china" target="_blank">etc</a>. Pero recuerda: esto son solo algunas de las muchísimas fuentes de inspiración que puedes encontrar por ahí. </p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿De qué tamaño tienen que ser las fotos?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Para evitar problemas a la hora de subir una fotografía, tenemos que poner un límite al tamaño. Este límite será de 5MB máximo por fotografía.</p>
+                                      <p>CÓMO REDUCIR EL TAMAÑO DE LA FOTOGRAFÍA:</p>
+                                      <ul>
+                                      	<li>1) Abre la página <a href="http://www.picresize.com" target="_blank">http://www.picresize.com</a></li>
+                                        <li>2) Sube la foto de tu ordenador haciendo clik en "browse" y eligiendo la imagen que quieres subir</li>
+                                        <li>3) Haz un click en "continue"</li>
+                                        <li>4) En el menu "make my picture" elige la opción "Fit to screen: 1280 resolution"</li>
+                                        <li>5) Haz un click en "I'm Done, Resize My Picture" y "Save to disk"</li>
+                                        <li>6) Busca la foto que se acaba de descargar en tu ordenador y vuelve a subirla en Curiosipics</li>
+                                      </ul>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo participar con un teléfono móvil?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, por supuesto. Para participar en CuriosiPics basta con cualquier cosa que pueda hacer una foto. Échale una pizca de imaginación y verás que lo que utilices para hacer las fotos, es lo de menos. Tampoco es necesario que la fotografía tenga una gran calidad en cuanto a claridad, enfoque, ni alta definición. Lo importante es lo que transmita.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo utilizar filtros?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, puedes utilizar Instagram o cualquiera de las muchas apps de fotografía. Puedes retocar la foto, pero no puedes hacer un fotomontaje, es decir, no puedes añadir elementos que no existían en la foto original.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo retocar una foto?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, aceptaremos las fotos retocadas con programas. Pero recordamos: no se premiará la calidad técnica, sino la creatividad. Puedes utilizar todas las herramientas fotográficas que quieras, pero todas las fotografías participarán en igualdad de condiciones, estén hechas con una cámara profesional o con un teléfono móvil.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">Si soy profesor de alumnos de Secundaria, pero en una academia o por mi cuenta ¿puedo participar en el concurso?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, puedes participar sin problemas.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo participar si soy menor de 14 años?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, pero con un permiso especial de tu madre, padre o tutor legal. Cuando rellenes los datos de registro, te pediremos este permiso.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Cuántas fotos puedo presentar?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Un máximo de 5 fotografías por usuario registrado.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Pueden presentarse alumnos de una misma clase?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, por supuesto. No pondremos ningún límite de participación (salvo el máximo de 5 fotos por usuario).</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo ganar más de un premio si presento más de una fotografía?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Puedes ganar más de un premio, porque puede pasar que tu foto gane un premio del jurado y uno del público. Pero en ningún caso podrás ganar dos premios del jurado. Los premios del público los elegiréis vosotros mismos con vuestros votos.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo votar por mi propia fotografía?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, puedes.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo votar más de una vez por una misma fotografía?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Para reducir al máximo el posible fraude de votos, siempre pediremos un registro por email. Cada fotografía solo podrá votarse una vez por cada usuario.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puede votar cualquiera, menores de edad incluidos?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>No es necesario participar en el concurso para votar, solo tendrás que darnos tu correo. Así que si quieres, puedes decirle a quien sea que te vote. </p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo incluir un nuevo tag?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Puedes proponernos un nuevo tag en la sección de contacto. Nosotros lo daremos de alta si consideramos que tiene sentido.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Cuánto tiempo dura el concurso?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>El concurso comenzará el día 17 de noviembre de 2014 y terminará el día 15 de mayo de 2015.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Tengo que estar registrado para participar en el concurso?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, para subir fotografías necesitas registrarte primero. Puedes registrarte <a href="#">aquí</a>.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo compartir las fotos con las que participo en redes sociales?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, puedes compartirlo en Facebook y en Twitter. Para ayudar a encontrar fotos del concurso en Twitter, puedes hacerlo buscando el hashtag #CuriosiPics o en nuestro perfil: <a href="https://twitter.com/CambridgeGen" target="_blank">https://twitter.com/CambridgeGen</a></p>
+                                   </div>
+                              </div>    
+                         </div><div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo participar en grupo?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Los premios se dan a una única persona. En la elaboración de una misma fotografía pueden participar todas las personas que quieran, delante o detrás de la cámara…pero tened en cuenta que el premio será solo para una de ellas, para la que suba la foto. En caso de que se trate de un premio colectivo (por ejemplo, un viaje), será el ganador (o su tutor legal) quien decida qué personas disfrutan del premio.</p>
+                                   </div>
+                              </div>    
+                         </div><div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Dónde se comunicarán los premios?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Lo anunciaremos en esta misma web, así como en <a href="https://www.facebook.com/CambridgeGeneration" target="_blank">Facebook</a> y <a href="https://twitter.com/CambridgeGen" target="_blank">Twitter</a>. Los ganadores serán contactados para informarles.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">Soy profesor, pero imparto CLIL, ¿puedo participar?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, puedes participar.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">Soy profesor de inglés en paro, ¿Puedo participar en el concurso?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, puedes. Todo lo que pedimos es que hayas impartido clase de inglés a alumnos de Secundaria.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Cuánto tiempo tardáis en subir las fotos?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Dependará de la cantidad de fotos que se suban cada día. Pero intentaremos que el proceso sea lo más rápido posible.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">El título tiene que ser forzosamente en inglés?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, tanto el título como la descripción de la fotografía tiene que ir en inglés.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">Puedo enviar fotos en blanco y negro?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Sí, por supuesto.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Puedo eliminar o sustituir mis fotografías?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Una vez aprobada y subida una fotografía, se puede eliminar si el autor así lo desea por algún motivo. Pero no podrá ser sustituida por otra. Es decir, contará como foto subida (de las 5 que puede subir cada participante) una vez se haya eliminado. Y una vez se haya eliminado, no podrá volver a subirse la misma foto.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">¿Hasta cuando puedo presentar fotografías?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>El concurso durará hasta el 15 de mayo de 2015. Unas semanas después comunicaremos los ganadores.</p>
+                                   </div>
+                              </div>    
+                         </div>
+                         <div class="box_consejo">
+                             <div class="inside_consejo">
+                                  <a href="#" class="top_enl">Tengo más preguntas, a quién se las puedo hacer?</a>
+                                  <div class="desplegable_consejo">
+                                      <p>Para cualquier duda puedes consultarnos en esta dirección de email: <a href="mailto:info@cambridgediscovery" target="_blank">INFO@CAMBRIDGEDISCOVERY.ES</a></p>
+                                   </div>
+                              </div>    
+                         </div>
+                             	
+                  	  </div>
+                  </div>
+             </div>
+        </div><!--Fin contenidos-->
+        <div id="footer">
+   			<div id="top_footer">
+            	<div class="container">
+                     	<ul class="menu_pie">
+                        	<li><a href="#" title="">El concurso</a></li>
+                    		<li><a href="pics.html" title="">Pics</a></li>
+                    		<li><a href="#" title="">Bases Legales</a></li>
+                    		<li><a href="#" title="">Contacto</a></li>
+                    		<li class="btn_footer"><a href="registro.html">Registro</a></li>
+                    	</ul>
+                        <div class="right_p_rrss">
+                    	<p>Síguenos</p>
+                        <ul class="list_rrss">
+                        	<li><a href="#" target="_blank" class="fa fa-instagram"><span class="hide">Instagram</span></a></li>
+                        	<li><a href="#" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a></li>
+                            <li><a href="#" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a></li>
+                            <li><a href="#" target="_blank" class="fa fa-youtube-play"><span class="hide">Youtube</span></a></li>
+                        </ul>
+                     </div>
+                </div>
+            </div>
+            <div id="boottom_footer">
+            	<div class="container">
+                	<p class="logo_foot"><a href="http://www.cambridge.es/" title="Cambridge University Press" target="_blank"><img alt="Cambridge University Press" src="svg/logo_escudo.svg"></a></p>
+                    <p class="copy_foot">&copy; Cambridge University Press 2015
+                        <span><a href="#">Aviso legal</a></span>
+                        <span><a href="#">Contacto</a></span>
+                    </p>
+                </div>
+            </div>
+        </div><!--Fin footer-->
+        <div class="marcador" style="color:#ff0000;font-size:18px;position:fixed;top:0;left:0;z-index:200;">0px</div>
+        <!--Bloque Cookies-->
+        <div class="block-cookies">
+        	<div class="container">
+                <h2>Política de Cookies</h2>
+                <p>Utilizamos cookies propias y de terceros para ofrecerte una mejor experiencia y servicio, de acuerdo a tus hábitos de navegación. Si continúas navegando, consideramos que aceptas su uso. Puedes obtener más información en nuestra <a href="#" title="Política de Cookies">Política de Cookies.</a></p>
+                <a href="#" class="btn-accept">Ok</a>
+                <a href="#" title="" class="close_c"></a>
+            </div>
+        </div>
+        <!--Fin Cookies-->
+        <!--Bloque Votar-->
+        <div class="box_pop_votar" style="display:none;">
+        	<div class="bg_pop_votar"></div>
+            <div class="pop_votar">
+            	<h3>Votar Pic</h3>
+                <p>Para votar debes introducir una dirección de correo electrónico y confirmar tu voto en el email que te enviaremos.</p>
+                <form action="#" method="get" novalidate role="form" id="form-votar-pic">
+                	<label for="search_term">Votar</label>
+                    <input type="email" autocorrect="off"  id="mail_pic" name="mail_pic" placeholder="Introduce tu email">
+                    <input type="submit" class="" value="Enviar">
+                </form>
+                <a href="#" class="close_votar">Cerrar</a>
+            </div>
+         </div>
+        <!--Fin Bloque Votar-->
+    </div><!--Fin wrapper-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.backgroundPosition.js"></script>
+    <script src="js/jquery-cookie.js"></script>
+    <script src="js/html5.image.preview.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/jquery.color.js"></script>
+    <script src="js/imagesloaded.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="js/application.js"></script>
+  </body>
+</html>

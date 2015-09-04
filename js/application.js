@@ -764,6 +764,12 @@ jQuery(document).ready(function(){
 				}
 			}
 	});
+	
+	//Enviar formulario de registro
+	jQuery(document).on("click",".box_consejo a.top_enl", function(e) {
+		e.preventDefault();
+		jQuery(this).parents('.box_consejo').find('.desplegable_consejo').stop().clearQueue().slideToggle(600,'easeInOutExpo');
+	});
 
 
 	//Evento para capturar el resize de la ventana

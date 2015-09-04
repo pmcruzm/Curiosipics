@@ -151,8 +151,9 @@ PROPIEDADES HEADER
 .logged_box div{text-align:right;padding-right:25px;}
 .logged_box a.log_out{color:#a1a1a1;font-size:14px;text-decoration:underline;}
 
-
-#header h2.logo_top a{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;z-index:80;margin:0 auto;background-size:397px 184px;}
+#header h2.logo_top{display:block;width:397px;height:184px;left:0;z-index:80;margin:0 auto;position:relative;}
+#header h2.logo_top a{display:block;width:397px;height:184px;left:0;text-indent:-99999px;background:url(../img/logo_top.png) top left no-repeat;background-size:397px 184px;}
+.ind_titul{position:absolute;color:#61bde9;font-family:'santa_fe', Helvetica, sans-serif;font-size:40px;bottom:60px;display:block;text-align:center;width:100%;}
 
 /*** Modal de Login escritorio ***/
 #box_login{background:#ffffff;display:block;box-sizing:border-box;width:280px;/*height:280px;*/position:absolute;top:70px;right:20px;padding:20px;border-radius:5px;z-index:300;padding-bottom:80px;}
@@ -669,6 +670,19 @@ GANADORES
 .sello_4_r{background-position:0px -144px;}
 .sello_5_r{background-position:0px -192px;}
 
+/**********************
+CONSEJOS
+***********************/
+.list_consejos{background:#ffffff;border-bottom:100px solid #f1f1f1;}
+.box_consejo{border-bottom:2px solid #f1f1f1;}
+.inside_consejo{width:100%;max-width:865px;margin:0 auto;text-align:center;}
+.inside_consejo a.top_enl{font-size:18px;color:#61bde9;display:block;padding-top:10px;padding-bottom:10px;line-height:24px;}
+.desplegable_consejo{padding:20px;box-sizing:border-box;padding-bottom:40px;display:block;display:none;}
+.desplegable_consejo p{padding-bottom:20px;color:#565656;}
+.desplegable_consejo a{font-family:'cabinbold', Helvetica, sans-serif;color:#565656;}
+.desplegable_consejo ul li{margin-bottom:10px;color:#565656;}
+
+
 /*****************************
 PROPIEDADES FOOTER
 ******************************/
@@ -1050,6 +1064,8 @@ MEDIA QUERIES
 	.left_navigation_pics{float:inherit;width:auto;position:relative;}
 	.right_navigation_pics ul{overflow:hidden;}
 	.right_navigation_pics ul li{display:block;float:left;width:50%;}
+	
+	.consejos_navigation{float:right !important;}
 }
 
 @media screen and (max-width: 815px) {	
@@ -1220,6 +1236,8 @@ MEDIA QUERIES
 	#registro-form .cont_radio{width:100%;}
 	
 	#registro-form .errores{padding-left:0;}
+	
+	.ind_titul{bottom:0;}
 }
 
 @media screen and (max-width: 680px){	
