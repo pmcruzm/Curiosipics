@@ -670,12 +670,23 @@ GANADORES
 .sello_4_r{background-position:0px -144px;}
 .sello_5_r{background-position:0px -192px;}
 
+/*.sello_b{height:48px;width:41px;position:absolute;top:10px;right:10px;background-image:url(../img/sprite_ganadores.png);background-repeat:no-repeat;background-size:41px;z-index:25;}*/
+.tipo_winner{color:#f1e87c;font-size:32px;display:inline-block;font-family:'santa_fe', Helvetica, sans-serif;line-height:35px;text-align:center;}
+.tipo_winner:before{content:'';display:block;height:48px;width:41px;margin:0 auto;background-image:url(../img/sprite_ganadores.png);background-repeat:no-repeat;background-size:41px;margin-bottom:5px;}
+.tipo_winner.sello_1:before{background-position:0px 0px;}
+.tipo_winner.sello_2:before{background-position:0px -48px;}
+.tipo_winner.sello_3:before{background-position:0px -96px;}
+.tipo_winner.sello_4:before{background-position:0px -144px;}
+.tipo_winner.sello_5:before{background-position:0px -192px;}
+
+
+
 /**********************
 CONSEJOS
 ***********************/
 .list_consejos{background:#ffffff;border-bottom:100px solid #f1f1f1;}
 .box_consejo{border-bottom:2px solid #f1f1f1;}
-.inside_consejo{width:100%;max-width:865px;margin:0 auto;text-align:center;}
+.inside_consejo{width:90%;max-width:865px;margin:0 auto;text-align:center;}
 .inside_consejo a.top_enl{font-size:18px;color:#61bde9;display:block;padding-top:10px;padding-bottom:10px;line-height:24px;}
 .desplegable_consejo{padding:20px;box-sizing:border-box;padding-bottom:40px;display:block;display:none;}
 .desplegable_consejo p{padding-bottom:20px;color:#565656;}
@@ -1189,6 +1200,8 @@ MEDIA QUERIES
 	.left_navigation_pics{width:100%;text-align:center;}
 	.left_navigation_pics ul{margin-left:0px;display:inline-block;}
 	.over_search{box-sizing: border-box;left: 0; margin: 0 auto 0 -56px;padding-left: 64px;right:0;width:100%;}
+	
+	.tipo_winner{margin-top:20px;margin-bottom:-20px;}
 }
 
 
