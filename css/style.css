@@ -600,7 +600,7 @@ PROPIEDADES CONTACTO
 #contacto-form .form-group input[type=password]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
 #contacto-form .form-group input[type=email]{border:none;height:40px;line-height:40px;-webkit-appearance:none;width:auto;display:block;width:65%;float:left;box-sizing:border-box;padding-left:10px;padding-right:10px;color:#929091;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
 
-#contacto-form textarea{border:none;display:block;width: 65%;box-sizing:border-box;padding:15px;height:300px;font-size:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
+#contacto-form textarea{border:none;display:block;width: 65%;box-sizing:border-box;padding:15px;height:300px;font-size:16px;font-family:Verdana, Geneva, sans-serif;color:#929091;}
 
 #contacto-form .form-group input[type=text].error{border:2px solid #f05456;}
 #contacto-form .form-group input[type=password].error{border:2px solid #f05456;}
