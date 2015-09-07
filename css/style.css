@@ -64,7 +64,7 @@ button:focus {
 /*****************************
 PROPIEDADES GENERALES
 ******************************/
-body{margin:0;padding:0;font-family:'cabinregular', Helvetica, sans-serif;font-size: 1em;line-height: 1.5em;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+body{margin:0;padding:0;font-family:'cabinregular', Helvetica, sans-serif;font-size: 1em;line-height: 1.5em;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;background:#f1f1f1;}
 .container{display:block;width:100%;max-width:1600px;margin:0 auto;}
 #wrapper{position:relative;background:#f1f1f1;overflow:hidden;}
 #wrapper.home{background:#ffffff;}
