@@ -175,7 +175,8 @@ jQuery(document).ready(function(){
 				top_all_pics=jQuery('#all_pics').offset().top;
 				var altura_t_all=h_win-jQuery("#wrapper").outerHeight();
 				altura_t_all=altura_t_all+jQuery("#contenidos").outerHeight()-top_all_pics-jQuery(".pagination_pics").outerHeight();
-				jQuery('#all_pics').height(altura_t_all);
+				jQuery('#all_pics').css('min-height',altura_t_all);
+				//jQuery('#all_pics').height(altura_t_all);
 			 }
 		}
 	}
@@ -854,7 +855,8 @@ jQuery(document).ready(function(){
 						top_all_pics=jQuery('#all_pics').offset().top;
 						var altura_t_all=h_win-jQuery("#wrapper").outerHeight();
 						altura_t_all=altura_t_all+jQuery("#contenidos").outerHeight()-top_all_pics-jQuery(".pagination_pics").outerHeight();
-						jQuery('#all_pics').height(altura_t_all);
+						jQuery('#all_pics').css('min-height',altura_t_all);
+						//jQuery('#all_pics').height(altura_t_all);
 					 }
 				}
 			}
@@ -1126,7 +1128,8 @@ function doOnOrientationChange()
 						top_all_pics=jQuery('#all_pics').offset().top;
 						var altura_t_all=h_win-jQuery("#wrapper").outerHeight();
 						altura_t_all=altura_t_all+jQuery("#contenidos").outerHeight()-top_all_pics-jQuery(".pagination_pics").outerHeight();
-						jQuery('#all_pics').height(altura_t_all);
+						jQuery('#all_pics').css('min-height',altura_t_all);
+						//jQuery('#all_pics').height(altura_t_all);
 					 }
 				}
 			}
@@ -1238,7 +1241,8 @@ function doOnOrientationChange()
 						top_all_pics=jQuery('#all_pics').offset().top;
 						var altura_t_all=h_win-jQuery("#wrapper").outerHeight();
 						altura_t_all=altura_t_all+jQuery("#contenidos").outerHeight()-top_all_pics-jQuery(".pagination_pics").outerHeight();
-						jQuery('#all_pics').height(altura_t_all);
+						jQuery('#all_pics').css('min-height',altura_t_all);
+						//jQuery('#all_pics').height(altura_t_all);
 					 }
 				}
 			}
