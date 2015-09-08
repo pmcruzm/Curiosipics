@@ -396,7 +396,8 @@ PROPIEDADES REGISTRO
 #registro-form .checkbox a{color:#484647;text-decoration:underline;}
 
 .submit_group{padding-left:30%;padding-top:40px;}
-.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;cursor:pointer;background:none !important;font-family:'cabinregular', Helvetica, sans-serif;}
+.submit_group input{-webkit-appearance:none;font-size:16px;height:40px;width:120px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;cursor:pointer;background:none;font-family:'cabinregular', Helvetica, sans-serif;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
+.submit_group input:hover{background:#373737;color:#f1f1f1;}
 
 .errores{color:#f05456;font-size:14px;display:block;padding-left:30%;width:95%;box-sizing:border-box;margin-top:20px;}
 
@@ -433,7 +434,7 @@ PROPIEDADES MIS PICS
 .fields_pic label{color:#484647;font-size:18px;margin-bottom:10px;}
 .fields_pic input[type=text]{height:40px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding-left:10px;padding-right:10px;margin-bottom:20px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
 .fields_pic span{text-align:right;font-size:13px;color:#adaaab;margin-bottom:10px;}
-.fields_pic textarea{height:220px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding:10px;}
+.fields_pic textarea{height:220px;width:100%;box-sizing:border-box;border:2px solid #e2e2e2;color:#929091;font-size:16px;padding:10px;font-family:Verdana, Geneva, sans-serif;}
 	
 .preview_pic{text-align:center;}
 .preview_pic span{font-size:13px;color:#adaaab;display:block;margin-top:10px;margin-bottom:30px;line-height:16px;}
@@ -477,7 +478,7 @@ PROPIEDADES MIS PICS
 .pic_subido_correcto h5{font-size:60px;color:#61bde9;font-family:'santa_fe', Helvetica, sans-serif;margin-bottom:30px;line-height:56px;}
 .pic_subido_correcto p{font-size:18px;color:#565656;}
 
-.error_pics{font-size:24px !important;color:#f05456 !important;text-align:center;margin-bottom:50px !important;}
+.error_pics{font-size:24px !important;color:#f05456 !important;text-align:center;margin-bottom:50px !important;width:90%;margin:0 auto;}
 
 /**********************
 PROPIEDADES PICS (TODOS)
