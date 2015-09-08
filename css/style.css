@@ -802,6 +802,22 @@ input[type="radio"] + label::before {
     background-size:21px;
 }
 
+input[type="radio"].error + label::before {
+    content:'';
+    cursor:pointer;
+    position:relative;
+    top:2px;
+    vertical-align:top;
+    padding-right:10px;
+    display:inline-block;
+    overflow:hidden;
+    width:21px;
+    height:21px;
+    background:url(../img/radio_opt.png) no-repeat;
+    background-position:0px -42px;
+    background-size:21px;
+}
+
 input[type="radio"]:checked + label::before {
     content:'';
     cursor:pointer;

@@ -467,11 +467,17 @@ jQuery(document).ready(function(){
 	});
 
 	//Eliminar marco de error cuando se hace click sobre un input con error
-	jQuery(document).on('focus','form input,form textarea,form input[type=checkbox]',function(event){
+	jQuery(document).on('focus','form input,form textarea,form input[type=checkbox],form input[type=radio]',function(event){
 		event.preventDefault();
 		if(jQuery(this).attr('type')!='submit'){
-			if(jQuery(this).hasClass('error')){
-				jQuery(this).removeClass('error');
+			if(jQuery(this).attr('type')=='radio'){
+				if(jQuery('form input[type=radio]').hasClass('error')){
+					jQuery('form input[type=radio]').removeClass('error');
+				}	
+			}else{
+				if(jQuery(this).hasClass('error')){
+					jQuery(this).removeClass('error');
+				}
 			}
 		}
 	});
@@ -1460,6 +1466,17 @@ function validate_form(id){
 
 				});
 			}
+			
+			//Busca todos los campos requeridos radio
+			if(jQuery(id).find('.validation-rule-radio').length > 0){
+				var error_radio=0;
+				var value_radio=jQuery(id).find('input[name=user_type]:checked').val();
+				if (typeof value_radio == 'undefined') {
+					error_radio=1;
+					jQuery(id).find('input[name=user_type]').addClass('error');
+				}
+				console.log(error_radio);
+			}
 
 			//Error general campos vacíos
 			if(error_empty==1){
@@ -1469,6 +1486,11 @@ function validate_form(id){
 
 			if(error_checkbox==1){
 				var message=jQuery(id).find('.validation-rule-checkbox').attr('data-error-msg');
+				jQuery('.errores').append('<p>'+message+'</p>');
+			}
+			
+			if(error_radio==1){
+				var message=jQuery(id).find('.validation-rule-radio').attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}
 
@@ -1502,7 +1524,7 @@ function validate_form(id){
 			}
 
 			//Salida
-			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1 /*|| error_big_14==1*/){
+			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1 || error_radio==1 /*|| error_big_14==1*/){
 				return 1;
 			}else{
 				return 0;
