@@ -178,6 +178,12 @@ jQuery(document).ready(function(){
 				jQuery('#all_pics').css('min-height',altura_t_all);
 				//jQuery('#all_pics').height(altura_t_all);
 			 }
+		}else{
+			//Otra página que no sea de galería de pics
+			if(h_win>jQuery("#wrapper").outerHeight()){
+				console.log('aqui')
+				console.log(jQuery("#contenidos").outerHeight()+'--'+jQuery("#wrapper").outerHeight()+h_win)
+			}
 		}
 	}
 
