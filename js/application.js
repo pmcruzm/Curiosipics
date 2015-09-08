@@ -1555,7 +1555,7 @@ function show_pic(id_pic,seccion){
 
 		//Completamos las urls de visualización y voto de un pic
 		var picUrl     = jQuery(".wall_pics").data("pic-url").replace('{id}', id_pic);
-		var picVoteUrl = jQuery(".wall_pics").data("pic-vote-url").replace('{id}', id_pic);
+		//var picVoteUrl = jQuery(".wall_pics").data("pic-vote-url").replace('{id}', id_pic);
 
 		if ( jQuery(".detalle_pic").is(":visible") ) {
 			jQuery(".detalle_pic").stop().clearQueue().animate({height:0},600,'easeInOutExpo',function(){
