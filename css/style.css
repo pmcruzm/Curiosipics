@@ -663,6 +663,11 @@ GANADORES
 .sello_3_r{background-position:0px -96px;}
 .sello_4_r{background-position:0px -144px;}
 .sello_5_r{background-position:0px -192px;}
+.sello_6_r{background-position:0px -240px;}
+.sello_7_r{background-position:0px -288px;}
+.sello_8_r{background-position:0px -336px;}
+.sello_9_r{background-position:0px -384px;}
+.sello_10_r{background-position:0px -432px;}
 
 .tipo_winner{color:#f1e87c;font-size:32px;display:inline-block;font-family:'santa_fe', Helvetica, sans-serif;line-height:35px;text-align:center;}
 .tipo_winner:before{content:'';display:block;height:48px;width:41px;margin:0 auto;background-image:url(../img/sprite_ganadores.png);background-repeat:no-repeat;background-size:41px;margin-bottom:5px;}
@@ -671,6 +676,11 @@ GANADORES
 .tipo_winner.sello_3:before{background-position:0px -96px;}
 .tipo_winner.sello_4:before{background-position:0px -144px;}
 .tipo_winner.sello_5:before{background-position:0px -192px;}
+.tipo_winner.sello_6:before{background-position:0px -240px;}
+.tipo_winner.sello_7:before{background-position:0px -288px;}
+.tipo_winner.sello_8:before{background-position:0px -336px;}
+.tipo_winner.sello_9:before{background-position:0px -384px;}
+.tipo_winner.sello_10:before{background-position:0px -432px;}
 
 
 
