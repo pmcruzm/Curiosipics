@@ -161,12 +161,15 @@ PROPIEDADES HEADER
 #form-login input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
 #form-login input[type=password]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
 #form-login a{font-size:14px;color:#7f7f7f;text-decoration:underline;}
-#form-login input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;font-family:'cabinregular', Helvetica, sans-serif;-webkit-appearance:none;}
+#form-login input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;font-family:'cabinregular', Helvetica, sans-serif;-webkit-appearance:none;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
+#form-login input[type=submit]:hover{background:#373737;color:#ffffff;}
+
 #form-forgot-password label{display:block;color:#373737;font-size:16px;margin-bottom:3px;}
 #form-forgot-password input[type=text]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
 #form-forgot-password input[type=password]{display:block;width:100%;height:40px;line-height:40px;background:#f1f1f1;border:0;-webkit-appearance:none;margin-bottom:10px;box-sizing:border-box;padding-left:10px;padding-right:10px;font-size:14px;font-family:Verdana, Geneva, sans-serif;color:#929091;-webkit-appearance:none;}
 #form-forgot-password p{font-size:14px;color:#7f7f7f;line-height:21px;margin-bottom:20px;}
-#form-forgot-password input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;font-family:'cabinregular', Helvetica, sans-serif;-webkit-appearance:none;}
+#form-forgot-password input[type=submit]{position:absolute;bottom:20px;right:20px;width:120px;height:40px;box-sizing:border-box;border:2px solid #373737;border-radius:5px;background:none;font-size:16px;-webkit-appearance:none;cursor:pointer;font-family:'cabinregular', Helvetica, sans-serif;-webkit-appearance:none;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
+#form-forgot-password input[type=submit]:hover{background:#373737;color:#ffffff;}
 .feedback{text-align:center;color:#f05456;font-size:14px;margin-top:20px;display:none;width:100%;}
 
 /*** Modal de Login mobile ***/

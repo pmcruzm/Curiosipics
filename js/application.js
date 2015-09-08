@@ -560,7 +560,9 @@ jQuery(document).ready(function(){
 		if(jQuery(this).parents('.mobile_opc').hasClass('active')){
 			jQuery('.extend_menu_mob').slideUp(600,function(){
 				jQuery('.right_top_header.mobile_opc').removeClass('active');
-				//jQuery(".right_top_header.mobile_opc").animate({backgroundColor:"rgba(0,0,0,0)"},600 );
+				//Limpiamos los campos
+				jQuery('.box_login_mob').show();
+				jQuery('.box_forget_mob').hide();
 			});
 		}else{
 			jQuery('.right_top_header.mobile_opc').addClass('active');
