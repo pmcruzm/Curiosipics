@@ -137,7 +137,7 @@ jQuery(document).ready(function(){
     // IE - when all the images are loaded
     return jQuery.when.apply(jQuery,dfds);
 
-}
+	}
 	
 
 	//Comprobar altura de las secciones de la home
@@ -165,6 +165,19 @@ jQuery(document).ready(function(){
 	//Ajustamos cuadros en el muro de pics
 	if ( jQuery(".wall_pics").is(":visible") ) {
 		jQuery(".box_img_small").height(jQuery(".box_img_small").width());
+	}
+	
+	//Ajustamos para resoluciones superiores
+	if ( jQuery("#box_all_pics").is(":visible") ) {
+		//Página de pics 
+		if (jQuery(".pagination_pics").is(":visible") ) {
+			 if(h_win>jQuery("#wrapper").outerHeight()){
+				top_all_pics=jQuery('#all_pics').offset().top;
+				var altura_t_all=h_win-jQuery("#wrapper").outerHeight();
+				altura_t_all=altura_t_all+jQuery("#contenidos").outerHeight()-top_all_pics-jQuery(".pagination_pics").outerHeight();
+				jQuery('#all_pics').height(altura_t_all);
+			 }
+		}
 	}
 
 	//Si detalle está desplegado calculamos altura de los bloques
@@ -832,6 +845,19 @@ jQuery(document).ready(function(){
 			if ( jQuery(".wall_pics").is(":visible") ) {
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
+			
+			//Ajustamos altura para resoluciones superiores
+			if ( jQuery("#box_all_pics").is(":visible") ) {
+				//Página de pics 
+				if (jQuery(".pagination_pics").is(":visible") ) {
+					 if(h_win>jQuery("#wrapper").outerHeight()){
+						top_all_pics=jQuery('#all_pics').offset().top;
+						var altura_t_all=h_win-jQuery("#wrapper").outerHeight();
+						altura_t_all=altura_t_all+jQuery("#contenidos").outerHeight()-top_all_pics-jQuery(".pagination_pics").outerHeight();
+						jQuery('#all_pics').height(altura_t_all);
+					 }
+				}
+			}
 
 			//Si detalle está desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
@@ -1091,6 +1117,19 @@ function doOnOrientationChange()
 			if ( jQuery(".wall_pics").is(":visible") ) {
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
+			
+			//Ajustamos altura para resoluciones superiores
+			if ( jQuery("#box_all_pics").is(":visible") ) {
+				//Página de pics 
+				if (jQuery(".pagination_pics").is(":visible") ) {
+					 if(h_win>jQuery("#wrapper").outerHeight()){
+						top_all_pics=jQuery('#all_pics').offset().top;
+						var altura_t_all=h_win-jQuery("#wrapper").outerHeight();
+						altura_t_all=altura_t_all+jQuery("#contenidos").outerHeight()-top_all_pics-jQuery(".pagination_pics").outerHeight();
+						jQuery('#all_pics').height(altura_t_all);
+					 }
+				}
+			}
 
 			//Si detalle está desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
@@ -1189,6 +1228,19 @@ function doOnOrientationChange()
 			//Ajustamos cuadros en el muro de pics
 			if ( jQuery(".wall_pics").is(":visible") ) {
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
+			}
+			
+			//Ajustamos altura para resoluciones superiores
+			if ( jQuery("#box_all_pics").is(":visible") ) {
+				//Página de pics 
+				if (jQuery(".pagination_pics").is(":visible") ) {
+					 if(h_win>jQuery("#wrapper").outerHeight()){
+						top_all_pics=jQuery('#all_pics').offset().top;
+						var altura_t_all=h_win-jQuery("#wrapper").outerHeight();
+						altura_t_all=altura_t_all+jQuery("#contenidos").outerHeight()-top_all_pics-jQuery(".pagination_pics").outerHeight();
+						jQuery('#all_pics').height(altura_t_all);
+					 }
+				}
 			}
 
 			//Si detalle está desplegado calculamos altura de los bloques
