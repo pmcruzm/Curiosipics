@@ -167,7 +167,7 @@ jQuery(document).ready(function(){
 		jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 	}
 	
-	//Ajustamos para resoluciones superiores
+	//Ajustamos para resoluciones superiores los pics
 	if ( jQuery("#box_all_pics").is(":visible") ) {
 		//Página de pics 
 		if (jQuery(".pagination_pics").is(":visible") ) {
@@ -178,14 +178,15 @@ jQuery(document).ready(function(){
 				jQuery('#all_pics').css('min-height',altura_t_all);
 				//jQuery('#all_pics').height(altura_t_all);
 			 }
-		}else{
-			//Otra página que no sea de galería de pics
-			if(h_win>jQuery("#wrapper").outerHeight()){
-				console.log('aqui')
-				console.log(jQuery("#contenidos").outerHeight()+'--'+jQuery("#wrapper").outerHeight()+h_win)
-			}
+		}
+	}else{
+		if(h_win>jQuery("#wrapper").outerHeight()){
+			//console.log(jQuery("#contenidos").outerHeight()+'--'+jQuery("#wrapper").outerHeight()+'--'+jQuery("#footer").outerHeight()+'--'+h_win);
+			var altura_t_all=jQuery("#contenidos").outerHeight()+(h_win-jQuery("#wrapper").outerHeight());
+			jQuery('#contenidos').css('min-height',altura_t_all);
 		}
 	}
+	
 
 	//Si detalle está desplegado calculamos altura de los bloques
 	if ( jQuery(".detalle_pic").is(":visible") ) {
@@ -867,6 +868,12 @@ jQuery(document).ready(function(){
 						//jQuery('#all_pics').height(altura_t_all);
 					 }
 				}
+			}else{
+				if(h_win>jQuery("#wrapper").outerHeight()){
+					//console.log(jQuery("#contenidos").outerHeight()+'--'+jQuery("#wrapper").outerHeight()+'--'+jQuery("#footer").outerHeight()+'--'+h_win);
+					var altura_t_all=jQuery("#contenidos").outerHeight()+(h_win-jQuery("#wrapper").outerHeight());
+					jQuery('#contenidos').css('min-height',altura_t_all);
+				}
 			}
 
 			//Si detalle está desplegado calculamos altura de los bloques
@@ -1128,7 +1135,7 @@ function doOnOrientationChange()
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
 			
-			//Ajustamos altura para resoluciones superiores
+			//Ajustamos para resoluciones superiores los pics
 			if ( jQuery("#box_all_pics").is(":visible") ) {
 				//Página de pics 
 				if (jQuery(".pagination_pics").is(":visible") ) {
@@ -1139,6 +1146,12 @@ function doOnOrientationChange()
 						jQuery('#all_pics').css('min-height',altura_t_all);
 						//jQuery('#all_pics').height(altura_t_all);
 					 }
+				}
+			}else{
+				if(h_win>jQuery("#wrapper").outerHeight()){
+					//console.log(jQuery("#contenidos").outerHeight()+'--'+jQuery("#wrapper").outerHeight()+'--'+jQuery("#footer").outerHeight()+'--'+h_win);
+					var altura_t_all=jQuery("#contenidos").outerHeight()+(h_win-jQuery("#wrapper").outerHeight());
+					jQuery('#contenidos').css('min-height',altura_t_all);
 				}
 			}
 
@@ -1241,7 +1254,7 @@ function doOnOrientationChange()
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
 			
-			//Ajustamos altura para resoluciones superiores
+			//Ajustamos para resoluciones superiores los pics
 			if ( jQuery("#box_all_pics").is(":visible") ) {
 				//Página de pics 
 				if (jQuery(".pagination_pics").is(":visible") ) {
@@ -1252,6 +1265,12 @@ function doOnOrientationChange()
 						jQuery('#all_pics').css('min-height',altura_t_all);
 						//jQuery('#all_pics').height(altura_t_all);
 					 }
+				}
+			}else{
+				if(h_win>jQuery("#wrapper").outerHeight()){
+					//console.log(jQuery("#contenidos").outerHeight()+'--'+jQuery("#wrapper").outerHeight()+'--'+jQuery("#footer").outerHeight()+'--'+h_win);
+					var altura_t_all=jQuery("#contenidos").outerHeight()+(h_win-jQuery("#wrapper").outerHeight());
+					jQuery('#contenidos').css('min-height',altura_t_all);
 				}
 			}
 
