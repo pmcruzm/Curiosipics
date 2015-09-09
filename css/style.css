@@ -268,13 +268,14 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 .flecha_scroll{display:block;width:119px;height:120px;position:absolute;left:0;right:0;margin:0 auto;background:url(../img/flecha_scroll.png) top left no-repeat;top:-40px;z-index:105;background-size:119px 120px;}
 #box_curiosidad{position:relative;background:#ffffff;z-index:91;}
 #box_curiosidad .container{position:relative;}
-.inside_curiosidad{width:60%;margin:0 auto;padding-top:100px;padding-bottom:40px;}
+.inside_curiosidad{width:60%;margin:0 auto;padding-top:100px;padding-bottom:80px;}
 #box_curiosidad h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
 #box_curiosidad h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:92px 16px;}
 #box_curiosidad h4{color:#484647;font-size:24px;text-align:center;margin-bottom:20px;line-height:36px;font-family:'cabinsemibold', Helvetica, sans-serif;}
 #box_curiosidad p{color:#484647;text-align:center;font-size:18px;margin-bottom:20px;line-height:24px;font-family:'cabinregular', Helvetica, sans-serif;}
 #box_curiosidad p a{font-family:'cabinsemibold', Helvetica, sans-serif;color:#484647;}
 .galeria_curiosidad{height:212px;overflow:hidden;}
+.title_pics_recent{display:block;position:absolute;left:0;right:0;margin:0 auto;background-image:url(../img/pics_recientes.png);background-position:0px 0px;background-repeat:no-repeat;background-size:154px 153px;width:154px;height:153px;text-indent:-99999px;z-index:300;bottom:135px;}
 
 /*************************************
 PROPIEDADES COMO PARTICIPAR
@@ -1311,6 +1312,7 @@ MEDIA QUERIES
 	.left_galeria .colum_2,.right_galeria .colum_2{display:none;}
 	.left_galeria .colum_1,.right_galeria .colum_1{width:100% !important;}
 	.galeria_curiosidad{height:125px;}
+	.title_pics_recent{background-size:124px 123px;width:124px;height:123px;bottom:65px;}
 	
 	.logo_top{z-index:-2;position:relative;}
 	.extend_menu_mob .logged_box{float:inherit;text-align:center;}
