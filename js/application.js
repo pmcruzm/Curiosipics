@@ -17,6 +17,7 @@ var top_curiosidades,top_participar,top_premios,top_jurado,top_registro;
 var send_form=0;
 var h_win,w_win,w_win_init;
 var id_pic_open;
+var tutor_block;
 
 //Eventos para dispositivos móviles
 var ua = navigator.userAgent,
@@ -731,9 +732,36 @@ jQuery(document).ready(function(){
 	   });
 
 	});
+	
+	//Evitar que se complete datos de menor con radio profesor 
+	jQuery(document).on('change','form input[type=radio]', function(e) {
+		e.preventDefault();
+		var value_radio=jQuery('input[name=user_type]:checked').val();
+		//Profesor
+		console.log(value_radio);
+		if(value_radio==2){
+			//Miramos si ya se ha desplegado form menor
+			if(jQuery('.tutor_datos').is(":visible")){
+				jQuery('.tutor_datos').hide("slow",function(){
+					jQuery('#tutor_name').val("");	
+					jQuery('#tutor_email').val("");	
+					jQuery('#tutor_id').val("");			
+				});
+			}
+		}else{
+			if(tutor_block==1){
+				jQuery('.tutor_datos').show("slow",function(){
+					jQuery('body').stop().clearQueue().scrollTo(jQuery('.tutor_datos'),600,{axis:'y',easing:'easeInOutExpo',offset:-20});
+				});
+			}
+		}
+	});
 
 	//Cambios en en los campos fecha para mostrar tutor
 	jQuery(document).on('change','#birth_day,#birth_month,#birth_year', function() {
+			//Obtenemos variable de radio
+			var value_radio=jQuery('form input[name=user_type]:checked').val();
+		
 			//Busca todos los campos requeridos de día
 			if(jQuery('#registro-form').find('.validation-rule-day').length > 0){
 				var error_day=0;
@@ -777,18 +805,24 @@ jQuery(document).ready(function(){
 				var day=jQuery('.validation-rule-day').val();
 				if (meetsMinimumAge(new Date(year, month, day),14)) {
 					jQuery('.tutor_datos').hide();
+					tutor_block=0;
 				}else{
 					//Mostramos el campo de tutor legal
+					tutor_block=1;
 					if(jQuery('.tutor_datos').is(":visible")){
-						 jQuery('.tutor_datos').show("slow",function(){
-							jQuery('body').stop().clearQueue().scrollTo(jQuery('.tutor_datos'),600,{axis:'y',easing:'easeInOutExpo',offset:-20});
-						});
+						if(value_radio!=2){
+						 	jQuery('.tutor_datos').show("slow",function(){
+								jQuery('body').stop().clearQueue().scrollTo(jQuery('.tutor_datos'),600,{axis:'y',easing:'easeInOutExpo',offset:-20});
+							});
+						}
 					}else{
-						var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
-						jQuery('.errores').append('<p>'+message+'</p>');
-						jQuery('.tutor_datos').show("slow",function(){
-							jQuery('body').stop().clearQueue().scrollTo(jQuery('.tutor_datos'),600,{axis:'y',easing:'easeInOutExpo',offset:-20});
-						});
+						//var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
+						//jQuery('.errores').append('<p>'+message+'</p>');
+						if(value_radio!=2){
+							jQuery('.tutor_datos').show("slow",function(){
+								jQuery('body').stop().clearQueue().scrollTo(jQuery('.tutor_datos'),600,{axis:'y',easing:'easeInOutExpo',offset:-20});
+							});
+						}
 					}
 				}
 			}
@@ -1475,7 +1509,7 @@ function validate_form(id){
 					error_radio=1;
 					jQuery(id).find('input[name=user_type]').addClass('error');
 				}
-				console.log(error_radio);
+				//console.log(error_radio);
 			}
 
 			//Error general campos vacíos
