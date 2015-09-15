@@ -273,6 +273,7 @@ PROPIEDADES CURIOSIDAD Y FOTOGRAFÍAS
 #box_curiosidad h3:after{content:'';display:block;margin-bottom:35px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:20px;background-size:92px 16px;}
 #box_curiosidad h4{color:#484647;font-size:24px;text-align:center;margin-bottom:20px;line-height:36px;font-family:'cabinsemibold', Helvetica, sans-serif;}
 #box_curiosidad p{color:#484647;text-align:center;font-size:18px;margin-bottom:20px;line-height:24px;font-family:'cabinregular', Helvetica, sans-serif;}
+#box_curiosidad p b{font-family:'cabinsemibold', Helvetica, sans-serif;}
 #box_curiosidad p a{font-family:'cabinsemibold', Helvetica, sans-serif;color:#484647;}
 .galeria_curiosidad{height:212px;overflow:hidden;}
 .title_pics_recent{display:block;position:absolute;left:0;right:0;margin:0 auto;background-image:url(../img/pics_recientes.png);background-position:0px 0px;background-repeat:no-repeat;background-size:154px 153px;width:154px;height:153px;text-indent:-99999px;z-index:300;bottom:135px;}
@@ -339,7 +340,7 @@ PROPIEDADES EL JURADO
 #box_jurado h4{font-size:24px;color:#ffffff;width:80%;margin:0 auto;text-align:center;margin-bottom:25px;line-height:32px;}
 #box_jurado .intro_jurado{font-size:18px;color:#ffffff;width:55%;margin:0 auto;text-align:center;margin-bottom:75px;line-height:24px;}
 
-.box_jurado_single{float:left;width:33.33%;text-align:center;}
+.box_jurado_single{float:left;width:50%;text-align:center;}
 .inside_jurado{width:80%;margin:0 auto;}
 .box_jurado_single img{max-width:100%;margin-bottom:35px;}
 .box_jurado_single h5{font-size:24px;line-height:32px;font-family:'cabinsemibold', Helvetica, sans-serif;color:#ffffff;margin-bottom:35px;}
@@ -701,6 +702,28 @@ CONSEJOS
 .desplegable_consejo p{padding-bottom:20px;color:#565656;}
 .desplegable_consejo a{font-family:'cabinbold', Helvetica, sans-serif;color:#565656;}
 .desplegable_consejo ul li{margin-bottom:10px;color:#565656;}
+
+/**********************
+BASES LEGALES 
+***********************/
+#box_bases{width:70%;margin:0 auto;padding-top:40px;padding-bottom:150px;}
+#box_bases h3{color:#61bde9;font-size:60px;text-align:center;line-height:72px;font-family:'santa_fe', Helvetica, sans-serif;}
+#box_bases h3:after{content:'';display:block;margin-bottom:75px;background:url(../img/dots_curiosidad.png) bottom center no-repeat;height:15px;padding-top:10px;background-size:92px 16px;}
+
+.cont_bases{}
+.cont_bases h4{font-family:'cabinbold', Helvetica, sans-serif;font-size:22px;color:#373737;}
+.cont_bases h5{font-family:'cabinbold', Helvetica, sans-serif;font-size:18px;margin-bottom:20px;margin-top:40px;color:#373737;}
+.cont_bases p{font-size:16px;margin-bottom:20px;color:#373737;}
+.cont_bases p a{font-family:'cabinbold', Helvetica, sans-serif;color:#373737;}
+
+.cont_bases ul{padding-left:40px;margin-bottom:20px;color:#373737;}
+.cont_bases ul li{list-style:disc;margin-bottom:10px;}
+.cont_bases li a{font-family:'cabinbold', Helvetica, sans-serif;color:#373737;}
+.cont_bases ol{padding-left:40px;margin-bottom:20px;color:#373737;}
+.cont_bases ol li{list-style:decimal;margin-bottom:10px;}
+.cont_bases ul li ol{margin-top:20px;}
+.cont_bases ol li ul{margin-top:20px;}
+.cont_bases ol li ul li{list-style:disc;}
 
 
 /*****************************

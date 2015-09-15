@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title></title>
+    <meta name="description" content="" />
+	<meta property="og:title" content=""/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/fontface.css" />
+     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+     <link rel="stylesheet" type="text/css" href="css/style.css" />
+     <!-- Font Awesome styles-->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--El siguiente comentario es un comentario condicional que solo IE sabe interpretar-->
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/css_ie.css"/>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+  	<div id="wrapper">
+    	<div id="header" class="header_normal">
+        	<div class="container">
+        		<div id="top_header" class="black_enl">
+                	<h1><a href="http://www.cambridge.es/">Cambridge University Press</a></h1>
+                    <h2 class="logo_top"><a href="index.html">Curiosipics</a></h2>
+                    <div class="right_top_header desktop_opc">
+                    	<ul class="user_menu">
+                        	<li class="btn_header"><a href="registro.html" class="btn_registro">Registro</a></li>
+                            <li class="btn_header"><a href="#" class="btn_login">Login</a></li>
+                        </ul>
+                        <ul class="navigation_menu">
+                            <li><a href="#">EL CONCURSO</a></li>
+                            <li><a href="pics.html">PICS</a></li>
+                        </ul>
+                    </div>
+                    <div class="right_top_header mobile_opc">
+                    	<ul class="ul_mob_menu">
+                    		<li><a class="mobile-menu-icon" href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="extend_menu_mob" style="display:none;">
+                       <ul class="user_menu">
+                           <li><a href="#">EL CONCURSO</a></li>
+                           <li><a href="pics.html">PICS</a></li>
+                           <li class="btn_header"><a href="registro.html" class="btn_registro">Regístrate aquí para participar</a></li>
+                        </ul>
+                        <div id="box_login_mob">
+                            <div class="box_login_mob">
+                                <p>¿Ya tienes cuenta? Accede aquí</p>
+                                <form action="json/login_ko.json" method="get" role="form" id="form-login-mob">
+                                    <label for="email_login">Email</label>
+                                    <input type="text"  id="email_login" placeholder="Email">
+                                    <label for="password_login">Contraseña</label>
+                                    <input type="password"  id="password_login" placeholder="Contraseña">
+                                    <span class="feedback"></span>
+                                    <input type="submit" class="btn" value="Login">
+                                    <div><a href="#" class="reset_password_mob">Recordar contraseña</a></div>
+                                </form>
+                            </div>
+                            <div class="box_forget_mob" style="display:none;">
+                                <form action="json/login_ko.json" method="get" role="form" id="form-forgot-password-mob">
+                                    <p>Introduce la cuenta de correo con la que estás registrado para restablecer la contraseña.</p>
+                                    <label for="email_forget">Email</label>
+                                    <input type="text"  id="email_forget" placeholder="Email">
+                                    <span class="feedback"></span>
+                                    <input type="submit" class="btn" value="Restablecer">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="box_login" style="display:none;">
+                	<div class="box_login">
+                	<form action="json/login_ko.json" method="get" role="form" id="form-login">
+                        <label for="email_login">Email</label>
+                        <input type="text"  id="email_login">
+                        <label for="password_login">Contraseña</label>
+                        <input type="password"  id="password_login">
+                        <div><a href="#" class="reset_password">Recordar contraseña</a></div>
+                        <span class="feedback"></span>
+                        <input type="submit" class="btn" value="Entrar">
+                    </form>
+                    </div>
+                    <div class="box_forget" style="display:none;">
+                    	<form action="json/login_ko.json" method="get" role="form" id="form-forgot-password">
+                            <p>Introduce la cuenta de correo con la que estás registrado para restablecer la contraseña.</p>
+                            <label for="email_forget">Email</label>
+                            <input type="text"  id="email_forget">
+                            <span class="feedback"></span>
+                            <input type="submit" class="btn" value="Restablecer">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!--Fin header-->
+        <div id="contenidos">
+        	<div class="container">
+            	<div class="box_space_top">
+                	<div id="box_bases">
+                    	<h3>Bases Legales</h3>
+                        <div class="cont_bases">
+                        	<h4>3ª EDICIÓN CONCURSO DE FOTOGRAFÍA CAMBRIDGE “CURIOSIPICS”</h4>
+
+                            <h5>Organizador Cambridge University Press Iberia.</h5>
+                            <p>Objetivo Fomentar la creatividad y la participación en el campo de la lengua inglesa, así como la difusión y la promoción de las obras seleccionadas.</p>
+                            <p>Este concurso está organizado por Cambridge University Press Iberia (en adelante, CAMBRIDGE UNIVERSITY PRESS), con domicilio en calle José Abascal 56, 1ª planta, 28003 Madrid, y con número de identificación fiscal W0064249F.</p>
+                             
+                           <h5>Requisitos para participar</h5>
+                           <ul>
+                           		<li>La inscripción será gratuita</li>
+                                <li>Pertenecer a alguna de las siguientes categorías:
+                                	<ol>
+                                    	<li>Alumnos de la ESO</li>
+                                        <li> Profesores de inglés y CLIL que impartan clases a alumnos de secundaria en todo el territorio español, o profesores que en algún momento hayan impartido clases regladas  de inglés  en este nivel y que por alguna circunstancia no se encuentren en activo durante el periodo del concurso. La organización se reserva el derecho a chequear y verificar que el participante ha desarrollado esta actividad, pudiendo ser descartado en caso de incumplimiento de alguno de los puntos de estas bases.</li>
+                                    </ol>
+                                </li>
+                                <li>Las fotografías presentadas deberán tener el título y la descripción en inglés con un máximo de 50 palabras y un mínimo de 10 palabras que sirvan para explicar el origen de la curiosidad a la hora de haber realizado el trabajo.</li>
+                                <li>El número de fotos a presentar por cada participante será de 5 unidades. La organización no considerará más que válidas las 5 fotografías que suba un participante. No se contemplará la posibilidad de petición de borrar fotos subidas para incluir nuevas. </li>
+                                <li>Los menores de 14 años podrán participar bajo la tutela y supervisión de su padre, madre o tutor, para lo que será preciso su consentimiento expreso.</li>
+                                <li>Se excluirán trabajos de personas relacionadas con la organización del concurso.</li>
+                           </ul>
+                           
+                           <h5>CuriosiPics</h5>
+                           <p>Pieza fotográfica inspirada en el tema “curiosidad” en la que debe figurar el título en inglés, el nombre del participante y el centro al que pertenece. No podrán presentarse fotografías que tengan carácter o contenidos publicitarios.</p>
+                            
+                            <h5>Fechas del concurso</h5>
+                            <p>La 3ª edición del Concurso de Fotografía Cambridge “CuriosiPics” se desarrollará en la web <a href="www.curiosipics.org">www.curiosipics.org</a> desde el 10 de octubre de 2015 hasta el 16 de mayo de 2016, y el fallo se producirá en la semana del 2 de junio de 2016, y se anunciará tanto en la web como mediante el email de contacto y en redes sociales. A partir de esa fecha CuriosiPics se reserva la posibilidad de seguir ofreciendo en la web las fotografías que hayan participado en el concurso. Si alguno de los concursantes desea que su fotografía/s sean retiradas de la web, podrá solicitarlo en todo momento, siempre y cuando no haya sido finalista. Así mismo, la organización puede optar a publicar alguna de las fotos en métodos de enseñanza propios de Cambridge University Press, webs o redes sociales. Se aconseja a los autores de las fotografías que guarden los originales en alta resolución por si la organización lo solicitara.</p>
+                            
+                            <h5>Como inscribir y subir las fotos</h5>
+                            <ol>
+                            	<li>El participante deberá inscribirse en la página web principal del concurso antes de enviar una fotografía <a href="www.curiosipics.org">www.curiosipics.org</a>, a partir del 10 de octubre de 2015 cumplimentar el cuestionario/formulario que aparece en el registro de usuario. A partir de ese momento cada usuario podrá entrar de nuevo en la web recordando su contraseña y votar tan solo una vez por cada foto.</li>
+                                <li>La fotografía debe incluir, a modo de títulos de crédito algunos datos necesarios: título de la fotografía en inglés, breve explicación de no más de 50 palabras y mínimo de 10 que explique la foto y el motivo de curiosidad que provocó sacarla, nombre y apellidos del autor.</li>
+                                <li>Si eres menor de 14 años deberás registrarte y darnos los datos de tu padre, madre o tutor para que la organización verifique con ellos la aceptación de tu participación. No podrás subir ninguna foto hasta que no tengamos esa autorización.</li>
+                            </ol>
+                            <p>La foto deberá ser tagueada para su fácil localización.</p> 
+                            
+                            <h5>Política de privacidad</h5>
+                            <p>Todos los datos personales que nos facilite serán incorporados a un fichero responsabilidad de Cambridge University Press, con domicilio José Abascal 56, 1ª planta, 28003 Madrid, debidamente inscrito ante la Agencia Española de Protección de Datos, con la finalidad de gestionar su participación en el concurso en base a las presentes bases legales, así como realizar acciones publicitarias o promocionales y mantenerle informado sobre otros productos o servicios propios relacionados con el sector educativo y editorial.</p> 
+                            <p>En cualquier momento, usted podrá modificar su perfil y sus preferencias de envíos comerciales, mediante el ejercicio de sus derechos de acceso, rectificación, cancelación u oposición mediante comunicación dirigida a la dirección de correo <a href="mailto:info@curiosipics.org">info<span style="font-family:Verdana, Geneva, sans-serif;">@</span>curiosipics.org</a> o bien por correo postal dirigido a Cambridge University Press, Att: Dpto. marketing, en el domicilio indicado anteriormente, acompañados en ambos casos copia de su documento de identidad o cualquier otro medio válido en derecho que permita acreditar su identidad, así como el motivo de la solicitud.</p>
+                            <p>Los ganadores y reservas consienten expresamente que sus datos personales, así como sus imágenes, sean publicados en los medios de Cambridge University Press, tales como páginas web o revistas, o títulos de la editorial. Igualmente los datos podrán ser comunicados a terceros con la única finalidad de hacer efectivos los premios, tales como, en su caso, agencias de viaje, medios de transporte u hotel de alojamiento.</p> 
+                            <p>En caso de que el participante sea menor de 14 años, se requerirá el consentimiento inequívoco del padre, madre o tutor para su participación en el presente concurso, que podrá ser otorgado mediante el procedimiento creado para tal fin en el registro de los participantes, o mediante cualquier otro medio que permita comprobar su validez efectiva.</p>
+                            <p>El participante deberá poder acreditar su identidad en todo momento para poder participar en el presente concurso, así como residir en territorio español. El participante se compromete a facilitar datos reales. En caso de que no fuera así, la organización se reserva el derecho de cancelar su participación en el concurso.</p>
+                            <p>Asimismo, los participantes deberán contar con el consentimiento expreso de cualquier persona que aparezca en la imagen, así como su consentimiento para la difusión de sus datos, que podrán incluir los de nombre, apellidos e imagen, entre otros,  a través de la  reproducción y comunicación pública de las imágenes. Si estos fueran menores de 14 años, se deberá contar con el consentimiento de su representante legal o tutor para participar dicha imagen en el concurso.</p>
+                            <p>Los trabajos que no cumplan cualquiera de los requisitos anteriores serán descartados, así como aquellas que a juicio de la organización sean consideradas inapropiadas o contrarias a la imagen y productos de Cambridge University Press.</p>
+                            <p>Los participantes consienten expresamente que sus datos sean tratados por los miembros del jurado, compuesto por el personal que se especifica en el apartado Visionado, para la elección de los ganadores.</p>
+                            
+                            <h5>Características técnicas</h5>
+                            <p>El tamaño máximo de la imagen será de 5 megas. Recomendamos guardar el original de la misma en alta resolución.</p>
+                            
+                            <h5>Plazos</h5>
+                            <ol>
+                            	<li>el plazo de presentación es del 10 de octubre de 2015 al 16 de mayo de 2016.</li>
+                            	<li>Es importante tener en cuenta que hay un premio del público al trabajo más votado a lo largo del certamen. Por ello, aquellos trabajos que entren primero a concurso y sean preseleccionados tendrán más opciones para adjudicarse ese Premio.</li>
+                            </ol>
+                            
+                            <h5>Visionado</h5>
+                            <p>Un comité de selección, formado por los prestigiosos fotógrafos: Antonio Xoubanova, Nicolás Combarro y Álvaro Fernández Prieto elegirán, entre todos los trabajos enviados, aquellos que entrarán a concurso y podrán verse en la web a partir de la semana del 2 de junio de 2016.</p>
+                            
+                            <h5>El jurado y el comité de selección</h5>
+                            <ol>
+                            	<li>El comité de selección elegirá las 5 obras finalistas del certamen premiando a los 5 ganadores de las dos categorías: alumnos de la ESO y profesores PREMIO DEL JURADO.</li>
+                            	<li>Las 5 fotografías más votadas, única y exclusivamente a través de la web y mediante correo electrónico recibirán el PREMIO DEL PUBLICO a cada una de las dos categorías: alumnos de la ESO y profesores.</li>				
+                            </ol>
+                            <p>Cada correo electrónico permitirá un solo voto a una fotografía.</p>
+                            <p>El jurado se reserva el derecho a retirar cualquier trabajo que considere que ha usado medios fraudulentos para la realización de votos.</p>
+                            
+                            <h5>Premios</h5>
+                            <h5>Premios del jurado:</h5>
+                            <p>Premios alumnos:</p>
+                            <ol>
+                            	<li>Viaje (1+2). Ganas tú y te llevas a dos personas a Londres
+                                	<ul>
+                                    	<li>los dos viajes serán de viernes a domingo</li>
+                                        <li>los hoteles serán de 4 estrellas, solo se determinará la categoría pero no el nombre</li>
+                                        <li>los viajes serán en temporada baja (detallando que está sujeto a disponibilidad)</li>
+                                        <li>reserva con 1 mes de antelación</li>
+                                        <li>el visado lo gestionarán los viajeros</li>
+                                        <li>los vuelos saldrán desde Madrid y los desplazamientos hasta el aeropuerto de salida (Madrid) no están incluidos</li>
+                                        <li>desplazamientos i/v del aeropuerto (UK) al hotel estarán incluidos</li>
+                                        <li>habitaciones individuales y dobles</li>
+                                        <li>habitaciones individuales y dobles</li>
+                                        <li>régimen de alojamiento y desayuno</li>
+                                    </ul>
+                                </li>
+                                <li>iPhone 6</li>
+                                <li>Cámara de fotos reflex, el modelo sera elegido por la organización en el momento de la entrega del premio.</li>
+                                <li>iPad. El modelo sera elegido por la organización en el momento de la entrega del premio.</li>
+                                <li>GoPro. El modelo sera elegido por la organización en el momento de la entrega del premio.</li>
+                            </ol>
+                            
+                            <p>Premios profesores:</p>
+                            <ol>
+                            	<li>Viaje (1+2). Ganas tú y te llevas a dos personas a Londres
+                                	<ul>
+                                    	<li>los dos viajes serán de viernes a domingo</li>
+                                        <li>los hoteles serán de 4 estrellas, solo se determinará la categoría pero no el nombre</li>
+                                        <li>los viajes serán en temporada baja (detallando que está sujeto a disponibilidad)</li>
+                                        <li>reserva con 1 mes de antelación</li>
+                                        <li>el visado lo gestionarán los viajeros</li>
+                                        <li>los vuelos saldrán desde Madrid y los desplazamientos hasta el aeropuerto de salida (Madrid) no están incluidos</li>
+                                        <li>desplazamientos i/v del aeropuerto (UK) al hotel estarán incluidos</li>
+                                        <li>habitaciones individuales y dobles</li>
+                                        <li>habitaciones individuales y dobles</li>
+                                        <li>régimen de alojamiento y desayuno</li>
+                                    </ul>
+                                </li>
+                                <li>iPhone 6</li>
+                                <li>Cámara de fotos reflex, el modelo sera elegido por la organización en el momento de la entrega del premio.</li>
+                                <li>iPad. El modelo sera elegido por la organización en el momento de la entrega del premio.</li>
+                                <li>GoPro. El modelo sera elegido por la organización en el momento de la entrega del premio.</li>
+                            </ol>  
+                            
+                            <h5>Premios del público:</h5>
+                            <p>Premios alumnos:</p>
+                            	<ol>
+                                	<li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                    <li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                    <li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                    <li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                    <li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                </ol>
+                                
+                            <p>Premios profesores:</p>
+                            	<ol>
+                                	<li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                    <li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                    <li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                    <li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                    <li>Packs Smartbox aventura para dos. A elegir entre 335 apasionantes actividades al aire libre </li>
+                                </ol>
+                             
+                            <p>el premio del jurado y el del público podrán recaer sobre el mismo ganador</p>
+                            <p>Los premios únicamente incluirán las cantidades citadas sin gastos de ningún tipo. Será responsabilidad de los ganadores asumir las cantidades que en su caso por imperativo legal fiscal debieran ingresarse o retenerse por este concepto, y tener toda su documentación en regla: pasaportes, documentos nacionales de identidad, etc. El premio no incluye todo aquello que no haya sido especificado anteriormente como contenido del premio.</p>
+                            <p>En caso de que no hubiera participantes; el seguimiento fuera inferior al esperado, o la calidad de las fotografías no fuera la mínima exigida por el comité de selección, los premios podrían declararse desiertos.</p>
+                            <p>Asimismo, si alguno de los ganadores no cumpliera los requisitos establecidos en estas bases, los premios correspondientes a los mismos podrían declararse desiertos.</p>
+                            <p>Los participantes asumen que el organizador podrá comunicar el nombre de los ganadores en la web relacionada con el concurso tras la finalización del plazo, y será responsabilidad de los participantes visitarla y comunicar la recepción de la comunicación y la aceptación del premio. También el organizador podrá comunicar a los ganadores (a través de teléfono y/o email que éstos hayan registrado al hacer la inscripción) el premio asignado. En todo caso, en el supuesto de que en el plazo de diez días el participante no hubiera confirmado la recepción de dicha comunicación y la aceptación del premio, perderá el derecho al premio, recayendo éste de forma automática en quien el organizador decida o quedando éste desierto.</p>
+                            <p>La organización no se responsabiliza de los errores en los datos facilitados por el participante que puedan impedir su correcta identificación.</p>
+                            <p>Igualmente, la organización no se responsabiliza ante posibles reclamaciones relacionadas con el disfrute del premio, ni de las posibles expectativas que se tuvieren sobre el mismo.
+                            <p>De manera previa a la realización del viaje, las personas que vayan a disfrutar del viaje deben tener toda la documentación personal pertinente (pasaporte vigente, visados…) y todas las vacunas idóneas, si fuese necesario, acreditando estos extremos mediante la presentación de la documentación pertinente a la organización o a la agencia de viajes designada por esta última. En el caso de que con 15 días de antelación a la fecha del comienzo del viaje, no se hubiera acreditado lo establecido en el párrafo anterior, el ganador perderá el premio correspondiente.</p>
+                            <p>El participante ganador del viaje deberá aceptar el premio tal y como se ofrece, es decir, no se aceptará modificación alguna del itinerario, fecha y lugar de alojamiento, vuelos establecidos, servicios incluidos, ciudades de origen y destino o cualquier otro aspecto del mismo. La organización tendrá el derecho de modificar cualquiera de estos aspectos cuando las circunstancias lo justifiquen. Los viajes se realizarán en todos los casos durante temporada baja.</p>
+                            <p>Está prohibida la comercialización o venta del premio. En caso de que por cualquier circunstancia el ganador o ganadores no pudiesen o quisiesen aceptar el premio o renunciasen al mismo, el Organizador el premio podría quedar desierto, y no corresponderá compensación económica alguna por parte del Organizador.</p>
+                            <p>Los premios no podrán canjearse por ningún otro premio ni por su valor en efectivo.</p>
+                            <p>El ganador podrá obtener únicamente un único premio y un único destino.</p>
+                            <p>Los menores deberán viajar siempre con adultos. En caso de que dichos adultos no sean sus padres o tutores legales, los padres o tutores legales del menor deberán otorgar previamente a la realización de dicho viaje su consentimiento expreso por escrito y comunicárselo fehacientemente a Cambridge University Press antes de que dicho viaje tenga lugar.</p>
+                            <p>La organización tampoco será responsable si por cualquier razón de fuerza mayor, tales como huelgas, guerras, epidemias, , etc. la agencia de viajes contratada o cualquier compañía involucrada en la organización de este evento, no pudiera cumplir con sus obligaciones en relación con el viaje.</p>
+                            
+                            <h5>Garantías y responsabilidades de los participantes</h5>
+                            <p>Con el fin de que se respeten los derechos de terceros y de evitar situaciones anómalas en el desarrollo del concurso, el organizador comunica que:</p>
+                            	<ol>
+                                	<li>La persona que inscriba su trabajo en este concurso será la responsable legal del contenido del mismo. Las fotos no pueden contener material ilícito, ni pornográfico, ni que atente a cualquier derecho de tercero, especialmente aquellos relativos a derechos de autor y propiedad intelectual, al honor, la imagen o la infancia.</li>
+                                    <li>El certamen y la organización declinan toda responsabilidad legal sobre los trabajos y su contenido. Asimismo, la participación supone la cesión gratuita de derechos de reproducción y comunicación pública sobre las imágenes a favor del Organizador, sin limitación territorial o temporal sobre las mismas. También supone una cesión gratuita en las mismas condiciones, del derecho de modificar o adaptar parcialmente la imagen para su inclusión en cualquier tipo de material o soporte publicitario o propio del Organizador, sin derecho en todo caso, a contraprestación alguna.
+                                    	<br/>
+                                        La explotación de la fotografía podrá realizarse por cualquier medio y utilizando cualquier método, ya sea a través de internet, exposiciones fotográficas, revistas, libros u otros materiales publicitarios digitales o análogos.
+                                        <br/>
+                                        La organización se reserva igualmente el derecho a no utilizar las fotografías.
+                                        <br/>
+                                        El Participante renuncia expresamente a firmar y/o colocar su nombre en cualquier realización de la Fotografía. No obstante, el Organizador podrá utilizar el nombre y la imagen del participante en cualquier comunicación en relación con la fotografía y durante el desarrollo del presente concurso, y en particular notas de prensa, prensa escrita, catálogos, libros y folletos. 
+                                    </li>
+                                    <li>Las fotografías deben ser originales (los participantes responderán en exclusiva de este hecho, sin poder derivar la citada responsabilidad ni siquiera de forma subsidiaria en ningún caso al organizador ante cualquier tercero, incluidos los eventuales autores, en su caso, visuales, etc.) y no con posibilidad de ser cedidos los derechos necesarios. En consonancia con la indemnidad garantizada, los participantes serán los únicos responsables ante cualquier titular de cualquier derecho sobre cualquier parte (guión, de las obras.</li>
+                                    <li>Del mismo modo, aunque sea obra original, el participante que envíe una obra sobre la que pesen derechos de propiedad intelectual que se reclamen legítimamente por terceras personas, será asimismo el único y exclusivo responsable de las reclamaciones que reciba el organizador o su grupo y/o cualesquiera otras entidades relacionadas con el concurso por este motivo, eximiéndoles de toda responsabilidad que se derive de su utilización.</li>
+                                </ol>
+                            
+                            <p>La presente promoción pretende que la competición entre los distintos participantes se haga con igualdad de oportunidades y con estricto respeto a las normas de la buena fe. Por ello, cualquier utilización abusiva o fraudulenta de estas Bases dará lugar a la consiguiente descalificación del participante en la Promoción.</p>
+                            <p>En caso de constatar las citadas irregularidades con posterioridad a la aceptación del Premio, el Organizador se reserva el derecho de ejercitar todas las acciones legales que le asista contra los infractores.</p>
+                            <p>En todo caso, serán descalificados los participantes que no cumplan con los Requisitos de Participación o con las Restricciones recogidas en las presentes Bases.</p>
+                            
+                            <h5>Modificación de las bases</h5>
+                            <po>El organizador se reserva el derecho de prolongar, modificar, recortar o anular la promoción en caso de fuerza mayor, que hiciese imposible seguir con la misma conforme a las disposiciones de estas Bases.</p>
+                            <p>Eventualmente, algunas modificaciones podrán ser publicadas durante la promoción y éstas serán consideradas como anexos a las presentes bases y parte integrante de las mismas.</p>
+                            <p>La organización se reserva el derecho de poder aumentar el número de fotos presentadas por participante si lo considerara oportuno.</p>
+                            <p>En ningún caso el Organizador podrá ser considerado responsable en caso de que la promoción tuviese que ser retrasada, modificada, acortada o anulada si las circunstancias lo justifican, y siempre que no se hubieran perjudicado los derechos adquiridos por los participantes.</p>
+                            
+                            <h5>Comité Organizador</h5>
+                            <p>La organización no mantendrá correspondencia con los responsables de las fotografías que no sea otra que las consultas propias derivadas de la producción del concurso.</p>
+                            <p>Para más información o consultas: <a href="mailto:info@curiosipics.org">info<span style="font-family:Verdana, Geneva, sans-serif">@</span>curiosipics.org</a></p>
+                            <p>EL HECHO DE PARTICIPAR O INTENTAR PARTICIPAR EN EL CONCURSO IMPLICA LA ACEPTACIÓN DE LAS REGLAS DE PARTICIPACIÓN. EN CASO DE SITUACIONES NO PREVISTAS EL ORGANIZADOR DECIDIRÁ EN CADA MOMENTO.</p>
+
+                        </div>
+                    </div>
+              	</div>
+            </div>
+        </div><!--Fin contenidos-->
+        <div id="footer">
+   			<div id="top_footer">
+            	<div class="container">
+                     	<ul class="menu_pie">
+                        	<li><a href="#" title="">El concurso</a></li>
+                    		<li><a href="pics.html" title="">Pics</a></li>
+                    		<li><a href="#" title="">Bases Legales</a></li>
+                    		<li><a href="#" title="">Contacto</a></li>
+                    		<li class="btn_footer"><a href="registro.html">Registro</a></li>
+                    	</ul>
+                        <div class="right_p_rrss">
+                    	<p>Síguenos</p>
+                        <ul class="list_rrss">
+                        	<li><a href="#" target="_blank" class="fa fa-instagram"><span class="hide">Instagram</span></a></li>
+                        	<li><a href="#" target="_blank" class="fa fa-twitter"><span class="hide">Twitter</span></a></li>
+                            <li><a href="#" target="_blank" class="fa fa-facebook"><span class="hide">Facebook</span></a></li>
+                            <li><a href="#" target="_blank" class="fa fa-youtube-play"><span class="hide">Youtube</span></a></li>
+                        </ul>
+                     </div>
+                </div>
+            </div>
+            <div id="boottom_footer">
+            	<div class="container">
+                	<p class="logo_foot"><a href="http://www.cambridge.es/" title="Cambridge University Press" target="_blank"><img alt="Cambridge University Press" src="svg/logo_escudo.svg"></a></p>
+                    <p class="copy_foot">&copy; Cambridge University Press 2015
+                        <span><a href="#">Aviso legal</a></span>
+                        <span><a href="#">Contacto</a></span>
+                    </p>
+                </div>
+            </div>
+        </div><!--Fin footer-->
+        <div class="marcador" style="color:#ff0000;font-size:18px;position:fixed;top:0;left:0;z-index:200;">0px</div>
+        <!--Bloque Cookies-->
+        <div class="block-cookies">
+        	<div class="container">
+                <h2>Política de Cookies</h2>
+                <p>Utilizamos cookies propias y de terceros para ofrecerte una mejor experiencia y servicio, de acuerdo a tus hábitos de navegación. Si continúas navegando, consideramos que aceptas su uso. Puedes obtener más información en nuestra <a href="#" title="Política de Cookies">Política de Cookies.</a></p>
+                <a href="#" class="btn-accept">Ok</a>
+                <a href="#" title="" class="close_c"></a>
+            </div>
+        </div>
+        <!--Fin Cookies-->
+    </div><!--Fin wrapper-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.backgroundPosition.js"></script>
+    <script src="js/jquery-cookie.js"></script>
+    <script src="js/html5.image.preview.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/jquery.color.js"></script>
+    <script src="js/imagesloaded.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="js/application.js"></script>
+  </body>
+</html>
