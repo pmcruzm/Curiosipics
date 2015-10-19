@@ -410,7 +410,7 @@ PROPIEDADES REGISTRO
 
 .tutor_datos{display:none;}
 .tutor_datos h4{margin-top:20px;padding-left:30%;text-align:left;}
-.tutor_datos p{padding-left:30%;margin-bottom:25px;}
+.tutor_datos p{padding-left:30%;margin-bottom:25px;color:#484647;}
 
 .info_contact_menores{background:#f0e783;border-radius:10px;box-sizing:border-box;padding:25px;text-align:center;margin-top:30px;display:none;}
 .info_contact_menores p{color: #373737;font-size: 16px;line-height: 21px;margin: 0 auto;}
