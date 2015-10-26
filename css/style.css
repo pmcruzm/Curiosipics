@@ -340,7 +340,7 @@ PROPIEDADES EL JURADO
 #box_jurado h4{font-size:24px;color:#ffffff;width:80%;margin:0 auto;text-align:center;margin-bottom:25px;line-height:32px;}
 #box_jurado .intro_jurado{font-size:18px;color:#ffffff;width:55%;margin:0 auto;text-align:center;margin-bottom:75px;line-height:24px;}
 
-.box_jurado_single{float:left;width:50%;text-align:center;}
+.box_jurado_single{float:left;width:33.3333%;text-align:center;}
 .inside_jurado{width:80%;margin:0 auto;}
 .box_jurado_single img{max-width:100%;margin-bottom:35px;}
 .box_jurado_single h5{font-size:24px;line-height:32px;font-family:'cabinsemibold', Helvetica, sans-serif;color:#ffffff;margin-bottom:35px;}
