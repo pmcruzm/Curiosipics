@@ -18,6 +18,7 @@ var send_form=0;
 var h_win,w_win,w_win_init;
 var id_pic_open;
 var tutor_block;
+var block_scroll=0;
 
 //Eventos para dispositivos móviles
 var ua = navigator.userAgent,
@@ -53,6 +54,18 @@ jQuery(window).load(function(){
 			slider_r_2_2=jQuery('.right_galeria .bxslider_r_2_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3700,speed:1200,touchEnabled:false});
 			slider_r_2_3_1=jQuery('.right_galeria .bxslider_r_2_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4250,speed:1200,touchEnabled:false});
 			slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3150,speed:1200,touchEnabled:false});
+			
+			//Si hay un ancla en la url 
+			if(block_scroll==1){
+				jQuery('body').scrollTo( "0px", 0,function(){
+					//Pillar anclas de la url si las hay
+					var hash = window.location.hash.substring(1);
+					if(hash!=""){
+						jQuery('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
+						block_scroll=0;
+					}
+				});
+			}
 		});
 	}
 });
@@ -77,17 +90,20 @@ jQuery(document).ready(function(){
 	
 	if(jQuery('#wrapper').hasClass('home')){
 		jQuery('body').css({ overflow: "hidden" });
+		block_scroll=1;
 		//jQuery('#preloader').css({display:"block"});
 	}
 
 	//Reiniciar Scroll a 0
-	jQuery('body').scrollTo( "0px", 0,function(){
-		//Pillar anclas de la url si las hay
-		var hash = window.location.hash.substring(1);
-		if(hash!=""){
-			jQuery('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
-		}
-	});
+	if(block_scroll==0){
+		jQuery('body').scrollTo( "0px", 0,function(){
+			//Pillar anclas de la url si las hay
+			var hash = window.location.hash.substring(1);
+			if(hash!=""){
+				jQuery('body').stop().clearQueue().scrollTo(jQuery('#'+hash),800,{axis:'y',easing:'easeInOutExpo'});
+			}
+		});
+	}
 
 	//Miramos si la cookie de aceptación está creada
 	if(jQuery.cookie('cambridge-curiosipics') == 'acepta'){
