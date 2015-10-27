@@ -239,7 +239,7 @@ jQuery(document).ready(function(){
 		/*COLUMNA 1 IZQUIERDA*/
 		//Cuadro columna 1 bloque 1
 		var n_img=randomIntFromInterval(2,10);
-		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"></div></li>').appendTo( ".bxslider_l_1_1" );}
+		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_1_1" );}
 		jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
 		slider_l_1_1=jQuery('.left_galeria .bxslider_l_1_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5000,speed:1200,touchEnabled:false});
 		//Cuadro columna 1 bloque 2
