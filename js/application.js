@@ -33,8 +33,28 @@ jQuery.noConflict();
 
 
 jQuery(window).load(function(){
-
-
+	if(jQuery('#wrapper').hasClass('home')){
+		jQuery('#preloader').fadeOut(600,function(){
+			//Activamos el scroll
+			jQuery('body').css({ overflow: "auto" });
+			//Activamos todas las galerías de cabecera
+			slider_l_1_1=jQuery('.left_galeria .bxslider_l_1_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5000,speed:1200,touchEnabled:false});
+			slider_l_1_2=jQuery('.left_galeria .bxslider_l_1_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000,speed:1200,touchEnabled:false});
+			slider_l_1_3_1=jQuery('.left_galeria .bxslider_l_1_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4400,speed:1200,touchEnabled:false});
+			slider_l_1_3_2=jQuery('.left_galeria .bxslider_l_1_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3500,speed:1200,touchEnabled:false});
+			slider_l_2_1=jQuery('.left_galeria .bxslider_l_2_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2800,speed:1200,touchEnabled:false});
+			slider_l_2_2=jQuery('.left_galeria .bxslider_l_2_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2300,speed:1200,touchEnabled:false});
+			slider_l_2_3=jQuery('.left_galeria .bxslider_l_2_3').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3200,speed:1200,touchEnabled:false,});
+			slider_l_2_4=jQuery('.left_galeria .bxslider_l_2_4').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4200,speed:1200,touchEnabled:false});
+			slider_r_1_1=jQuery('.right_galeria .bxslider_r_1_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4300,speed:1200,touchEnabled:false});
+			slider_r_1_2=jQuery('.right_galeria .bxslider_r_1_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2200,speed:1200,touchEnabled:false});
+			slider_r_1_3=jQuery('.right_galeria .bxslider_r_1_3').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3600,speed:1200,touchEnabled:false});
+			slider_r_2_1=jQuery('.right_galeria .bxslider_r_2_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5200,speed:1200,touchEnabled:false});
+			slider_r_2_2=jQuery('.right_galeria .bxslider_r_2_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3700,speed:1200,touchEnabled:false});
+			slider_r_2_3_1=jQuery('.right_galeria .bxslider_r_2_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4250,speed:1200,touchEnabled:false});
+			slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3150,speed:1200,touchEnabled:false});
+		});
+	}
 });
 
 jQuery(document).ready(function(){
@@ -54,6 +74,11 @@ jQuery(document).ready(function(){
     speedD = 0.6;
     speedE = 1;
 	speedF = 0.3;
+	
+	if(jQuery('#wrapper').hasClass('home')){
+		jQuery('body').css({ overflow: "hidden" });
+		//jQuery('#preloader').css({display:"block"});
+	}
 
 	//Reiniciar Scroll a 0
 	jQuery('body').scrollTo( "0px", 0,function(){
@@ -241,22 +266,22 @@ jQuery(document).ready(function(){
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_1_1" );}
 		jQuery('.left_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_1').height());
-		slider_l_1_1=jQuery('.left_galeria .bxslider_l_1_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5000,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_l_1_1=jQuery('.left_galeria .bxslider_l_1_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5000,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 2
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_1_2" );}
 		jQuery('.left_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_2').height());
-		slider_l_1_2=jQuery('.left_galeria .bxslider_l_1_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_l_1_2=jQuery('.left_galeria .bxslider_l_1_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 3-1
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_1_3_1" );}
 		jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
-		slider_l_1_3_1=jQuery('.left_galeria .bxslider_l_1_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4400,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_l_1_3_1=jQuery('.left_galeria .bxslider_l_1_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4400,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 3-2
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_1_3_2" );}
 		jQuery('.left_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_1 .box_img_3').height());
-		slider_l_1_3_2=jQuery('.left_galeria .bxslider_l_1_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3500,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_l_1_3_2=jQuery('.left_galeria .bxslider_l_1_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3500,speed:1200,touchEnabled:false,preloadImages:'all'});
 
 
 		/*COLUMNA 2 IZQUIERDA*/
@@ -264,39 +289,39 @@ jQuery(document).ready(function(){
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_2_1" );}
 		jQuery('.left_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_1').height());
-		slider_l_2_1=jQuery('.left_galeria .bxslider_l_2_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2800,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_l_2_1=jQuery('.left_galeria .bxslider_l_2_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2800,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 2
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_2_2" );}
 		jQuery('.left_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_2').height());
-		slider_l_2_2=jQuery('.left_galeria .bxslider_l_2_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2300,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_l_2_2=jQuery('.left_galeria .bxslider_l_2_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2300,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 3-1
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_2_3" );}
 		jQuery('.left_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_3').height());
-		slider_l_2_3=jQuery('.left_galeria .bxslider_l_2_3').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3200,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_l_2_3=jQuery('.left_galeria .bxslider_l_2_3').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3200,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 3-2
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_l_2_4" );}
 		jQuery('.left_galeria .colum_2 .box_img_4 .box_slider_img').height(jQuery('.left_galeria .colum_2 .box_img_4').height());
-		slider_l_2_4=jQuery('.left_galeria .bxslider_l_2_4').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4200,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_l_2_4=jQuery('.left_galeria .bxslider_l_2_4').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4200,speed:1200,touchEnabled:false,preloadImages:'all'});
 
 		/*COLUMNA 1 DERECHA*/
 		//Cuadro columna 1 bloque 1
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_r_1_1" );}
 		jQuery('.right_galeria .colum_1 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_1').height());
-		slider_r_1_1=jQuery('.right_galeria .bxslider_r_1_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4300,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_r_1_1=jQuery('.right_galeria .bxslider_r_1_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4300,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 2
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_r_1_2" );}
 		jQuery('.right_galeria .colum_1 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_2').height());
-		slider_r_1_2=jQuery('.right_galeria .bxslider_r_1_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2200,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_r_1_2=jQuery('.right_galeria .bxslider_r_1_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:2200,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 3-1
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_r_1_3" );}
 		jQuery('.right_galeria .colum_1 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_1 .box_img_3').height());
-		slider_r_1_3=jQuery('.right_galeria .bxslider_r_1_3').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3600,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_r_1_3=jQuery('.right_galeria .bxslider_r_1_3').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3600,speed:1200,touchEnabled:false,preloadImages:'all'});
 
 
 		/*COLUMNA 2 DERECHA*/
@@ -304,22 +329,22 @@ jQuery(document).ready(function(){
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_r_2_1" );}
 		jQuery('.right_galeria .colum_2 .box_img_1 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_1').height());
-		slider_r_2_1=jQuery('.right_galeria .bxslider_r_2_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5200,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_r_2_1=jQuery('.right_galeria .bxslider_r_2_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5200,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 1 bloque 2
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_r_2_2" );}
 		jQuery('.right_galeria .colum_2 .box_img_2 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_2').height());
-		slider_r_2_2=jQuery('.right_galeria .bxslider_r_2_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3700,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_r_2_2=jQuery('.right_galeria .bxslider_r_2_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3700,speed:1200,touchEnabled:false,preloadImages:'all'});
 		//Cuadro columna 2 bloque 3-1
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_r_2_3_1" );}
 		jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
-		slider_r_2_3_1=jQuery('.right_galeria .bxslider_r_2_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4250,speed:1200,touchEnabled:false});
+		//slider_r_2_3_1=jQuery('.right_galeria .bxslider_r_2_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4250,speed:1200,touchEnabled:false});
 		//Cuadro columna 2 bloque 3-2
 		var n_img=randomIntFromInterval(2,10);
 		for(var i=1;i< n_img+1;i++) {var pos_img=Math.floor((Math.random()*cont_img)+1);var obj=all_img[pos_img-1];jQuery('<li><div class="box_slider_img" style="background:url('+obj.img+') center center no-repeat;"><img src="'+obj.img+'"></div></li>').appendTo( ".bxslider_r_2_3_2" );}
 		jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
-		slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3150,speed:1200,touchEnabled:false,preloadImages:'all'});
+		//slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3150,speed:1200,touchEnabled:false,preloadImages:'all'});
 
 		/*Últimos Pics*/
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());

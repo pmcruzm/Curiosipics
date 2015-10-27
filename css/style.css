@@ -778,6 +778,12 @@ PROPIEDADES COOKIES
 .btn-accept{background:#ea575b;color:#ffffff;height:30px;display:block;-webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius:15px;width:140px;margin:0 auto;line-height:30px;text-align:center;margin-top:20px;}
 .btn-accept:hover{color:#ffffff;}
 
+/**********************************
+PROPIEDADES PRELOADER
+**********************************/
+#preloader{background:#ffffff;position:fixed;top:0;width:100%;z-index:400;display:block;left:0;height:100%;}
+.cargando{color:red;position:absolute;top:50%;left:50%;}
+
 
 /*****************************
 PROPIEDADES ESPECIALES
