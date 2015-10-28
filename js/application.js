@@ -151,6 +151,7 @@ jQuery(document).ready(function(){
 					jQuery(this).val(limited);
 			    } else {
 			        jQuery("#counter-text").html((options.limit - wordcount)+' palabras restantes');
+					jQuery("#counter-text").attr('rel',wordcount);
 			    }
 			});
 		});
@@ -1553,6 +1554,16 @@ function validate_form(id){
 				}
 				//console.log(error_radio);
 			}
+			
+			//Si son menos de 10 palabras
+			if(jQuery(id).find('#counter-text').length > 0){
+				var error_palabras=0;
+				var n_words=jQuery(id).find('#counter-text').attr('rel'); 
+				if(n_words<10){
+					error_palabras=1;
+					jQuery(id).find('#descrip_pic').addClass('error');
+				}
+			}
 
 			//Error general campos vacíos
 			if(error_empty==1){
@@ -1598,9 +1609,14 @@ function validate_form(id){
 				var message=jQuery(id).find('.validation-rule-mail').attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}
+			
+			//Error menos 10 palabras
+			if(error_palabras==1){
+				jQuery('.errores').append('<p>Recuerda que la descripción debe tener 10 palabras como mínimo</p>');
+			}
 
 			//Salida
-			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1 || error_radio==1 /*|| error_big_14==1*/){
+			if(error_empty==1 || error_checkbox==1 ||error_mail || error_password==1 || error_day==1 || error_month==1 || error_year==1 || error_radio==1 || error_palabras==1 ){
 				return 1;
 			}else{
 				return 0;
