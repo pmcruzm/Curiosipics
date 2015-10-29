@@ -657,6 +657,9 @@ PROPIEDADES VOTO CONFIRMADO
 .cont_detalle_pic_vote .rrss_vote_detalle .btns_share a{color:#999999;border:2px solid #999999;border-radius:30px;display:inline-block;width:40px;height:40px;line-height:40px;text-align:center;font-size:20px;margin-left:10px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
 .cont_detalle_pic_vote .rrss_vote_detalle .btns_share a:hover{background:#999999;color:#323232;}
 
+.back_form{color:#373737;display:block;height:30px;width:120px;margin:0 auto;border:2px solid #373737;line-height:30px;border-radius:5px;margin-top:10px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;margin-top:50px;}
+.back_form:hover{background:#373737;color:#ffffff;}
+
 /**********************
 GANADORES
 ***********************/
