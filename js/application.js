@@ -110,13 +110,13 @@ jQuery(document).ready(function(){
 		//Ocultamos info cookies
 		jQuery('.block-cookies').hide();
 		//Añadimos GA
-		/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		ga('create', 'UA-31155962-13', 'auto');
-		ga('send', 'pageview');*/
+		ga('send', 'pageview');
 	}else{
 		jQuery('.block-cookies').show();
 	}
@@ -1041,13 +1041,13 @@ function control_scroll(e){
 				//Creamos la cookie de aceptación
 				jQuery.cookie('cambridge-curiosipics', 'acepta', { expires: 365 * 10 ,path: '/' });
 				//Añadimos GA
-				/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 				ga('create', 'UA-31155962-13', 'auto');
-				ga('send', 'pageview');*/
+				ga('send', 'pageview');
 			});
 		}
   }
