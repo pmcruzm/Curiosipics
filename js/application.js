@@ -35,7 +35,7 @@ jQuery.noConflict();
 
 jQuery(window).load(function(){
 	if(jQuery('#wrapper').hasClass('home')){
-		jQuery('#preloader').fadeOut(600,function(){
+		/*jQuery('#preloader').fadeOut(600,function(){
 			//Activamos el scroll
 			jQuery('body').css({ overflow: "auto" });
 			//Activamos todas las galerías de cabecera
@@ -66,7 +66,7 @@ jQuery(window).load(function(){
 					}
 				});
 			}
-		});
+		});*/
 	}
 });
 

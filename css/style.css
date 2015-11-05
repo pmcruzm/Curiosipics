@@ -785,7 +785,7 @@ PROPIEDADES COOKIES
 PROPIEDADES PRELOADER
 **********************************/
 #preloader{background:#ffffff;position:fixed;top:0;width:100%;z-index:400;display:block;left:0;height:100%;}
-.cargando{position:absolute;top:50%;left:50%;background-size:contain;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center;background-repeat:no-repeat;height:90px;width:342px;background-image:url(../img/animacion.gif);text-indent:-99999px;margin-left:-171px;margin-top:-87px;}
+.cargando{position:absolute;top:50%;left:50%;background-size:contain;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center;background-repeat:no-repeat;height:90px;width:342px;background-image:url(../img/animacion.gif);text-indent:-99999px;margin-left:-171px;margin-top:56px;}
 
 
 /*****************************
@@ -1440,7 +1440,7 @@ MEDIA QUERIES
 	.cont_detalle_pic_vote .rrss_vote_detalle .btns_share{right:0px;}
 	
 	.pop_votar{width:80%;margin-left:-40%;}
-	.cargando{width: 238px;margin-left:-119px;margin-top:-222px;}
+	.cargando{width: 238px;margin-left:-119px;margin-top:-79px;}
 	
 	
 }
