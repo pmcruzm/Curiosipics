@@ -20,7 +20,7 @@ var id_pic_open;
 var tutor_block;
 var block_scroll=0;
 
-//Eventos para dispositivos móviles
+//Eventos para dispositivos mÃ³viles
 var ua = navigator.userAgent,
 event = (ua.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) ? "touchstart" : "click";
 var device='none';
@@ -38,7 +38,7 @@ jQuery(window).load(function(){
 		jQuery('#preloader').fadeOut(600,function(){
 			//Activamos el scroll
 			jQuery('body').css({ overflow: "auto" });
-			//Activamos todas las galerías de cabecera
+			//Activamos todas las galerÃ­as de cabecera
 			slider_l_1_1=jQuery('.left_galeria .bxslider_l_1_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:5000,speed:1200,touchEnabled:false});
 			slider_l_1_2=jQuery('.left_galeria .bxslider_l_1_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3000,speed:1200,touchEnabled:false});
 			slider_l_1_3_1=jQuery('.left_galeria .bxslider_l_1_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4400,speed:1200,touchEnabled:false});
@@ -54,8 +54,8 @@ jQuery(window).load(function(){
 			slider_r_2_2=jQuery('.right_galeria .bxslider_r_2_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3700,speed:1200,touchEnabled:false});
 			slider_r_2_3_1=jQuery('.right_galeria .bxslider_r_2_3_1').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:4250,speed:1200,touchEnabled:false});
 			slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3150,speed:1200,touchEnabled:false});
-			
-			//Si hay un ancla en la url 
+
+			//Si hay un ancla en la url
 			if(block_scroll==1){
 				jQuery('body').scrollTo( "0px", 0,function(){
 					//Pillar anclas de la url si las hay
@@ -87,7 +87,7 @@ jQuery(document).ready(function(){
     speedD = 0.6;
     speedE = 1;
 	speedF = 0.3;
-	
+
 	if(jQuery('#wrapper').hasClass('home')){
 		jQuery('body').css({ overflow: "hidden" });
 		block_scroll=1;
@@ -105,11 +105,11 @@ jQuery(document).ready(function(){
 		});
 	}
 
-	//Miramos si la cookie de aceptación está creada
+	//Miramos si la cookie de aceptaciÃ³n estÃ¡ creada
 	if(jQuery.cookie('cambridge-curiosipics') == 'acepta'){
 		//Ocultamos info cookies
 		jQuery('.block-cookies').hide();
-		//Añadimos GA
+		//AÃ±adimos GA
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -121,7 +121,7 @@ jQuery(document).ready(function(){
 		jQuery('.block-cookies').show();
 	}
 
-	//Función contador de palabras textarea
+	//FunciÃ³n contador de palabras textarea
 	jQuery.fn.textareaCounter = function(options) {
 		// setting the defaults
 		// $("textarea").textareaCounter({ limit: 100 });
@@ -139,7 +139,6 @@ jQuery(document).ready(function(){
 
 			obj.keyup(function() {
 			    text = obj.val();
-				text=text.replace(/  +/g, ' ');
 			    if(text === "") {
 			    	wordcount = 0;
 			    } else {
@@ -157,8 +156,8 @@ jQuery(document).ready(function(){
 			});
 		});
 	};
-	
-	//Función para controlar la carga de las imagenes dinámicas
+
+	//FunciÃ³n para controlar la carga de las imagenes dinÃ¡micas
 	jQuery.fn.imagesLoaded = function () {
 
     imgs = this.find('img[src!=""]');
@@ -166,7 +165,7 @@ jQuery(document).ready(function(){
     if (!imgs.length) {return jQuery.Deferred.resolve().promise();}
 
     // for each image, add a deferred object to the array which resolves when the image is loaded
-    var dfds = [];  
+    var dfds = [];
     imgs.each(function(){
 
         var dfd = jQuery.Deferred();
@@ -182,7 +181,7 @@ jQuery(document).ready(function(){
     return jQuery.when.apply(jQuery,dfds);
 
 	}
-	
+
 
 	//Comprobar altura de las secciones de la home
 	if ( jQuery("#galeria_sup").is(":visible")){
@@ -210,10 +209,10 @@ jQuery(document).ready(function(){
 	if ( jQuery(".wall_pics").is(":visible") ) {
 		jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 	}
-	
+
 	//Ajustamos para resoluciones superiores los pics
 	if ( jQuery("#box_all_pics").is(":visible") ) {
-		//Página de pics 
+		//PÃ¡gina de pics
 		if (jQuery(".pagination_pics").is(":visible") ) {
 			 if(h_win>jQuery("#wrapper").outerHeight()){
 				top_all_pics=jQuery('#all_pics').offset().top;
@@ -230,15 +229,15 @@ jQuery(document).ready(function(){
 			jQuery('#contenidos').css('min-height',altura_t_all);
 		}
 	}
-	
 
-	//Si detalle está desplegado calculamos altura de los bloques
+
+	//Si detalle estÃ¡ desplegado calculamos altura de los bloques
 	if ( jQuery(".detalle_pic").is(":visible") ) {
-	   //Ajustamos cuadros dependiendo de resolución
+	   //Ajustamos cuadros dependiendo de resoluciÃ³n
 		var h_detalle_opc;
 		var n_block_h=2;
 		if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-							
+
 		if(w_win<426){
 			h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 			jQuery(".detalle_pic").height('auto');
@@ -250,13 +249,13 @@ jQuery(document).ready(function(){
 		}
 	}
 
-	//Si está desplegado cuadro de voto confirmado
+	//Si estÃ¡ desplegado cuadro de voto confirmado
 	if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
-		//Ajustamos cuadros dependiendo de resolución
+		//Ajustamos cuadros dependiendo de resoluciÃ³n
 		var h_detalle_opc;
 		var n_block_h=2;
 		if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-							
+
 		if(w_win<426){
 			//h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 			jQuery(".detalle_pic").height('auto');
@@ -267,7 +266,7 @@ jQuery(document).ready(function(){
 		}
 	}
 
-	//Solo ejecutar si es visible la galería
+	//Solo ejecutar si es visible la galerÃ­a
 	if ( jQuery("#galeria_sup").is(":visible") ) {
 		//Slider columnas de la izquierda
 
@@ -364,7 +363,7 @@ jQuery(document).ready(function(){
 		jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
 		//slider_r_2_3_2=jQuery('.right_galeria .bxslider_r_2_3_2').bxSlider({mode:'fade',pager: false,infiniteLoop: true,useCSS: false,auto: true,controls:false,pause:3150,speed:1200,touchEnabled:false,preloadImages:'all'});
 
-		/*Últimos Pics*/
+		/*Ãšltimos Pics*/
 		jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 		var n_slides=5;
 		if(w_win<768){if(w_win<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
@@ -397,7 +396,7 @@ jQuery(document).ready(function(){
 			send_form=1;
 			//Limpiamos errores si no es la primera vez
 			jQuery(".errores").html("");
-			//Llamamos a la función de validar (id formulario y contenedor errores)
+			//Llamamos a la funciÃ³n de validar (id formulario y contenedor errores)
 			var result=validate_form('#registro-form');
 			if(result==1){
 				e.preventDefault();
@@ -406,13 +405,13 @@ jQuery(document).ready(function(){
 		}
 	});
 
-	//Enviar formulario de nueva contraseña
+	//Enviar formulario de nueva contraseÃ±a
 	jQuery(document).on("submit","#new-password-form", function(e) {
 		if(send_form==0){
 			send_form=1;
 			//Limpiamos errores si no es la primera vez
 			jQuery(".errores").html("");
-			//Llamamos a la función de validar (id formulario y contenedor errores)
+			//Llamamos a la funciÃ³n de validar (id formulario y contenedor errores)
 			var result=validate_form('#new-password-form');
 			if(result==1){
 				e.preventDefault();
@@ -427,7 +426,7 @@ jQuery(document).ready(function(){
 			send_form=1;
 			//Limpiamos errores si no es la primera vez
 			jQuery(".errores").html("");
-			//Llamamos a la función de validar (id formulario y contenedor errores)
+			//Llamamos a la funciÃ³n de validar (id formulario y contenedor errores)
 			var result=validate_form('#contacto-form');
 			if(result==1){
 				e.preventDefault();
@@ -444,7 +443,7 @@ jQuery(document).ready(function(){
 			send_form=1;
 			//Limpiamos errores si no es la primera vez
 			jQuery(".errores").html("");
-			//Llamamos a la función de validar (id formulario y contenedor errores)
+			//Llamamos a la funciÃ³n de validar (id formulario y contenedor errores)
 			var result=0;
 			//Busca todos los campos requeridos de mail
 			var res_campo=jQuery('#mail_pic').val();
@@ -454,14 +453,14 @@ jQuery(document).ready(function(){
 				jQuery('#mail_pic').addClass('error').val('');
 			}
 
-			//Acción si el mail es correcto o no
+			//AcciÃ³n si el mail es correcto o no
 			if(result==1){
 				send_form=0;
 			}else{
 				//Con el mail correcto se procede a votar
 				var pic_id   = jQuery('.detalle_pic').data('id');
 				var url_vote = jQuery('.wall_pics').attr('data-pic-vote-url').replace('{id}', pic_id);
-				//Enviamos el voto vía AJAX
+				//Enviamos el voto vÃ­a AJAX
 				jQuery.ajax({
 					  type: "POST",
 					  url: url_vote,
@@ -471,7 +470,7 @@ jQuery(document).ready(function(){
 					  success : function(data){
 								console.log(data);
 								if(data.errorCode==0){
-									//Si se ha añadido correctamente actualizamos
+									//Si se ha aÃ±adido correctamente actualizamos
 									jQuery('.cont_detalle_pic .votos_detalle span').text(data.votos+' Votos');
 									//Cerramos el modal de Voto
 									jQuery('.box_pop_votar').fadeOut(600,function(){
@@ -500,7 +499,7 @@ jQuery(document).ready(function(){
 			send_form=1;
 			//Limpiamos errores si no es la primera vez
 			jQuery(".errores").html("");
-			//Llamamos a la función de validar (id formulario y contenedor errores)
+			//Llamamos a la funciÃ³n de validar (id formulario y contenedor errores)
 			var result=validate_form('#form-upload-pic');
 			if(result==1){
 				//Comprobamos si hay error en img
@@ -518,7 +517,7 @@ jQuery(document).ready(function(){
 			if(jQuery(this).attr('type')=='radio'){
 				if(jQuery('form input[type=radio]').hasClass('error')){
 					jQuery('form input[type=radio]').removeClass('error');
-				}	
+				}
 			}else{
 				if(jQuery(this).hasClass('error')){
 					jQuery(this).removeClass('error');
@@ -612,7 +611,7 @@ jQuery(document).ready(function(){
 		jQuery('.block-cookies').fadeOut(600);
 	});
 
-	//Abrir menú mobile
+	//Abrir menÃº mobile
 	jQuery(document).on('click','.right_top_header.mobile_opc .mobile-menu-icon',function(e){
 		e.preventDefault();
 		if(jQuery(this).parents('.mobile_opc').hasClass('active')){
@@ -634,9 +633,9 @@ jQuery(document).ready(function(){
 	jQuery(document).on('click','.btn-accept',function(e){
 		e.preventDefault();
 		jQuery('.block-cookies').fadeOut(600,function(){
-			//Creamos la cookie de aceptación
+			//Creamos la cookie de aceptaciÃ³n
 			jQuery.cookie('cambridge-curiosipics', 'acepta', { expires: 365 * 10 ,path: '/' });
-			//Añadimos GA
+			//AÃ±adimos GA
 			/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -690,12 +689,12 @@ jQuery(document).ready(function(){
 		var pic_id     = parent.data('id');
 		var url_vote   = jQuery('.wall_pics').attr('data-pic-vote-url').replace('{id}', pic_id);
 
-		//Miramos si el usuarios está registrado
+		//Miramos si el usuarios estÃ¡ registrado
 		var user_loged = jQuery('.wall_pics').attr('data-user-logged');
 
 		//console.log(user_loged+'--'+url_vote);
 		if(user_loged=='true'){
-		 	//Enviamos el voto vía AJAX
+		 	//Enviamos el voto vÃ­a AJAX
 			jQuery.ajax({
 				  type: "POST",
 				  url: url_vote,
@@ -704,7 +703,7 @@ jQuery(document).ready(function(){
 				  success : function(data){
 					  		console.log(data);
 				  			if(data.errorCode==0){
-								//Si se ha añadido correctamente actualizamos
+								//Si se ha aÃ±adido correctamente actualizamos
 								jQuery('.cont_detalle_pic .votos_detalle span').text(data.votos+' Votos');
 								alert(data.message);
 							}else{
@@ -752,7 +751,7 @@ jQuery(document).ready(function(){
 
 	});
 
-	//Comprobación del login/forgot-password vía AJAX
+	//ComprobaciÃ³n del login/forgot-password vÃ­a AJAX
 	jQuery('#form-login,#form-forgot-password,#form-login-mob,#form-forgot-password-mob').on('submit', function(e){
 		e.preventDefault();
 
@@ -776,8 +775,8 @@ jQuery(document).ready(function(){
 	   });
 
 	});
-	
-	//Evitar que se complete datos de menor con radio profesor 
+
+	//Evitar que se complete datos de menor con radio profesor
 	jQuery(document).on('change','form input[type=radio]', function(e) {
 		e.preventDefault();
 		var value_radio=jQuery('input[name=user_type]:checked').val();
@@ -787,9 +786,9 @@ jQuery(document).ready(function(){
 			//Miramos si ya se ha desplegado form menor
 			if(jQuery('.tutor_datos').is(":visible")){
 				jQuery('.tutor_datos').hide("slow",function(){
-					jQuery('#tutor_name').val("");	
-					jQuery('#tutor_email').val("");	
-					jQuery('#tutor_id').val("");			
+					jQuery('#tutor_name').val("");
+					jQuery('#tutor_email').val("");
+					jQuery('#tutor_id').val("");
 				});
 			}
 		}else{
@@ -805,8 +804,8 @@ jQuery(document).ready(function(){
 	jQuery(document).on('change','#birth_day,#birth_month,#birth_year', function() {
 			//Obtenemos variable de radio
 			var value_radio=jQuery('form input[name=user_type]:checked').val();
-		
-			//Busca todos los campos requeridos de día
+
+			//Busca todos los campos requeridos de dÃ­a
 			if(jQuery('#registro-form').find('.validation-rule-day').length > 0){
 				var error_day=0;
 				jQuery('#registro-form').find('.validation-rule-day').each(function() {
@@ -830,7 +829,7 @@ jQuery(document).ready(function(){
 				});
 			}
 
-			//Busca todos los campos requeridos de año
+			//Busca todos los campos requeridos de aÃ±o
 			if(jQuery('#registro-form').find('.validation-rule-year').length > 0){
 				var error_year=0;
 				jQuery('#registro-form').find('.validation-rule-year').each(function() {
@@ -842,7 +841,7 @@ jQuery(document).ready(function(){
 				});
 			}
 
-			//Comprobar si la fecha introducida es mayor de 14años
+			//Comprobar si la fecha introducida es mayor de 14aÃ±os
 			if( error_day==0 && error_month==0 && error_year==0){
 				var year=jQuery('.validation-rule-year').val();
 				var month=(jQuery('.validation-rule-month').val()-1);
@@ -860,7 +859,7 @@ jQuery(document).ready(function(){
 							});
 						}
 					}else{
-						//var message='Menor de 14 años!! Debe rellenar los datos de tutor legal.';
+						//var message='Menor de 14 aÃ±os!! Debe rellenar los datos de tutor legal.';
 						//jQuery('.errores').append('<p>'+message+'</p>');
 						if(value_radio!=2){
 							jQuery('.tutor_datos').show("slow",function(){
@@ -871,7 +870,7 @@ jQuery(document).ready(function(){
 				}
 			}
 	});
-	
+
 	//Enviar formulario de registro
 	jQuery(document).on("click",".box_consejo a.top_enl", function(e) {
 		e.preventDefault();
@@ -883,7 +882,7 @@ jQuery(document).ready(function(){
 	jQuery( window ).resize(function() {
 
 		if(jQuery(this).width() != w_win_init && device=='none'){
-			
+
 			//console.log('aqui');
 
 			//Obtenemos altura y anchura del navegador
@@ -918,7 +917,7 @@ jQuery(document).ready(function(){
 				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
 				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height())
 
-				//Resize ticker de home (Falta nº de cuadros según resolución)
+				//Resize ticker de home (Falta nÂº de cuadros segÃºn resoluciÃ³n)
 				jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 				var n_slides=5;
 				if(w_win_r<768){if(w_win_r<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
@@ -939,10 +938,10 @@ jQuery(document).ready(function(){
 			if ( jQuery(".wall_pics").is(":visible") ) {
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
-			
+
 			//Ajustamos altura para resoluciones superiores
 			if ( jQuery("#box_all_pics").is(":visible") ) {
-				//Página de pics 
+				//PÃ¡gina de pics
 				if (jQuery(".pagination_pics").is(":visible") ) {
 					 if(h_win>jQuery("#wrapper").outerHeight()){
 						top_all_pics=jQuery('#all_pics').offset().top;
@@ -960,16 +959,16 @@ jQuery(document).ready(function(){
 				}
 			}
 
-			//Si detalle está desplegado calculamos altura de los bloques
+			//Si detalle estÃ¡ desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
 				//Si es detalle de RSS
 				if ( jQuery(".detalle_pic").hasClass('pic_rrss')){
-					
-					//Ajustamos cuadros dependiendo de resolución
+
+					//Ajustamos cuadros dependiendo de resoluciÃ³n
 					var h_detalle_opc;
 					var n_block_h=2;
 					if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-							
+
 					if(w_win<426){
 						h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 						jQuery(".detalle_pic").height('auto');
@@ -995,13 +994,13 @@ jQuery(document).ready(function(){
 				}
 			}
 
-			//Si está desplegado cuadro de voto confirmado
+			//Si estÃ¡ desplegado cuadro de voto confirmado
 			if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
-				//Ajustamos cuadros dependiendo de resolución
+				//Ajustamos cuadros dependiendo de resoluciÃ³n
 				var h_detalle_opc;
 				var n_block_h=2;
 				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-									
+
 				if(w_win<426){
 					//h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 					jQuery(".detalle_pic").height('auto');
@@ -1025,7 +1024,7 @@ FUNCIONES JAVASCRIPT
 **************************/
 
 
-//Función para capturar eventos scroll
+//FunciÃ³n para capturar eventos scroll
 function control_scroll(e){
   //Variable de scroll
   var scrollAmount = jQuery(window).scrollTop();
@@ -1035,13 +1034,13 @@ function control_scroll(e){
   h_win=jQuery(window).height();
   w_win=jQuery(window).width();
 
-  //Añadir Cookie si se hace scroll a +100px
+  //AÃ±adir Cookie si se hace scroll a +100px
   if(scrollAmount>100){
  		if(jQuery.cookie('cambridge-curiosipics') != 'acepta'){
 			jQuery('.block-cookies').fadeOut(600,function(){
-				//Creamos la cookie de aceptación
+				//Creamos la cookie de aceptaciÃ³n
 				jQuery.cookie('cambridge-curiosipics', 'acepta', { expires: 365 * 10 ,path: '/' });
-				//Añadimos GA
+				//AÃ±adimos GA
 				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -1054,14 +1053,14 @@ function control_scroll(e){
   }
 
 	//Para los enlaces de la home
-	//Solo ejecutar si es visible la galería (HOME)
+	//Solo ejecutar si es visible la galerÃ­a (HOME)
   if ( jQuery("#galeria_sup").is(":visible")){
 	  	 top_curiosidades=jQuery('#box_curiosidad').offset().top;
 		 top_participar=jQuery('#box_participar').offset().top;
 		 top_premios=jQuery('#box_premios').offset().top;
 		 top_jurado=jQuery('#box_jurado').offset().top;
 
-		//Añadir clases a los enlaces del menú según scroll
+		//AÃ±adir clases a los enlaces del menÃº segÃºn scroll
 		if(scrollAmount<(top_curiosidades)){jQuery("#top_header").removeClass();}
 		if(scrollAmount>(top_curiosidades) && scrollAmount<(top_participar)){jQuery("#top_header").removeClass().addClass('block1');}
 		if(scrollAmount>(top_participar) && scrollAmount<(top_premios)){jQuery("#top_header").removeClass().addClass('block2');}
@@ -1069,7 +1068,7 @@ function control_scroll(e){
 		if(scrollAmount>(top_jurado)){jQuery("#top_header").removeClass().addClass('block4');}
   }
 
-  //Solo ejecutar si es visible la galería (HOME)
+  //Solo ejecutar si es visible la galerÃ­a (HOME)
   if ( jQuery("#galeria_sup").is(":visible") && device=='none' && w_win>1100) {
 
 	   	  top_curiosidades=jQuery('#box_curiosidad').offset().top;
@@ -1077,9 +1076,9 @@ function control_scroll(e){
 		  top_premios=jQuery('#box_premios').offset().top;
 		  top_jurado=jQuery('#box_jurado').offset().top;
 
-		  //Animación decoración superior de la home
+		  //AnimaciÃ³n decoraciÃ³n superior de la home
 		  if(scrollAmount<top_curiosidades){
-			/*Decoración 1*/
+			/*DecoraciÃ³n 1*/
 			jQuery('.deco_1_1').stop().clearQueue().animate({ top: 64-(scrollAmount * speedC)}, 0);
 			jQuery('.deco_1_2').stop().clearQueue().animate({ top: 0-(scrollAmount * speedD)}, 0);
 
@@ -1097,7 +1096,7 @@ function control_scroll(e){
 			jQuery('#box_curiosidad').stop().clearQueue().animate({ marginTop: 0-(scrollAmount * speedE)}, 0);
 		  }
 
-		  //Animación de decoración de la sección curiosidades
+		  //AnimaciÃ³n de decoraciÃ³n de la secciÃ³n curiosidades
 		  if(scrollAmount>(top_curiosidades-parseInt(5*h_win/8))){
 			  jQuery('.deco_4_1').stop().clearQueue().animate({ top: 60-((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedF)}, 0);
 			  jQuery('.deco_4_2').stop().clearQueue().animate({ bottom: 7+((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedB)}, 0);
@@ -1108,7 +1107,7 @@ function control_scroll(e){
 			  jQuery('.deco_5_3').stop().clearQueue().animate({ top: 0-((scrollAmount-(top_curiosidades-parseInt(5*h_win/8))) * speedF)}, 0);
 		  }
 
-		   //Animación de decoración de la sección participar
+		   //AnimaciÃ³n de decoraciÃ³n de la secciÃ³n participar
 		  if(scrollAmount>(top_participar-(h_win+100))){
 			  //console.log(scrollAmount+'--'+(top_participar-(h_win/2)));
 			 posY=(scrollAmount-(top_participar-(h_win+100)))*0.15;
@@ -1116,21 +1115,21 @@ function control_scroll(e){
 			jQuery('#box_participar .container').css({ backgroundPosition:"50% "+(-posY)+"px" });
 		  }
 
-		   //Animación de decoración de la sección premios
+		   //AnimaciÃ³n de decoraciÃ³n de la secciÃ³n premios
 		  if(scrollAmount>(top_premios-(3*h_win/4))){
 			 posX=-(scrollAmount-(top_premios-(3*h_win/4)))*0.3;
 			 //console.log(posY);
 			jQuery('#box_premios .container').css({ backgroundPosition: posX+"px top" });
 		  }
 
-		   //Animación de decoración de la sección premios
+		   //AnimaciÃ³n de decoraciÃ³n de la secciÃ³n premios
 		  if(scrollAmount>(top_jurado-(3*h_win/4))){
 			 posXj=-(scrollAmount-(top_jurado-(3*h_win/4)))*0.1;
 			 //console.log(posY);
 			jQuery('#box_jurado .container').css({ backgroundPosition: "right "+posXj+"px" });
 		  }
 
-		  //Animación flecha home
+		  //AnimaciÃ³n flecha home
 		  if(scrollAmount<40){
 			jQuery('.flecha_scroll').stop().clearQueue().animate({ top: -40+(scrollAmount * speedE)}, 0).fadeIn(400);
 		  }else{
@@ -1140,7 +1139,7 @@ function control_scroll(e){
 
     }
 
-	//Animación cuadro de registro lateral
+	//AnimaciÃ³n cuadro de registro lateral
 	if ( jQuery("#registro-form").is(":visible")){
 		top_registro=jQuery('#registro-form').offset().top;
 		var center_tope=jQuery('#center_name').offset().top;
@@ -1157,14 +1156,14 @@ function control_scroll(e){
 }
 
 
-//Función para el cambio de orientación
+//FunciÃ³n para el cambio de orientaciÃ³n
 function doOnOrientationChange()
   {
     switch(window.orientation)
     {
       case -90:
       case 90:
-       
+
 	   		//Obtenemos altura y anchura del navegador
 			var h_win_r=jQuery(this).height();
 			var w_win_r=jQuery(this).width();
@@ -1197,7 +1196,7 @@ function doOnOrientationChange()
 				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
 				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height())
 
-				//Resize ticker de home (Falta nº de cuadros según resolución)
+				//Resize ticker de home (Falta nÂº de cuadros segÃºn resoluciÃ³n)
 				jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 				var n_slides=5;
 				if(w_win_r<768){if(w_win_r<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
@@ -1218,10 +1217,10 @@ function doOnOrientationChange()
 			if ( jQuery(".wall_pics").is(":visible") ) {
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
-			
+
 			//Ajustamos para resoluciones superiores los pics
 			if ( jQuery("#box_all_pics").is(":visible") ) {
-				//Página de pics 
+				//PÃ¡gina de pics
 				if (jQuery(".pagination_pics").is(":visible") ) {
 					 if(h_win>jQuery("#wrapper").outerHeight()){
 						top_all_pics=jQuery('#all_pics').offset().top;
@@ -1239,16 +1238,16 @@ function doOnOrientationChange()
 				}
 			}
 
-			//Si detalle está desplegado calculamos altura de los bloques
+			//Si detalle estÃ¡ desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
 				//Si es detalle de RSS
 				if ( jQuery(".detalle_pic").hasClass('pic_rrss')){
-					
-					//Ajustamos cuadros dependiendo de resolución
+
+					//Ajustamos cuadros dependiendo de resoluciÃ³n
 					var h_detalle_opc;
 					var n_block_h=2;
 					if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-							
+
 					if(w_win<426){
 						h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 						jQuery(".detalle_pic").height('auto');
@@ -1264,13 +1263,13 @@ function doOnOrientationChange()
 				}
 			}
 
-			//Si está desplegado cuadro de voto confirmado
+			//Si estÃ¡ desplegado cuadro de voto confirmado
 			if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
-				//Ajustamos cuadros dependiendo de resolución
+				//Ajustamos cuadros dependiendo de resoluciÃ³n
 				var h_detalle_opc;
 				var n_block_h=2;
 				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-									
+
 				if(w_win<426){
 					//h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 					jQuery(".detalle_pic").height('auto');
@@ -1280,10 +1279,10 @@ function doOnOrientationChange()
 					jQuery(".cont_detalle_pic_vote").height(h_detalle_opc-90);
 				}
 			}
-	   
+
         break;
       default:
-       
+
 	   		//Obtenemos altura y anchura del navegador
 			var h_win_r=jQuery(this).height();
 			var w_win_r=jQuery(this).width();
@@ -1316,7 +1315,7 @@ function doOnOrientationChange()
 				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height());
 				jQuery('.right_galeria .colum_2 .box_img_3 .box_slider_img').height(jQuery('.right_galeria .colum_2 .box_img_3').height())
 
-				//Resize ticker de home (Falta nº de cuadros según resolución)
+				//Resize ticker de home (Falta nÂº de cuadros segÃºn resoluciÃ³n)
 				jQuery('.galeria_curiosidad .box_slider_img').height(jQuery('.galeria_curiosidad').height());
 				var n_slides=5;
 				if(w_win_r<768){if(w_win_r<640){n_slides=2;}else{n_slides=3;}}else{n_slides=5;}
@@ -1337,10 +1336,10 @@ function doOnOrientationChange()
 			if ( jQuery(".wall_pics").is(":visible") ) {
 				jQuery(".box_img_small").height(jQuery(".box_img_small").width());
 			}
-			
+
 			//Ajustamos para resoluciones superiores los pics
 			if ( jQuery("#box_all_pics").is(":visible") ) {
-				//Página de pics 
+				//PÃ¡gina de pics
 				if (jQuery(".pagination_pics").is(":visible") ) {
 					 if(h_win>jQuery("#wrapper").outerHeight()){
 						top_all_pics=jQuery('#all_pics').offset().top;
@@ -1358,16 +1357,16 @@ function doOnOrientationChange()
 				}
 			}
 
-			//Si detalle está desplegado calculamos altura de los bloques
+			//Si detalle estÃ¡ desplegado calculamos altura de los bloques
 			if ( jQuery(".detalle_pic").is(":visible") ) {
 				//Si es detalle de RSS
 				if ( jQuery(".detalle_pic").hasClass('pic_rrss')){
-					
-					//Ajustamos cuadros dependiendo de resolución
+
+					//Ajustamos cuadros dependiendo de resoluciÃ³n
 					var h_detalle_opc;
 					var n_block_h=2;
 					if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-							
+
 					if(w_win<426){
 						h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 						jQuery(".detalle_pic").height('auto');
@@ -1383,13 +1382,13 @@ function doOnOrientationChange()
 				}
 			}
 
-			//Si está desplegado cuadro de voto confirmado
+			//Si estÃ¡ desplegado cuadro de voto confirmado
 			if ( jQuery(".inside_detalle_pic_vote").is(":visible") ) {
-				//Ajustamos cuadros dependiendo de resolución
+				//Ajustamos cuadros dependiendo de resoluciÃ³n
 				var h_detalle_opc;
 				var n_block_h=2;
 				if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-									
+
 				if(w_win<426){
 					//h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 					jQuery(".detalle_pic").height('auto');
@@ -1399,12 +1398,12 @@ function doOnOrientationChange()
 					jQuery(".cont_detalle_pic_vote").height(h_detalle_opc-90);
 				}
 			}
-	   
+
         break;
     }
   }
 
-//Función para alinear top los cuadros
+//FunciÃ³n para alinear top los cuadros
 function align_top_box(id){
 
 		//Listado cajas
@@ -1412,7 +1411,7 @@ function align_top_box(id){
 		{
 			return jQuery(this).outerHeight();
 		}).get(),
-		//Obtenemos tamaño max de los cuadros
+		//Obtenemos tamaÃ±o max de los cuadros
 		maxHeight = Math.max.apply(null, heights);
 		jQuery(id).css('height',maxHeight);
 }
@@ -1436,7 +1435,7 @@ function randomIntFromInterval(min,max)
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
-//Funcion para validar genéricamnete un formulario
+//Funcion para validar genÃ©ricamnete un formulario
 function validate_form(id){
 
 		//Busca todos los campos requeridos de texto
@@ -1469,7 +1468,7 @@ function validate_form(id){
 				});
 			}
 
-			//Busca todos los campos requeridos de día
+			//Busca todos los campos requeridos de dÃ­a
 			if(jQuery(id).find('.validation-rule-day').length > 0){
 				var error_day=0;
 				jQuery(id).find('.validation-rule-day').each(function() {
@@ -1495,7 +1494,7 @@ function validate_form(id){
 				});
 			}
 
-			//Busca todos los campos requeridos de año
+			//Busca todos los campos requeridos de aÃ±o
 			if(jQuery(id).find('.validation-rule-year').length > 0){
 				var error_year=0;
 				jQuery(id).find('.validation-rule-year').each(function() {
@@ -1511,7 +1510,7 @@ function validate_form(id){
 			//Busca todos los campos requeridos de codigo postal
 			if(jQuery(id).find('.validation-rule-password').length > 0){
 				var error_password=0;
-				//Comprobamos que uno de los 2 no está vacío
+				//Comprobamos que uno de los 2 no estÃ¡ vacÃ­o
 				if(jQuery('.init_password').val()!="" && jQuery('.repeat_password').val()!=""){
 					var txt_ini=jQuery('.init_password').val();
 					var txt_rept=jQuery('.repeat_password').val();
@@ -1544,7 +1543,7 @@ function validate_form(id){
 
 				});
 			}
-			
+
 			//Busca todos los campos requeridos radio
 			if(jQuery(id).find('.validation-rule-radio').length > 0){
 				var error_radio=0;
@@ -1555,18 +1554,18 @@ function validate_form(id){
 				}
 				//console.log(error_radio);
 			}
-			
+
 			//Si son menos de 10 palabras
 			if(jQuery(id).find('#counter-text').length > 0){
 				var error_palabras=0;
-				var n_words=jQuery(id).find('#counter-text').attr('rel'); 
+				var n_words=jQuery(id).find('#counter-text').attr('rel');
 				if(n_words<10){
 					error_palabras=1;
 					jQuery(id).find('#descrip_pic').addClass('error');
 				}
 			}
 
-			//Error general campos vacíos
+			//Error general campos vacÃ­os
 			if(error_empty==1){
 				var message=jQuery(id).attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
@@ -1576,7 +1575,7 @@ function validate_form(id){
 				var message=jQuery(id).find('.validation-rule-checkbox').attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}
-			
+
 			if(error_radio==1){
 				var message=jQuery(id).find('.validation-rule-radio').attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
@@ -1610,10 +1609,10 @@ function validate_form(id){
 				var message=jQuery(id).find('.validation-rule-mail').attr('data-error-msg');
 				jQuery('.errores').append('<p>'+message+'</p>');
 			}
-			
+
 			//Error menos 10 palabras
 			if(error_palabras==1){
-				jQuery('.errores').append('<p>Recuerda que la descripción debe tener 10 palabras como mínimo</p>');
+				jQuery('.errores').append('<p>Recuerda que la descripciÃ³n debe tener 10 palabras como mÃ­nimo</p>');
 			}
 
 			//Salida
@@ -1625,7 +1624,7 @@ function validate_form(id){
 }
 
 function show_pic(id_pic,seccion){
-		//Cambiar secciones según resolución
+		//Cambiar secciones segÃºn resoluciÃ³n
 		var n_secc;
 		var pos_winner, descrip_winner;
 		if(w_win>1100){n_secc=5;}
@@ -1636,16 +1635,16 @@ function show_pic(id_pic,seccion){
 		//Eliminamos el indicador de bloque activo
 		jQuery('.box_img_small').removeClass('active');
 		jQuery('.box_img_small a').removeClass('active');
-		
+
 
 		//Recorremos todos los divs hasta obtener la posicion del div pulsado
 		var seccion_afectada;
 		if(seccion=='all_pics'){
-			seccion_afectada='.row';	
+			seccion_afectada='.row';
 		}else{
 			seccion_afectada='#'+seccion;
 		}
-		
+
 		var pos_div=1;
 		var total_cuadros=jQuery(seccion_afectada).find('.box_img_small').length;
 		jQuery(seccion_afectada).find('.box_img_small').each(function() {
@@ -1668,7 +1667,7 @@ function show_pic(id_pic,seccion){
 		var mod_t_fila=total_cuadros%n_secc;
 		//console.log(total_cuadros+'--'+fila+'--'+mod_fila+'--'+n_fila+'--'+pos_div);
 
-		//Completamos las urls de visualización y voto de un pic
+		//Completamos las urls de visualizaciÃ³n y voto de un pic
 		var picUrl     = jQuery(".wall_pics").data("pic-url").replace('{id}', id_pic);
 		//var picVoteUrl = jQuery(".wall_pics").data("pic-vote-url").replace('{id}', id_pic);
 
@@ -1693,20 +1692,20 @@ function show_pic(id_pic,seccion){
 					}
 					// Pintamos detalles
 					if(seccion=='all_pics'){
-						var salida='<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>';	
+						var salida='<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a><a class="fa fa-link" href="'+data.permalink+'" title="Permalink"><span class="hide">Permalink</span></a></p></div></div></div></div></div>';
 					}else{
 						//Obtenemos el texto de ese ganador
-						var salida='<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><div><h3 class="tipo_winner sello_'+pos_winner+'">'+descrip_winner+'</h3></div><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p></div></div></div>';	
+						var salida='<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><div><h3 class="tipo_winner sello_'+pos_winner+'">'+descrip_winner+'</h3></div><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p></div></div></div>';
 					}
-					
+
 						jQuery(salida).insertAfter( jQuery(seccion_afectada).find('.box_img_small').eq(pos_final_det));
-							
-							//No mostramos el contenidos hasta que la imagen está cargada	
+
+							//No mostramos el contenidos hasta que la imagen estÃ¡ cargada
 						imagesLoaded( jQuery('.detalle_pic'),function( instance ) {
-							
+
 							//Solo flecha para pics
 							if(seccion=='all_pics'){
-								//Comprobamos las flechas de navegación que hay que añadir
+								//Comprobamos las flechas de navegaciÃ³n que hay que aÃ±adir
 								if(pos_div!=1 && pos_div!=total_cuadros){
 									jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
 								}else{
@@ -1716,12 +1715,12 @@ function show_pic(id_pic,seccion){
 							}else{
 								jQuery('<a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
 							}
-							
-							//Ajustamos cuadros dependiendo de resolución
+
+							//Ajustamos cuadros dependiendo de resoluciÃ³n
 							var h_detalle_opc;
 							var n_block_h=2;
 							if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-							
+
 							if(w_win<426){
 								h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 								jQuery(".detalle_pic").stop().clearQueue().css({'height':'auto',display:'none'}).slideDown(600,'easeInOutExpo',function(){
@@ -1741,9 +1740,9 @@ function show_pic(id_pic,seccion){
 									var h_offset;
 									if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
 									jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
-								});	
+								});
 							}
-							
+
 						});
 				  }
 			  });
@@ -1766,29 +1765,29 @@ function show_pic(id_pic,seccion){
 		var mod_t_fila=total_cuadros%n_secc;
 		console.log(total_cuadros+'--'+fila+'--'+mod_fila+'--'+n_fila+'--'+pos_div);
 						*/
-						
+
 						if(mod_fila==0){
 							var pos_final_det=(fila*n_secc)-1;
 						}else{
 							var pos_final_det=((fila+1)*n_secc)-1;
 							if(n_fila==fila /*&& total_cuadros<=pos_final_det*/){pos_final_det=((fila*n_secc)+mod_t_fila)-1;}
 						}
-						
+
 						// Pintamos detalles
 						if(seccion=='all_pics'){
-							var salida='<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a></p></div></div></div></div></div>';	
+							var salida='<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p><div class="bottom_detalle"><div class="votos_detalle"><span>'+data.votes+' Votos</span></div><div class="rrss_vote_detalle"><a href="#" class="btn_votar">Votar</a><p class="btns_share"><span>Compartir</span> <a href="#" class="fa fa-twitter"><span class="hide">Twitter</span></a><a href="#" class="fa fa-facebook"><span class="hide">Facebook</span></a><a href="#" class="fa fa-pinterest-p"><span class="hide">Pinterest</span></a><a class="fa fa-link" href="'+data.permalink+'" title="Permalink"><span class="hide">Permalink</span></a></p></div></div></div></div></div>';
 						}else{
 							//Obtenemos el texto de ese ganador
-							var salida='<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><div><h3 class="tipo_winner sello_'+pos_winner+'">'+descrip_winner+'</h3></div><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p></div></div></div>';	
+							var salida='<div class="detalle_pic" data-id="'+id_pic+'"><div class="inside_detalle_pic"><div class="img_detalle_pic"><span class="helper"></span><img src="'+data.img+'" /></div><div class="cont_detalle_pic"><div><h3 class="tipo_winner sello_'+pos_winner+'">'+descrip_winner+'</h3></div><h4>'+data.author_type+'</h4><p class="nombre_persona">'+data.author_name+'</p><h5>'+data.title+'</h5><p class="descrip_pic">'+data.description+'</p></div></div></div>';
 						}
-						
+
 						jQuery(salida).insertAfter( jQuery(seccion_afectada).find('.box_img_small').eq(pos_final_det));
-						
-						//No mostramos el contenidos hasta que la imagen está cargada	
+
+						//No mostramos el contenidos hasta que la imagen estÃ¡ cargada
 						imagesLoaded( jQuery('.detalle_pic'),function( instance ) {
 							//Solo flecha para pics
 							if(seccion=='all_pics'){
-								//Comprobamos las flechas de navegación que hay que añadir
+								//Comprobamos las flechas de navegaciÃ³n que hay que aÃ±adir
 								if(pos_div!=1 && pos_div!=total_cuadros){
 									jQuery('<a href="#" class="prev_pic">Anterior</a><a href="#" class="next_pic">Siguiente</a><a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
 								}else{
@@ -1798,12 +1797,12 @@ function show_pic(id_pic,seccion){
 							}else{
 								jQuery('<a href="#" class="close_pic">Cerrar</a>').insertAfter('.inside_detalle_pic');
 							}
-							
-							//Ajustamos cuadros dependiendo de resolución
+
+							//Ajustamos cuadros dependiendo de resoluciÃ³n
 							var h_detalle_opc;
 							var n_block_h=2;
 							if(w_win<816){if(w_win<641){n_block_h=4;}else{n_block_h=3;}}else{n_block_h=2}
-							
+
 							if(w_win<426){
 								h_detalle_opc=parseInt(jQuery(".img_detalle_pic").outerHeight())+parseInt(jQuery(".cont_detalle_pic").outerHeight())+90;
 								jQuery(".detalle_pic").stop().clearQueue().css({'height':'auto',display:'none'}).slideDown(600,'easeInOutExpo',function(){
@@ -1823,17 +1822,13 @@ function show_pic(id_pic,seccion){
 									var h_offset;
 									if(w_win<641){h_offset=0;}else{if(h_win>h_detalle){h_offset=-(h_win-h_detalle);}else{h_offset=h_detalle-h_win;}}
 									jQuery('body').stop().clearQueue().scrollTo(jQuery('.detalle_pic'),600,{axis:'y',easing:'easeInOutExpo',offset:h_offset});
-								});	
+								});
 							}
-							
+
 						});
-							
+
 				  }
 		  });
-		  	
+
 		}
 }
-
-
-
-
