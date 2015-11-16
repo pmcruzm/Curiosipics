@@ -139,6 +139,7 @@ jQuery(document).ready(function(){
 
 			obj.keyup(function() {
 			    text = obj.val();
+				text=text.replace(/  +/g, ' ');
 			    if(text === "") {
 			    	wordcount = 0;
 			    } else {
