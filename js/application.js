@@ -35,9 +35,7 @@ jQuery.noConflict();
 
 jQuery(window).load(function(){
 	
-	alert('Instrucciones JS después de finalizar carga total');
-	
-	/*if(jQuery('#wrapper').hasClass('home')){
+	if(jQuery('#wrapper').hasClass('home')){
 		jQuery('#preloader').fadeOut(600,function(){
 			//Activamos el scroll
 			jQuery('body').css({ overflow: "auto" });
@@ -70,12 +68,10 @@ jQuery(window).load(function(){
 				});
 			}
 		});
-	}*/
+	}
 });
 
 jQuery(document).ready(function(){
-	
-	alert('Comienza carga JS');
 
 	//Obtenemos altura y anchura del navegador
 	h_win=jQuery(window).height();
