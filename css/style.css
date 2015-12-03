@@ -785,7 +785,7 @@ PROPIEDADES COOKIES
 /**********************************
 PROPIEDADES PRELOADER
 **********************************/
-#preloader{background:#ffffff;position:fixed;top:0;width:100%;z-index:400;display:block;left:0;height:100%;display:none !important;}
+#preloader{background:#ffffff;position:fixed;top:0;width:100%;z-index:400;display:block;left:0;height:100%;}
 .cargando{position:absolute;top:338px;left:50%;background-size:contain;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center;background-repeat:no-repeat;height:90px;width:342px;background-image:url(../img/animacion.gif);text-indent:-99999px;margin-left:-171px;}
 
 
