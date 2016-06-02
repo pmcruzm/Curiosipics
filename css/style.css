@@ -789,6 +789,13 @@ PROPIEDADES PRELOADER
 .cargando{position:absolute;top:338px;left:50%;background-size:contain;-ms-behavior:url(/backgroundsize.min.htc);background-position:center center;background-repeat:no-repeat;height:90px;width:342px;background-image:url(../img/animacion.gif);text-indent:-99999px;margin-left:-171px;}
 
 
+/**********************************
+PROPIEDADES DESTACADOS GANADORES 
+**********************************/
+.destacado_winners{display:block;width:350px;height:350px;background:url(../img/dest_winners.png) top left no-repeat;position:fixed;z-index:200;top:100px;left:50%;margin-left:-750px;}
+.destacado_winners a{display:block;height:40px;width:140px;box-sizing:border-box;border:2px solid #f1e87c;border-radius:6px;position:absolute;bottom:90px;left:0;right:0;margin:0 auto;text-align:center;line-height:35px;color:#f1e87c;}
+.destacado_winners a:hover{color:#000000;background:#f1e87c;-webkit-transition: all 0.4s ease-in-out;-moz-transition: all 0.4s ease-in-out;-o-transition: all 0.4s ease-in-out;transition: all 0.4s ease-in-out;}
+
 /*****************************
 PROPIEDADES ESPECIALES
 ******************************/
@@ -914,6 +921,10 @@ input[type="checkbox"]:checked + label::before {
 /*****************************
 MEDIA QUERIES
 ******************************/
+@media screen and (max-width: 1600px) {
+	.destacado_winners{left:50px;margin-left:0;}
+}
+
 
 @media screen and (max-width: 1400px) {
 	/*.container{max-width:1280px;}*/
@@ -1203,6 +1214,9 @@ MEDIA QUERIES
 	.cont_detalle_pic_vote .rrss_vote_detalle .btns_share a{width:35px;line-height:37px;height:35px;margin-left:8px;}
 	
 	.cont_detalle_pic .rrss_vote_detalle .btns_share span{display:none;}
+	
+	.destacado_winners{display:block;width:300px;height:300px;background:url(../img/dest_winners.png) top left no-repeat;background-size:300px;left:25px;}
+	.destacado_winners a{height:35px;width:120px;bottom:70px;line-height:30px;}
 
 }
 
@@ -1451,6 +1465,9 @@ MEDIA QUERIES
 	
 	.pop_votar{width:80%;margin-left:-40%;}
 	.cargando{width: 238px;margin-left:-119px;top:202px;}	
+	
+	.destacado_winners{display:block;width:250px;height:250px;background:url(../img/dest_winners.png) top left no-repeat;background-size:250px;left:25px;}
+	.destacado_winners a{height:30px;width:100px;bottom:60px;line-height:25px;font-size:14px;border:1px solid #f1e87c;}
 }
 
 @media screen and (max-width: 479px) {
