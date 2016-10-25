@@ -504,19 +504,16 @@ PROPIEDADES PICS (TODOS)
 
 .pagination_pics{background:#61bde9;text-align:center;padding-top:20px;padding-bottom:20px;}
 .pagination_pics ul{display:inline-block;}
-.pagination_pics li{display:inline-block;}
-.pagination_pics li a{font-size:18px;color:#ffffff;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;margin-right:10px;}
-.pagination_pics li:last-child a{margin-right:30px;}
-.pagination_pics li:first-child a{margin-left:30px;}
+.pagination_pics li{display:inline-block;font-size:18px;vertical-align: middle;}
+.pagination_pics li a{color:#ffffff;margin:0 5px;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
+.pagination_pics li span{color:#ffffff;margin:0 5px;}
 .pagination_pics li a:hover{color:#7ed8ff;}
-.pagination_pics li a.active{color:#7ed8ff;}
+.pagination_pics li.active span{color:#7ed8ff;}
 
-.prev_pag{display:inline-block;width:23px;height:16px;background-image:url(../img/arrow_pag_l.png); background-position:0px 0px;background-repeat:no-repeat;text-indent:-99999px;vertical-align:middle;background-size:23px;}
-.prev_pag:hover{background-position:0px -16px;}
-.prev_pag.active{background-position:0px -16px;}
-.next_pag{display:inline-block;width:23px;height:16px;background-image:url(../img/arrow_pag_r.png); background-position:0px 0px;background-repeat:no-repeat;text-indent:-99999px;vertical-align:middle;background-size:23px;}
-.next_pag:hover{background-position:0px -16px;}
-.next_pag.active{background-position:0px -16px;}
+.pagination_pics li.prev_page{display:inline-block;}
+.pagination_pics li.prev_page:hover{background-position:0px -16px;}
+.pagination_pics li.next_page{display:inline-block;}
+.pagination_pics li.next_page:hover{background-position:0px -16px;}
 
 .navigation_pics{overflow:hidden;position:relative;z-index:101;}
 .left_navigation_pics{display:inline-block;float:left;position:absolute;bottom:0px;}
