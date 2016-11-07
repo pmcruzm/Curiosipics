@@ -229,7 +229,7 @@ PROPIEDADES GALERÍ SUPERIOR HOME
 *************************************/
 #gallery_home{position:relative;}
 #gallery_home .container{background:#000000;}
-#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url(../img/rombo_logo_grande.png) top left no-repeat;top:50%;margin-top:-216px;z-index:90;background-size:433px 432px;/*background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);*/}
+#gallery_home h2.logo_gall{display:block;position:absolute;width:433px;height:432px;left:0;right:0;margin:0 auto;text-indent:-99999px;background:url('../img/rombo_logo_grande.png?v=1') top left no-repeat;top:50%;margin-top:-216px;z-index:90;background-size:433px 432px;/*background-size:cover;-ms-behavior:url(/backgroundsize.min.htc);*/}
 
 #galeria_sup{height:795px;overflow:hidden;position:relative;}
 #galeria_sup:after{content:'';display:block;height:795px;background:rgba(0,0,0,0.5);position:absolute;top:0;width:100%;z-index:50;}
@@ -329,6 +329,8 @@ PROPIEDADES PREMIOS
 .box_jurado li,.box_publico li{background:#ebebeb;display:table;border-radius:8px;height:70px;margin-bottom:1px;box-sizing:border-box;padding-left:60px;padding-right:20px;font-size:16px;color:#484647;line-height:21px;width:100%;position:relative;}
 .box_jurado li p,.box_publico li p{display:table-cell;vertical-align:middle;}
 .box_jurado li p span,.box_publico li p span{color:#484647;font-size:30px;font-family:'cabinbold', Helvetica, sans-serif;line-height:70px;display:block;position:absolute;left:20px;top:0;}
+.box_jurado li a,.box_publico li a{color:#61bde9;}
+.box_jurado li a:hover,.box_publico li a:hover{text-decoration: underline;}
 
 /*************************************
 PROPIEDADES EL JURADO
